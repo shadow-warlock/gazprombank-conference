@@ -11,9 +11,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
-use Symfony\Component\Serializer\Serializer;
 
 class ChatController extends AbstractController {
     /**
@@ -22,6 +19,7 @@ class ChatController extends AbstractController {
      * @return JsonResponse
      */
     public function getChat($id) {
+        $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
         $chat = $this->getDoctrine()->getRepository(Chat::class)->find($id);
         return $this->json($chat);
     }
