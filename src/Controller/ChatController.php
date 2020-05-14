@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ChatController extends AbstractController {
@@ -80,6 +81,9 @@ class ChatController extends AbstractController {
         $entityManager = $this->getDoctrine()->getManager();
         $message = $entityManager->find(UserLike::class, $id);
         $like = $message->findLikeFromUser();
+        if(!$like) {
+            throw new NotFoundHttpException("like not found");
+        }
         $entityManager->remove($like);
         $entityManager->flush();
         return $this->json(true, 204);
