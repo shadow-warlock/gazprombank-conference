@@ -19,6 +19,7 @@ class UserController extends AbstractController {
      * @return JsonResponse
      */
     public function userAdd(Request $request) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $serializer = new Serializer([new GetSetMethodNormalizer()], [new JsonEncoder()]);
         $user = $serializer->deserialize($request->getContent(), User::class, 'json');
         $user->setRole(User::ROLE_USER);
@@ -37,6 +38,7 @@ class UserController extends AbstractController {
      * @return JsonResponse
      */
     public function generateNewCode($id) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $repository = $this->getDoctrine()->getRepository(User::class);
         $user = $repository->find($id);
         $codes = array_map(fn($user) => $user->getCode(), $this->getAllUsers());

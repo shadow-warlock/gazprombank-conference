@@ -96,6 +96,10 @@ class Message
         return $this->replyTo;
     }
 
+    /**
+     * @param Message|object|null $replyTo
+     * @return $this
+     */
     public function setReplyTo(?self $replyTo): self
     {
         $this->replyTo = $replyTo;
@@ -139,6 +143,10 @@ class Message
         return $this->user;
     }
 
+    /**
+     * @param User|object|null $user
+     * @return $this
+     */
     public function setUser(?User $user): self
     {
         $this->user = $user;
@@ -182,6 +190,10 @@ class Message
         return $this->chat;
     }
 
+    /**
+     * @param Chat|object|null $chat
+     * @return $this
+     */
     public function setChat(?Chat $chat): self
     {
         $this->chat = $chat;
