@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\Chat;
 use App\Entity\Message;
 use App\Entity\User;
+use App\Entity\UserLike;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -38,14 +40,48 @@ class ChatController extends AbstractController {
         if(isset($data['text']) && count($data['text']) >= 2) {
             $message->setText($data['text']);
         } else {
-            throw new HttpException(500, "field text must be over 2 symbols in length");
+            throw new BadRequestHttpException("field text must be over 2 symbols in length");
         }
         $message->setChat($entityManager->find(Chat::class, $id));
         $message->setUser($this->getUser());
         $message->setReplyTo(isset($data['replyTo']) ? $entityManager->find(Message::class, $data['replyTo']) : null);
-        $message->setTime(new DateTime());
+        $message->setTime();
         $entityManager->persist($message);
         $entityManager->flush();
-        return $this->json($message);
+        return $this->json($message, 201);
+    }
+
+    /**
+     * @Route("/api/message/{id}/like", name="add_like", methods={"POST"})
+     * @param $id
+     * @return JsonResponse
+     */
+    public function addLike($id) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $message = $entityManager->find(UserLike::class, $id);
+        if($message->findLikeFromUser($this->getUser())) {
+            throw new BadRequestHttpException("like already exist");
+        }
+        $like = new UserLike();
+        $like->setUser($this->getUser());
+        $like->setMessage($message);
+        $like->setTime();
+        $entityManager->persist($like);
+        $entityManager->flush();
+        return $this->json($like, 201);
+    }
+
+    /**
+     * @Route("/api/message/{id}/like", name="add_like", methods={"DELETE"})
+     * @param $id
+     * @return JsonResponse
+     */
+    public function removeLike($id) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $message = $entityManager->find(UserLike::class, $id);
+        $like = $message->findLikeFromUser();
+        $entityManager->remove($like);
+        $entityManager->flush();
+        return $this->json(true, 204);
     }
 }

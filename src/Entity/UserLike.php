@@ -3,13 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\UserLikeRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UserLikeRepository::class)
  */
-class UserLike
-{
+class UserLike {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -34,42 +34,42 @@ class UserLike
      */
     private $message;
 
-    public function getId(): ?int
-    {
+    public function getId(): ?int {
         return $this->id;
     }
 
-    public function getTime(): ?\DateTimeInterface
-    {
+    public function getTime(): ?\DateTimeInterface {
         return $this->time;
     }
 
-    public function setTime(\DateTimeInterface $time): self
-    {
-        $this->time = $time;
-
+    public function setTime(): self {
+        $this->time = new DateTime();
         return $this;
     }
 
-    public function getUser(): ?User
-    {
+    public function getUser(): ?User {
         return $this->user;
     }
 
-    public function setUser(?User $user): self
-    {
+    /**
+     * @param User|object|null $user
+     * @return $this
+     */
+    public function setUser(?User $user): self {
         $this->user = $user;
 
         return $this;
     }
 
-    public function getMessage(): ?Message
-    {
+    public function getMessage(): ?Message {
         return $this->message;
     }
 
-    public function setMessage(?Message $message): self
-    {
+    /**
+     * @param Message|object|null $message
+     * @return $this
+     */
+    public function setMessage(?Message $message): self {
         $this->message = $message;
 
         return $this;

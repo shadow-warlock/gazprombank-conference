@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\MessageRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -10,8 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=MessageRepository::class)
  */
-class Message
-{
+class Message {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -56,43 +56,36 @@ class Message
      */
     private $chat;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->replies = new ArrayCollection();
         $this->likes = new ArrayCollection();
     }
 
-    public function getId(): ?int
-    {
+    public function getId(): ?int {
         return $this->id;
     }
 
-    public function getTime(): ?\DateTimeInterface
-    {
+    public function getTime(): ?\DateTimeInterface {
         return $this->time;
     }
 
-    public function setTime(\DateTimeInterface $time): self
-    {
-        $this->time = $time;
+    public function setTime(): self {
+        $this->time = new DateTime();
 
         return $this;
     }
 
-    public function getText(): ?string
-    {
+    public function getText(): ?string {
         return $this->text;
     }
 
-    public function setText(string $text): self
-    {
+    public function setText(string $text): self {
         $this->text = $text;
 
         return $this;
     }
 
-    public function getReplyTo(): ?self
-    {
+    public function getReplyTo(): ?self {
         return $this->replyTo;
     }
 
@@ -100,8 +93,7 @@ class Message
      * @param Message|object|null $replyTo
      * @return $this
      */
-    public function setReplyTo(?self $replyTo): self
-    {
+    public function setReplyTo(?self $replyTo): self {
         $this->replyTo = $replyTo;
 
         return $this;
@@ -110,14 +102,12 @@ class Message
     /**
      * @return Collection|self[]
      */
-    public function getReplies(): Collection
-    {
+    public function getReplies(): Collection {
         return $this->replies;
     }
 
-    public function addReply(self $reply): self
-    {
-        if (!$this->replies->contains($reply)) {
+    public function addReply(self $reply): self {
+        if(!$this->replies->contains($reply)) {
             $this->replies[] = $reply;
             $reply->setReplyTo($this);
         }
@@ -125,12 +115,11 @@ class Message
         return $this;
     }
 
-    public function removeReply(self $reply): self
-    {
-        if ($this->replies->contains($reply)) {
+    public function removeReply(self $reply): self {
+        if($this->replies->contains($reply)) {
             $this->replies->removeElement($reply);
             // set the owning side to null (unless already changed)
-            if ($reply->getReplyTo() === $this) {
+            if($reply->getReplyTo() === $this) {
                 $reply->setReplyTo(null);
             }
         }
@@ -138,8 +127,7 @@ class Message
         return $this;
     }
 
-    public function getUser(): ?User
-    {
+    public function getUser(): ?User {
         return $this->user;
     }
 
@@ -147,8 +135,7 @@ class Message
      * @param User|object|null $user
      * @return $this
      */
-    public function setUser(?User $user): self
-    {
+    public function setUser(?User $user): self {
         $this->user = $user;
 
         return $this;
@@ -157,14 +144,12 @@ class Message
     /**
      * @return Collection|UserLike[]
      */
-    public function getLikes(): Collection
-    {
+    public function getLikes(): Collection {
         return $this->likes;
     }
 
-    public function addLike(UserLike $like): self
-    {
-        if (!$this->likes->contains($like)) {
+    public function addLike(UserLike $like): self {
+        if(!$this->likes->contains($like)) {
             $this->likes[] = $like;
             $like->setMessage($this);
         }
@@ -172,12 +157,11 @@ class Message
         return $this;
     }
 
-    public function removeLike(UserLike $like): self
-    {
-        if ($this->likes->contains($like)) {
+    public function removeLike(UserLike $like): self {
+        if($this->likes->contains($like)) {
             $this->likes->removeElement($like);
             // set the owning side to null (unless already changed)
-            if ($like->getMessage() === $this) {
+            if($like->getMessage() === $this) {
                 $like->setMessage(null);
             }
         }
@@ -185,8 +169,7 @@ class Message
         return $this;
     }
 
-    public function getChat(): ?Chat
-    {
+    public function getChat(): ?Chat {
         return $this->chat;
     }
 
@@ -194,10 +177,18 @@ class Message
      * @param Chat|object|null $chat
      * @return $this
      */
-    public function setChat(?Chat $chat): self
-    {
+    public function setChat(?Chat $chat): self {
         $this->chat = $chat;
 
         return $this;
+    }
+
+    public function findLikeFromUser(User $user): ?UserLike {
+        foreach($this->getLikes() as $like) {
+            if($user->getId() == $like->getUser()->getId()) {
+                return $like;
+            }
+        }
+        return null;
     }
 }
