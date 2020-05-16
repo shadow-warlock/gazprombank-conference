@@ -56,6 +56,10 @@ class Answer
         return $this->user;
     }
 
+    /**
+     * @param User|null|object $user
+     * @return $this
+     */
     public function setUser(?User $user): self
     {
         $this->user = $user;
@@ -68,6 +72,10 @@ class Answer
         return $this->poll;
     }
 
+    /**
+     * @param Poll|object|null $poll
+     * @return $this
+     */
     public function setPoll(?Poll $poll): self
     {
         $this->poll = $poll;

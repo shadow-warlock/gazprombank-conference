@@ -16,4 +16,17 @@ class ConferenceController extends AbstractController {
         $conference = $this->getDoctrine()->getRepository(Conference::class)->findAll()[0] ?? null;
         return $this->json($conference);
     }
+
+    /**
+     * @Route("/api/conference/poll",name="close_poll", methods={"DELETE"})
+     */
+    public function closePoll() {
+//        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+        $entityManager = $this->getDoctrine()->getManager();
+        $conference = $entityManager->getRepository(Conference::class)->findAll()[0];
+        $conference->setPoll(null);
+        $entityManager->persist($conference);
+        $entityManager->flush();
+        return $this->json(true, 204);
+    }
 }
