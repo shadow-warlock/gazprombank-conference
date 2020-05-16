@@ -11,3 +11,4 @@
 /.idea/
 /composer.lock
 /symfony.lock
+/frontend/package-lock.json
