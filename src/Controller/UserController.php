@@ -83,4 +83,11 @@ class UserController extends AbstractController {
         $repository = $this->getDoctrine()->getRepository(User::class);
         return $repository->findAll();
     }
+
+    /**
+     * @Route("/api/user", name="get_logged_user", methods={"GET"})
+     */
+    public function getLoggedUser() {
+        return $this->json($this->getUser());
+    }
 }
