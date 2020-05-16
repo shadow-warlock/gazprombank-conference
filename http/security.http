@@ -1,8 +1,11 @@
-POST http://localhost:8080/api/session
+POST http://localhost:8000/api/session
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"code":"123456"}
+{"code":"230284"}
 
 ###
+
+GET http://localhost:8000/api/session
+Content-Type: application/json
