@@ -23,7 +23,7 @@ class Auth extends Component {
     }
 
     send(){
-        axios.post(SERVER_URL + API_SESSION, {code: this.state.code}).then(
+        axios.post(SERVER_URL + API_SESSION, {code: this.state.code}, {withCredentials: true}).then(
             res => {
                 console.log(res.data);
             }
