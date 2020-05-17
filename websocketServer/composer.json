@@ -1,0 +1,13 @@
+{
+    "name": "kolebn/websocker-server",
+    "type": "project",
+    "authors": [
+        {
+            "name": "nik",
+            "email": "nik_mak@bk.ru"
+        }
+    ],
+    "require": {
+        "workerman/workerman": "^4.0"
+    }
+}

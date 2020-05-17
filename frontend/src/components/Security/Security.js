@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {API_SESSION, SERVER_URL} from "../../const/const";
+import {API, AXIOS_CONFIG} from "../../const/const";
 import AuthPage from "../AuthPage/AuthPage";
 
 export default class Security extends Component {
@@ -17,7 +17,7 @@ export default class Security extends Component {
 
     getUser() {
         let self = this;
-        axios.get(SERVER_URL + API_SESSION, {withCredentials: true}).then(
+        axios.get(API.SESSION, AXIOS_CONFIG).then(
             res => {
                 self.setState({user: res.data});
             }

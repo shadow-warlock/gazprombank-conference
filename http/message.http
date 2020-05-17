@@ -1,0 +1,8 @@
+POST http://localhost:8000/api/chat/1/message
+Content-Type: application/json
+
+{
+  "text":"Мое async7 сообщение"
+}
+
+###

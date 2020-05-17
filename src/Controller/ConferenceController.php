@@ -4,21 +4,27 @@ namespace App\Controller;
 
 use App\Entity\Conference;
 use App\Entity\User;
+use App\Service\JSONer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ConferenceController extends AbstractController {
     /**
      * @Route("/api/conference", name="get_conference", methods={"GET"})
+     * @param JSONer $serializer
+     * @return JsonResponse
      */
-    public function getConference() {
+    public function getConference(JSONer $serializer) {
         $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
         $conference = $this->getDoctrine()->getRepository(Conference::class)->findAll()[0] ?? null;
-        return $this->json($conference);
+        $json = $serializer->toJSON($conference);
+        return new JsonResponse($json, 200, [], true);
     }
 
     /**
      * @Route("/api/conference/poll",name="close_poll", methods={"DELETE"})
+     * @return JsonResponse
      */
     public function closePoll() {
 //        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);

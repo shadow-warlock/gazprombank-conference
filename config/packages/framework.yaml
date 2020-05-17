@@ -1,5 +1,6 @@
 framework:
-    serializer: { enable_annotations: true }
+    serializer:
+        enable_annotations: true
     secret: '%env(APP_SECRET)%'
     #csrf_protection: true
     #http_method_override: true
@@ -10,8 +11,8 @@ framework:
         cookie_httponly: false
         enabled: true
         save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
-        cookie_secure: false
-        cookie_samesite: null
+        cookie_secure: auto
+        cookie_samesite: lax
         gc_maxlifetime: 2592000
         cookie_lifetime: 2592000
 

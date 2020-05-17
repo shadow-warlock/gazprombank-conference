@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {API_SESSION, SERVER_URL} from "../../../const/const";
+import {API, AXIOS_CONFIG} from "../../../const/const";
 
 export default class AuthForm extends Component {
     constructor(props) {
@@ -23,7 +23,7 @@ export default class AuthForm extends Component {
     }
 
     sendAuthFrom() {
-        axios.post(SERVER_URL + API_SESSION, {code: this.state.code}, {withCredentials: true}).then(
+        axios.post(API.SESSION, {code: this.state.code}, AXIOS_CONFIG).then(
             res => {
                 this.props.setUser(res.data)
             }
