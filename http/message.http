@@ -6,3 +6,28 @@ Content-Type: application/json
 }
 
 ###
+
+DELETE http://localhost:8000/api/chat/message/6
+Content-Type: application/json
+
+###
+
+POST http://localhost:8000/api/message/2/like
+Content-Type: application/json
+
+
+###
+
+DELETE http://localhost:8000/api/message/2/like
+Content-Type: application/json
+
+
+###
+
+POST http://localhost:8000/api/poll
+Content-Type: application/json
+
+{
+  "question":"ты опрос?"
+}
+###

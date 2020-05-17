@@ -9,12 +9,12 @@ export default function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Security role={ROLE.USER}>
+                <Security roles={[ROLE.USER, ROLE.ADMIN]}>
                     <Route exact path="/">
                         <ConferencePage/>
                     </Route>
                 </Security>
-                <Security role={ROLE.ADMIN}>
+                <Security roles={[ROLE.ADMIN]}>
                     <Route exact path="/admin">
                         {"jopa admin"}
                     </Route>

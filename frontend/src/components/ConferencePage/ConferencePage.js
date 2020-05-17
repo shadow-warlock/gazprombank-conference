@@ -65,9 +65,33 @@ export default class ConferencePage extends Component {
     handleData(json) {
         let data = JSON.parse(json);
         let conf = Object.assign({}, this.state.conference);
+        let messageIndex;
+        console.log(data);
         switch (data.type) {
             case "message":
                 conf.chat.messages.push(data.data);
+                break;
+            case "delete message":
+                conf.chat.messages = conf.chat.messages.filter((message)=>{
+                    return message.id !== data.data.messageId;
+                });
+                break;
+            case "like":
+                messageIndex = conf.chat.messages.findIndex((message)=>{
+                    return message.id === data.data.message.id;
+                });
+                conf.chat.messages[messageIndex].likes.push(data.data);
+                break;
+            case "delete like":
+                messageIndex = conf.chat.messages.findIndex((message)=>{
+                    return message.id === data.data.messageId;
+                });
+                conf.chat.messages[messageIndex].likes = conf.chat.messages[messageIndex].likes.filter((like) => {
+                    return like.id !== data.data.likeId
+                });
+                break;
+            case "poll":
+                conf.poll = data.data;
                 break;
         }
         this.setState({

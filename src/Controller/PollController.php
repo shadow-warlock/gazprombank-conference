@@ -6,6 +6,8 @@ use App\Entity\Answer;
 use App\Entity\Conference;
 use App\Entity\Poll;
 use App\Entity\User;
+use App\Service\JSONer;
+use App\Service\WebSocketSender;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,9 +29,11 @@ class PollController extends AbstractController {
     /**
      * @Route("/api/poll", name="set_poll", methods={"POST"})
      * @param Request $request
+     * @param JSONer $serializer
+     * @param WebSocketSender $wsSender
      * @return JsonResponse
      */
-    public function addPoll(Request $request) {
+    public function addPoll(Request $request, JSONer $serializer, WebSocketSender $wsSender) {
         $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $entityManager = $this->getDoctrine()->getManager();
         $data = json_decode($request->getContent(), true);
@@ -41,7 +45,9 @@ class PollController extends AbstractController {
         $entityManager->persist($poll);
         $entityManager->persist($conference);
         $entityManager->flush();
-        return $this->json($poll, 201);
+        $json = $serializer->toJSON($poll);
+        $wsSender->send(WebSocketSender::POLL, $poll);
+        return new JsonResponse($json, 201, [], true);
     }
 
     /**
