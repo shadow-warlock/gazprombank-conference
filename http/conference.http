@@ -1,0 +1,16 @@
+GET http://localhost:8000/api/conference
+
+
+###
+
+POST http://localhost:8000/api/poll
+Content-Type: application/json
+
+{
+  "question": "Все работает",
+  "variants": ["Да","Конечно"]
+}
+
+###
+
+DELETE http://localhost:8000/api/conference/poll
