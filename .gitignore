@@ -13,3 +13,4 @@
 /symfony.lock
 /frontend/package-lock.json
 /websocketServer/composer.lock
+/websocketServer/vendor/
