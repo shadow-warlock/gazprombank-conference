@@ -1,0 +1,14 @@
+.poll {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.variants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.variants > *{
+    margin: 10px;
+}
