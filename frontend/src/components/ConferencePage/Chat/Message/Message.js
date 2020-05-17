@@ -9,15 +9,20 @@ import 'moment/locale/ru';
 export default class Message extends Component {
     render() {
         return (
-            <div className={"message"}>
-                <div>
-                    <p className={"uppercase bold color_violet name"}>{this.props.message.user.name} {this.props.message.user.surname}</p>
-                    <p className={"text"}>{this.props.message.text}</p>
+            <div>
+                <div className={"message"}>
+                    <div>
+                        <p className={"uppercase bold color_violet name"}>{this.props.message.user.name} {this.props.message.user.surname}</p>
+                        <p className={"text"}>{this.props.message.text}</p>
+                    </div>
+                    <div>
+                        <p className={"nowrap text_right"}>
+                            {this.props.message.likes.length} <FontAwesomeIcon className={"like_button"}
+                                             icon={faHeart}/>
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <p className={"nowrap"}>
-                        <FontAwesomeIcon className={"like_button"} icon={faHeart}/> {this.props.message.likes.length}
-                    </p>
+                <div className={"text_right padding_right"}>
                     <Moment className={"nowrap color_pink"} fromNow ago date={this.props.message.time} locale={"ru"}/>
                 </div>
             </div>
