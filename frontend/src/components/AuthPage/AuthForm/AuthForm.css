@@ -1,0 +1,26 @@
+.auth_form {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 30px 30px;
+    align-items: center;
+}
+
+.form_header {
+    margin-bottom: 20px;
+}
+
+.tech_support {
+
+}
+
+.tech_support > p {
+    padding-bottom: 5px;
+}
+
+.auth_form .input {
+    margin-bottom: 20px;
+}
+
+.auth_form .button {
+    margin-bottom: 20px;
+}
