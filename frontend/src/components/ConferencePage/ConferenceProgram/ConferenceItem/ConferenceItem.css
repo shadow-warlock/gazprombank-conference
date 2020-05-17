@@ -4,11 +4,18 @@
     padding-bottom: 30px;
 }
 
-.description_container{
+.conference_item .time {
+    border-radius: 30px;
+    width: 200px;
+    border: 2px solid var(--pink);
+    text-align: center;
+}
+
+.description_container {
     display: flex;
 }
 
-.conf_item_image{
+.conf_item_image {
     margin-right: 50px;
     width: 150px;
     border-radius: 30px;

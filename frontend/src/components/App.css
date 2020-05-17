@@ -14,11 +14,11 @@ p {
     margin: 0;
 }
 
-.uppercase{
+.uppercase {
     text-transform: uppercase;
 }
 
-.nowrap{
+.nowrap {
     white-space: nowrap;
 }
 
@@ -46,7 +46,19 @@ p {
     font-size: calc(2 * var(--default-font-size));
 }
 
-.white_link{
+.white_link {
     color: white;
     text-decoration: none;
+}
+
+.text_right {
+    text-align: right;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
 }

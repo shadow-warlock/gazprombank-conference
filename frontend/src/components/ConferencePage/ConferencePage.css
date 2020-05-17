@@ -1,17 +1,25 @@
-.conference{
+.conference {
     background-color: var(--violet);
     padding-top: 50px;
+}
+
+.conference_title {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.broadcast_chat_container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: white url("./../../assets/graphics_bg.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
+
+.padding_side {
     padding-left: 100px;
     padding-right: 100px;
-}
-
-.conference_title{
-    display: flex;
-    justify-content: space-between;
-}
-
-.broadcast_chat_container{
-    display: flex;
-    justify-content: space-between;
 }
 

@@ -19,7 +19,9 @@ export default class ConferenceItem extends Component {
                     </div>
                 </div>
                 <div>
-                    <p className={"font_size_very_big color_white"}>{this.props.item.time}</p>
+                    <div className={"time"}>
+                        <p className={"font_size_very_big color_white bold"}>{this.props.item.time}</p>
+                    </div>
                 </div>
             </div>
         );

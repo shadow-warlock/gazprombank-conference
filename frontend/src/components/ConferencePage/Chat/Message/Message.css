@@ -1,9 +1,11 @@
 .message {
-    width: 300px;
+    width: 400px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    border-left: 1px solid var(--violet);
+    border-bottom: 1px solid var(--violet);
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
+

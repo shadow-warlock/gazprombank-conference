@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import "./Message.css";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+// import {faLike} from '@fortawesome/free-solid-svg-icons'
 
 export default class Message extends Component {
     render() {

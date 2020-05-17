@@ -36,26 +36,25 @@ export default class ConferencePage extends Component {
             return "Loading";
         return (
             <div className={"conference"}>
-                <div className={"conference_title"}>
+                <div className={"conference_title padding_side"}>
                     <div>
                         <Logo/>
                     </div>
-                    <div>
-                        <div>Банковское сопровождение контактов</div>
-                        <div>Часовой пояс: Москва, Россия (UTC+3)</div>
+                    <div className={"text_right"}>
+                        <p className={"color_white font_size_very_big uppercase"}>Банковское сопровождение контактов</p>
+                        <p className={"color_pink font_size_big uppercase"}>Часовой пояс: Москва, Россия (UTC+3)</p>
                     </div>
                 </div>
-                <div>
+                <div className={"padding_side"}>
                     <ConferenceProgram items={CONFERENCE_ITEMS}/>
                 </div>
-                <div className={"broadcast_chat_container"}>
+                <div className={"broadcast_chat_container padding_side"}>
                     <Broadcast url={this.state.conference.url}/>
                     <Chat chat={this.state.conference.chat}/>
                 </div>
-                <div>
+                <div className={"padding_side"}>
                     {this.state.conference.poll && <Poll poll={this.state.conference.poll}/>}
                 </div>
-                <div><Logo/></div>
                 <Websocket url='ws://localhost:2346'
                            onMessage={this.handleData.bind(this)}/>
             </div>
