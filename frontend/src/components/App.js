@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Security from "./Security/Security";
 import {ROLE} from "../const/const";
 import ConferencePage from "./ConferencePage/ConferencePage";
+import "./App.css";
 
 export default function App() {
     return (

@@ -1,0 +1,15 @@
+.button {
+    border-radius: 30px;
+    border: 1px solid var(--pink);
+    padding: 10px 30px;
+    width: 300px;
+    background-color: transparent;
+    color: white;
+    font-size: var(--default-font-size);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: var(--dark-violet);
+}

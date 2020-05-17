@@ -1,6 +1,10 @@
 import React, {Component} from "react";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
+import {TECH_SUPPORT_PHONE} from "../../../const/const";
+import Button from "../../Button/Button";
+import Input from "../../Input/Input";
+import "./AuthForm.css";
 
 export default class AuthForm extends Component {
     constructor(props) {
@@ -13,12 +17,8 @@ export default class AuthForm extends Component {
     }
 
     changeCode(e) {
-        let key = e.target.name;
-        let target = e.target;
         this.setState({
-            [key]: e.target.value
-        }, () => {
-            target.value = this.state[key]
+            code: e.target.value
         });
     }
 
@@ -34,14 +34,21 @@ export default class AuthForm extends Component {
 
     render() {
         return (
-            <div>
-                <p>Вход</p>
-                <input
-                    name={"code"}
+            <div className={"auth_form"}>
+                <p className={"form_header"}>Вход</p>
+                <Input
+                    value={this.state.code}
                     onChange={this.changeCode}
                     type={"number"}
                     placeholder={"Пароль"}/>
-                <button onClick={this.sendAuthFrom}>Войти</button>
+                <Button onClick={this.sendAuthFrom}>Войти</Button>
+                <div className={"tech_support"}>
+                    <p className={"font_size_less nowrap"}>Технические вопросы по подключению к трансляции</p>
+                    <p className={"font_size_less"}>
+                        Денис Лазаренко <a className={"white_link"}
+                                           href={"tel:" + TECH_SUPPORT_PHONE}>{TECH_SUPPORT_PHONE}</a>
+                    </p>
+                </div>
             </div>
         );
     }

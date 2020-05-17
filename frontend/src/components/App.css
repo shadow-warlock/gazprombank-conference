@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=cyrillic-ext');
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    --violet: #430d7f;
+    --dark-violet: #230668;
+    --pink: rgb(194, 17, 161);
+    --default-font-size: 15px;
+    font-size: var(--default-font-size);
+}
+
+p {
+    margin: 0;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+.color_pink {
+    color: var(--pink);
+}
+
+.color_white {
+    color: white;
+}
+
+.font_size_default {
+    font-size: var(--default-font-size);
+}
+
+.font_size_less {
+    font-size: calc(0.7 * var(--default-font-size));
+}
+
+.font_size_big {
+    font-size: calc(1.5 * var(--default-font-size));
+}
+
+.font_size_very_big {
+    font-size: calc(2 * var(--default-font-size));
+}
+
+.white_link{
+    color: white;
+    text-decoration: none;
+}
