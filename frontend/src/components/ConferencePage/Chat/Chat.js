@@ -3,6 +3,7 @@ import Message from "./Message/Message";
 import "./Chat.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCommentDots} from '@fortawesome/free-solid-svg-icons'
+import TextareaAutosize from "react-textarea-autosize";
 
 export default class Chat extends Component {
 
@@ -11,7 +12,7 @@ export default class Chat extends Component {
             <div className={"chat"}>
                 <p className={"bold font_size_big text_center"}>Чат</p>
                 <div className={"send_message_container"}>
-                    <div className={"textarea"} contentEditable={true} placeholder={"Введите сообщение"}/>
+                    <TextareaAutosize className={"textarea"} placeholder={"Введите сообщение"}/>
                     <FontAwesomeIcon className={"send_button"} icon={faCommentDots}/>
                 </div>
                 <div className={"messages"}>

@@ -28,7 +28,8 @@
     color: var(--violet);
     height: 30px;
     width: 30px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     cursor: pointer;
 }
 

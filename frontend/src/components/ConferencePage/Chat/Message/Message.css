@@ -3,9 +3,22 @@
     display: flex;
     justify-content: space-between;
     border-left: 1px solid var(--violet);
-    border-bottom: 1px solid var(--violet);
-    padding: 10px;
+    /*padding-top: 5px;*/
+    padding-right: 10px;
+    padding-bottom: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
+.message .name{
+    padding-left: 10px;
+}
+
+.message .text{
+    padding-left: 20px;
+}
+
+.like_button:hover{
+    color: var(--pink);
+    cursor: pointer;
+}

@@ -22,6 +22,10 @@ p {
     white-space: nowrap;
 }
 
+.color_violet {
+    color: var(--violet);
+}
+
 .color_pink {
     color: var(--pink);
 }
