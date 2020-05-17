@@ -30,7 +30,7 @@ class User implements UserInterface {
     /**
      * @ORM\Column(type="string")
      */
-    private $role = [];
+    private $role;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -75,6 +75,10 @@ class User implements UserInterface {
     public function getRoles(): array {
         $roles = [$this->role];
         return array_unique($roles);
+    }
+
+    public function getRole(): string {
+        return $this->role;
     }
 
     public function setRole(string $role): self {

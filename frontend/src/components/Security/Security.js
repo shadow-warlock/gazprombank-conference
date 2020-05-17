@@ -1,33 +1,44 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {SERVER_URL} from "../../const/server";
-import Auth from "./Auth";
-import {API_SESSION} from "../../const/api";
+import {API_SESSION, SERVER_URL} from "../../const/const";
+import AuthPage from "../AuthPage/AuthPage";
 
-class Security extends Component {
+export default class Security extends Component {
 
     constructor(props) {
         super(props);
+        this.getUser = this.getUser.bind(this);
+        this.setUser = this.setUser.bind(this);
+        this.checkAccess = this.checkAccess.bind(this);
         this.state = {
-            isAccess: false
+            user: null
         };
     }
 
-
-    componentDidMount() {
-        axios.get(SERVER_URL + API_SESSION).then(
+    getUser() {
+        let self = this;
+        axios.get(SERVER_URL + API_SESSION, {withCredentials: true}).then(
             res => {
-                console.log(res.data);
-                this.setState({isAccess: res.data.role === this.props.role});
+                self.setState({user: res.data});
             }
         ).catch(e => {
-            this.setState({isAccess: false});
-        })
+            console.error(e);
+        });
+    }
+
+    setUser(user) {
+        this.setState({user: user});
+    }
+
+    componentDidMount() {
+        this.getUser();
+    }
+
+    checkAccess() {
+        return this.state.user && this.state.user.role === this.props.role;
     }
 
     render() {
-        return this.state.isAccess ? this.props.children : <Auth/>;
+        return this.checkAccess() ? this.props.children : <AuthPage setUser={this.setUser}/>;
     }
 }
-
-export default Security;
