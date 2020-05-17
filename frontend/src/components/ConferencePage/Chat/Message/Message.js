@@ -18,7 +18,7 @@ export default class Message extends Component {
                     <div>
                         <p className={"nowrap text_right"}>
                             {this.props.message.likes.length} <FontAwesomeIcon className={"like_button"}
-                                             icon={faHeart}/>
+                                                                               icon={faHeart}/>
                         </p>
                     </div>
                 </div>
