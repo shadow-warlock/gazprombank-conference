@@ -1,0 +1,15 @@
+.conference_item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.description_container{
+    display: flex;
+}
+
+.conf_item_image{
+    margin-right: 50px;
+    width: 150px;
+    border-radius: 30px;
+}

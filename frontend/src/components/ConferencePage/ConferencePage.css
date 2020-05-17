@@ -1,0 +1,17 @@
+.conference{
+    background-color: var(--violet);
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.conference_title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.broadcast_chat_container{
+    display: flex;
+    justify-content: space-between;
+}
+
