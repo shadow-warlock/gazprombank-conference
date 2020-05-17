@@ -35,7 +35,7 @@ export default class Security extends Component {
     }
 
     checkAccess() {
-        return this.state.user && this.state.user.role === this.props.role;
+        return this.state.user && this.props.roles.includes(this.state.user.role);
     }
 
     render() {

@@ -59,13 +59,36 @@ class ChatController extends AbstractController {
     }
 
     /**
-     * @Route("/api/message/{id}/like", name="add_like", methods={"POST"})
+     * @Route("/api/chat/message/{id}", name="delete_message", methods={"DELETE"})
+     * @param Request $request
      * @param $id
+     * @param WebSocketSender $wsSender
      * @return JsonResponse
      */
-    public function addLike($id) {
+    public function deleteMessage(Request $request, int $id, WebSocketSender $wsSender) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $entityManager = $this->getDoctrine()->getManager();
-        $message = $entityManager->find(UserLike::class, $id);
+        $message = $entityManager->find(Message::class, $id);
+        if(!$message) {
+            throw new NotFoundHttpException("message not found");
+        }
+        $entityManager->remove($message);
+        $entityManager->flush();
+        $wsSender->send(WebSocketSender::DELETE_MESSAGE, ["messageId"=>$id]);
+        return new JsonResponse("", 204, [], true);
+    }
+
+    /**
+     * @Route("/api/message/{id}/like", name="add_like", methods={"POST"})
+     * @param $id
+     * @param JSONer $serializer
+     * @param WebSocketSender $wsSender
+     * @return JsonResponse
+     */
+    public function addLike(int $id, JSONer $serializer, WebSocketSender $wsSender) {
+        $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
+        $entityManager = $this->getDoctrine()->getManager();
+        $message = $entityManager->find(Message::class, $id);
         if($message->findLikeFromUser($this->getUser())) {
             throw new BadRequestHttpException("like already exist");
         }
@@ -75,23 +98,30 @@ class ChatController extends AbstractController {
         $like->setTime();
         $entityManager->persist($like);
         $entityManager->flush();
-        return $this->json($like, 201);
+        $wsSender->send(WebSocketSender::LIKE, $like);
+        $json = $serializer->toJSON($like);
+        return new JsonResponse($json, 201, [], true);
     }
 
     /**
-     * @Route("/api/message/{id}/like", name="add_like", methods={"DELETE"})
+     * @Route("/api/message/{id}/like", name="delete_like", methods={"DELETE"})
      * @param $id
+     * @param WebSocketSender $wsSender
      * @return JsonResponse
      */
-    public function removeLike($id) {
+    public function removeLike(int $id, WebSocketSender $wsSender) {
+        $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
         $entityManager = $this->getDoctrine()->getManager();
-        $message = $entityManager->find(UserLike::class, $id);
-        $like = $message->findLikeFromUser();
+        $message = $entityManager->find(Message::class, $id);
+        $like = $message->findLikeFromUser($this->getUser());
+        $likeId = $like->getId();
         if(!$like) {
             throw new NotFoundHttpException("like not found");
         }
         $entityManager->remove($like);
         $entityManager->flush();
+        $wsData = ["messageId" => $id, "likeId" => $likeId];
+        $wsSender->send(WebSocketSender::DELETE_LIKE, $wsData);
         return $this->json(true, 204);
     }
 }
