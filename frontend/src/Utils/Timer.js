@@ -16,6 +16,9 @@ export default class Timer {
     start(onEnd, time){
         this.time = time;
         this.onEnd = onEnd;
+        if(this.interval){
+            clearInterval(this.interval);
+        }
         this.interval = setInterval(this.tick, 1000);
     }
 

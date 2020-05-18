@@ -8,6 +8,7 @@ export const API = {
     CONFERENCE: SERVER.URL + "/api/conference",
     CONFERENCE_POLL: SERVER.URL + "/api/conference/poll",
     USER: SERVER.URL + "/api/user",
+    POLL: SERVER.URL + "/api/poll",
     MESSAGE: (id)=> {return SERVER.URL+"/api/message/"+id},
     CHAT_MESSAGE: (id) => {return SERVER.URL + "/api/chat/" + id + "/message"},
     MESSAGE_LIKE: (id) => {return SERVER.URL + "/api/message/" + id + "/like"},

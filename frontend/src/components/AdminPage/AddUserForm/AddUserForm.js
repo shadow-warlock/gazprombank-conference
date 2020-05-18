@@ -5,7 +5,7 @@ import axios from "axios";
 import {API, AXIOS_CONFIG, ROLE} from "../../../const/const";
 
 const buttonText = [
-    "Добавить пользвателя",
+    "Добавить пользователя",
     "Отмена"
 ];
 

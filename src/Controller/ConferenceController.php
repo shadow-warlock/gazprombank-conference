@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Conference;
 use App\Entity\User;
 use App\Service\JSONer;
+use App\Service\WebSocketSender;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,15 +25,17 @@ class ConferenceController extends AbstractController {
 
     /**
      * @Route("/api/conference/poll",name="close_poll", methods={"DELETE"})
+     * @param WebSocketSender $wsSender
      * @return JsonResponse
      */
-    public function closePoll() {
-//        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+    public function closePoll(WebSocketSender $wsSender) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $entityManager = $this->getDoctrine()->getManager();
         $conference = $entityManager->getRepository(Conference::class)->findAll()[0];
         $conference->setPoll(null);
         $entityManager->persist($conference);
         $entityManager->flush();
+        $wsSender->send(WebSocketSender::POLL, null);
         return $this->json(true, 204);
     }
 }

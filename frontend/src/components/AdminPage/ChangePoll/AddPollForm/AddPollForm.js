@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import Input from "../../../Input/Input";
 import Button from "../../../Button/Button";
+import axios from "axios";
+import {API, AXIOS_CONFIG} from "../../../../const/const";
 
 const buttonText = [
     "Новый опрос",
@@ -16,6 +18,22 @@ export default class AddPollForm extends Component {
             answers: [],
             isOpen: false
         };
+    }
+
+    save(){
+        let data = {
+            question: this.state.question,
+            variants: this.state.answers.length > 0 ? this.state.answers : null
+        };
+        axios.post(API.POLL, data, AXIOS_CONFIG).then(res => {
+            this.props.reload();
+            this.setState({
+                question: "",
+                answers: []
+            })
+        }).catch(e => {
+            console.log(e);
+        });
     }
 
     render() {
@@ -55,7 +73,7 @@ export default class AddPollForm extends Component {
                                 Добавить ответ
                             </Button></div>
                     </div>
-                    <Button>Сохранить</Button>
+                    <Button onClick={this.save.bind(this)}>Сохранить</Button>
                 </div>
                 }
             </div>

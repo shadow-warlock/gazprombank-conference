@@ -35,7 +35,7 @@ export default class ChangePoll extends Component {
         return (
             <div className={"change_poll"}>
                 <AdminPoll reload={this.loadPoll.bind(this)} poll={this.state.poll}/>
-                <AddPollForm/>
+                <AddPollForm reload={this.loadPoll.bind(this)}/>
             </div>
         );
     }
