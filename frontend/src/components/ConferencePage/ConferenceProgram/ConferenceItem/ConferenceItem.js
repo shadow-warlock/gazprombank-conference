@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import "./ConferenceItem.css";
-import rectangle from "./../../../../assets/rectangle.png";
 
 export default class ConferenceItem extends Component {
     render() {
@@ -8,8 +7,9 @@ export default class ConferenceItem extends Component {
             <div className={"conference_item"}>
                 <div className={"description_container"}>
                     <div>
-                        <div>
-                            <img className={"conf_item_image"} alt={"conf item image"} src={rectangle}/>
+                        <div className={"rectangle_image"}>
+                            {this.props.item.image &&
+                            <img className={"conf_item_image"} alt={"conf item image"} src={this.props.item.image}/>}
                         </div>
                     </div>
                     <div>
