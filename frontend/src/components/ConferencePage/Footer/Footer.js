@@ -9,7 +9,7 @@ export default class Footer extends Component {
             <div className={"footer"}>
                 <p className={"color_white uppercase font_size_very_big"}>Техническая поддержка</p>
                 <div>
-                    {TECH_SUPPORTERS.map((supporter) => <Supporter supporter={supporter}/>)}
+                    {TECH_SUPPORTERS.map((supporter) => <Supporter key={supporter.phone} supporter={supporter}/>)}
                 </div>
             </div>
         );
