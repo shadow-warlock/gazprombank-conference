@@ -52,7 +52,9 @@ export default class Message extends Component {
     }
 
     removeMessage() {
-        axios.delete(API.MESSAGE(this.props.message.id), AXIOS_CONFIG).catch(e => console.log(e));
+        if (window.confirm("Вы хотите удалить сообщение?")) {
+            axios.delete(API.MESSAGE(this.props.message.id), AXIOS_CONFIG).catch(e => console.log(e));
+        }
     }
 
     render() {
