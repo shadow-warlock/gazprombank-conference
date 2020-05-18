@@ -7,7 +7,7 @@ POST http://localhost:8000/api/poll
 Content-Type: application/json
 
 {
-  "question": "Ну буууэээ?",
+  "question": "Ну воркай2?",
   "variants": ["Да","Конечно"]
 }
 
