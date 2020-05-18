@@ -32,6 +32,7 @@ export default class MessageSender extends Component {
     render() {
         return (
             <div className={"send_message_container"}>
+                {this.props.reply && (this.props.reply.user.name + ": " + this.props.reply.text)}
                 <TextareaAutosize
                     maxRows={10}
                     className={"textarea"}

@@ -10,13 +10,28 @@ import MessageSender from "./MessageSender/MessageSender";
 
 export default class Chat extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            reply: null
+        };
+    }
+
     render() {
         return (
             <div className={"chat"}>
                 <p className={"bold font_size_big text_center"}>Чат</p>
-                <MessageSender chatId={this.props.chat.id}/>
+                <MessageSender reply={this.state.reply} chatId={this.props.chat.id}/>
                 <div className={"messages"}>
-                    {this.props.chat.messages.map((message) => <Message user={this.props.user} key={message.id} message={message}/>)}
+                    {this.props.chat.messages.map((message) =>
+                        <Message
+                            onReply = {(reply)=>{
+                                this.setState({reply: reply});
+                            }}
+                            user={this.props.user}
+                            key={message.id}
+                            message={message}/>
+                    )}
                 </div>
             </div>
         );

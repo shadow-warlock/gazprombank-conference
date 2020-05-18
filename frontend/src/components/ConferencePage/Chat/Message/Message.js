@@ -31,12 +31,14 @@ export default class Message extends Component {
         let myLike = this.props.message.likes.find((like)=>{
             return like.user.id === this.props.user.id;
         });
+        let message = this.props.message;
+        let replyTo = message.replyTo;
         return (
             <div className={"message_container"}>
                 <div className={"message"}>
                     <div>
-                        <p className={"uppercase bold color_violet name"}>{this.props.message.user.name} {this.props.message.user.surname}</p>
-                        <p className={"text"}>{this.props.message.text}</p>
+                        <p className={"uppercase bold color_violet name"}>{message.user.name} {message.user.surname}</p>
+                        <p className={"text"}>{(replyTo ? replyTo.user.name + ", " : "") + message.text}</p>
                     </div>
                     <div>
                         <p className={"nowrap text_right"}>
@@ -48,7 +50,10 @@ export default class Message extends Component {
                     </div>
                 </div>
                 <div className={"padding_right reply_and_time"}>
-                    <p className={"reply_button"}>Ответить</p>
+                    <p  onClick={()=>{this.props.onReply(this.props.message)}}
+                        className={"reply_button"}>
+                        Ответить
+                    </p>
                     <Moment className={"nowrap color_pink"} fromNow ago date={this.props.message.time} locale={"ru"}/>
                 </div>
             </div>
