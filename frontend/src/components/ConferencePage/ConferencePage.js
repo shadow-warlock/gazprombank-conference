@@ -23,6 +23,7 @@ export default class ConferencePage extends Component {
         let self = this;
         axios.get(API.CONFERENCE, AXIOS_CONFIG).then(
             res => {
+                this.messagesSort(res.data.chat.messages);
                 self.setState({
                     conference: res.data
                 });
@@ -51,7 +52,7 @@ export default class ConferencePage extends Component {
                 </div>
                 <div className={"broadcast_chat_container padding_side"}>
                     <Broadcast url={this.state.conference.url}/>
-                    <Chat chat={this.state.conference.chat}/>
+                    <Chat user={this.props.user} chat={this.state.conference.chat}/>
                 </div>
                 <div className={"padding_side"}>
                     {this.state.conference.poll && <Poll poll={this.state.conference.poll}/>}
@@ -65,14 +66,19 @@ export default class ConferencePage extends Component {
         );
     }
 
+    messagesSort(messages){
+        messages.sort((a, b)=>{
+            return a < b ? -1 : 1;
+        });
+    }
+
     handleData(json) {
         let data = JSON.parse(json);
         let conf = Object.assign({}, this.state.conference);
         let messageIndex;
-        console.log(data);
         switch (data.type) {
             case "message":
-                conf.chat.messages.push(data.data);
+                conf.chat.messages.unshift(data.data);
                 break;
             case "delete message":
                 conf.chat.messages = conf.chat.messages.filter((message) => {

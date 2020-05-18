@@ -12,7 +12,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8000/api/message/2/like
+POST http://localhost:8000/api/message/7/like
 Content-Type: application/json
 
 

@@ -39,6 +39,6 @@ export default class Security extends Component {
     }
 
     render() {
-        return this.checkAccess() ? this.props.children : <AuthPage setUser={this.setUser}/>;
+        return this.checkAccess() ? this.props.children(this.state.user) : <AuthPage setUser={this.setUser}/>;
     }
 }

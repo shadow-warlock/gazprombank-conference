@@ -5,9 +5,32 @@ import {faHeart} from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import 'moment/locale/ru';
+import axios from "axios";
+import {API, AXIOS_CONFIG} from "../../../../const/const";
 
 export default class Message extends Component {
+
+    likeClick(myLike){
+        myLike ? this.unlike() : this.like();
+    }
+
+    like(){
+        axios.post(API.MESSAGE_LIKE(this.props.message.id),
+            {}, AXIOS_CONFIG).catch(e => {
+            console.error(e);
+        });
+    }
+
+    unlike(){
+        axios.delete(API.MESSAGE_LIKE(this.props.message.id), AXIOS_CONFIG).catch(e => {
+            console.error(e);
+        });
+    }
+
     render() {
+        let myLike = this.props.message.likes.find((like)=>{
+            return like.user.id === this.props.user.id;
+        });
         return (
             <div className={"message_container"}>
                 <div className={"message"}>
@@ -17,8 +40,10 @@ export default class Message extends Component {
                     </div>
                     <div>
                         <p className={"nowrap text_right"}>
-                            {this.props.message.likes.length} <FontAwesomeIcon className={"like_button"}
-                                                                               icon={faHeart}/>
+                            {this.props.message.likes.length}
+                            <FontAwesomeIcon onClick={()=>{this.likeClick.bind(this)(myLike);}}
+                                             className={"like_button " + (myLike && "color_pink")}
+                                             icon={faHeart}/>
                         </p>
                     </div>
                 </div>

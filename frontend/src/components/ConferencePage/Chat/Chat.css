@@ -7,36 +7,6 @@
     padding-bottom: 30px;
 }
 
-.send_message_container .textarea {
-    width: 350px;
-    resize: none;
-    border: 1px solid var(--pink);
-    padding: 10px;
-}
-
-[contenteditable=true]:empty:before {
-    content: attr(placeholder);
-    pointer-events: none;
-    display: block; /* For Firefox */
-}
-
-.send_message_container {
-    display: flex;
-}
-
-.send_message_container .send_button {
-    color: var(--violet);
-    height: 30px;
-    width: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.send_message_container .send_button:hover {
-    color: var(--pink);
-}
-
 .messages {
     overflow-y: scroll;
     height: 500px;
