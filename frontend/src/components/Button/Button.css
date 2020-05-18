@@ -2,7 +2,7 @@
     border-radius: 30px;
     border: 1px solid var(--pink);
     padding: 10px 30px;
-    width: 300px;
+    width: var(--input-width);
     background-color: transparent;
     color: white;
     font-size: var(--default-font-size);

@@ -1,0 +1,134 @@
+@media (max-width: 1024px) {
+    body {
+        --default-font-size: 14px;
+    }
+
+    .auth_page {
+        padding: 10%;
+    }
+
+    .bank_container {
+        display: none;
+    }
+
+    .left_container {
+        max-width: none;
+    }
+
+    .left_container .uppercase {
+        white-space: initial;
+    }
+
+    .auth_form .input, .auth_form .button {
+        --input-width: 200px;
+    }
+
+    .auth_form {
+        padding: 50px 0;
+    }
+
+    .tech_support .nowrap {
+        white-space: initial;
+    }
+
+    .logo_right {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .padding_side {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .conference_title {
+        display: block;
+    }
+
+    .conference_title .text_right {
+        text-align: left;
+    }
+
+    .conference_item {
+        display: block;
+    }
+
+    .conference_item .description_container {
+        display: block;
+        text-align: center;
+    }
+
+    .rectangle_image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .rectangle_image .conf_item_image {
+        width: 250px;
+        height: 250px;
+        border-radius: 30px;
+    }
+
+    .conference_item .time {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .conference_program_title{
+        padding-bottom: 30px;
+    }
+
+    .broadcast_chat_container {
+        display: block;
+    }
+
+    .broadcast_chat_container.padding_side {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 10px;
+    }
+
+    .broadcast > p {
+        padding-bottom: 10px;
+    }
+
+    .broadcast_chat_container .iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .chat {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .chat > p {
+        padding-bottom: 10px;
+    }
+
+    .send_message_container .textarea {
+        width: 250px;
+    }
+
+    .send_message_container {
+        text-align: center;
+    }
+
+    .send_message_container > div {
+        width: 250px;
+    }
+
+    .message {
+        width: auto;
+    }
+
+    .footer > div {
+        display: block;
+    }
+
+    .footer > div > div {
+        display: flex;
+        justify-content: space-between;
+    }
+}

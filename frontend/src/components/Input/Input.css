@@ -3,7 +3,7 @@
     border-radius: 30px;
     border: 1px solid white;
     padding: 10px 30px;
-    width: 238px;
+    width: calc(var(--input-width) - 62px);
     background-color: transparent;
     color: white;
     font-size: var(--default-font-size);
