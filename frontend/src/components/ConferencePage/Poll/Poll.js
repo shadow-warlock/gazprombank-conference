@@ -28,10 +28,10 @@ export default class Poll extends Component {
     }
 
     getVariants() {
-
         if (this.props.poll.variants) {
             return this.props.poll.variants.map((variant) =>
                 <Button
+                    key={variant}
                     onClick={() => {
                         this.setState({answer: variant}, this.send.bind(this));
                     }}>
@@ -71,9 +71,8 @@ export default class Poll extends Component {
     }
 
     render() {
-        console.log(this.props.poll.answers);
         return (
-            <div className={"poll"}>
+            <div className={"poll"}>{this.props.timer&&<p>{this.props.timer}</p>}
                 <p className={"color_white font_size_very_big uppercase"}>Опрос</p>
                 {this.getPoll()}
             </div>
