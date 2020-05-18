@@ -66,7 +66,14 @@ export default class AddPollForm extends Component {
                                         this.setState({answers: answers})
                                     }}
                                 />
-                                <FontAwesomeIcon className={"remove_answer_button"} icon={faTimes}/>
+                                <FontAwesomeIcon
+                                    onClick={()=>{
+                                        let answers = [...this.state.answers];
+                                        answers.splice(index, 1);
+                                        this.setState({answers: answers})
+                                    }}
+                                    className={"remove_answer_button"}
+                                    icon={faTimes}/>
                             </div>
                         })}
                             <Button
