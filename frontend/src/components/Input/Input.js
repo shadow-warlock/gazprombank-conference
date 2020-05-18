@@ -6,10 +6,7 @@ export default class Input extends Component {
         return (
             <input autoComplete={"nope"}
                    className={"input"}
-                   value={this.props.value}
-                   placeholder={this.props.placeholder}
-                   onChange={this.props.onChange}
-                   type={this.props.type}/>
+                   {...this.props}/>
         );
     }
 }

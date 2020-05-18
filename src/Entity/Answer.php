@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AnswerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity(repositoryClass=AnswerRepository::class)
@@ -31,6 +32,7 @@ class Answer
     /**
      * @ORM\ManyToOne(targetEntity=Poll::class, inversedBy="answers")
      * @ORM\JoinColumn(nullable=false)
+     * @Serializer\Exclude()
      */
     private $poll;
 
