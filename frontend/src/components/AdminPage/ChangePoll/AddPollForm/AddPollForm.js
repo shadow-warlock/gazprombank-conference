@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import Input from "../../../Input/Input";
 import Button from "../../../Button/Button";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const buttonText = [
     "Новый опрос",
@@ -37,14 +39,17 @@ export default class AddPollForm extends Component {
                     <div className={"form_container pb_20"}>
                         <p className={"color_white"}>{this.state.answers.length > 0 ? "Варианты ответа: " : "Без вариантов ответа"}</p>
                         <div className={"question_answers_container"}>{this.state.answers.map((answer, index) => {
-                            return <Input
-                                value={answer}
-                                onChange={(e) => {
-                                    let answers = [...this.state.answers];
-                                    answers[index] = e.target.value;
-                                    this.setState({answers: answers})
-                                }}
-                            />
+                            return <div>
+                                <Input
+                                    value={answer}
+                                    onChange={(e) => {
+                                        let answers = [...this.state.answers];
+                                        answers[index] = e.target.value;
+                                        this.setState({answers: answers})
+                                    }}
+                                />
+                                <FontAwesomeIcon className={"remove_answer_button"} icon={faTimes}/>
+                            </div>
                         })}
                             <Button
                                 onClick={() => {
