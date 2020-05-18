@@ -32,11 +32,11 @@
 .remove_answer_button {
     color: var(--pink);
     margin-left: 10px;
+    position: absolute;
 }
 
 .remove_answer_button:hover {
     cursor: pointer;
     color: white;
-    position: absolute;
 }
 
