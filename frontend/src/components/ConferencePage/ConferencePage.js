@@ -110,6 +110,8 @@ export default class ConferencePage extends Component {
             case "poll":
                 conf.poll = data.data;
                 break;
+            default:
+                console.log(data);
         }
         this.setState({
             conference: conf

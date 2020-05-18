@@ -1,7 +1,7 @@
 .conference_item {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 .conference_item .time {
@@ -15,8 +15,14 @@
     display: flex;
 }
 
-.conf_item_image {
-    margin-right: 50px;
+.conf_item_image{
     width: 150px;
+}
+
+.rectangle_image{
+    width: 150px;
+    margin-right: 50px;
+    height: 150px;
     border-radius: 30px;
+    overflow: hidden;
 }

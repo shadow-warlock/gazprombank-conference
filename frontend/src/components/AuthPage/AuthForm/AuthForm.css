@@ -24,3 +24,8 @@
 .auth_form .button {
     margin-bottom: 20px;
 }
+
+.login_supporters > p {
+    justify-content: space-between;
+    display: flex;
+}
