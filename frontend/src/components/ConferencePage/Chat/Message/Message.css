@@ -54,3 +54,8 @@
 .reply_button:hover{
     color: var(--pink);
 }
+
+.reply_to:hover{
+    cursor: pointer;
+    color: var(--pink);
+}
