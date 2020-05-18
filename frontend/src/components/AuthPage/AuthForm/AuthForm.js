@@ -10,7 +10,8 @@ export default class AuthForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            code: ""
+            code: "",
+            error: ""
         };
         this.changeCode = this.changeCode.bind(this);
         this.sendAuthFrom = this.sendAuthFrom.bind(this);
@@ -23,12 +24,13 @@ export default class AuthForm extends Component {
     }
 
     sendAuthFrom() {
+        this.setState({error: ""})
         axios.post(API.SESSION, {code: this.state.code}, AXIOS_CONFIG).then(
             res => {
                 this.props.setUser(res.data)
             }
         ).catch(e => {
-            console.error(e);
+            this.setState({error: "Не удалось войти"})
         });
     }
 
@@ -42,6 +44,8 @@ export default class AuthForm extends Component {
                     type={"number"}
                     placeholder={"Пароль"}/>
                 <Button onClick={this.sendAuthFrom}>Войти</Button>
+                <p className={"color_pink"}>{this.state.error}</p>
+                <br/>
                 <div className={"tech_support"}>
                     <p className={"font_size_less nowrap"}>Технические вопросы по подключению к трансляции</p>
                     <p className={"font_size_less"}>
