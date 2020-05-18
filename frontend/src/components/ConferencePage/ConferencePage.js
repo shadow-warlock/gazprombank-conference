@@ -55,7 +55,7 @@ export default class ConferencePage extends Component {
                     <Chat user={this.props.user} chat={this.state.conference.chat}/>
                 </div>
                 <div className={"padding_side"}>
-                    {this.state.conference.poll && <Poll poll={this.state.conference.poll}/>}
+                    {this.state.conference.poll && <Poll user={this.props.user} addAnswer={this.addAnswer.bind(this)} poll={this.state.conference.poll}/>}
                 </div>
                 <div className={"padding_side"}>
                     <Footer/>
@@ -66,9 +66,17 @@ export default class ConferencePage extends Component {
         );
     }
 
+    addAnswer(answer){
+        let conf = Object.assign({}, this.state.conference);
+        conf.poll.answers.push(answer);
+        this.setState({
+            conference: conf
+        })
+    }
+
     messagesSort(messages){
         messages.sort((a, b)=>{
-            return a < b ? -1 : 1;
+            return a.time > b.time ? -1 : 1;
         });
     }
 

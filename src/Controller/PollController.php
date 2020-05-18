@@ -54,9 +54,10 @@ class PollController extends AbstractController {
      * @Route("/api/poll/{id}/answer", name="add_answer", methods={"POST"})
      * @param Request $request
      * @param $id
+     * @param JSONer $serializer
      * @return JsonResponse
      */
-    public function addAnswer(Request $request, $id) {
+    public function addAnswer(Request $request, $id, JSONer $serializer) {
         $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
         $data = json_decode($request->getContent(), true);
         $entityManager = $this->getDoctrine()->getManager();
@@ -70,6 +71,7 @@ class PollController extends AbstractController {
         $answer->setPoll($poll);
         $entityManager->persist($answer);
         $entityManager->flush();
-        return $this->json($answer);
+        $json = $serializer->toJSON($answer);
+        return new JsonResponse($json, 201, [], true);
     }
 }

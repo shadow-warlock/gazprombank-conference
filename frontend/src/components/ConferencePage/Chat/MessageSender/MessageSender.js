@@ -18,10 +18,14 @@ export default class MessageSender extends Component {
 
     send() {
         if (this.state.message !== "") {
+            let data = {text: this.state.message};
+            if(this.props.reply)
+                data.replyTo = this.props.reply.id;
             axios.post(API.CHAT_MESSAGE(this.props.chatId),
-                {text: this.state.message}, AXIOS_CONFIG).then(
+                data, AXIOS_CONFIG).then(
                 res => {
                     this.setState({message: ""});
+                    this.props.deleteReply();
                 }
             ).catch(e => {
                 console.error(e);
@@ -34,7 +38,7 @@ export default class MessageSender extends Component {
             let text = "Ответ для " + this.props.reply.user.name + " " + this.props.reply.user.surname;
             return (
                 <>
-                    {text} <FontAwesomeIcon className={"cancel_reply"} icon={faTimes}/>
+                    {text} <FontAwesomeIcon onClick={()=>{this.props.deleteReply();}} className={"cancel_reply"} icon={faTimes}/>
                 </>
             );
         } else {
