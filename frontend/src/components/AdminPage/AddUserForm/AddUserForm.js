@@ -6,7 +6,7 @@ import {API, AXIOS_CONFIG, ROLE} from "../../../const/const";
 
 const buttonText = [
     "Добавить пользвателя",
-    "Скрыть форму"
+    "Отмена"
 ];
 
 export default class AddUserForm extends Component {
@@ -23,8 +23,8 @@ export default class AddUserForm extends Component {
         };
     }
 
-    create(){
-        if(this.state.name === "" || this.state.surname === ""){
+    create() {
+        if (this.state.name === "" || this.state.surname === "") {
             alert("Вы не ввели имя или фамилию");
             return;
         }
@@ -52,36 +52,57 @@ export default class AddUserForm extends Component {
 
     render() {
         return (
-            <>
-                <Button onClick={()=>{this.setState({isOpen: !this.state.isOpen})}}>
+            <div className={"pb_20"}>
+                <Button onClick={() => {
+                    this.setState({isOpen: !this.state.isOpen})
+                }}>
                     {buttonText[this.state.isOpen ? 1 : 0]}
                 </Button>
                 {
                     this.state.isOpen
                     &&
-                    <div style={{background: "red"}}>
-                        <p>Имя: <Input value={this.state.name}
-                                       onChange={(e)=>{this.setState({name: e.target.value})}}
-                        /></p>
-                        <p>Фамилия: <Input value={this.state.surname}
-                                           onChange={(e)=>{this.setState({surname: e.target.value})}}
-                        /></p>
-                        <p>Админ: <input type="checkbox"
-                                         checked={this.state.role}
-                                         onClick={(e)=>{this.setState({role: !this.state.role})}}
-                        /></p>
-                        <p>Email: <Input  value={this.state.email}
-                                          onChange={(e)=>{this.setState({email: e.target.value})}}
-                        /></p>
-                        <p>Телефон: <Input  value={this.state.phone}
-                                            onChange={(e)=>{this.setState({phone: e.target.value})}}
-                        /></p>
+                    <div>
+                        <div className={"form_container"}>
+                            <p>Имя: </p>
+                            <Input value={this.state.name}
+                                   onChange={(e) => {
+                                       this.setState({name: e.target.value})
+                                   }}/>
+                        </div>
+                        <div className={"form_container"}>
+                            <p>Фамилия: </p>
+                            <Input value={this.state.surname}
+                                   onChange={(e) => {
+                                       this.setState({surname: e.target.value})
+                                   }}/>
+                        </div>
+                        <div className={"form_container"}>
+                            <p>Админ: </p>
+                            <Input type="checkbox" checked={this.state.role}
+                                   onClick={(e) => {
+                                       this.setState({role: !this.state.role})
+                                   }}/>
+                        </div>
+                        <div className={"form_container"}>
+                            <p>Email: </p>
+                            <Input value={this.state.email}
+                                   onChange={(e) => {
+                                       this.setState({email: e.target.value})
+                                   }}/>
+                        </div>
+                        <div className={"form_container pb_20"}>
+                            <p>Телефон: </p>
+                            <Input value={this.state.phone}
+                                   onChange={(e) => {
+                                       this.setState({phone: e.target.value})
+                                   }}/>
+                        </div>
                         <Button onClick={this.create.bind(this)}>
                             Создать
                         </Button>
                     </div>
                 }
-            </>
+            </div>
         );
     }
 }

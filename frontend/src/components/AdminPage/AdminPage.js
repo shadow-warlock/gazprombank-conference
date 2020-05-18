@@ -4,7 +4,7 @@ import {API, AXIOS_CONFIG} from "../../const/const";
 import User from "./User/User";
 import AddUserForm from "./AddUserForm/AddUserForm";
 import ChangePoll from "./ChangePoll/ChangePoll";
-
+import "./AdminPage.css";
 export default class AdminPage extends Component {
 
     constructor(props) {
@@ -33,16 +33,17 @@ export default class AdminPage extends Component {
 
     render() {
         return (
-            <>
+            <div className={"admin_page padding_side"}>
+                <p className={"uppercase color_white font_size_very_big bold"}>Админ панель</p>
+                <ChangePoll/>
+                <AddUserForm reload={this.loadUsers.bind(this)}/>
                 {this.state.users.map(user =>
                     <User
                         key={user.id}
                         reload={this.loadUsers.bind(this)}
                         user={user}/>
                 )}
-                <AddUserForm reload={this.loadUsers.bind(this)}/>
-                <ChangePoll/>
-            </>
+            </div>
         );
     }
 }

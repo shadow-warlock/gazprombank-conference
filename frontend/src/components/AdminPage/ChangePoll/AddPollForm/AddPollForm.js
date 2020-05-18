@@ -4,7 +4,7 @@ import Button from "../../../Button/Button";
 
 const buttonText = [
     "Новый опрос",
-    "Скрыть форм"
+    "Отмена"
 ];
 
 export default class AddPollForm extends Component {
@@ -20,38 +20,45 @@ export default class AddPollForm extends Component {
 
     render() {
         return (
-            <>
-                <Button onClick={()=>{this.setState({isOpen: !this.state.isOpen})}}>
+            <div>
+                <Button onClick={() => {
+                    this.setState({isOpen: !this.state.isOpen})
+                }}>
                     {buttonText[this.state.isOpen ? 1 : 0]}
                 </Button>
                 {this.state.isOpen &&
-                    <div style={{background: "red"}}>
-                        <p>Вопрос: <Input
-                            value={this.state.question}
-                            onChange={(e)=>{this.setState({question: e.target.value})}}
-                        /></p>
-                        {this.state.answers.length > 0 ? "Варианты ответа: " : "Без вариантов ответа"}
-                        {this.state.answers.map((answer, index) => {
+                <div>
+                    <div className={"form_container"}>
+                        <p className={"color_white"}>Вопрос: </p>
+                        <Input value={this.state.question} onChange={(e) => {
+                            this.setState({question: e.target.value})
+                        }}/>
+                    </div>
+                    <div className={"form_container pb_20"}>
+                        <p className={"color_white"}>{this.state.answers.length > 0 ? "Варианты ответа: " : "Без вариантов ответа"}</p>
+                        <div className={"question_answers_container"}>{this.state.answers.map((answer, index) => {
                             return <Input
                                 value={answer}
-                                onChange={(e)=>{
+                                onChange={(e) => {
                                     let answers = [...this.state.answers];
                                     answers[index] = e.target.value;
                                     this.setState({answers: answers})
                                 }}
                             />
                         })}
-                        <Button
-                            onClick={()=>{
-                                let answers = [...this.state.answers];
-                                answers.push("");
-                                this.setState({answers: answers})
-                            }}>
-                            Добавить ответ
-                        </Button>
+                            <Button
+                                onClick={() => {
+                                    let answers = [...this.state.answers];
+                                    answers.push("");
+                                    this.setState({answers: answers})
+                                }}>
+                                Добавить ответ
+                            </Button></div>
                     </div>
+                    <Button>Сохранить</Button>
+                </div>
                 }
-            </>
+            </div>
         );
     }
 }

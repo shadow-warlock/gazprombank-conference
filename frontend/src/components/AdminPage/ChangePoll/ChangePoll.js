@@ -3,6 +3,7 @@ import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
 import AdminPoll from "./AdminPoll/AdminPoll";
 import AddPollForm from "./AddPollForm/AddPollForm";
+import "./ChangePoll.css";
 
 export default class ChangePoll extends Component {
 
@@ -17,7 +18,7 @@ export default class ChangePoll extends Component {
         this.loadPoll();
     }
 
-    loadPoll(){
+    loadPoll() {
         let self = this;
         axios.get(API.CONFERENCE, AXIOS_CONFIG).then(
             res => {
@@ -32,10 +33,10 @@ export default class ChangePoll extends Component {
 
     render() {
         return (
-            <>
+            <div className={"change_poll"}>
                 <AdminPoll reload={this.loadPoll.bind(this)} poll={this.state.poll}/>
                 <AddPollForm/>
-            </>
+            </div>
         );
     }
 }

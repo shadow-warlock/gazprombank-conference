@@ -5,7 +5,7 @@ import {API, AXIOS_CONFIG} from "../../../const/const";
 
 export default class User extends Component {
 
-    generatePassword(){
+    generatePassword() {
         axios.put(API.USER_CODE(this.props.user.id), {}, AXIOS_CONFIG).then(
             res => {
                 this.props.reload();
@@ -15,7 +15,7 @@ export default class User extends Component {
         });
     }
 
-    delete(){
+    delete() {
         axios.delete(API.USER + "/" + this.props.user.id, AXIOS_CONFIG).then(
             res => {
                 this.props.reload();
@@ -27,7 +27,7 @@ export default class User extends Component {
 
     render() {
         return (
-            <div style={{border:"1px solid black", margin:"10px", width:"max-content"}}>
+            <div>
                 <p>ID: {this.props.user.id}</p>
                 <p>Имя: {this.props.user.name}</p>
                 <p>Фамилия: {this.props.user.surname}</p>

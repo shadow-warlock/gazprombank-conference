@@ -1,0 +1,44 @@
+.change_poll {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.close_poll_button {
+    padding-left: 10px;
+    color: var(--pink);
+    cursor: pointer;
+}
+
+
+.close_poll_button:hover {
+    color: white;
+}
+
+.actual_poll{
+    display: flex;
+}
+
+.pb_20{
+    padding-bottom: 20px;
+}
+
+
+.form_container{
+    color: white;
+    padding-top: 20px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.question_answers_container{
+    display: flex;
+    justify-items: right;
+    flex-direction: column;
+}
+
+.question_answers_container > *{
+    margin-top: 10px;
+}
