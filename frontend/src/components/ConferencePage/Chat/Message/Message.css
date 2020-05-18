@@ -16,6 +16,9 @@
     word-break: break-word;
     padding-left: 20px;
 }
+.like_button{
+    margin-left: 5px;
+}
 
 .like_button:hover {
     color: var(--pink);

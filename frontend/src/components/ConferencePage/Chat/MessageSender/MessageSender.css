@@ -6,7 +6,7 @@
 }
 
 .send_message_container {
-    display: flex;
+    /*display: flex;*/
 }
 
 .send_message_container .send_button {
@@ -20,4 +20,18 @@
 
 .send_message_container .send_button:hover {
     color: var(--pink);
+}
+
+
+.send_message_container .cancel_reply:hover {
+    cursor: pointer;
+    color: var(--pink);
+}
+
+.cancel_reply{
+    display: none;
+}
+
+.send_message_container:hover .cancel_reply{
+    display: initial;
 }
