@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Service\JSONer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +14,19 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
 class UserController extends AbstractController {
+
+    /**
+     * @Route("/api/user", name="users_get", methods={"GET"})
+     * @param JSONer $serializer
+     * @return JsonResponse
+     */
+    public function getUsers(JSONer $serializer) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $users = $entityManager->getRepository(User::class)->findAll();
+        $json = $serializer->toJSON($users);
+        return new JsonResponse($json, 200, [], true);
+    }
+
     /**
      * @Route("/api/user/{id}", name="user_delete", methods={"DELETE"})
      * @param $id
@@ -35,10 +49,12 @@ class UserController extends AbstractController {
      * @return JsonResponse
      */
     public function userAdd(Request $request) {
+        $data = $request->getContent();
+        $data = json_decode($data, true);
         $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $serializer = new Serializer([new GetSetMethodNormalizer()], [new JsonEncoder()]);
         $user = $serializer->deserialize($request->getContent(), User::class, 'json');
-        $user->setRole(User::ROLE_USER);
+        $user->setRole($data['role']);
         $codes = array_map(fn(User $user) => $user->getCode(), $this->getAllUsers());
         do {
             $user->setCode();

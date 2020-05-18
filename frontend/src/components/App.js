@@ -4,6 +4,7 @@ import Security from "./Security/Security";
 import {ROLE} from "../const/const";
 import ConferencePage from "./ConferencePage/ConferencePage";
 import "./App.css";
+import AdminPage from "./AdminPage/AdminPage";
 
 export default function App() {
     return (
@@ -16,7 +17,7 @@ export default function App() {
                     </Route>
                     <Route exact path="/admin">
                         <Security roles={[ROLE.ADMIN]}>
-                            {user => "jopa"}
+                            {user => <AdminPage/>}
                         </Security>
                     </Route>
             </Switch>
