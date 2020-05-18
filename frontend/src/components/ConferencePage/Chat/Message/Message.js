@@ -6,13 +6,14 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import 'moment/locale/ru';
 import axios from "axios";
-import {API, AXIOS_CONFIG} from "../../../../const/const";
+import {API, AXIOS_CONFIG, ROLE} from "../../../../const/const";
 
 export default class Message extends Component {
 
     constructor(props) {
         super(props);
         this.scrollToMessage = this.scrollToMessage.bind(this);
+        this.removeMessage = this.removeMessage.bind(this);
     }
 
     likeClick(myLike) {
@@ -50,6 +51,10 @@ export default class Message extends Component {
         // document.querySelector(".messages").scrollTop = message.offsetTop;
     }
 
+    removeMessage() {
+        axios.delete(API.MESSAGE(this.props.message.id), AXIOS_CONFIG).catch(e => console.log(e));
+    }
+
     render() {
         let myLike = this.props.message.likes.find((like) => {
             return like.user.id === this.props.user.id;
@@ -76,10 +81,13 @@ export default class Message extends Component {
                 <div className={"padding_right reply_and_time"}>
                     <p onClick={() => {
                         this.props.onReply(this.props.message)
-                    }}
-                       className={"reply_button"}>
+                    }} className={"reply_button"}>
                         Ответить
                     </p>
+                    {this.props.user.role === ROLE.ADMIN &&
+                    <p onClick={this.removeMessage} className={"reply_button"}>
+                        Удалить
+                    </p>}
                     <Moment className={"nowrap color_pink"} fromNow ago date={this.props.message.time} locale={"ru"}/>
                 </div>
             </div>

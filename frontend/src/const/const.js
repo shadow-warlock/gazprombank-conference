@@ -6,6 +6,7 @@ export const SERVER = {
 export const API = {
     SESSION: SERVER.URL + "/api/session",
     CONFERENCE: SERVER.URL + "/api/conference",
+    MESSAGE: (id)=> {return SERVER.URL+"/api/message/"+id},
     CHAT_MESSAGE: (id) => {return SERVER.URL + "/api/chat/" + id + "/message"},
     MESSAGE_LIKE: (id) => {return SERVER.URL + "/api/message/" + id + "/like"},
     POLL_ANSWER: (id) => {return SERVER.URL + "/api/poll/" + id + "/answer"}
