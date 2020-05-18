@@ -10,48 +10,73 @@ import {API, AXIOS_CONFIG} from "../../../../const/const";
 
 export default class Message extends Component {
 
-    likeClick(myLike){
+    constructor(props) {
+        super(props);
+        this.scrollToMessage = this.scrollToMessage.bind(this);
+    }
+
+    likeClick(myLike) {
         myLike ? this.unlike() : this.like();
     }
 
-    like(){
+    like() {
         axios.post(API.MESSAGE_LIKE(this.props.message.id),
             {}, AXIOS_CONFIG).catch(e => {
             console.error(e);
         });
     }
 
-    unlike(){
+    unlike() {
         axios.delete(API.MESSAGE_LIKE(this.props.message.id), AXIOS_CONFIG).catch(e => {
             console.error(e);
         });
     }
 
+    getReplyToElement() {
+        let replyTo = this.props.message.replyTo;
+        if (replyTo) {
+            return (
+                <span className={"reply_to"} onClick={this.scrollToMessage}>{replyTo.user.name + ", "}</span>
+            );
+        } else {
+            return "";
+        }
+    }
+
+    scrollToMessage() {
+        let msgContainerSelector = "#msg_" + this.props.message.replyTo.id;
+        let message = document.querySelector(msgContainerSelector);
+        document.querySelector(".messages").scrollTop = message.offsetTop;
+    }
+
     render() {
-        let myLike = this.props.message.likes.find((like)=>{
+        let myLike = this.props.message.likes.find((like) => {
             return like.user.id === this.props.user.id;
         });
         let message = this.props.message;
-        let replyTo = message.replyTo;
         return (
-            <div className={"message_container"}>
+            <div className={"message_container"} id={"msg_" + this.props.message.id}>
                 <div className={"message"}>
                     <div>
                         <p className={"uppercase bold color_violet name"}>{message.user.name} {message.user.surname}</p>
-                        <p className={"text"}>{(replyTo ? replyTo.user.name + ", " : "") + message.text}</p>
+                        <p className={"text"}>{this.getReplyToElement()} {message.text}</p>
                     </div>
                     <div>
                         <p className={"nowrap text_right"}>
                             {this.props.message.likes.length}
-                            <FontAwesomeIcon onClick={()=>{this.likeClick.bind(this)(myLike);}}
+                            <FontAwesomeIcon onClick={() => {
+                                this.likeClick.bind(this)(myLike);
+                            }}
                                              className={"like_button " + (myLike && "color_pink")}
                                              icon={faHeart}/>
                         </p>
                     </div>
                 </div>
                 <div className={"padding_right reply_and_time"}>
-                    <p  onClick={()=>{this.props.onReply(this.props.message)}}
-                        className={"reply_button"}>
+                    <p onClick={() => {
+                        this.props.onReply(this.props.message)
+                    }}
+                       className={"reply_button"}>
                         Ответить
                     </p>
                     <Moment className={"nowrap color_pink"} fromNow ago date={this.props.message.time} locale={"ru"}/>
