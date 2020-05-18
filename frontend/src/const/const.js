@@ -1,5 +1,6 @@
 export const SERVER = {
-    URL: "http://localhost:8000"
+    URL: "http://localhost:8000",
+    WS: 'ws://localhost:2346'
 };
 
 export const API = {
@@ -15,3 +16,5 @@ export const ROLE = {
     ADMIN: "ROLE_ADMIN",
     USER: "ROLE_USER"
 }
+
+

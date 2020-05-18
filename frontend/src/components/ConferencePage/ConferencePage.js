@@ -5,10 +5,11 @@ import Chat from "./Chat/Chat";
 import Poll from "./Poll/Poll";
 import Logo from "../Logo/Logo";
 import axios from "axios";
-import {API, AXIOS_CONFIG} from "../../const/const";
+import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
 import Websocket from "react-websocket";
 import "./ConferencePage.css";
 import {CONFERENCE_ITEMS} from "../../const/mockData";
+import Footer from "./Footer/Footer";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -55,7 +56,10 @@ export default class ConferencePage extends Component {
                 <div className={"padding_side"}>
                     {this.state.conference.poll && <Poll poll={this.state.conference.poll}/>}
                 </div>
-                <Websocket url='ws://localhost:2346'
+                <div className={"padding_side"}>
+                    <Footer/>
+                </div>
+                <Websocket url={SERVER.WS}
                            onMessage={this.handleData.bind(this)}/>
             </div>
         );
@@ -71,18 +75,18 @@ export default class ConferencePage extends Component {
                 conf.chat.messages.push(data.data);
                 break;
             case "delete message":
-                conf.chat.messages = conf.chat.messages.filter((message)=>{
+                conf.chat.messages = conf.chat.messages.filter((message) => {
                     return message.id !== data.data.messageId;
                 });
                 break;
             case "like":
-                messageIndex = conf.chat.messages.findIndex((message)=>{
+                messageIndex = conf.chat.messages.findIndex((message) => {
                     return message.id === data.data.message.id;
                 });
                 conf.chat.messages[messageIndex].likes.push(data.data);
                 break;
             case "delete like":
-                messageIndex = conf.chat.messages.findIndex((message)=>{
+                messageIndex = conf.chat.messages.findIndex((message) => {
                     return message.id === data.data.messageId;
                 });
                 conf.chat.messages[messageIndex].likes = conf.chat.messages[messageIndex].likes.filter((like) => {
