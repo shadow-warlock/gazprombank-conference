@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
-import {TECH_SUPPORT_PHONE} from "../../../const/const";
 import Button from "../../Button/Button";
 import Input from "../../Input/Input";
 import "./AuthForm.css";

@@ -13,7 +13,6 @@ export const API = {
 
 export const AXIOS_CONFIG = {withCredentials: true};
 
-export const TECH_SUPPORT_PHONE = "+7-926-149-14-37";
 export const ROLE = {
     ADMIN: "ROLE_ADMIN",
     USER: "ROLE_USER"

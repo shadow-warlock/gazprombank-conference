@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import AuthForm from "./AuthForm/AuthForm";
-import {TECH_SUPPORT_PHONE} from "../../const/const";
 import Logo from "../Logo/Logo";
 import "./AuthPage.css";
 import bank from "./../../assets/bank.png";

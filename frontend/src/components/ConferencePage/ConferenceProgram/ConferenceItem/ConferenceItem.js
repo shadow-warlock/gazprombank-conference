@@ -9,7 +9,7 @@ export default class ConferenceItem extends Component {
                     <div>
                         <div className={"rectangle_image"}>
                             {this.props.item.image &&
-                            <img className={"conf_item_image"} alt={"conf item image"} src={this.props.item.image}/>}
+                            <img className={"conf_item_image"} alt={"img"} src={this.props.item.image}/>}
                         </div>
                     </div>
                     <div>
