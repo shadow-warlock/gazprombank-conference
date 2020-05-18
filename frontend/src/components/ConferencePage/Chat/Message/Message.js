@@ -9,7 +9,7 @@ import 'moment/locale/ru';
 export default class Message extends Component {
     render() {
         return (
-            <div>
+            <div className={"message_container"}>
                 <div className={"message"}>
                     <div>
                         <p className={"uppercase bold color_violet name"}>{this.props.message.user.name} {this.props.message.user.surname}</p>
@@ -22,7 +22,8 @@ export default class Message extends Component {
                         </p>
                     </div>
                 </div>
-                <div className={"text_right padding_right"}>
+                <div className={"padding_right reply_and_time"}>
+                    <p className={"reply_button"}>Ответить</p>
                     <Moment className={"nowrap color_pink"} fromNow ago date={this.props.message.time} locale={"ru"}/>
                 </div>
             </div>

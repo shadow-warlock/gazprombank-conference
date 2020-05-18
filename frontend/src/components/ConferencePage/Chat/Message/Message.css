@@ -8,20 +8,46 @@
     margin-top: 20px;
 }
 
-.message .name{
+.message .name {
     padding-left: 10px;
 }
 
-.message .text{
+.message .text {
     word-break: break-word;
     padding-left: 20px;
 }
 
-.like_button:hover{
+.like_button:hover {
     color: var(--pink);
     cursor: pointer;
 }
 
-.padding_right{
+.padding_right {
     padding-right: 10px;
+}
+
+.reply_and_time {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message_container .reply_button {
+    display: none;
+}
+
+.message_container:hover .reply_button {
+    display: block;
+}
+
+.message_container:hover .reply_and_time {
+    justify-content: space-between;
+}
+
+.reply_button {
+    color: var(--violet);
+    cursor: pointer;
+}
+
+.reply_button:hover{
+    color: var(--pink);
 }
