@@ -15,30 +15,28 @@
     color: white;
 }
 
-.actual_poll{
+.actual_poll {
     display: flex;
 }
 
-.pb_20{
-    padding-bottom: 20px;
-}
-
-
-.form_container{
-    color: white;
-    padding-top: 20px;
-    width: 500px;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.question_answers_container{
+.question_answers_container {
     display: flex;
     justify-items: right;
     flex-direction: column;
 }
 
-.question_answers_container > *{
+.question_answers_container > * {
     margin-top: 10px;
 }
+
+.remove_answer_button {
+    color: var(--pink);
+    margin-left: 10px;
+}
+
+.remove_answer_button:hover {
+    cursor: pointer;
+    color: white;
+    position: absolute;
+}
+
