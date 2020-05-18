@@ -14,8 +14,8 @@ export default class Poll extends Component {
         };
     }
 
-    send(){
-        if(this.state.answer !== ""){
+    send() {
+        if (this.state.answer !== "") {
             axios.post(API.POLL_ANSWER(this.props.poll.id),
                 {text: this.state.answer}, AXIOS_CONFIG).then(
                 res => {
@@ -28,11 +28,11 @@ export default class Poll extends Component {
     }
 
     getVariants() {
-
         if (this.props.poll.variants) {
             return this.props.poll.variants.map((variant) =>
                 <Button
-                    onClick={()=>{
+                    key={variant}
+                    onClick={() => {
                         this.setState({answer: variant}, this.send.bind(this));
                     }}>
                     {variant}
@@ -42,7 +42,9 @@ export default class Poll extends Component {
             return (
                 <>
                     <Input
-                        onChange={(e)=>{this.setState({answer: e.target.value})}}
+                        onChange={(e) => {
+                            this.setState({answer: e.target.value})
+                        }}
                         value={this.state.answer}
                         placeholder={"Ваш ответ"}/>
                     <Button onClick={this.send.bind(this)}>Ответить</Button>
@@ -51,20 +53,28 @@ export default class Poll extends Component {
         }
     }
 
-    render() {
-        console.log(this.props.poll.answers);
-
-        let myAnswer = this.props.poll.answers.find((answer)=>{
+    getPoll() {
+        let myAnswer = this.props.poll.answers.find((answer) => {
             return answer.user.id === this.props.user.id;
         });
-        return (
-            <div className={"poll"}>
-                {myAnswer && "jopa"}
-                <p className={"color_white font_size_very_big uppercase"}>Опрос</p>
-                <p className={"color_pink font_size_big uppercase bold"}>{this.props.poll.question}</p>
+        if (myAnswer) {
+            return (<p className={"uppercase font_size_big color_pink"}>Спасибо за ответ!</p>)
+        } else {
+            return (<><p className={"color_pink font_size_big uppercase bold"}>
+                {this.props.poll.question}
+            </p>
                 <div className={"variants"}>
                     {this.getVariants()}
                 </div>
+            </>);
+        }
+    }
+
+    render() {
+        return (
+            <div className={"poll"}>{this.props.timer&&<p>{this.props.timer}</p>}
+                <p className={"color_white font_size_very_big uppercase"}>Опрос</p>
+                {this.getPoll()}
             </div>
         );
     }

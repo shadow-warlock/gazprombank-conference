@@ -15,8 +15,11 @@ export default class ConferencePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            conference: null
+            conference: null,
+            pollTimer: null,
+            interval: null,
         }
+        this.closePollTimer = this.closePollTimer.bind(this);
     }
 
     componentDidMount() {
@@ -44,7 +47,7 @@ export default class ConferencePage extends Component {
                     </div>
                     <div className={"text_right"}>
                         <p className={"color_white font_size_very_big uppercase"}>Банковское сопровождение контактов</p>
-                        <p className={"color_pink font_size_big uppercase"}>Часовой пояс: Москва, Россия (UTC+3)</p>
+                        <p className={"color_pink font_size_big uppercase"}>Часовой пояс: Баку, Азербайджан (UTC+4)</p>
                     </div>
                 </div>
                 <div className={"padding_side"}>
@@ -55,7 +58,9 @@ export default class ConferencePage extends Component {
                     <Chat user={this.props.user} chat={this.state.conference.chat}/>
                 </div>
                 <div className={"padding_side"}>
-                    {this.state.conference.poll && <Poll user={this.props.user} addAnswer={this.addAnswer.bind(this)} poll={this.state.conference.poll}/>}
+                    {this.state.conference.poll &&
+                    <Poll timer={this.props.pollTime} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
+                          poll={this.state.conference.poll}/>}
                 </div>
                 <div className={"padding_side"}>
                     <Footer/>
@@ -66,7 +71,7 @@ export default class ConferencePage extends Component {
         );
     }
 
-    addAnswer(answer){
+    addAnswer(answer) {
         let conf = Object.assign({}, this.state.conference);
         conf.poll.answers.push(answer);
         this.setState({
@@ -74,10 +79,21 @@ export default class ConferencePage extends Component {
         })
     }
 
-    messagesSort(messages){
-        messages.sort((a, b)=>{
+    messagesSort(messages) {
+        messages.sort((a, b) => {
             return a.time > b.time ? -1 : 1;
         });
+    }
+
+    closePollTimer(conf) {
+        console.log(this.state.pollTimer)
+        let newTimer = this.state.pollTimer - 1
+        if (newTimer < 0) {
+            newTimer = null;
+            this.setState({conference: conf})
+            clearInterval(this.state.interval);
+        }
+        this.setState({pollTimer: newTimer});
     }
 
     handleData(json) {
@@ -109,7 +125,11 @@ export default class ConferencePage extends Component {
                 break;
             case "poll":
                 conf.poll = data.data;
-                break;
+                this.setState({
+                    pollTime: 15,
+                    interval: () => setInterval(() => this.closePollTimer(conf), 1000)
+                });
+                return;
             default:
                 console.log(data);
         }

@@ -7,6 +7,7 @@ body {
     --dark-violet: #230668;
     --pink: rgb(194, 17, 161);
     --default-font-size: 15px;
+    --input-width: 300px;
     font-size: var(--default-font-size);
 }
 

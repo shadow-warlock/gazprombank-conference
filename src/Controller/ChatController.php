@@ -59,7 +59,7 @@ class ChatController extends AbstractController {
     }
 
     /**
-     * @Route("/api/chat/message/{id}", name="delete_message", methods={"DELETE"})
+     * @Route("/api/message/{id}", name="delete_message", methods={"DELETE"})
      * @param Request $request
      * @param $id
      * @param WebSocketSender $wsSender
