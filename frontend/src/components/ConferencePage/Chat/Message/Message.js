@@ -12,7 +12,6 @@ export default class Message extends Component {
 
     constructor(props) {
         super(props);
-        this.myRef = React.createRef();
         this.scrollToMessage = this.scrollToMessage.bind(this);
     }
 
@@ -47,8 +46,7 @@ export default class Message extends Component {
     scrollToMessage() {
         let msgContainerSelector = "#msg_" + this.props.message.replyTo.id;
         let message = document.querySelector(msgContainerSelector);
-        message.scrollIntoViewIfNeeded();
-        // document.querySelector(".messages").scrollTop = (message.offsetTop - message.offsetHeight);
+        document.querySelector(".messages").scrollTop = message.offsetTop;
     }
 
     render() {
@@ -57,7 +55,7 @@ export default class Message extends Component {
         });
         let message = this.props.message;
         return (
-            <div className={"message_container"} id={"msg_" + this.props.message.id} ref={this.myRef}>
+            <div className={"message_container"} id={"msg_" + this.props.message.id}>
                 <div className={"message"}>
                     <div>
                         <p className={"uppercase bold color_violet name"}>{message.user.name} {message.user.surname}</p>
