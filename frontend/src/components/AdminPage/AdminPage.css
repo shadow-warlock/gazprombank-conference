@@ -1,3 +1,22 @@
 .admin_page {
     background-color: var(--violet);
 }
+
+.pb_20 {
+    padding-bottom: 20px;
+}
+
+
+.form_container {
+    color: white;
+    padding-top: 20px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

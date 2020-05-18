@@ -19,19 +19,6 @@
     display: flex;
 }
 
-.pb_20{
-    padding-bottom: 20px;
-}
-
-
-.form_container{
-    color: white;
-    padding-top: 20px;
-    width: 500px;
-    display: flex;
-    justify-content: space-between;
-}
-
 
 .question_answers_container{
     display: flex;

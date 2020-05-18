@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Button from "../../Button/Button";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
+import "./User.css";
 
 export default class User extends Component {
 
@@ -27,18 +28,20 @@ export default class User extends Component {
 
     render() {
         return (
-            <div>
-                <p>ID: {this.props.user.id}</p>
-                <p>Имя: {this.props.user.name}</p>
-                <p>Фамилия: {this.props.user.surname}</p>
-                <p>Роль: {this.props.user.role}</p>
-                <p>Email: {this.props.user.email ?? "Не задан"}</p>
-                <p>Телефон: {this.props.user.phone ?? "Не задан"}</p>
-                <p>Код: {this.props.user.code}</p>
-                <Button
-                    onClick={this.generatePassword.bind(this)}>
-                    Сгенерировать новый пароль
-                </Button>
+            <div className={"user_info"}>
+                <div className={"pb_20 mx_auto"}>
+                    <div className={"form_container"}><p>ID:</p><p> {this.props.user.id}</p></div>
+                    <div className={"form_container"}><p>Имя:</p><p>{this.props.user.name}</p></div>
+                    <div className={"form_container"}><p>Фамилия:</p><p>{this.props.user.surname}</p></div>
+                    <div className={"form_container"}><p>Роль:</p><p>{this.props.user.role}</p></div>
+                    <div className={"form_container"}><p>Email:</p><p>{this.props.user.email ?? "Не задан"}</p></div>
+                    <div className={"form_container"}><p>Телефон:</p><p>{this.props.user.phone ?? "Не задан"}</p></div>
+                    <div className={"form_container"}><p>Код:</p><p>{this.props.user.code}</p></div>
+                </div>
+                <div className={"pb_20"}>
+                    <Button
+                    onClick={this.generatePassword.bind(this)}>Сменить код
+                </Button></div>
                 <Button
                     onClick={this.delete.bind(this)}>
                     Удалить
