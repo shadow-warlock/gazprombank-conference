@@ -23,6 +23,7 @@ class UserController extends AbstractController {
      * @return JsonResponse
      */
     public function getUsers(JSONer $serializer) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $entityManager = $this->getDoctrine()->getManager();
         $users = $entityManager->getRepository(User::class)->findAll();
         $json = $serializer->toJSON($users);
@@ -35,6 +36,7 @@ class UserController extends AbstractController {
      * @return JsonResponse
      */
     public function deleteUser($id) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $entityManager = $this->getDoctrine()->getManager();
         $user = $entityManager->find(User::class, $id);
         if(!$user) {
@@ -51,6 +53,7 @@ class UserController extends AbstractController {
      * @return JsonResponse
      */
     public function userAdd(Request $request) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $data = $request->getContent();
         $data = json_decode($data, true);
         $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
