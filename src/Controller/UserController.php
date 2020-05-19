@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Conference;
 use App\Entity\User;
 use App\Service\JSONer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -98,5 +100,26 @@ class UserController extends AbstractController {
     private function getAllUsers() {
         $repository = $this->getDoctrine()->getRepository(User::class);
         return $repository->findAll();
+    }
+
+    /**
+     * @Route("/api/user/code/csv",name="csv_user_code", methods={"GET"})
+     * @param JSONer $serializer
+     * @return Response
+     */
+    public function csvUserCode(JSONer $serializer) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+        $manager = $this->getDoctrine()->getManager();
+        $users = $manager->getRepository(User::class)->findAll();
+        $data = [];
+        foreach($users as $user){
+            $data[] = [$user->getName() . " " . $user->getSurname(), $user->getCode()];
+        }
+        return new Response($serializer->ArrayToCSV($data), 200,
+            [
+                "Content-Type" => "text/csv",
+                "Content-Disposition" => "attachment;filename=users_code.csv"
+            ]
+        );
     }
 }

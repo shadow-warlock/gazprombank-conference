@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Chat;
+use App\Entity\Conference;
 use App\Entity\Message;
 use App\Entity\User;
 use App\Entity\UserLike;
@@ -12,6 +13,7 @@ use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -101,6 +103,35 @@ class ChatController extends AbstractController {
         $wsSender->send(WebSocketSender::LIKE, $like);
         $json = $serializer->toJSON($like);
         return new JsonResponse($json, 201, [], true);
+    }
+
+    /**
+     * @Route("/api/chat/message/csv",name="chat_message_csv", methods={"GET"})
+     * @param JSONer $serializer
+     * @return Response
+     */
+    public function csvChatMessages(JSONer $serializer) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+        $manager = $this->getDoctrine()->getManager();
+        $conference = $manager->getRepository(Conference::class)->findAll()[0] ?? null;
+        if($conference == null || $conference->getChat() == null){
+            throw new NotFoundHttpException();
+        }
+        $data = [];
+        foreach($conference->getChat()->getMessages() as $message){
+            $data[] = [
+                $message->getId(),
+                $message->getTime()->format('Y-m-d H:i:s'),
+                $message->getText(),
+                $message->getReplyTo() == null ? null : $message->getReplyTo()->getId()
+            ];
+        }
+        return new Response($serializer->ArrayToCSV($data), 200,
+            [
+                "Content-Type" => "text/csv",
+                "Content-Disposition" => "attachment;filename=chat_messages.csv"
+            ]
+        );
     }
 
     /**

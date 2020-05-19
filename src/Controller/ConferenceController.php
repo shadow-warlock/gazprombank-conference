@@ -8,6 +8,8 @@ use App\Service\JSONer;
 use App\Service\WebSocketSender;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ConferenceController extends AbstractController {
@@ -37,5 +39,32 @@ class ConferenceController extends AbstractController {
         $entityManager->flush();
         $wsSender->send(WebSocketSender::POLL, null);
         return $this->json(true, 204);
+    }
+
+    /**
+     * @Route("/api/conference/poll/csv",name="csv_poll", methods={"GET"})
+     * @param JSONer $serializer
+     * @return Response
+     */
+    public function csvPoll(JSONer $serializer) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+        $manager = $this->getDoctrine()->getManager();
+        $conference = $manager->getRepository(Conference::class)->findAll()[0] ?? null;
+        if($conference == null || $conference->getPoll() == null){
+            throw new NotFoundHttpException();
+        }
+        $poll = $conference->getPoll();
+        $answers = $poll->getAnswers();
+        $data = [[$poll->getQuestion()]];
+        foreach($answers as $answer){
+            $user = $answer->getUser();
+            $data[] = [$user->getName() . " " . $user->getSurname(), $answer->getText()];
+        }
+        return new Response($serializer->ArrayToCSV($data), 200,
+            [
+                "Content-Type" => "text/csv",
+                "Content-Disposition" => "attachment;filename=poll_answers.csv"
+            ]
+        );
     }
 }
