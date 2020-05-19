@@ -19,20 +19,18 @@ class InitController extends AbstractController {
 
 
     /**
-     * @Route("/api/init/{token}/{url}", name="init", methods={"GET"})
+     * @Route("/api/init", name="init", methods={"GET"})
      * @param Request $request
-     * @param $token
-     * @param $url
      * @return JsonResponse
      */
-    public function init(Request $request, $token, $url) {
+    public function init(Request $request) {
         $user = new User();
         $user->setRole(User::ROLE_ADMIN);
         $user->setName("Администратор");
         $user->setSurname("портала");
-        $user->setCode($token);
+        $user->setCode(10);
         $conference = new Conference();
-        $conference->setUrl($url);
+        $conference->setUrl("https://facecast.net/v/tk1yzi");
         $chat = new Chat();
         $conference->setChat($chat);
         $manager = $this->getDoctrine()->getManager();
@@ -40,6 +38,6 @@ class InitController extends AbstractController {
         $manager->persist($conference);
         $manager->persist($chat);
         $manager->flush();
-        return new JsonResponse("", 204, [], true);
+        return new JsonResponse($user->getCode(), 200, [], true);
     }
 }
