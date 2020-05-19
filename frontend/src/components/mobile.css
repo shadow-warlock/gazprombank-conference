@@ -105,7 +105,7 @@
 
     .chat {
         padding-left: 5%;
-        padding-right: 5%   ;
+        padding-right: 5%;
     }
 
     .chat > p {
@@ -140,5 +140,13 @@
     .cancel_reply {
         margin-left: 10px;
         display: block;
+    }
+
+    .form_container {
+        display: block;
+    }
+
+    .user_info .form_container {
+        display: flex;
     }
 }

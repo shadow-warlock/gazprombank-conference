@@ -1,5 +1,6 @@
 .admin_page {
-    background-color: var(--violet);
+    background-image: linear-gradient(0deg, #15054f 0%, #430d7f 100%);
+    /*background-color: var(--violet);*/
 }
 
 .pb_20 {

@@ -8,7 +8,7 @@ export default class AuthPage extends Component {
     render() {
         return (
             <div className={"auth_page color_white"}>
-                <div className={"form_container"}>
+                <div className={"auth_page_container"}>
                     <div className={"left_container"}>
                         <p>Онлайн семинар:</p>
                         <p className={"font_size_very_big uppercase nowrap"}>Банковское сопровождение контактов</p>

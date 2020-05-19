@@ -112,9 +112,15 @@ export default class ConferencePage extends Component {
                 });
                 break;
             case "poll":
-                this.timer.start(
-                    () => {conf.poll = data.data; this.setState({conference: conf});},
-                    15);
+                conf.poll = data.data;
+                if (this.state.conference.poll) {
+                    this.timer.start(() => {
+                            this.setState({conference: conf});
+                        },
+                        15);
+                } else {
+                    this.setState({conference: conf});
+                }
                 return;
             default:
                 console.log(data);

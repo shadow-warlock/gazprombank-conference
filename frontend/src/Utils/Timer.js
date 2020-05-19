@@ -25,8 +25,8 @@ export default class Timer {
     tick(){
         let newTime = this.time - 1
         if (newTime < 0) {
-            this.onEnd();
             this.onTick(null);
+            this.onEnd();
             clearInterval(this.interval);
         }else{
             this.time = newTime;

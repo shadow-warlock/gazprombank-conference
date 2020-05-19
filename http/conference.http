@@ -7,8 +7,8 @@ POST http://localhost:8000/api/poll
 Content-Type: application/json
 
 {
-  "question": "Ну воркай2?",
-  "variants": ["Да","Конечно"]
+  "question": "За что?",
+  "variants": ["ЗА АЛЬЯНС"]
 }
 
 ###

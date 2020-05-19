@@ -13,7 +13,7 @@ export default class Poll extends Component {
             answer: "",
             time: null
         };
-        props.timer.handleTick((time)=>{
+        props.timer.handleTick((time) => {
             this.setState({
                 time: time
             })
@@ -78,8 +78,8 @@ export default class Poll extends Component {
 
     render() {
         return (
-            <div className={"poll"}>{this.state.time && <p>{this.state.time}</p>}
-                <p className={"color_white font_size_very_big uppercase"}>Опрос</p>
+            <div className={"poll"}>
+                <p className={"color_white font_size_very_big uppercase"}>Опрос {this.state.time!==null && <span className={"color_pink font_size_default"}>Закончится через {this.state.time}...</span>}</p>
                 {this.getPoll()}
             </div>
         );
