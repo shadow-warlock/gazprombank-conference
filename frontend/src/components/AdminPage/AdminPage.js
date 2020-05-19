@@ -5,6 +5,7 @@ import User from "./User/User";
 import AddUserForm from "./AddUserForm/AddUserForm";
 import ChangePoll from "./ChangePoll/ChangePoll";
 import "./AdminPage.css";
+import LoaderCSV from "./LoadersCSV/LoaderCSV";
 
 export default class AdminPage extends Component {
 
@@ -36,6 +37,7 @@ export default class AdminPage extends Component {
         return (
             <div className={"admin_page padding_side"}>
                 <p className={"uppercase color_white font_size_very_big bold"}>Админ панель</p>
+                <LoaderCSV/>
                 <ChangePoll/>
                 <AddUserForm reload={this.loadUsers.bind(this)}/>
                 <div className={"user_list"}>{this.state.users.map(user =>

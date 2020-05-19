@@ -24,4 +24,16 @@ class JSONer
         }
         return $json;
     }
+
+    public function ArrayToCSV(array $array):string {
+        ob_start();
+        $out = fopen('php://output', 'w');
+        foreach ($array as $fields) {
+            fputcsv($out, $fields);
+        }
+        $content = ob_get_contents();
+        ob_end_clean();
+        fclose($out);
+        return $content;
+    }
 }
