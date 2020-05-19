@@ -7,10 +7,9 @@ export default class Broadcast extends Component {
             <div className={"broadcast"}>
                 <p className={"bold font_size_big text_center"}>Трансляция</p>
                 <div>
-                    <iframe className={"iframe"} src={this.props.url}
-                            frameBorder="0"
+                    <iframe src={this.props.url}
+                            className={"iframe"}
                             title={"translation"}
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen>
                         Your browser must be updated
                     </iframe>
