@@ -79,6 +79,30 @@
         padding-bottom: 30px;
     }
 
+    .footer > div {
+        display: block;
+    }
+
+    .footer > div > div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cancel_reply {
+        margin-left: 10px;
+        display: block;
+    }
+
+    .form_container {
+        display: block;
+    }
+
+    .user_info .form_container {
+        display: flex;
+    }
+}
+
+@media (max-width: 1200px) {
     .broadcast_chat_container {
         display: block;
     }
@@ -127,26 +151,6 @@
     .message {
         width: auto;
     }
-
-    .footer > div {
-        display: block;
-    }
-
-    .footer > div > div {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .cancel_reply {
-        margin-left: 10px;
-        display: block;
-    }
-
-    .form_container {
-        display: block;
-    }
-
-    .user_info .form_container {
-        display: flex;
-    }
 }
+
+
