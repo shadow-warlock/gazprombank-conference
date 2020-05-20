@@ -20,7 +20,7 @@ export const CONFERENCE_ITEMS = [
         image: "/assets/speakers/kamishev.jpg",
         name: "Приветственное слово",
         speaker: "Денис Камышев",
-        description: "Первый Вице-Президент Банка ГПБ (АО)",
+        description: "Член Правления, Первый Вице-Президент Банка ГПБ (АО)",
         time: "11:00 - 11:05"
     },
     {

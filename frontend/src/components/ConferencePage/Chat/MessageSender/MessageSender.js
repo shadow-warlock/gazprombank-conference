@@ -43,7 +43,7 @@ export default class MessageSender extends Component {
             );
         } else {
             return (
-                <>Поделитесь своим мнением</>
+                <>Напишите, пожалуйста, Ваш вопрос</>
             )
         }
     }

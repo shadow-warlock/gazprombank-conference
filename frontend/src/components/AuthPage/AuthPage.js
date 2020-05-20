@@ -11,7 +11,7 @@ export default class AuthPage extends Component {
                 <div className={"auth_page_container"}>
                     <div className={"left_container"}>
                         <p>Онлайн семинар:</p>
-                        <p className={"font_size_very_big uppercase nowrap"}>Банковское сопровождение контактов</p>
+                        <p className={"font_size_very_big uppercase nowrap"}>Банковское сопровождение контрактов</p>
                         <p className={"font_size_big color_pink uppercase"}>21 мая 2020 года</p>
                         <AuthForm setUser={this.props.setUser}/>
                     </div>
