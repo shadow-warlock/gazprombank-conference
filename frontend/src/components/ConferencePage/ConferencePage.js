@@ -45,7 +45,7 @@ export default class ConferencePage extends Component {
                         <Logo/>
                     </div>
                     <div className={"text_right"}>
-                        <p className={"color_white font_size_very_big uppercase"}>Банковское сопровождение контактов</p>
+                        <p className={"color_white font_size_very_big uppercase"}>Банковское сопровождение контрактов</p>
                         <p className={"color_pink font_size_big uppercase"}>Часовой пояс: Баку, Азербайджан (UTC+4)</p>
                     </div>
                 </div>
