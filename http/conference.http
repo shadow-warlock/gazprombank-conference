@@ -6,11 +6,24 @@ GET http://localhost:8000/api/conference
 POST http://localhost:8000/api/poll
 Content-Type: application/json
 
-{
-  "question": "За что?",
-  "variants": ["ЗА АЛЬЯНС"]
+{"name": "Опрос",
+ "questions": [
+   {
+    "question": "Кто мы?",
+    "variants": ["ОРКИ","ЛЮДИ","ЭЛЬФЫ"]
+   },
+   {
+    "question": "За что мы?",
+    "variants": ["ЗА ОРДУ"]
+   },
+   {
+     "question": "Где мы?"
+   }
+ ]
 }
 
 ###
 
 DELETE http://localhost:8000/api/conference/poll
+
+###
