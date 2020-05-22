@@ -20,23 +20,18 @@ class Poll
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
-    private $question;
+    private $name;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\OneToMany(targetEntity=Question::class, mappedBy="poll", orphanRemoval=true)
      */
-    private $variants = [];
-
-    /**
-     * @ORM\OneToMany(targetEntity=Answer::class, mappedBy="poll", orphanRemoval=true)
-     */
-    private $answers;
+    private $questions;
 
     public function __construct()
     {
-        $this->answers = new ArrayCollection();
+        $this->questions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -44,56 +39,31 @@ class Poll
         return $this->id;
     }
 
-    public function getQuestion(): ?string
+    public function getName(): ?string
     {
-        return $this->question;
+        return $this->name;
     }
 
-    public function setQuestion(string $question): self
+    public function setName(string $name): self
     {
-        $this->question = $question;
-
-        return $this;
-    }
-
-    public function getVariants(): ?array
-    {
-        return $this->variants;
-    }
-
-    public function setVariants(?array $variants): self
-    {
-        $this->variants = $variants;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * @return Collection|Answer[]
+     * @return Collection|Question[]
      */
-    public function getAnswers(): Collection
+    public function getQuestions(): Collection
     {
-        return $this->answers;
+        return $this->questions;
     }
 
-    public function addAnswer(Answer $answer): self
+    public function addQuestions(Question $question): self
     {
-        if (!$this->answers->contains($answer)) {
-            $this->answers[] = $answer;
-            $answer->setPoll($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAnswer(Answer $answer): self
-    {
-        if ($this->answers->contains($answer)) {
-            $this->answers->removeElement($answer);
-            // set the owning side to null (unless already changed)
-            if ($answer->getPoll() === $this) {
-                $answer->setPoll(null);
-            }
+        if (!$this->questions->contains($question)) {
+            $this->questions[] = $question;
+            $question->setPoll($this);
         }
 
         return $this;

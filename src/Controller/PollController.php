@@ -68,7 +68,7 @@ class PollController extends AbstractController {
         $answer = new Answer();
         $answer->setUser($this->getUser());
         $answer->setText($data['text']);
-        $answer->setPoll($poll);
+        $answer->setQuestion($poll);
         $entityManager->persist($answer);
         $entityManager->flush();
         $json = $serializer->toJSON($answer);
