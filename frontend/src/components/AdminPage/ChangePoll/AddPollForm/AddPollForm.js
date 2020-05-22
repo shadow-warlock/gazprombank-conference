@@ -15,7 +15,7 @@ export default class AddPollForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "Название опроса",
+            name: "",
             questions: [{question: "", variants: []}],
         };
         this.addVariant = this.addVariant.bind(this);
@@ -73,7 +73,7 @@ export default class AddPollForm extends Component {
     }
 
     save() {
-        let data = {...this.state.questions};
+        let data = {...this.state};
         for (let i = 0; i < data.questions.length; i++) {
             if (data.questions[i].variants.length === 0) {
                 data.questions[i].variants = null;
@@ -101,7 +101,7 @@ export default class AddPollForm extends Component {
                 </Button>
                 {this.state.isOpen &&
                 <div>
-                    <Input value={this.state.name} onChange={(e) => {
+                    <Input placeholder={"Название опроса"} value={this.state.name} onChange={(e) => {
                         this.setState({name: e.target.value});
                     }}/>
                     {this.state.questions.map(
@@ -111,7 +111,6 @@ export default class AddPollForm extends Component {
                             deleteQuestion={this.deleteQuestion}
                             question={question}
                             index={index}
-                            inputName={this.inputName}
                             deleteVariant={this.deleteVariant}
                             inputVariant={this.inputVariant}
                             inputQuestion={this.inputQuestion}

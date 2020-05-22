@@ -12,7 +12,7 @@ class Question extends React.Component {
                 <div className={"form_container"}>
                     <p className={"color_white"}>Вопрос: </p>
                     <Input value={this.props.name} onChange={(e) => {
-                        this.props.inputName( e.target.value);
+                        this.props.inputQuestion(this.props.index,  e.target.value);
                     }}/>
                 </div>
                 <div className={"form_container pb_20"}>
