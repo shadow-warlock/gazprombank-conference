@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Conference;
+use App\Entity\Poll;
 use App\Entity\User;
 use App\Service\JSONer;
 use App\Service\WebSocketSender;
@@ -47,18 +48,25 @@ class ConferenceController extends AbstractController {
      * @return Response
      */
     public function csvPoll(JSONer $serializer) {
-        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+//        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         $manager = $this->getDoctrine()->getManager();
         $conference = $manager->getRepository(Conference::class)->findAll()[0] ?? null;
         if($conference == null || $conference->getPoll() == null){
             throw new NotFoundHttpException();
         }
+        /**
+         * @var Poll $poll
+         */
         $poll = $conference->getPoll();
-        $answers = $poll->getAnswers();
-        $data = [[$poll->getQuestion()]];
-        foreach($answers as $answer){
-            $user = $answer->getUser();
-            $data[] = [$user->getName() . " " . $user->getSurname(), $answer->getText()];
+        $data = [[$poll->getName()]];
+        $questions = $poll->getQuestions();
+        foreach($questions as $question){
+            $data[] = [$question->getQuestion()];
+            $answers = $question->getAnswers();
+            foreach($answers as $answer){
+                $user = $answer->getUser();
+                $data[] = [$user->getName() . " " . $user->getSurname(), $answer->getText()];
+            }
         }
         return new Response($serializer->ArrayToCSV($data), 200,
             [
