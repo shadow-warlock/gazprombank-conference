@@ -21,9 +21,9 @@ class PollController extends AbstractController {
      * @param $id
      * @return JsonResponse
      */
-    public function getPoll($id) {
+    public function getPoll($id, JSONer $serializer) {
         $poll = $this->getDoctrine()->getManager()->find(Poll::class, $id);
-        return $this->json($poll);
+        return new JsonResponse($serializer->toJSON($poll), 200, [],true);
     }
 
     /**

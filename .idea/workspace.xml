@@ -19,15 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19199298-1241-4529-9861-6b549d39c958" name="Default Changelist" comment="fixes">
-      <change afterPath="$PROJECT_DIR$/src/Controller/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Question.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200522133452.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200522141302.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/QuestionRepository.php" afterDir="false" />
+    <list default="true" id="19199298-1241-4529-9861-6b549d39c958" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PollController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PollController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Answer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Poll.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Poll.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1750,7 +1744,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.websocket">
+  <component name="RunManager" selected="PHP Built-in Web Server.symfony">
     <configuration name="symfony" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public" host="0.0.0.0" port="8000">
       <method v="2" />
     </configuration>
@@ -1799,13 +1793,6 @@
       <workItem from="1589976504831" duration="1491000" />
       <workItem from="1590002975128" duration="2648000" />
       <workItem from="1590146485249" duration="724000" />
-    </task>
-    <task id="LOCAL-00010" summary="Poll's &amp; Answer's">
-      <created>1589641030931</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1589641030931</updated>
     </task>
     <task id="LOCAL-00011" summary="security update">
       <created>1589641047379</created>
@@ -2143,7 +2130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590003125558</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="refactor poll">
+      <created>1590157228203</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1590157228204</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2164,7 +2158,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="login supporters" />
     <MESSAGE value="Conference Program" />
     <MESSAGE value="warning fixes" />
     <MESSAGE value="mobile adaptivity" />
@@ -2189,7 +2182,8 @@
     <MESSAGE value="chat and broadcast adaptivity fix" />
     <MESSAGE value="meta content" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="refactor poll" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor poll" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="104" width="800" height="689" key="#Deployment" timestamp="1590073379213">
@@ -2212,11 +2206,11 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="542" y="165" width="442" height="567" key="#Web_Browsers/0.27.1536.837@0.27.1536.837" timestamp="1589389548190" />
-    <state x="798" y="102" width="802" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590151501272">
+    <state x="798" y="102" width="802" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590158326271">
       <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state x="363" y="104" width="953" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1536.837@0.27.1536.837" timestamp="1590148366074" />
-    <state x="798" y="102" width="802" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1600.844@0.28.1600.844" timestamp="1590151501272" />
+    <state x="798" y="102" width="802" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1600.844@0.28.1600.844" timestamp="1590158326271" />
     <state x="432" y="224" width="745" height="471" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589662856786">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
@@ -2230,15 +2224,19 @@
     </state>
     <state x="408" y="27" width="709" height="837" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1536.837@0.27.1536.837" timestamp="1589384142661" />
     <state x="425" y="28" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.28.1600.844@0.28.1600.844" timestamp="1590154758871" />
-    <state x="522" y="203" width="524" height="496" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590154565069">
+    <state x="522" y="203" width="526" height="483" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590157648294">
       <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state x="501" y="201" width="524" height="496" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1536.837@0.27.1536.837" timestamp="1589635781891" />
-    <state x="522" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.28.1600.844@0.28.1600.844" timestamp="1590154565069" />
+    <state x="522" y="203" width="526" height="483" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.28.1600.844@0.28.1600.844" timestamp="1590157648294" />
     <state x="551" y="361" width="424" height="176" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1589460056531">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="551" y="361" width="424" height="176" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.27.1536.837@0.27.1536.837" timestamp="1589460056531" />
+    <state x="340" y="28" width="911" height="843" key="CommitChangelistDialog2" timestamp="1590157227749">
+      <screen x="0" y="28" width="1600" height="844" />
+    </state>
+    <state x="340" y="28" width="911" height="843" key="CommitChangelistDialog2/0.28.1600.844@0.28.1600.844" timestamp="1590157227749" />
     <state x="515" y="347" width="495" height="203" key="ComposerInitDialogKey" timestamp="1589376841009">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
@@ -2255,22 +2253,30 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="546" y="204" width="424" height="496" key="FileChooserDialogImpl/0.27.1536.837@0.27.1536.837" timestamp="1590148286975" />
-    <state width="1472" height="163" key="GridCell.Tab.0.bottom" timestamp="1589986943362">
-      <screen x="0" y="27" width="1536" height="837" />
+    <state x="474" y="319" width="643" height="261" key="Github.CreatePullRequestDialog" timestamp="1590157591143">
+      <screen x="0" y="28" width="1600" height="844" />
+    </state>
+    <state x="474" y="319" width="643" height="261" key="Github.CreatePullRequestDialog/0.28.1600.844@0.28.1600.844" timestamp="1590157591143" />
+    <state width="1554" height="209" key="GridCell.Tab.0.bottom" timestamp="1590158250915">
+      <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state width="1472" height="163" key="GridCell.Tab.0.bottom/0.27.1536.837@0.27.1536.837" timestamp="1589986943362" />
-    <state width="1472" height="163" key="GridCell.Tab.0.center" timestamp="1589986943362">
-      <screen x="0" y="27" width="1536" height="837" />
+    <state width="1554" height="209" key="GridCell.Tab.0.bottom/0.28.1600.844@0.28.1600.844" timestamp="1590158250915" />
+    <state width="1554" height="209" key="GridCell.Tab.0.center" timestamp="1590158250914">
+      <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state width="1472" height="163" key="GridCell.Tab.0.center/0.27.1536.837@0.27.1536.837" timestamp="1589986943362" />
-    <state width="1472" height="163" key="GridCell.Tab.0.left" timestamp="1589986943361">
-      <screen x="0" y="27" width="1536" height="837" />
+    <state width="1554" height="209" key="GridCell.Tab.0.center/0.28.1600.844@0.28.1600.844" timestamp="1590158250914" />
+    <state width="1554" height="209" key="GridCell.Tab.0.left" timestamp="1590158250912">
+      <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state width="1472" height="163" key="GridCell.Tab.0.left/0.27.1536.837@0.27.1536.837" timestamp="1589986943361" />
-    <state width="1472" height="163" key="GridCell.Tab.0.right" timestamp="1589986943362">
-      <screen x="0" y="27" width="1536" height="837" />
+    <state width="1554" height="209" key="GridCell.Tab.0.left/0.28.1600.844@0.28.1600.844" timestamp="1590158250912" />
+    <state width="1554" height="209" key="GridCell.Tab.0.right" timestamp="1590158250914">
+      <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state width="1472" height="163" key="GridCell.Tab.0.right/0.27.1536.837@0.27.1536.837" timestamp="1589986943362" />
+    <state width="1554" height="209" key="GridCell.Tab.0.right/0.28.1600.844@0.28.1600.844" timestamp="1590158250914" />
     <state x="149" y="96" width="1228" height="706" key="MergeDialog" timestamp="1589820925670">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
@@ -2279,10 +2285,11 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="650" y="292" width="448" height="313" key="MultipleFileMergeDialog/0.27.1536.837@0.27.1536.837" timestamp="1589820925675" />
-    <state x="396" y="103" width="733" height="692" key="NewPhpClassDialog" timestamp="1589456869656">
-      <screen x="0" y="27" width="1536" height="837" />
+    <state x="413" y="105" width="733" height="692" key="NewPhpClassDialog" timestamp="1590157623732">
+      <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state x="396" y="103" width="733" height="692" key="NewPhpClassDialog/0.27.1536.837@0.27.1536.837" timestamp="1589456869656" />
+    <state x="413" y="105" key="NewPhpClassDialog/0.28.1600.844@0.28.1600.844" timestamp="1590157623732" />
     <state x="487" y="27" width="551" height="837" key="RollbackChangesDialog" timestamp="1589821674486">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
@@ -2291,23 +2298,28 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="264" y="80" width="1007" height="737" key="SettingsEditor/0.27.1536.837@0.27.1536.837" timestamp="1589388119177" />
-    <state x="363" y="177" width="800" height="544" key="Vcs.Push.Dialog.v2" timestamp="1590003127602">
-      <screen x="0" y="27" width="1536" height="837" />
+    <state x="378" y="179" width="800" height="544" key="Vcs.Push.Dialog.v2" timestamp="1590157358643">
+      <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state x="363" y="177" width="800" height="544" key="Vcs.Push.Dialog.v2/0.27.1536.837@0.27.1536.837" timestamp="1590003127602" />
+    <state x="378" y="179" key="Vcs.Push.Dialog.v2/0.28.1600.844@0.28.1600.844" timestamp="1590157358643" />
     <state x="501" y="251" width="524" height="396" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1589386259548">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="501" y="251" width="524" height="396" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.27.1536.837@0.27.1536.837" timestamp="1589386259548" />
+    <state x="400" y="188" width="784" height="523" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1590157589649">
+      <screen x="0" y="28" width="1600" height="844" />
+    </state>
+    <state x="400" y="188" width="784" height="523" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.28.1600.844@0.28.1600.844" timestamp="1590157589649" />
     <state x="378" y="56" width="770" height="785" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589660553964">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="378" y="56" width="770" height="785" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1536.837@0.27.1536.837" timestamp="1589660553964" />
-    <state x="569" y="351" width="464" height="206" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590153561542">
+    <state x="569" y="351" width="464" height="206" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590157525917">
       <screen x="0" y="28" width="1600" height="844" />
     </state>
     <state x="546" y="347" width="443" height="204" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1536.837@0.27.1536.837" timestamp="1590002980288" />
-    <state x="569" y="351" width="464" height="206" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.28.1600.844@0.28.1600.844" timestamp="1590153561542" />
+    <state x="569" y="351" width="464" height="206" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.28.1600.844@0.28.1600.844" timestamp="1590157525917" />
     <state x="467" y="71" width="687" height="748" key="find.popup" timestamp="1590003077137">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
