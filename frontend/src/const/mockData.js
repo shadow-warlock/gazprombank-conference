@@ -8,7 +8,7 @@ export const CONFERENCE_ITEMS = [
         time: "11:00 - 11:05"
     },
     {
-        id: 1,
+        id: 2,
         image: "/assets/speakers/abdulaev.jpeg",
         name: "Приветственное слово",
         speaker: "Юсиф Абдуллаев",
@@ -16,7 +16,7 @@ export const CONFERENCE_ITEMS = [
         time: "11:00 - 11:05"
     },
     {
-        id: 1,
+        id: 3,
         image: "/assets/speakers/kamishev.jpg",
         name: "Приветственное слово",
         speaker: "Денис Камышев",
@@ -24,7 +24,7 @@ export const CONFERENCE_ITEMS = [
         time: "11:00 - 11:05"
     },
     {
-        id: 2,
+        id: 4,
         image: null,
         name: "Демонстрация ролика «Банковское сопровождение контрактов»",
         speaker: "",
@@ -32,7 +32,7 @@ export const CONFERENCE_ITEMS = [
         time: "11:05 - 11:10"
     },
     {
-        id: 3,
+        id: 5,
         image: "/assets/speakers/melnikov.jpg",
         name: "Банковское сопровождение контрактов: эволюция и перспективы развития",
         speaker: "Олег Мельников",
@@ -40,7 +40,7 @@ export const CONFERENCE_ITEMS = [
         time: "11:10 - 11:45"
     },
     {
-        id: 4,
+        id: 6,
         image: "/assets/speakers/grishin.jpg",
         name: "Практика внедрения банковского сопровождения в Группе Газпром",
         speaker: "Дмитрий Гришин",
@@ -48,7 +48,7 @@ export const CONFERENCE_ITEMS = [
         time: "11:45 - 11:55"
     },
     {
-        id: 5,
+        id: 7,
         image: "/assets/speakers/nikiforov2.jpg",
         name: "Демонстрация электронных сервисов по банковскому сопровождению контрактов",
         speaker: "Антон Никифоров",
@@ -56,7 +56,7 @@ export const CONFERENCE_ITEMS = [
         time: "11:55 - 12:05"
     },
     {
-        id: 6,
+        id: 8,
         image: null,
         name: "Сессия вопросов и ответов",
         speaker: "",

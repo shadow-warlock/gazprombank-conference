@@ -15,7 +15,7 @@ export const API = {
     MESSAGE: (id)=> {return SERVER.URL+"/api/message/"+id},
     CHAT_MESSAGE: (id) => {return SERVER.URL + "/api/chat/" + id + "/message"},
     MESSAGE_LIKE: (id) => {return SERVER.URL + "/api/message/" + id + "/like"},
-    POLL_ANSWER: (id) => {return SERVER.URL + "/api/poll/" + id + "/answer"},
+    QUESTION_ANSWER: (id) => {return SERVER.URL + "/api/question/" + id + "/answer"},
     USER_CODE: (id) => {return SERVER.URL + "/api/user/" + id + "/code"}
 };
 

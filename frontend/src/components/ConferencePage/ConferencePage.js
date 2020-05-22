@@ -45,7 +45,8 @@ export default class ConferencePage extends Component {
                         <Logo/>
                     </div>
                     <div className={"text_right"}>
-                        <p className={"color_white font_size_very_big uppercase"}>Банковское сопровождение контрактов</p>
+                        <p className={"color_white font_size_very_big uppercase"}>Банковское сопровождение
+                            контрактов</p>
                         <p className={"color_pink font_size_big uppercase"}>Часовой пояс: Баку, Азербайджан (UTC+4)</p>
                     </div>
                 </div>
@@ -72,7 +73,11 @@ export default class ConferencePage extends Component {
 
     addAnswer(answer) {
         let conf = Object.assign({}, this.state.conference);
-        conf.poll.answers.push(answer);
+        for (let id in conf.poll.questions) {
+            if (conf.poll.questions[id].id === answer.question.id) {
+                conf.poll.questions[id].answers.push(answer);
+            }
+        }
         this.setState({
             conference: conf
         })

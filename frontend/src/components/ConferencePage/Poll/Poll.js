@@ -18,13 +18,16 @@ export default class Poll extends Component {
                 time: time
             })
         });
+        this.send = this.send.bind(this);
+        this.findActualQuestion = this.findActualQuestion.bind(this);
     }
 
-    send() {
+    send(question) {
         if (this.state.answer !== "") {
-            axios.post(API.POLL_ANSWER(this.props.poll.id),
+            axios.post(API.QUESTION_ANSWER(question.id),
                 {text: this.state.answer}, AXIOS_CONFIG).then(
                 res => {
+                    this.setState({answer: ""});
                     this.props.addAnswer(res.data);
                 }
             ).catch(e => {
@@ -33,13 +36,13 @@ export default class Poll extends Component {
         }
     }
 
-    getVariants() {
-        if (this.props.poll.variants) {
-            return this.props.poll.variants.map((variant) =>
+    getVariants(question) {
+        if (question.variants) {
+            return question.variants.map((variant) =>
                 <Button
                     key={variant}
                     onClick={() => {
-                        this.setState({answer: variant}, this.send.bind(this));
+                        this.setState({answer: variant}, () => this.send(question));
                     }}>
                     {variant}
                 </Button>
@@ -53,33 +56,43 @@ export default class Poll extends Component {
                         }}
                         value={this.state.answer}
                         placeholder={"Ваш ответ"}/>
-                    <Button onClick={this.send.bind(this)}>Ответить</Button>
+                    <Button onClick={() => this.send(question)}>Ответить</Button>
                 </>
             )
         }
     }
 
     getPoll() {
-        let myAnswer = this.props.poll.answers.find((answer) => {
-            return answer.user.id === this.props.user.id;
-        });
-        if (myAnswer) {
+        let question = this.findActualQuestion(this.props.poll.questions);
+        if (question === null) {
             return (<p className={"uppercase font_size_big color_pink"}>Спасибо за ответ!</p>)
         } else {
             return (<><p className={"color_pink font_size_big uppercase bold"}>
-                {this.props.poll.question}
+                {question.question}
             </p>
                 <div className={"variants"}>
-                    {this.getVariants()}
+                    {this.getVariants(question)}
                 </div>
             </>);
         }
     }
 
+    findActualQuestion() {
+        for (let key in this.props.poll.questions) {
+            let question = this.props.poll.questions[key];
+            let isMyAnswer = question.answers.find((answer) => answer.user.id === this.props.user.id);
+            if (!isMyAnswer) {
+                return question;
+            }
+        }
+        return null;
+    }
+
     render() {
         return (
             <div className={"poll"}>
-                <p className={"color_white font_size_very_big uppercase"}>Опрос {this.state.time!==null && <span className={"color_pink font_size_default"}>Закончится через {this.state.time}...</span>}</p>
+                <p className={"color_white font_size_very_big uppercase"}>{this.props.poll.name}{this.state.time !== null &&
+                <span className={"color_pink font_size_default"}>Закончится через {this.state.time}...</span>}</p>
                 {this.getPoll()}
             </div>
         );
