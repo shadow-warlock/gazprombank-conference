@@ -13,7 +13,7 @@ use JMS\Serializer\Annotation as Serializer;
  * @Table(name="answer",
  *    uniqueConstraints={
  *        @UniqueConstraint(name="answer_unique",
- *            columns={"user_id", "poll_id"})
+ *            columns={"user_id", "question_id"})
  *    }
  * )
  */
@@ -37,11 +37,11 @@ class Answer {
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Poll::class, inversedBy="answers")
+     * @ORM\ManyToOne(targetEntity=Question::class, inversedBy="answers")
      * @ORM\JoinColumn(nullable=false)
      * @Serializer\Exclude()
      */
-    private $poll;
+    private $question;
 
     public function getId(): ?int {
         return $this->id;
@@ -71,16 +71,16 @@ class Answer {
         return $this;
     }
 
-    public function getPoll(): ?Poll {
-        return $this->poll;
+    public function getQuestion(): ?Question {
+        return $this->question;
     }
 
     /**
-     * @param Poll|object|null $poll
+     * @param Question|object|null $question
      * @return $this
      */
-    public function setPoll(?Poll $poll): self {
-        $this->poll = $poll;
+    public function setQuestion(?Question $question): self {
+        $this->question = $question;
 
         return $this;
     }

@@ -1,6 +1,7 @@
-<mxfile host="app.diagrams.net" modified="2020-05-22T13:33:56.203Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) snap Chromium/81.0.4044.138 Chrome/81.0.4044.138 Safari/537.36" etag="P4WMRjWdxCBzNvhtSRop" version="13.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-22T14:24:00.766Z" agent="5.0 (X11)" etag="biw89hrsVhR9bAZSUV0W" version="13.1.3" type="github">
+
   <diagram id="Q7E229yqiWH4B0S2Epc4" name="Page-1">
-    <mxGraphModel dx="1038" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1100" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -113,6 +114,19 @@
             <mxPoint x="202.94000000000005" y="421.9939999999999" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="0U7pnIErnt9a43PBEdF6-26" value="Poll" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=19;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="860" y="50" width="140" height="97" as="geometry" />
+        </mxCell>
+        <mxCell id="0U7pnIErnt9a43PBEdF6-27" value="+ id: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="0U7pnIErnt9a43PBEdF6-26" vertex="1">
+          <mxGeometry y="19" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0U7pnIErnt9a43PBEdF6-28" value="+ name: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="0U7pnIErnt9a43PBEdF6-26" vertex="1">
+          <mxGeometry y="45" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0U7pnIErnt9a43PBEdF6-44" value="+ variants: array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="0U7pnIErnt9a43PBEdF6-26" vertex="1">
+          <mxGeometry y="71" width="140" height="26" as="geometry" />
+        </mxCell>
+
         <mxCell id="VhpcOtgaXgjq9XyAFSWe-5" value="question" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="0U7pnIErnt9a43PBEdF6-41" target="VhpcOtgaXgjq9XyAFSWe-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -128,7 +142,8 @@
         <mxCell id="VhpcOtgaXgjq9XyAFSWe-4" value="+ variants: array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VhpcOtgaXgjq9XyAFSWe-1" vertex="1">
           <mxGeometry y="45" width="140" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="VhpcOtgaXgjq9XyAFSWe-7" value="+ name: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VhpcOtgaXgjq9XyAFSWe-1" vertex="1">
+        <mxCell id="VhpcOtgaXgjq9XyAFSWe-7" value="+ question: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VhpcOtgaXgjq9XyAFSWe-1" vertex="1">
+
           <mxGeometry y="71" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="0U7pnIErnt9a43PBEdF6-26" value="Poll" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=19;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
