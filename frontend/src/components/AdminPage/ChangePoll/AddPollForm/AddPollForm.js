@@ -73,22 +73,22 @@ export default class AddPollForm extends Component {
     }
 
     save() {
-        let data = {...this.state};
+        let data = {...this.state.questions};
         for (let i = 0; i < data.questions.length; i++) {
             if (data.questions[i].variants.length === 0) {
                 data.questions[i].variants = null;
             }
         }
 
-         axios.post(API.POLL, data, AXIOS_CONFIG).then(res => {
-             this.props.reload();
-             this.setState({
-                 name: "",
-                 question: [],
-             })
-         }).catch(e => {
-             console.log(e);
-         });
+        axios.post(API.POLL, data, AXIOS_CONFIG).then(res => {
+            this.props.reload();
+            this.setState({
+                name: "",
+                question: [],
+            })
+        }).catch(e => {
+            console.log(e);
+        });
     }
 
     render() {
