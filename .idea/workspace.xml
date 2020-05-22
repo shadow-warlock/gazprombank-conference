@@ -1725,9 +1725,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.start " />
       <item itemvalue="PHP Built-in Web Server.symfony" />
       <item itemvalue="PHP Script.websocket" />
+      <item itemvalue="npm.start " />
     </list>
   </component>
   <component name="SvnConfiguration">
