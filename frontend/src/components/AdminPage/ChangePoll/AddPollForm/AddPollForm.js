@@ -1,10 +1,9 @@
 import React, {Component} from "react";
-import Input from "../../../Input/Input";
 import Button from "../../../Button/Button";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../../const/const";
+import Question from "./Question";
+import Input from "../../../Input/Input";
 
 const buttonText = [
     "Новый опрос",
@@ -16,26 +15,80 @@ export default class AddPollForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            question: "",
-            answers: [],
-            isOpen: false
+            name: "Название опроса",
+            questions: [{question: "", variants: []}],
         };
+        this.addVariant = this.addVariant.bind(this);
+        this.addQuestion = this.addQuestion.bind(this);
+        this.deleteQuestion = this.deleteQuestion.bind(this);
+        this.deleteVariant = this.deleteVariant.bind(this);
+        this.inputVariant = this.inputVariant.bind(this);
+        this.inputQuestion = this.inputQuestion.bind(this);
+        this.inputName = this.inputName.bind(this);
+        this.save = this.save.bind(this);
     }
 
-    save(){
-        let data = {
-            question: this.state.question,
-            variants: this.state.answers.length > 0 ? this.state.answers : null
-        };
-        axios.post(API.POLL, data, AXIOS_CONFIG).then(res => {
-            this.props.reload();
-            this.setState({
-                question: "",
-                answers: []
-            })
-        }).catch(e => {
-            console.log(e);
-        });
+    inputName(nameText) {
+        this.setState({name: nameText});
+    }
+
+    deleteVariant(keyQuestion, keyVariants) {
+        let questions = [...this.state.questions];
+        let variants = questions[keyQuestion].variants;
+        variants.splice(keyVariants, 1);
+        this.setState({questions: questions});
+    }
+
+    addVariant(key) {
+        let questions = [...this.state.questions];
+        let variants = questions[key].variants;
+        variants.push("");
+        this.setState({questions: questions});
+    }
+
+    addQuestion() {
+        let questions = [...this.state.questions];
+        questions.push({question: "", variants: []});
+        this.setState({questions: questions});
+    }
+
+    deleteQuestion(key) {
+        let questions = [...this.state.questions];
+        questions.splice(key, 1);
+        this.setState({questions: questions});
+
+    }
+
+    inputQuestion(key, questionText) {
+        let questions = [...this.state.questions];
+        questions[key].question = questionText;
+        this.setState({questions: questions});
+    }
+
+    inputVariant(keyQuestion, keyVariants, variantText) {
+        let questions = [...this.state.questions];
+        questions[keyQuestion].variants[keyVariants] = variantText;
+        this.setState({questions: questions});
+
+    }
+
+    save() {
+        let data = {...this.state};
+        for (let i = 0; i < data.questions.length; i++) {
+            if (data.questions[i].variants.length === 0) {
+                data.questions[i].variants = null;
+            }
+        }
+
+         axios.post(API.POLL, data, AXIOS_CONFIG).then(res => {
+             this.props.reload();
+             this.setState({
+                 name: "",
+                 question: [],
+             })
+         }).catch(e => {
+             console.log(e);
+         });
     }
 
     render() {
@@ -48,44 +101,23 @@ export default class AddPollForm extends Component {
                 </Button>
                 {this.state.isOpen &&
                 <div>
-                    <div className={"form_container"}>
-                        <p className={"color_white"}>Вопрос: </p>
-                        <Input value={this.state.question} onChange={(e) => {
-                            this.setState({question: e.target.value})
-                        }}/>
-                    </div>
-                    <div className={"form_container pb_20"}>
-                        <p className={"color_white"}>{this.state.answers.length > 0 ? "Варианты ответа: " : "Без вариантов ответа"}</p>
-                        <div className={"question_answers_container"}>{this.state.answers.map((answer, index) => {
-                            return <div className={"not_use_this_please"}>
-                                <Input
-                                    value={answer}
-                                    onChange={(e) => {
-                                        let answers = [...this.state.answers];
-                                        answers[index] = e.target.value;
-                                        this.setState({answers: answers})
-                                    }}
-                                />
-                                <FontAwesomeIcon
-                                    onClick={()=>{
-                                        let answers = [...this.state.answers];
-                                        answers.splice(index, 1);
-                                        this.setState({answers: answers})
-                                    }}
-                                    className={"remove_answer_button"}
-                                    icon={faTimes}/>
-                            </div>
-                        })}
-                            <Button
-                                onClick={() => {
-                                    let answers = [...this.state.answers];
-                                    answers.push("");
-                                    this.setState({answers: answers})
-                                }}>
-                                Добавить ответ
-                            </Button></div>
-                    </div>
-                    <Button onClick={this.save.bind(this)}>Сохранить</Button>
+                    <Input value={this.state.name} onChange={(e) => {
+                        this.setState({name: e.target.value});
+                    }}/>
+                    {this.state.questions.map(
+                        (question, index) => <Question
+                            key={index}
+                            addVariant={this.addVariant}
+                            deleteQuestion={this.deleteQuestion}
+                            question={question}
+                            index={index}
+                            inputName={this.inputName}
+                            deleteVariant={this.deleteVariant}
+                            inputVariant={this.inputVariant}
+                            inputQuestion={this.inputQuestion}
+                        />)}
+                    <Button onClick={this.addQuestion}>добавить вопрос</Button>
+                    <Button onClick={this.save}>сохранить опрос</Button>
                 </div>
                 }
             </div>
