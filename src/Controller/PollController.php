@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Answer;
 use App\Entity\Conference;
 use App\Entity\Poll;
+use App\Entity\Question;
 use App\Entity\User;
 use App\Service\JSONer;
 use App\Service\WebSocketSender;
@@ -27,7 +28,7 @@ class PollController extends AbstractController {
     }
 
     /**
-     * @Route("/api/poll", name="set_poll", methods={"POST"})
+     * @Route("/api/poll", name="add_poll", methods={"POST"})
      * @param Request $request
      * @param JSONer $serializer
      * @param WebSocketSender $wsSender
@@ -38,8 +39,15 @@ class PollController extends AbstractController {
         $entityManager = $this->getDoctrine()->getManager();
         $data = json_decode($request->getContent(), true);
         $poll = new Poll();
-        $poll->setQuestion($data['question']);
-        $poll->setVariants($data['variants'] ?? null);
+        $poll->setName($data['name']);
+        foreach ($data['questions'] as $questionData){
+            $question = new Question();
+            $question->setPoll($poll);
+            $question->setQuestion($questionData['question']);
+            $question->setVariants($questionData['variants'] ?? null);
+            $entityManager->persist($question);
+        }
+
         $conference = $entityManager->getRepository(Conference::class)->findAll()[0];
         $conference->setPoll($poll);
         $entityManager->persist($poll);
@@ -51,7 +59,7 @@ class PollController extends AbstractController {
     }
 
     /**
-     * @Route("/api/poll/{id}/answer", name="add_answer", methods={"POST"})
+     * @Route("/api/question/{id}/answer", name="add_answer", methods={"POST"})
      * @param Request $request
      * @param $id
      * @param JSONer $serializer
@@ -61,14 +69,14 @@ class PollController extends AbstractController {
         $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
         $data = json_decode($request->getContent(), true);
         $entityManager = $this->getDoctrine()->getManager();
-        $poll = $entityManager->find(Poll::class, $id);
-        if(is_null($poll)) {
-            throw new BadRequestHttpException("poll not exist");
+        $question = $entityManager->find(Question::class, $id);
+        if(is_null($question)) {
+            throw new BadRequestHttpException("question not exist");
         }
         $answer = new Answer();
         $answer->setUser($this->getUser());
         $answer->setText($data['text']);
-        $answer->setQuestion($poll);
+        $answer->setQuestion($question);
         $entityManager->persist($answer);
         $entityManager->flush();
         $json = $serializer->toJSON($answer);
