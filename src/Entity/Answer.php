@@ -39,7 +39,6 @@ class Answer {
     /**
      * @ORM\ManyToOne(targetEntity=Question::class, inversedBy="answers")
      * @ORM\JoinColumn(nullable=false)
-     * @Serializer\Exclude()
      */
     private $question;
 
