@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ConferenceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,10 +30,20 @@ class Conference
     private $poll;
 
     /**
+     * @ORM\OneToMany(targetEntity=ConferenceItem::class, mappedBy="conference", orphanRemoval=true)
+     */
+    private $conferenceItems;
+
+    /**
      * @ORM\OneToOne(targetEntity=Chat::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $chat;
+
+    public function __construct()
+    {
+        $this->conferenceItems = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -70,6 +82,24 @@ class Conference
     public function setChat(Chat $chat): self
     {
         $this->chat = $chat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ConferenceItem[]
+     */
+    public function getConferenceItems(): Collection
+    {
+        return $this->conferenceItems;
+    }
+
+    public function addConferenceItem(ConferenceItem $conferenceItem): self
+    {
+        if (!$this->conferenceItems->contains($conferenceItem)) {
+            $this->conferenceItems[] = $conferenceItem;
+            $conferenceItem->setConference($this);
+        }
 
         return $this;
     }
