@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19199298-1241-4529-9861-6b549d39c958" name="Default Changelist" comment="fixes" />
+    <list default="true" id="19199298-1241-4529-9861-6b549d39c958" name="Default Changelist" comment="run configurations">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -1709,7 +1711,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Built-in Web Server.symfony">
+  <component name="RunManager" selected="PHP Script.websocket">
     <configuration name="symfony" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public" host="0.0.0.0" port="8000">
       <method v="2" />
     </configuration>
@@ -1752,14 +1754,8 @@
       <workItem from="1589913342770" duration="6770000" />
       <workItem from="1589976504831" duration="1491000" />
       <workItem from="1590002975128" duration="2648000" />
-      <workItem from="1590146485249" duration="724000" />
-    </task>
-    <task id="LOCAL-00010" summary="Poll's &amp; Answer's">
-      <created>1589641030931</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1589641030931</updated>
+      <workItem from="1590146485249" duration="3560000" />
+      <workItem from="1590154398122" duration="653000" />
     </task>
     <task id="LOCAL-00011" summary="security update">
       <created>1589641047379</created>
@@ -2097,7 +2093,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590003125558</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="run configurations">
+      <created>1590148495582</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1590148495582</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2117,7 +2120,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="login supporters" />
     <MESSAGE value="Conference Program" />
     <MESSAGE value="warning fixes" />
     <MESSAGE value="mobile adaptivity" />
@@ -2142,7 +2144,8 @@
     <MESSAGE value="chat and broadcast adaptivity fix" />
     <MESSAGE value="meta content" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="run configurations" />
+    <option name="LAST_COMMIT_MESSAGE" value="run configurations" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="104" width="800" height="689" key="#Deployment" timestamp="1590073379213">
@@ -2193,6 +2196,10 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="609" y="325" width="307" height="247" key="ComposerValidateDialog/0.27.1536.837@0.27.1536.837" timestamp="1589391964624" />
+    <state x="100" y="127" width="1336" height="637" key="DiffContextDialog" timestamp="1590154132799">
+      <screen x="0" y="27" width="1536" height="837" />
+    </state>
+    <state x="100" y="127" width="1336" height="637" key="DiffContextDialog/0.27.1536.837@0.27.1536.837" timestamp="1590154132799" />
     <state x="688" y="141" width="293" height="621" key="EnvironmentVariablesDialog" timestamp="1589643947279">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
@@ -2201,22 +2208,22 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="546" y="204" width="424" height="496" key="FileChooserDialogImpl/0.27.1536.837@0.27.1536.837" timestamp="1590148286975" />
-    <state width="1472" height="163" key="GridCell.Tab.0.bottom" timestamp="1589986943362">
+    <state width="1472" height="163" key="GridCell.Tab.0.bottom" timestamp="1590154380515">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
-    <state width="1472" height="163" key="GridCell.Tab.0.bottom/0.27.1536.837@0.27.1536.837" timestamp="1589986943362" />
-    <state width="1472" height="163" key="GridCell.Tab.0.center" timestamp="1589986943362">
+    <state width="1472" height="163" key="GridCell.Tab.0.bottom/0.27.1536.837@0.27.1536.837" timestamp="1590154380515" />
+    <state width="1472" height="163" key="GridCell.Tab.0.center" timestamp="1590154380515">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
-    <state width="1472" height="163" key="GridCell.Tab.0.center/0.27.1536.837@0.27.1536.837" timestamp="1589986943362" />
-    <state width="1472" height="163" key="GridCell.Tab.0.left" timestamp="1589986943361">
+    <state width="1472" height="163" key="GridCell.Tab.0.center/0.27.1536.837@0.27.1536.837" timestamp="1590154380515" />
+    <state width="1472" height="163" key="GridCell.Tab.0.left" timestamp="1590154380515">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
-    <state width="1472" height="163" key="GridCell.Tab.0.left/0.27.1536.837@0.27.1536.837" timestamp="1589986943361" />
-    <state width="1472" height="163" key="GridCell.Tab.0.right" timestamp="1589986943362">
+    <state width="1472" height="163" key="GridCell.Tab.0.left/0.27.1536.837@0.27.1536.837" timestamp="1590154380515" />
+    <state width="1472" height="163" key="GridCell.Tab.0.right" timestamp="1590154380515">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
-    <state width="1472" height="163" key="GridCell.Tab.0.right/0.27.1536.837@0.27.1536.837" timestamp="1589986943362" />
+    <state width="1472" height="163" key="GridCell.Tab.0.right/0.27.1536.837@0.27.1536.837" timestamp="1590154380515" />
     <state x="149" y="96" width="1228" height="706" key="MergeDialog" timestamp="1589820925670">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
@@ -2237,10 +2244,10 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="264" y="80" width="1007" height="737" key="SettingsEditor/0.27.1536.837@0.27.1536.837" timestamp="1589388119177" />
-    <state x="363" y="177" width="800" height="544" key="Vcs.Push.Dialog.v2" timestamp="1590003127602">
+    <state x="363" y="177" width="800" height="544" key="Vcs.Push.Dialog.v2" timestamp="1590148497590">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
-    <state x="363" y="177" width="800" height="544" key="Vcs.Push.Dialog.v2/0.27.1536.837@0.27.1536.837" timestamp="1590003127602" />
+    <state x="363" y="177" width="800" height="544" key="Vcs.Push.Dialog.v2/0.27.1536.837@0.27.1536.837" timestamp="1590148497590" />
     <state x="501" y="251" width="524" height="396" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1589386259548">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
@@ -2249,14 +2256,14 @@
       <screen x="0" y="27" width="1536" height="837" />
     </state>
     <state x="378" y="56" width="770" height="785" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1536.837@0.27.1536.837" timestamp="1589660553964" />
-    <state x="546" y="347" width="443" height="204" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590002980288">
+    <state x="546" y="347" width="443" height="204" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590153507306">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
-    <state x="546" y="347" width="443" height="204" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1536.837@0.27.1536.837" timestamp="1590002980288" />
-    <state x="467" y="71" width="687" height="748" key="find.popup" timestamp="1590003077137">
+    <state x="546" y="347" width="443" height="204" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1536.837@0.27.1536.837" timestamp="1590153507306" />
+    <state x="467" y="71" width="752" height="748" key="find.popup" timestamp="1590148451758">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
-    <state x="467" y="71" width="687" height="748" key="find.popup/0.27.1536.837@0.27.1536.837" timestamp="1590003077137" />
+    <state x="467" y="71" width="752" height="748" key="find.popup/0.27.1536.837@0.27.1536.837" timestamp="1590148451758" />
     <state x="482" y="319" width="562" height="259" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1589383147025">
       <screen x="0" y="27" width="1536" height="837" />
     </state>
