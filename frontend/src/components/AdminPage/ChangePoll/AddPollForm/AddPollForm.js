@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Button from "../../../Button/Button";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../../const/const";
-import Question from "./Question";
+import Question from "./Question/Question";
 import Input from "../../../Input/Input";
 
 const buttonText = [
@@ -73,7 +73,7 @@ export default class AddPollForm extends Component {
     }
 
     save() {
-        let data = {...this.state};
+        let data = JSON.parse(JSON.stringify(this.state));
         for (let i = 0; i < data.questions.length; i++) {
             if (data.questions[i].variants.length === 0) {
                 data.questions[i].variants = null;
@@ -84,7 +84,7 @@ export default class AddPollForm extends Component {
             this.props.reload();
             this.setState({
                 name: "",
-                question: [],
+                questions: [],
             })
         }).catch(e => {
             console.log(e);

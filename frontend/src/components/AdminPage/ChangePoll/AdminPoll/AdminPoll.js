@@ -23,7 +23,7 @@ export default class AdminPoll extends Component {
                 <div className={"actual_poll"}>
                     {this.props.poll && <p className={"uppercase color_pink"}>
                         Текущий опрос: <span
-                        className={"color_white"}>{this.props.poll.question}</span>
+                        className={"color_white"}>{this.props.poll.name}</span>
                     </p>}
                     {this.props.poll &&
                     <FontAwesomeIcon icon={faBan} className={"close_poll_button"} onClick={this.close.bind(this)}/>
