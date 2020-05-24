@@ -15,6 +15,7 @@ export default class AddPollForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isOpen : false,
             name: "",
             questions: [{question: "", variants: []}],
         };
@@ -85,6 +86,7 @@ export default class AddPollForm extends Component {
             this.setState({
                 name: "",
                 questions: [],
+                isOpen : false,
             })
         }).catch(e => {
             console.log(e);
