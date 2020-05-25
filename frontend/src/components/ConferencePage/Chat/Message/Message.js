@@ -75,7 +75,7 @@ export default class Message extends Component {
                             <FontAwesomeIcon onClick={() => {
                                 this.likeClick.bind(this)(myLike);
                             }}
-                                             className={"like_button " + (myLike && "color_pink")}
+                                             className={"like_button " + (myLike && "color_blue")}
                                              icon={faHeart}/>
                         </p>
                     </div>
