@@ -45,7 +45,7 @@ export default class AuthForm extends Component {
                     type={"number"}
                     placeholder={"Пароль"}/>
                 <Button onClick={this.sendAuthFrom}>Войти</Button>
-                <p className={"color_pink"}>{this.state.error}</p>
+                <p className={"color_white_blue"}>{this.state.error}</p>
                 <br/>
                 <TechSupport/>
             </div>

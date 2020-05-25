@@ -41,6 +41,10 @@ p {
     color: white;
 }
 
+.color_blue{
+    color: var(--blue);
+}
+
 .font_size_default {
     font-size: var(--default-font-size);
 }

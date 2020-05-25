@@ -11,6 +11,8 @@ import "./ConferencePage.css";
 import {CONFERENCE_ITEMS} from "../../const/mockData";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
+import Button from "../Button/Button";
+import LogoutButton from "../LogoutButton/LogoutButton";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -44,6 +46,7 @@ export default class ConferencePage extends Component {
                     <div>
                         <Logo/>
                     </div>
+                    <LogoutButton/>
                 </div>
                 <div className={"padding_side"}>
                     <ConferenceProgram items={CONFERENCE_ITEMS}/>

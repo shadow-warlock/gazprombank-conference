@@ -3,7 +3,7 @@
         --default-font-size: 14px;
     }
 
-    .font_size_very_big {
+    .auth_page .font_size_very_big {
         font-size: calc(2 * var(--default-font-size));
     }
 
@@ -56,6 +56,9 @@
 
     .conference_title {
         display: block;
+        text-align: right;
+        /*display: flex;*/
+        /*flex-direction: column-reverse;*/
     }
 
     .conference_title .text_right {
@@ -89,16 +92,23 @@
     }
 
     .conference_program_title {
+        flex-wrap: wrap;
         padding-bottom: 30px;
     }
 
+    .footer{
+        display: block;
+    }
+
     .footer > div {
+        width: auto;
         display: block;
     }
 
     .footer > div > div {
-        display: flex;
-        justify-content: space-between;
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+        padding-bottom: 20px;
     }
 
     .cancel_reply {

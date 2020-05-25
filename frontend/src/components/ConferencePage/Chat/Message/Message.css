@@ -2,7 +2,7 @@
     width: 400px;
     display: flex;
     justify-content: space-between;
-    border-left: 1px solid var(--violet);
+    border-left: 1px solid var(--blue);
     /*padding-top: 5px;*/
     padding-right: 10px;
     margin-top: 20px;
@@ -21,7 +21,7 @@
 }
 
 .like_button:hover {
-    color: var(--pink);
+    color: var(--blue);
     cursor: pointer;
 }
 
@@ -47,15 +47,15 @@
 }
 
 .reply_button {
-    color: var(--violet);
+    color: var(--blue);
     cursor: pointer;
 }
 
 .reply_button:hover{
-    color: var(--pink);
+    color: var(--dark-violet);
 }
 
 .reply_to:hover{
     cursor: pointer;
-    color: var(--pink);
+    color: var(--dark-violet);
 }
