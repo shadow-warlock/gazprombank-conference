@@ -42,6 +42,7 @@ class PollController extends AbstractController {
         $poll->setName($data['name']);
         foreach ($data['questions'] as $questionData){
             $question = new Question();
+            $poll->addQuestions($question);
             $question->setPoll($poll);
             $question->setQuestion($questionData['question']);
             $question->setVariants($questionData['variants'] ?? null);
