@@ -21,7 +21,7 @@ export default class AdminPoll extends Component {
             <div>
                 <p className={"uppercase color_white font_size_big pb_20"}>Опрос</p>
                 <div className={"actual_poll"}>
-                    {this.props.poll && <p className={"uppercase color_pink"}>
+                    {this.props.poll && <p className={"uppercase color_white_blue  bold pb_20"}>
                         Текущий опрос: <span
                         className={"color_white"}>{this.props.poll.name}</span>
                     </p>}

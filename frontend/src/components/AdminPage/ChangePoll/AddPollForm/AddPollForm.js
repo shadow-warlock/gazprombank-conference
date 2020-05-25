@@ -15,7 +15,7 @@ export default class AddPollForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen : false,
+            isOpen: false,
             name: "",
             questions: [{question: "", variants: []}],
         };
@@ -86,26 +86,32 @@ export default class AddPollForm extends Component {
             this.setState({
                 name: "",
                 questions: [{question: "", variants: []}],
-                isOpen : false,
+                isOpen: false,
             })
         }).catch(e => {
             console.log(e);
         });
     }
+
 //
     render() {
         return (
             <div>
-                <Button onClick={() => {
-                    this.setState({isOpen: !this.state.isOpen})
-                }}>
-                    {buttonText[this.state.isOpen ? 1 : 0]}
-                </Button>
+                <div className={"pb_20"}>
+                    <Button onClick={() => {
+                        this.setState({isOpen: !this.state.isOpen})
+                    }}>
+                        {buttonText[this.state.isOpen ? 1 : 0]}
+                    </Button>
+                </div>
                 {this.state.isOpen &&
                 <div>
-                    <Input placeholder={"Название опроса"} value={this.state.name} onChange={(e) => {
-                        this.setState({name: e.target.value});
-                    }}/>
+                    <div className={"form_container pb_20"}>
+                        <p className={"color_white"}>Название опроса:</p>
+                        <Input value={this.state.name} onChange={(e) => {
+                            this.setState({name: e.target.value});
+                        }}/>
+                    </div>
                     {this.state.questions.map(
                         (question, index) => <Question
                             key={index}
@@ -117,7 +123,10 @@ export default class AddPollForm extends Component {
                             inputVariant={this.inputVariant}
                             inputQuestion={this.inputQuestion}
                         />)}
-                    <Button onClick={this.addQuestion}>добавить вопрос</Button>
+                    <div className={"pb_20"}>
+                        <Button onClick={this.addQuestion}>добавить вопрос</Button>
+                        <br/>
+                    </div>
                     <Button onClick={this.save}>сохранить опрос</Button>
                 </div>
                 }

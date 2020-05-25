@@ -6,7 +6,7 @@
 
 .close_poll_button {
     padding-left: 10px;
-    color: var(--pink);
+    color: var(--white-blue);
     cursor: pointer;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .remove_answer_button {
-    color: var(--pink);
+    color: var(--white-blue);
     margin-left: 10px;
     position: absolute;
 }

@@ -7,7 +7,6 @@
     padding-bottom: 20px;
 }
 
-
 .form_container {
     color: white;
     padding-top: 20px;
@@ -23,6 +22,11 @@
 }
 
 .csv_buttons{
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
+}
+
+.csv_buttons > .button{
+    margin-bottom: 20px;
 }
