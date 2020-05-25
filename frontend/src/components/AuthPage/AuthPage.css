@@ -9,7 +9,7 @@
 }
 
 .auth_page .font_size_very_big {
-    font-size: calc(3 * var(--default-font-size));
+    font-size: calc(2 * var(--default-font-size));
 }
 
 .auth_page_container {

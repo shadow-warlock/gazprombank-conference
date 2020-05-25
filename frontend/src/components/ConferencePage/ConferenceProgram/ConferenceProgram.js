@@ -12,7 +12,8 @@ export default class ConferenceProgram extends Component {
                         <p className={"color_white font_size_very_big uppercase bold"}>семинара</p>
                     </div>
                     <div>
-                        <p className={"color_white font_size_very_big uppercase bold"}>Интерактивная отчетность</p>
+                        <p className={"color_white font_size_very_big uppercase bold"}>Демонстрация возможностей <br/>сервиса
+                            Банка «Интерактивная отчетность»</p>
                         <p className={"color_white bold"}>Обучающий семинар по работе с сервисом Банка ГПБ (АО)</p>
                         <br/>
                         <p className={"color_white_blue font_size_big uppercase bold"}>28 мая 2020 года 14:00</p>

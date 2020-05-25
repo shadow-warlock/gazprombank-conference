@@ -96,6 +96,12 @@
         padding-bottom: 30px;
     }
 
+    .conference_program_title > div:nth-child(2){
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+
     .footer{
         display: block;
     }

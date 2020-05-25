@@ -10,7 +10,8 @@ export default class AuthPage extends Component {
             <div className={"auth_page color_white"}>
                 <div className={"auth_page_container"}>
                     <div className={"left_container"}>
-                        <p className={"font_size_very_big uppercase nowrap bold"}>Интерактивная отчетность</p>
+                        <p className={"font_size_very_big uppercase nowrap bold"}>Демонстрация возможностей <br/>
+                            сервиса Банка <br/> «Интерактивная отчетность»</p>
                         <p className={"bold nowrap"}>Обучающий семинар по работе с сервисом Банка ГПБ (АО)</p>
                         <br/>
                         <p className={"font_size_big color_white uppercase bold"}>28 мая 2020 года 14:00</p>
