@@ -92,7 +92,7 @@ export default class AddPollForm extends Component {
             console.log(e);
         });
     }
-
+//
     render() {
         return (
             <div>
