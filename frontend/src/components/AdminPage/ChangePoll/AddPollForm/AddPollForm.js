@@ -85,14 +85,14 @@ export default class AddPollForm extends Component {
             this.props.reload();
             this.setState({
                 name: "",
-                questions: [{question: "", variants: []}],
+                questions: [],
                 isOpen : false,
             })
         }).catch(e => {
             console.log(e);
         });
     }
-//
+
     render() {
         return (
             <div>
