@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import {TECH_SUPPORTERS} from "../../../const/mockData";
-import Supporter from "./Supporter/Supporter";
 import "./Footer.css";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
+import TechSupport from "../../TechSupport/TechSupport";
+import Logo from "../../Logo/Logo";
 
 export default class Footer extends Component {
 
@@ -18,14 +18,9 @@ export default class Footer extends Component {
 
     render() {
         return (
-            <div className={"footer"}>
-                <p className={"color_white uppercase font_size_very_big"}>Техническая поддержка</p>
-                <div>
-                    {TECH_SUPPORTERS.map((supporter) => <Supporter key={supporter.phone} supporter={supporter}/>)}
-                </div>
-                <div>
-                    <p className={"logout"} onClick={this.logout}>Выйти</p>
-                </div>
+            <div className={"footer color_white"}>
+                <Logo/>
+                <TechSupport/>
             </div>
         );
     }

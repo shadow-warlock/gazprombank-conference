@@ -1,6 +1,14 @@
 .footer > div {
+    width: 50%;
     padding-top: 50px;
     display: flex;
-    justify-content: space-between;
     padding-bottom: 50px    ;
+}
+
+.footer{
+    display: flex;
+}
+
+.footer img{
+    height: 60px;
 }

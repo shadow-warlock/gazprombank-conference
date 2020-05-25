@@ -44,11 +44,6 @@ export default class ConferencePage extends Component {
                     <div>
                         <Logo/>
                     </div>
-                    <div className={"text_right"}>
-                        <p className={"color_white font_size_very_big uppercase"}>Банковское сопровождение
-                            контрактов</p>
-                        <p className={"color_pink font_size_big uppercase"}>Часовой пояс: Баку, Азербайджан (UTC+4)</p>
-                    </div>
                 </div>
                 <div className={"padding_side"}>
                     <ConferenceProgram items={CONFERENCE_ITEMS}/>
@@ -118,6 +113,7 @@ export default class ConferencePage extends Component {
                 break;
             case "poll":
                 conf.poll = data.data;
+                console.log(data.data);
                 if (this.state.conference.poll) {
                     this.timer.start(() => {
                             this.setState({conference: conf});

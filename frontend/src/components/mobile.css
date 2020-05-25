@@ -3,6 +3,10 @@
         --default-font-size: 14px;
     }
 
+    .font_size_very_big {
+        font-size: calc(2 * var(--default-font-size));
+    }
+
     .auth_page {
         padding: 10%;
     }
@@ -13,10 +17,15 @@
 
     .left_container {
         max-width: none;
+        text-align: center;
     }
 
     .left_container .uppercase {
         white-space: initial;
+    }
+
+    .left_container .nowrap{
+        white-space: normal;
     }
 
     .auth_form .input, .auth_form .button {
@@ -29,6 +38,10 @@
 
     .tech_support .nowrap {
         white-space: initial;
+    }
+
+    .tech_support .font_size_big{
+        font-size: var(--default-font-size);
     }
 
     .logo_right {

@@ -7,7 +7,7 @@
 .conference_item .time {
     border-radius: 30px;
     width: 200px;
-    border: 2px solid var(--pink);
+    border: 2px solid var(--white-blue);
     text-align: center;
 }
 
@@ -16,6 +16,7 @@
 }
 
 .conf_item_image{
+    filter: grayscale(100%);
     width: 150px;
 }
 

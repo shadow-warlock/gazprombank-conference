@@ -1,0 +1,12 @@
+.tech_support {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tech_support > p {
+    padding-bottom: 5px;
+}
+
+.login_supporters > p{
+    padding-top: 10px;
+}

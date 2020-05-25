@@ -1,7 +1,11 @@
 .conference {
-    background-image: linear-gradient(0deg, #15054f 0%, #430d7f 100%);
+    background-color: var(--blue);
     /*background-color: var(--violet);*/
     padding-top: 50px;
+    background-image: url(/assets/sphere.png);
+    background-position: left -150px top 400px;
+    background-repeat: no-repeat;
+    background-size: 500px;
 }
 
 .logout {
