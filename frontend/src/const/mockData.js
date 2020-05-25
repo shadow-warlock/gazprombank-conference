@@ -2,17 +2,17 @@ export const CONFERENCE_ITEMS = [
     {
         id: 1,
         image: null,
-        name: "Приветственное слово",
+        name: "Открытие семинара, вступительное слово",
         speaker: "",
         description: "",
-        time: "11:00 - 11:10"
+        time: "14:00 – 14:20"
     },
     {
         id: 2,
-        image: "/assets/speakers/smirnov.png",
+        image: "/assets/speakers/grishin.jpg",
         name: "",
-        speaker: "Игорь Смирнов",
-        description: "Заместитель начальника Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        speaker: "Дмитрий Гришин",
+        description: "Начальник Департамента ПАО «Газпром»",
         time: null
     },
     {
@@ -24,36 +24,60 @@ export const CONFERENCE_ITEMS = [
         time: null
     },
     {
-        id: 6,
-        image: "/assets/speakers/grishin.jpg",
-        name: "",
-        speaker: "Дмитрий Гришин",
-        description: "Начальник Департамента ПАО «Газпром»",
-        time: null
-    },
-    {
         id: 4,
         image: null,
         name: "Демонстрация возможностей сервиса Банка ГПБ (АО) «Интерактивная отчетность»",
         speaker: "",
         description: "",
-        time: "11:10 - 11:50"
+        time: "14:20 – 15:10"
+    },
+    {
+        id: 5,
+        image: "/assets/speakers/ponomareva.jpeg",
+        name: "",
+        speaker: "Анастасия Пономарева",
+        description: "Директор проекта Управления контроля операций и отчетности Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        time: null
+    },
+    {
+        id: 6,
+        image: "/assets/speakers/nikiforov.jpg",
+        name: "",
+        speaker: "Антон Никифоров",
+        description: "Исполнительный директор Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        time: null
     },
     {
         id: 7,
-        image: "/assets/speakers/rectangle.png",
-        name: "",
-        speaker: "Анастасия Пономарева",
-        description: "Директор проекта Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
-        time: null
+        image: null,
+        name: "Комментарии спикеров, обмен мнениями",
+        speaker: "",
+        description: "",
+        time: "15:10 – 15:20"
     },
     {
         id: 8,
         image: null,
-        name: "Сессия вопросов и ответов",
+        name: "Ответы на вопросы участников семинара, поступившие в чат",
         speaker: "",
         description: "",
-        time: "10:50 - 11:40"
+        time: "15:20 – 15:40"
+    },
+    {
+        id: 9,
+        image: null,
+        name: "Закрытие семинара, подведение итогов",
+        speaker: "",
+        description: "",
+        time: "15:40 - 15:50"
+    },
+    {
+        id: 10,
+        image: null,
+        name: "Онлайн опрос по результатам мероприятия",
+        speaker: "",
+        description: "",
+        time: "15:50-16:00"
     },
 
 ];

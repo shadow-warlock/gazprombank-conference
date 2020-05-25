@@ -13,7 +13,7 @@ export default class AuthPage extends Component {
                         <p className={"font_size_very_big uppercase nowrap bold"}>Интерактивная отчетность</p>
                         <p className={"bold nowrap"}>Обучающий семинар по работе с сервисом Банка ГПБ (АО)</p>
                         <br/>
-                        <p className={"font_size_big color_white uppercase bold"}>28 мая 2020 года 10:00</p>
+                        <p className={"font_size_big color_white uppercase bold"}>28 мая 2020 года 14:00</p>
                         <AuthForm setUser={this.props.setUser}/>
                     </div>
                     <div className={"bank_container"}>
