@@ -30,7 +30,7 @@ class InitController extends AbstractController {
         $user->setSurname("портала");
         $user->setCode(10);
         $conference = new Conference();
-        $conference->setUrl("https://facecast.net/v/tk1yzi");
+        $conference->setUrl("https://facecast.net/v/bgva4m");
         $chat = new Chat();
         $conference->setChat($chat);
         $manager = $this->getDoctrine()->getManager();

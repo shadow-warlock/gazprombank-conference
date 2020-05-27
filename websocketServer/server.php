@@ -5,14 +5,14 @@ use Workerman\Worker;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$ws_worker = new Worker('websocket://0.0.0.0:2346');
+$ws_worker = new Worker('websocket://0.0.0.0:2348');
 
 $connections = [];
 // 4 processes
 //$ws_worker->count = 4;
 
 $ws_worker->onWorkerStart = function() use (&$connections){
-    $inner_tcp_worker = new Worker("tcp://127.0.0.1:2345");
+    $inner_tcp_worker = new Worker("tcp://127.0.0.1:2347");
     $inner_tcp_worker->onMessage = function($connection, $data) use (&$connections) {
         foreach ($connections as $client) {
             $client->send($data);

@@ -33,7 +33,7 @@ class Message {
 
     /**
      * @ORM\ManyToOne(targetEntity=Message::class, inversedBy="replies")
-     * @ORM\JoinColumn(onDelete="CASCADE")
+     * @ORM\JoinColumn(onDelete="SET NULL")
      */
     private $replyTo;
 

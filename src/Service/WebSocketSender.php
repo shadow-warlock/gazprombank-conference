@@ -23,7 +23,7 @@ class WebSocketSender {
 
 
     public function send($type, $data){
-        $instance = stream_socket_client("tcp://127.0.0.1:2345");
+        $instance = stream_socket_client("tcp://127.0.0.1:2347");
         $json = $this->serializer->toJSON(["type" => $type, "data" => $data]);
         fwrite($instance, $json);
     }

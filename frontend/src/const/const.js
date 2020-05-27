@@ -1,6 +1,6 @@
 export const SERVER = {
-    URL: "http://localhost:8000",
-    WS: 'ws://localhost:2346'
+    URL: "",
+    WS: 'wss://interactive-reporting.ru:2348'
 };
 
 export const API = {
