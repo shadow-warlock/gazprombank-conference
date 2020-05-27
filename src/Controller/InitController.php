@@ -17,6 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class InitController extends AbstractController {
 
+    const URL = "https://facecast.net/v/ly5olv";
 
     /**
      * @Route("/api/init", name="init", methods={"GET"})
@@ -30,7 +31,7 @@ class InitController extends AbstractController {
         $user->setSurname("портала");
         $user->setCode(10);
         $conference = new Conference();
-        $conference->setUrl("https://facecast.net/v/bgva4m");
+        $conference->setUrl(self::URL);
         $chat = new Chat();
         $conference->setChat($chat);
         $manager = $this->getDoctrine()->getManager();
@@ -39,5 +40,17 @@ class InitController extends AbstractController {
         $manager->persist($chat);
         $manager->flush();
         return new JsonResponse($user->getCode(), 200, [], true);
+    }
+
+    /**
+     * @Route("/api/seturl", name="set_url", methods={"GET"})
+     */
+    public function setConferenceUrl() {
+        $em = $this->getDoctrine()->getManager();
+        $conference = $em->getRepository(Conference::class)->findAll()[0];
+        $conference->setUrl(self::URL);
+        $em->persist($conference);
+        $em->flush();
+        return $this->json($conference->getUrl());
     }
 }
