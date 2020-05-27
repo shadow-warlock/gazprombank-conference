@@ -1,11 +1,12 @@
 import React, {Component} from "react";
-import logo from "./../../assets/logo.png";
+import logo from "./../../assets/logo_combined.png";
+import "./Logo.css";
 
 export default class Logo extends Component {
     render() {
         return (
-            <div>
-                <img src={logo} alt={"logo"}/>
+            <div className={"logo"}>
+                <img src={logo} alt={"logo_bank"}/>
             </div>
         );
     }

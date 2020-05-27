@@ -9,6 +9,14 @@ export const CONFERENCE_ITEMS = [
     },
     {
         id: 2,
+        image: "/assets/speakers/smirnov.png",
+        name: "",
+        speaker: "Игорь Смирнов",
+        description: "Заместитель начальника Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        time: null
+    },
+    {
+        id: 3,
         image: "/assets/speakers/grishin.jpg",
         name: "",
         speaker: "Дмитрий Гришин",
@@ -16,7 +24,7 @@ export const CONFERENCE_ITEMS = [
         time: null
     },
     {
-        id: 3,
+        id: 5,
         image: "/assets/speakers/melnikov.jpg",
         name: "",
         speaker: "Олег Мельников",
@@ -24,7 +32,7 @@ export const CONFERENCE_ITEMS = [
         time: null
     },
     {
-        id: 4,
+        id: 6,
         image: null,
         name: "Демонстрация возможностей сервиса Банка ГПБ (АО) «Интерактивная отчетность»",
         speaker: "",
@@ -32,7 +40,7 @@ export const CONFERENCE_ITEMS = [
         time: "14:20 – 15:10"
     },
     {
-        id: 5,
+        id: 7,
         image: "/assets/speakers/ponomareva.jpeg",
         name: "",
         speaker: "Анастасия Пономарева",
@@ -40,7 +48,7 @@ export const CONFERENCE_ITEMS = [
         time: null
     },
     {
-        id: 6,
+        id: 8,
         image: "/assets/speakers/nikiforov.jpg",
         name: "",
         speaker: "Антон Никифоров",
@@ -48,7 +56,7 @@ export const CONFERENCE_ITEMS = [
         time: null
     },
     {
-        id: 7,
+        id: 9,
         image: null,
         name: "Комментарии спикеров, обмен мнениями",
         speaker: "",
@@ -56,7 +64,7 @@ export const CONFERENCE_ITEMS = [
         time: "15:10 – 15:20"
     },
     {
-        id: 8,
+        id: 10,
         image: null,
         name: "Ответы на вопросы участников семинара, поступившие в чат",
         speaker: "",
@@ -64,7 +72,7 @@ export const CONFERENCE_ITEMS = [
         time: "15:20 – 15:40"
     },
     {
-        id: 9,
+        id: 11,
         image: null,
         name: "Закрытие семинара, подведение итогов",
         speaker: "",
@@ -72,7 +80,7 @@ export const CONFERENCE_ITEMS = [
         time: "15:40 - 15:50"
     },
     {
-        id: 10,
+        id: 12,
         image: null,
         name: "Онлайн опрос по результатам мероприятия",
         speaker: "",
