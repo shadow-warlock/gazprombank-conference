@@ -3,6 +3,7 @@ import Button from "../../Button/Button";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
 import "./User.css";
+import Moment from "react-moment";
 
 export default class User extends Component {
 
@@ -37,11 +38,14 @@ export default class User extends Component {
                     <div className={"form_container"}><p>Email:</p><p>{this.props.user.email ?? "Не задан"}</p></div>
                     <div className={"form_container"}><p>Телефон:</p><p>{this.props.user.phone ?? "Не задан"}</p></div>
                     <div className={"form_container"}><p>Код:</p><p>{this.props.user.code}</p></div>
+                    <div className={"form_container"}><p>Присоединился:</p>
+                        {this.props.user.joinTime ? <Moment format={"D.mm.Y (H:m)"} date={this.props.user.joinTime}/> : <p>нет</p>}
+                    </div>
                 </div>
                 <div className={"pb_20"}>
                     <Button
-                    onClick={this.generatePassword.bind(this)}>Сменить код
-                </Button></div>
+                        onClick={this.generatePassword.bind(this)}>Сменить код
+                    </Button></div>
                 <Button
                     onClick={this.delete.bind(this)}>
                     Удалить

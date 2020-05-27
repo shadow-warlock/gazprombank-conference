@@ -52,6 +52,11 @@ class User implements UserInterface {
      */
     private $phone;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $joinTime;
+
     public function getId(): ?int {
         return $this->id;
     }
@@ -155,5 +160,17 @@ class User implements UserInterface {
             $symbols .= str_repeat($i, $length);
         }
         $this->code = substr(str_shuffle($symbols), 0, $length);
+    }
+
+    public function getJoinTime(): ?\DateTimeInterface
+    {
+        return $this->joinTime;
+    }
+
+    public function setJoinTime(?\DateTimeInterface $joinTime): self
+    {
+        $this->joinTime = $joinTime;
+
+        return $this;
     }
 }

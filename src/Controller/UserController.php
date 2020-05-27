@@ -115,8 +115,9 @@ class UserController extends AbstractController {
         $manager = $this->getDoctrine()->getManager();
         $users = $manager->getRepository(User::class)->findAll();
         $data = [];
-        foreach($users as $user){
-            $data[] = [$user->getName() . " " . $user->getSurname(), $user->getCode()];
+        foreach($users as $user) {
+            $joinTime = $user->getJoinTime() ? $user->getJoinTime()->format('Y-m-d H:i:s') : "";
+            $data[] = [$user->getName() . " " . $user->getSurname(), $user->getCode(), $joinTime];
         }
         return new Response($serializer->ArrayToCSV($data), 200,
             [
