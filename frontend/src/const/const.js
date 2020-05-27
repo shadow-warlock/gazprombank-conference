@@ -1,6 +1,6 @@
 export const SERVER = {
-    URL: "",
-    WS: 'wss://localhost:2348'
+    URL: "http://localhost:8000",
+    WS: 'ws://localhost:2348'
 };
 
 export const API = {
