@@ -1,5 +1,5 @@
 export const SERVER = {
-    URL: "",
+    URL: "http://localhost:8000",
     WS: 'wss://interactive-reporting.ru:2348'
 };
 
