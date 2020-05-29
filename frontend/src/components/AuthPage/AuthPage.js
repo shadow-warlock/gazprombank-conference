@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import AuthForm from "./AuthForm/AuthForm";
 import Logo from "../Logo/Logo";
 import "./AuthPage.css";
-import device from "./../../assets/device.png";
+import femida from "./../../assets/femida.png";
 
 export default class AuthPage extends Component {
     render() {
@@ -23,7 +23,7 @@ export default class AuthPage extends Component {
                         <AuthForm setUser={this.props.setUser}/>
                     </div>
                     <div className={"bank_container"}>
-                        <img src={device} alt={"bank"}/>
+                        <img src={femida} alt={"bank"}/>
                     </div>
                 </div>
                 <div className={"logo_right"}>

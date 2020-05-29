@@ -17,7 +17,8 @@
 }
 
 .auth_page_container img {
-    height: 80vh;
+    margin-top: 100px;
+    height: 100vh;
 }
 
 .bank_container {

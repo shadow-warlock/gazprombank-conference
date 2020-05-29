@@ -1,8 +1,6 @@
 .logo img {
-    /*it is blue color https://codepen.io/sosuke/pen/Pjoqqp*/
-    filter: brightness(0) invert(15%) sepia(98%) saturate(2965%) hue-rotate(206deg) brightness(98%) contrast(78%);
     height: auto;
     width: 100%;
     max-height: 50px;
-    max-width: 245px;
+    max-width: 215px;
 }
