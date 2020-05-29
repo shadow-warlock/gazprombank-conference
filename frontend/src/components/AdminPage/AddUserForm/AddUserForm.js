@@ -52,8 +52,8 @@ export default class AddUserForm extends Component {
 
     render() {
         return (
-            <div className={"pb_20"}>
-                <p className={"uppercase color_white font_size_big pb_20"}>Пользователи</p>
+            <div className={"pb_20 color_blue"}>
+                <p className={"uppercase font_size_big pb_20"}>Пользователи</p>
                 <Button onClick={() => {
                     this.setState({isOpen: !this.state.isOpen})
                 }}>

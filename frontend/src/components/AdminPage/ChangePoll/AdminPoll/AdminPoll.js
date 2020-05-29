@@ -19,11 +19,11 @@ export default class AdminPoll extends Component {
     render() {
         return (
             <div>
-                <p className={"uppercase color_white font_size_big pb_20"}>Опрос</p>
+                <p className={"uppercase color_blue font_size_big pb_20"}>Опрос</p>
                 <div className={"actual_poll"}>
-                    {this.props.poll && <p className={"uppercase color_white_blue  bold pb_20"}>
+                    {this.props.poll && <p className={"uppercase color_blue  bold pb_20"}>
                         Текущий опрос: <span
-                        className={"color_white"}>{this.props.poll.name}</span>
+                        className={"bg_blue color_white"}>{this.props.poll.name}</span>
                     </p>}
                     {this.props.poll &&
                     <FontAwesomeIcon icon={faBan} className={"close_poll_button"} onClick={this.close.bind(this)}/>

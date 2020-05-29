@@ -38,7 +38,6 @@ export default class AuthForm extends Component {
     render() {
         return (
             <div className={"auth_form"}>
-                <p className={"form_header bold"}>Добро пожаловать в прямой эфир</p>
                 <Input
                     value={this.state.code}
                     onChange={this.changeCode}

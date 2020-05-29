@@ -96,7 +96,7 @@ export default class AddPollForm extends Component {
 //
     render() {
         return (
-            <div>
+            <div className={"color_blue"}>
                 <div className={"pb_20"}>
                     <Button onClick={() => {
                         this.setState({isOpen: !this.state.isOpen})
@@ -107,7 +107,7 @@ export default class AddPollForm extends Component {
                 {this.state.isOpen &&
                 <div>
                     <div className={"form_container pb_20"}>
-                        <p className={"color_white"}>Название опроса:</p>
+                        <p>Название опроса:</p>
                         <Input value={this.state.name} onChange={(e) => {
                             this.setState({name: e.target.value});
                         }}/>

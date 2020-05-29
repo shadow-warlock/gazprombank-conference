@@ -20,11 +20,16 @@
         text-align: center;
     }
 
-    .left_container .uppercase {
-        white-space: initial;
+    .left_container .font_size_very_big{
+        font-size: var(--font-size-big);
     }
 
-    .left_container .nowrap{
+    .left_container .uppercase {
+        white-space: initial;
+        text-align: left;
+    }
+
+    .left_container .nowrap {
         white-space: normal;
     }
 
@@ -40,7 +45,7 @@
         white-space: initial;
     }
 
-    .tech_support .font_size_big{
+    .tech_support .font_size_big {
         font-size: var(--default-font-size);
     }
 
@@ -57,12 +62,29 @@
     .conference_title {
         display: block;
         text-align: right;
+        padding-bottom: 30px;
         /*display: flex;*/
         /*flex-direction: column-reverse;*/
     }
 
-    .conference_title .text_right {
+    .conference_title .text_right.flex_right {
+
+    }
+
+    div.padding_side.flex_right.font_size_very_big.color_blue.bold.conference_theme {
+        font-size: calc(1.6 * var(--default-font-size));
+        align-items: initial;
         text-align: left;
+    }
+
+    .materials_and_time {
+        font-size: var(--default-font-size);
+        flex-direction: column-reverse;
+        padding: 30px 0;
+    }
+
+    .materials_and_time > div {
+        margin-bottom: 20px;
     }
 
     .conference_item {
@@ -71,6 +93,10 @@
 
     .conference_item .description_container {
         display: block;
+        text-align: center;
+    }
+
+    .conference .flex_right {
         text-align: center;
     }
 
@@ -87,6 +113,7 @@
     }
 
     .conference_item .time {
+        padding: unset;
         margin-top: 10px;
         width: 100%;
     }
@@ -96,13 +123,13 @@
         padding-bottom: 30px;
     }
 
-    .conference_program_title > div:nth-child(2){
+    .conference_program_title > div:nth-child(2) {
         margin-top: 20px;
         margin-left: 0;
     }
 
 
-    .footer{
+    .footer {
         display: block;
     }
 
@@ -128,6 +155,16 @@
 
     .user_info .form_container {
         display: flex;
+    }
+
+    .footer .tech_support .login_supporters {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .footer .tech_support .login_supporters .supporter {
+        margin-bottom: 20px;
+        flex-direction: row;
     }
 }
 

@@ -7,8 +7,13 @@ body {
     --white-blue: rgb(161, 232, 255);
     --violet: #430d7f;
     --dark-violet: #230668;
+    --light-blue: #d7e5f7;
     --pink: rgb(194, 17, 161);
+    --yellow: #ffcb00;
     --default-font-size: 15px;
+    --font-size-less: calc(0.7 * var(--default-font-size));
+    --font-size-big: calc(1.5 * var(--default-font-size));
+    --font-size-very-big: calc(1.9 * var(--default-font-size));
     --input-width: 300px;
     font-size: var(--default-font-size);
 }
@@ -41,8 +46,16 @@ p {
     color: white;
 }
 
-.color_blue{
+.color_blue {
     color: var(--blue);
+}
+
+.bg_blue {
+    background-color: var(--blue);
+}
+
+.bg_yellow {
+    background-color: var(--yellow);
 }
 
 .font_size_default {
@@ -50,15 +63,15 @@ p {
 }
 
 .font_size_less {
-    font-size: calc(0.7 * var(--default-font-size));
+    font-size: var(--font-size-less);
 }
 
 .font_size_big {
-    font-size: calc(1.5 * var(--default-font-size));
+    font-size: var(--font-size-big);
 }
 
 .font_size_very_big {
-    font-size: calc(2 * var(--default-font-size));
+    font-size: var(--font-size-very-big);
 }
 
 .white_link {

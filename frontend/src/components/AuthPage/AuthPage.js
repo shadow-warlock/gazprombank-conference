@@ -7,14 +7,19 @@ import device from "./../../assets/device.png";
 export default class AuthPage extends Component {
     render() {
         return (
-            <div className={"auth_page color_white"}>
+            <div className={"auth_page color_blue"}>
                 <div className={"auth_page_container"}>
                     <div className={"left_container"}>
-                        <p className={"font_size_very_big uppercase nowrap bold"}>Демонстрация возможностей <br/>
-                            сервиса Банка <br/> «Интерактивная отчетность»</p>
-                        <p className={"bold nowrap"}>Обучающий семинар по работе с сервисом Банка ГПБ (АО)</p>
+                        <p className={"bold font_size_big"}>Конференция</p>
                         <br/>
-                        <p className={"font_size_big color_white uppercase bold"}>28 мая 2020 года 14:00</p>
+                        <p className={"font_size_very_big uppercase nowrap bold color_blue"}>
+                            <span className={"bg_blue color_white"}>
+                                Актуальные вопросы и изменения
+                            </span> законодательства<br/>
+                            Российской Федерации в области валютного регулирования<br/>
+                            и валютного контроля
+                        </p>
+                        <p className={"conference_time font_size_very_big bold uppercase"}>2 июня 2020 года</p>
                         <AuthForm setUser={this.props.setUser}/>
                     </div>
                     <div className={"bank_container"}>

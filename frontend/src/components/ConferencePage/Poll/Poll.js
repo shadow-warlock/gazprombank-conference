@@ -65,9 +65,9 @@ export default class Poll extends Component {
     getPoll() {
         let question = this.findActualQuestion(this.props.poll.questions);
         if (question === null) {
-            return (<p className={"uppercase font_size_big color_white_blue bold"}>Спасибо за ответ!</p>)
+            return (<p className={"uppercase font_size_big bold"}>Спасибо за ответ!</p>)
         } else {
-            return (<><p className={"color_white_blue font_size_big uppercase bold"}>
+            return (<><p className={"font_size_big uppercase bold"}>
                 {question.question}
             </p>
                 <div className={"variants"}>
@@ -90,9 +90,9 @@ export default class Poll extends Component {
 
     render() {
         return (
-            <div className={"poll"}>
-                <p className={"color_white bold font_size_very_big uppercase"}>{this.props.poll.name}{this.state.time !== null &&
-                <span className={"color_white_blue font_size_default"}>Закончится через {this.state.time}...</span>}</p>
+            <div className={"poll color_blue"}>
+                <p className={"bold font_size_very_big uppercase"}>{this.props.poll.name}{this.state.time !== null &&
+                <span className={"font_size_default"}>Закончится через {this.state.time}...</span>}</p>
                 {this.getPoll()}
             </div>
         );

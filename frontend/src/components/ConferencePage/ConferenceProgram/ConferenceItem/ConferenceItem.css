@@ -5,9 +5,11 @@
 }
 
 .conference_item .time {
+    padding: 5px 15px;
+    color: var(--blue);
     border-radius: 30px;
     width: 200px;
-    border: 2px solid var(--white-blue);
+    border: 2px solid var(--yellow);
     text-align: center;
 }
 

@@ -13,7 +13,7 @@ export default class LoaderCSV extends Component {
         return (
             <>
                 <br/>
-                <p className={"uppercase color_white font_size_big pb_20"}>Выгрузка в CSV</p>
+                <p className={"uppercase font_size_big pb_20"}>Выгрузка в CSV</p>
                 <div className={"csv_buttons"}>
                     <Button onClick={() => {
                         this.loadCSV.bind(this)(API.CONFERENCE_POLL_CSV)

@@ -1,11 +1,21 @@
 .user_info{
+    font-weight: bold;
+    color: var(--yellow);
     margin: 10px;
     padding: 30px;
     width: 300px;
-    background-color: var(--dark-violet);
+    background-color: var(--blue);
     border-radius: 10px;
+}
+
+.user_info button{
+    background-color: var(--light-blue);
 }
 
 .user_info .form_container{
     width: initial;
+}
+
+.user_info .form_container > p:nth-child(1){
+    color: white;
 }

@@ -1,7 +1,6 @@
 .auth_page {
-    background: url(/assets/sphere.png) no-repeat, url(/assets/back.png);
+    background-color: var(--light-blue);
     background-size: 500px, auto;
-    background-position: left -250px bottom -200px, center;
     padding-top: 50px;
     padding-left: 100px;
     min-height: 100vh;
@@ -34,4 +33,12 @@
     padding-top: 10px;
     padding-right: 100px;
     padding-bottom: 20px;
+}
+
+.conference_time{
+    background-color: var(--yellow);
+    color: var(--blue);
+    padding: 15px 30px;
+    border-radius: 15px;
+    width: fit-content;
 }

@@ -1,93 +1,116 @@
 export const CONFERENCE_ITEMS = [
     {
-        id: 1,
+        id: 0,
         image: null,
-        name: "Открытие семинара, вступительное слово",
+        name: "Вступительное слово",
         speaker: "",
         description: "",
-        time: "14:00 – 14:20"
+        time: "10:00 – 10:10"
     },
     {
-        id: 2,
-        image: "/assets/speakers/smirnov.png",
+        id: 1,
+        image: "/assets/speakers/paradejenko.jpg",
         name: "",
-        speaker: "Игорь Смирнов",
-        description: "Заместитель начальника Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        speaker: "Парадеженко Виталий Геннадьевич",
+        description: "Исполнительный Вице-Президент",
         time: null
     },
     {
-        id: 3,
-        image: "/assets/speakers/grishin.jpg",
+        id: 1.5,
+        image: null,
+        name: "Обзор изменений Федерального закона от 10.12.2003 № 173-ФЗ «О валютном регулировании и валютном контроле»",
+        speaker: "",
+        description: "",
+        time: "10:10 - 10:45"
+    },
+    {
+        id: 2,
+        image: "/assets/speakers/lopatnikova.jpg",
         name: "",
-        speaker: "Дмитрий Гришин",
-        description: "Начальник Департамента ПАО «Газпром»",
+        speaker: "Лопатникова Элина Вячеславовна",
+        description: "Вице-Президент - начальник Департамента сопровождения валютных операций",
+        time: null
+    },
+    {
+        id: 2.5,
+        image: null,
+        name: "Практические вопросы проведения валютных операций в Банке ГПБ (АО)",
+        speaker: "",
+        description: "",
+        time: "10:45 - 11:15"
+    },
+    {
+        id: 3,
+        image: "/assets/speakers/zetilova.jpg",
+        name: "",
+        speaker: "Зетилова Татьяна Владимировна",
+        description: "Заместитель начальника Департамента сопровождения валютных операций",
         time: null
     },
     {
         id: 5,
-        image: "/assets/speakers/melnikov.jpg",
+        image: "/assets/speakers/putilina.jpg",
         name: "",
-        speaker: "Олег Мельников",
-        description: "Исполнительный Вице-Президент - начальник Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        speaker: "Путилина Юлия Евгеньевна",
+        description: "Начальник Управления сопровождения и контроля валютных операций Департамента сопровождения валютных операций",
         time: null
     },
     {
-        id: 6,
+        id: 5.5,
         image: null,
-        name: "Демонстрация возможностей сервиса Банка ГПБ (АО) «Интерактивная отчетность»",
+        name: "Новые продукты для корпоративных клиентов в рамках валютного контроля. Ответы на вопросы",
         speaker: "",
         description: "",
-        time: "14:20 – 15:10"
+        time: "11:15 – 12:00"
+    },
+    {
+        id: 6,
+        image: "/assets/speakers/lopatnikova.jpg",
+        name: "",
+        speaker: "Лопатникова Элина Вячеславовна",
+        description: "Вице-Президент - начальник Департамента сопровождения валютных операций",
+        time: null
     },
     {
         id: 7,
-        image: "/assets/speakers/ponomareva.jpeg",
+        image: "/assets/speakers/zetilova.jpg",
         name: "",
-        speaker: "Анастасия Пономарева",
-        description: "Директор проекта Управления контроля операций и отчетности Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        speaker: "Зетилова Татьяна Владимировна",
+        description: "Заместитель начальника Департамента сопровождения валютных операций",
         time: null
     },
     {
         id: 8,
-        image: "/assets/speakers/nikiforov.jpg",
+        image: "/assets/speakers/putilina.jpg",
         name: "",
-        speaker: "Антон Никифоров",
-        description: "Исполнительный директор Департамента банковского сопровождения контрактов Банка ГПБ (АО)",
+        speaker: "Путилина Юлия Евгеньевна",
+        description: "Начальник Управления сопровождения и контроля валютных операций Департамента сопровождения валютных операций",
         time: null
     },
     {
         id: 9,
-        image: null,
-        name: "Комментарии спикеров, обмен мнениями",
-        speaker: "",
-        description: "",
-        time: "15:10 – 15:20"
+        image: "/assets/speakers/mironova.jpg",
+        name: "",
+        speaker: "Миронова Екатерина Юрьевна",
+        description: "Заместитель начальника Управления сопровождения и контроля валютных операций Департамента сопровождения валютных операций",
+        time: null
     },
     {
         id: 10,
         image: null,
-        name: "Ответы на вопросы участников семинара, поступившие в чат",
+        name: "Закрытие конференции",
         speaker: "",
         description: "",
-        time: "15:20 – 15:40"
+        time: null
     },
     {
         id: 11,
-        image: null,
-        name: "Закрытие семинара, подведение итогов",
-        speaker: "",
-        description: "",
-        time: "15:40 - 15:50"
-    },
-    {
-        id: 12,
-        image: null,
-        name: "Онлайн опрос по результатам мероприятия",
-        speaker: "",
-        description: "",
-        time: "15:50-16:00"
-    },
-
+        image: "/assets/speakers/lopatnikova.jpg",
+        name: "",
+        speaker: "Лопатникова Элина Вячеславовна",
+        description: "Вице-Президент - начальник Департамента сопровождения валютных операций",
+        time: null
+    }
 ];
 
 export const TECH_SUPPORTERS = [

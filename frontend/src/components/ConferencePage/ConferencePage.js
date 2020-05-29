@@ -11,7 +11,6 @@ import "./ConferencePage.css";
 import {CONFERENCE_ITEMS} from "../../const/mockData";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
-import Button from "../Button/Button";
 import LogoutButton from "../LogoutButton/LogoutButton";
 
 export default class ConferencePage extends Component {
@@ -43,17 +42,27 @@ export default class ConferencePage extends Component {
         return (
             <div className={"conference"}>
                 <div className={"conference_title padding_side"}>
-                    <div>
-                        <Logo/>
-                    </div>
+                    <div><Logo/></div>
                     <LogoutButton/>
                 </div>
-                <div className={"padding_side"}>
-                    <ConferenceProgram items={CONFERENCE_ITEMS}/>
+                <div className={"padding_side flex_right font_size_very_big color_blue bold conference_theme"}>
+                    <p className={"bg_yellow"}>Онлайн-конференция</p>
+                    <br/>
+                    <p className={"uppercase"}><span
+                        className={"bg_blue color_white"}>Актуальные вопросы и изменения</span> законодательства<br/>
+                        Российской Федерации в области валютного регулирования<br/>
+                        и валютного контроля</p>
+                    <div className={"materials_and_time"}>
+                        <div>Материалы конференции</div>
+                        <div>2 июня 2020 года 10:00</div>
+                    </div>
                 </div>
                 <div className={"broadcast_chat_container padding_side"}>
                     <Broadcast url={this.state.conference.url}/>
                     <Chat user={this.props.user} chat={this.state.conference.chat}/>
+                </div>
+                <div className={"padding_side"}>
+                    <ConferenceProgram items={CONFERENCE_ITEMS}/>
                 </div>
                 <div className={"padding_side"}>
                     {this.state.conference.poll &&

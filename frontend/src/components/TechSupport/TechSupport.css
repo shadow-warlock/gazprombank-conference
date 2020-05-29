@@ -3,10 +3,21 @@
     justify-content: space-between;
 }
 
-.tech_support > p {
-    padding-bottom: 5px;
+.tech_support .supporter {
+    display: flex;
+    justify-content: space-between;
 }
 
-.login_supporters > p{
-    padding-top: 10px;
+.login_supporters > p {
+    justify-content: space-between;
+    display: flex;
+}
+
+.login_supporters {
+    margin-top: 30px;
+}
+
+.login_supporters a {
+    text-decoration: none;
+    color: var(--blue);
 }

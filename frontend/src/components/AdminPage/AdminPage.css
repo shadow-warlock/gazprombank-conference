@@ -1,5 +1,5 @@
 .admin_page {
-    background-color: var(--blue);
+    background-color: var(--light-blue);
     /*background-color: var(--violet);*/
 }
 
@@ -8,7 +8,6 @@
 }
 
 .form_container {
-    color: white;
     padding-top: 20px;
     width: 500px;
     display: flex;

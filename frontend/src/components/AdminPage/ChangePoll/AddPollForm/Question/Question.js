@@ -8,9 +8,9 @@ class Question extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={"color_blue"}>
                 <div className={"form_container"}>
-                    <p className={"color_white"}>Вопрос: </p>
+                    <p>Вопрос: </p>
                     <div>
                         <Input value={this.props.name} onChange={(e) => {
                             this.props.inputQuestion(this.props.index, e.target.value);
@@ -21,7 +21,7 @@ class Question extends React.Component {
                     </div>
                 </div>
                 <div className={"form_container pb_20"}>
-                    <p className={"color_white"}>{this.props.question.variants ? "Варианты ответа: " : "Без вариантов ответа"}</p>
+                    <p>{this.props.question.variants ? "Варианты ответа: " : "Без вариантов ответа"}</p>
                     <div
                         className={"question_answers_container"}>{this.props.question.variants ? this.props.question.variants.map((variants, index) => {
                         return <div key={index} className={"not_use_this_please"}>
