@@ -1,6 +1,6 @@
 export const SERVER = {
-    URL: "http://localhost:8000",
-    WS: 'ws://localhost:2348'
+    URL: "",
+    WS: 'ws://currency-control.ru:2350'
 };
 
 export const API = {
