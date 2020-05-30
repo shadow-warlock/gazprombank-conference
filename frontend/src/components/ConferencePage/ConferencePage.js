@@ -53,7 +53,9 @@ export default class ConferencePage extends Component {
                         Российской Федерации в области валютного регулирования<br/>
                         и валютного контроля</p>
                     <div className={"materials_and_time"}>
-                        <div>Материалы конференции</div>
+                        <div onClick={()=>{window.open('/assets/materials.zip', '_blank');}}>
+                            Материалы конференции
+                        </div>
                         <div>2 июня 2020 года 10:00</div>
                     </div>
                 </div>
