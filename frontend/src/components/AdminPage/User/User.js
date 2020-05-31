@@ -39,7 +39,7 @@ export default class User extends Component {
                     <div className={"form_container"}><p>Телефон:</p><p>{this.props.user.phone ?? "Не задан"}</p></div>
                     <div className={"form_container"}><p>Код:</p><p>{this.props.user.code}</p></div>
                     <div className={"form_container"}><p>Присоединился:</p>
-                        {this.props.user.joinTime ? <Moment format={"D.mm.Y (H:m)"} date={this.props.user.joinTime}/> : <p>нет</p>}
+                        {this.props.user.joinTime ? <Moment format={"D.MM.Y (H:m)"} date={this.props.user.joinTime}/> : <p>нет</p>}
                     </div>
                 </div>
                 <div className={"pb_20"}>
