@@ -16,7 +16,7 @@ class SecurityController extends AbstractController {
          * @var User $user
          */
         $user = $this->getUser();
-        $conferenceStartTime = 1590652800;
+        $conferenceStartTime = 1591084800;
         if(time() > $conferenceStartTime) {
             if(is_null($user->getJoinTime())) {
                 $user->setJoinTime(new DateTime());
