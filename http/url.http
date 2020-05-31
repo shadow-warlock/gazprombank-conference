@@ -1,0 +1,17 @@
+POST http://localhost:8000/api/seturl
+Content-Type: application/json
+
+{
+  "url": "https://facecast.net/v/lrsp2q"
+}
+
+###
+
+POST http://currency-control.ru/api/seturl
+Content-Type: application/json
+
+{
+  "url": "https://facecast.net/v/lrsp2q"
+}
+
+###
