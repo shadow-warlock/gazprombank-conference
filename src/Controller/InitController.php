@@ -43,12 +43,13 @@ class InitController extends AbstractController {
     }
 
     /**
-     * @Route("/api/seturl", name="set_url", methods={"GET"})
+     * @Route("/api/seturl", name="set_url", methods={"POST"})
      */
-    public function setConferenceUrl() {
+    public function setConferenceUrl(Request $request) {
+        $url = json_decode($request->getContent(), true)["url"];
         $em = $this->getDoctrine()->getManager();
         $conference = $em->getRepository(Conference::class)->findAll()[0];
-        $conference->setUrl(self::URL);
+        $conference->setUrl($url);
         $em->persist($conference);
         $em->flush();
         return $this->json($conference->getUrl());

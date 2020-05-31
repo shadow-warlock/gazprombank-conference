@@ -4,7 +4,6 @@ import {API, AXIOS_CONFIG} from "../../../const/const";
 import Button from "../../Button/Button";
 import Input from "../../Input/Input";
 import "./AuthForm.css";
-import {TECH_SUPPORTERS} from "../../../const/mockData";
 import TechSupport from "../../TechSupport/TechSupport";
 
 export default class AuthForm extends Component {
@@ -44,7 +43,7 @@ export default class AuthForm extends Component {
                     type={"number"}
                     placeholder={"Пароль"}/>
                 <Button onClick={this.sendAuthFrom}>Войти</Button>
-                <p className={"color_white_blue"}>{this.state.error}</p>
+                <p className={"bg_yellow color_blue"}>{this.state.error}</p>
                 <br/>
                 <TechSupport/>
             </div>
