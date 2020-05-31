@@ -3,6 +3,8 @@ export const SERVER = {
     WS: 'ws://localhost:2348'
 };
 
+export const TEST = "test";
+
 export const API = {
     SESSION: SERVER.URL + "/api/session",
     CONFERENCE: SERVER.URL + "/api/conference",
