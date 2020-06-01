@@ -26,5 +26,7 @@ class WebSocketSender {
         $instance = stream_socket_client("tcp://127.0.0.1:2349");
         $json = $this->serializer->toJSON(["type" => $type, "data" => $data]);
         fwrite($instance, $json);
+        $instance = stream_socket_client("tcp://127.0.0.1:2351");
+        fwrite($instance, $json);
     }
 }

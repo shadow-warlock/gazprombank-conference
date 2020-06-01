@@ -1,6 +1,7 @@
 export const SERVER = {
     URL: "",
-    WS: 'ws://currency-control.ru:2350'
+    WS1: 'ws://currency-control.ru:2350',
+    WS2: 'ws://currency-control.ru:2352',
 };
 
 export const API = {
