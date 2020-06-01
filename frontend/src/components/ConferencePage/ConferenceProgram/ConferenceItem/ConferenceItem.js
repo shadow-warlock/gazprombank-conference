@@ -13,7 +13,8 @@ export default class ConferenceItem extends Component {
                         </div>}
                     </div>
                     <div>
-                        <p className={"color_blue font_size_big uppercase bold"}>{this.props.item.name}</p>
+                        <p className={"color_blue font_size_big uppercase bold"}>{Array.isArray(this.props.item.name) ? this.props.item.name.map(name =>
+                            <p>{name}</p>) : this.props.item.name}</p>
                         <p className={"font_size_big bold"}>{this.props.item.speaker}</p>
                         <p>{this.props.item.description}</p>
                     </div>
