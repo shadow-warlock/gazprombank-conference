@@ -17,7 +17,8 @@ export default class ConferencePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            conference: null
+            conference: null,
+            failWS1: false
         }
         this.timer = new Timer();
     }
@@ -74,7 +75,9 @@ export default class ConferencePage extends Component {
                 <div className={"padding_side"}>
                     <Footer/>
                 </div>
-                <Websocket url={SERVER.WS}
+                <Websocket url={this.state.failWS1 ? SERVER.WS2 : SERVER.WS1}
+                           debug={true}
+                           onClose={()=>{this.state.failWS1 ? console.log("Совсем пизда") : this.setState({failWS1: true})}}
                            onMessage={this.handleData.bind(this)}/>
             </div>
         );
