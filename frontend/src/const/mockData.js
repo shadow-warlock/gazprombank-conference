@@ -72,7 +72,7 @@ export const CONFERENCE_ITEMS = [
         name: "Сессия вопросов и ответов",
         speaker: "",
         description: "",
-        time: "11:15 – 12:00"
+        time: "11:20 – 12:00"
     },
     {
         id: 8,
