@@ -1,3 +1,27 @@
 {
-  "hello": "Петуч, блять!"
+  "hello": "Петуч, блять!",
+
+  "password": "пароль",
+  "sign_id": "войти",
+  "conference": "онлайн-конференция",
+  "restart": "перезапуск",
+  "air_transport": "воздушного транспорта",
+  "technical_support": "Техническая поддержка",
+  "svetlana_pimenova": "Светлана Пименова",
+  "valeria_burskaya": "Валерия Бурская",
+  "nikita_kachaev": "Никита Качаев",
+  "margarita_gukasova": "Маргарита Гукасова",
+
+  "agenda": "программа",
+  "broadcast": "Трансляция",
+  "chat": "Чат",
+  "conference_partner": "партнер конференции",
+  "organizer": "Организатор:",
+  "ato_events": "ATO Events",
+  "more_than": "Более 340 мероприятий, 41 200 + делегатов, 23 года на рынке",
+  "personal_data_policy": "Политика обработки персональных данных",
+  "privacy_policy": "Политика конфиденциальности",
+
+  "thank_you": "спасибо",
+  "participation": "за ваше участие!"
 }
