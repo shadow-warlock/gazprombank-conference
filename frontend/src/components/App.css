@@ -3,6 +3,7 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    --green-blue: #24767c;
     --blue: #1c58a5;
     --white-blue: rgb(161, 232, 255);
     --violet: #430d7f;
@@ -40,6 +41,10 @@ p {
 
 .color_white_blue {
     color: var(--white-blue);
+}
+
+.color_green_blue{
+    color: var(--green-blue);
 }
 
 .color_white {
