@@ -16,6 +16,10 @@
     justify-content: space-between;
 }
 
+.auth_page_container > div:nth-child(2) {
+    margin-right: 30px;
+}
+
 .auth_page_container img {
     margin-top: 100px;
     height: 100vh;
@@ -35,7 +39,7 @@
     padding-bottom: 20px;
 }
 
-.conference_time{
+.conference_time {
     background-color: var(--yellow);
     color: var(--blue);
     padding: 15px 30px;
