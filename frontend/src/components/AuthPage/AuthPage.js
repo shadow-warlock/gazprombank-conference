@@ -7,23 +7,17 @@ import femida from "./../../assets/femida.png";
 export default class AuthPage extends Component {
     render() {
         return (
-            <div className={"auth_page color_blue"}>
+            <div className={"auth_page color_white"}>
                 <div className={"auth_page_container"}>
                     <div className={"left_container"}>
                         <p className={"bold font_size_big uppercase"}>Онлайн-конференция</p>
                         <br/>
-                        <p className={"font_size_very_big uppercase nowrap bold color_blue"}>
-                            <span className={"bg_blue color_white"}>
-                                Актуальные вопросы и изменения
-                            </span> законодательства<br/>
-                            Российской Федерации в области валютного регулирования<br/>
-                            и валютного контроля
+                        <p className={"font_size_very_big uppercase nowrap bold color_white"}>
+                            Перезапуск воздушного транспорта
                         </p>
-                        <p className={"conference_time font_size_very_big bold uppercase"}>2 июня 2020 года</p>
+                        <p className={"font_size_very_big bold uppercase"}>16 июля 2020 года</p>
+                        <p className={"bold uppercase"}>11:00 - 16:00 (GMT+3, Москва)</p>
                         <AuthForm setUser={this.props.setUser}/>
-                    </div>
-                    <div className={"bank_container"}>
-                        <img src={femida} alt={"bank"}/>
                     </div>
                 </div>
                 <div className={"logo_right"}>

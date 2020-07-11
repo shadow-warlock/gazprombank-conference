@@ -37,13 +37,15 @@ export default class AuthForm extends Component {
     render() {
         return (
             <div className={"auth_form"}>
-                <Input
-                    value={this.state.code}
-                    onChange={this.changeCode}
-                    type={"number"}
-                    placeholder={"Пароль"}/>
-                <Button onClick={this.sendAuthFrom}>Войти</Button>
-                <p className={"bg_yellow color_blue"}>{this.state.error}</p>
+                <div className={"form_div"}>
+                    <Input
+                        value={this.state.code}
+                        onChange={this.changeCode}
+                        type={"number"}
+                        placeholder={"Пароль"}/>
+                    <Button onClick={this.sendAuthFrom}>Войти</Button>
+                </div>
+                <p>{this.state.error}</p>
                 <br/>
                 <TechSupport/>
             </div>

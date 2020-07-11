@@ -8,6 +8,10 @@
     justify-content: space-between;
 }
 
+.tech_support .supporter p{
+    margin-right: 20px;
+}
+
 .login_supporters > p {
     justify-content: space-between;
     display: flex;
@@ -19,5 +23,5 @@
 
 .login_supporters a {
     text-decoration: none;
-    color: var(--blue);
+    color: white;
 }
