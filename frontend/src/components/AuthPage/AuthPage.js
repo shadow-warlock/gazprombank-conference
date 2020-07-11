@@ -10,7 +10,7 @@ export default class AuthPage extends Component {
             <div className={"auth_page color_blue"}>
                 <div className={"auth_page_container"}>
                     <div className={"left_container"}>
-                        <p className={"bold font_size_big"}>Конференция</p>
+                        <p className={"bold font_size_big uppercase"}>Онлайн-конференция</p>
                         <br/>
                         <p className={"font_size_very_big uppercase nowrap bold color_blue"}>
                             <span className={"bg_blue color_white"}>
