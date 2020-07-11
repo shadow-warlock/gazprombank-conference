@@ -15,6 +15,9 @@ export default class TechSupport extends Component {
                                 <p>
                                     <a href={"tel:" + techSupporter.phone}>{techSupporter.phone}</a>
                                 </p>
+                                <p className={"mail"}>
+                                    <a href={"mailto:" + techSupporter.email}>{techSupporter.email}</a>
+                                </p>
                             </div>
                         )}
                     </div>
