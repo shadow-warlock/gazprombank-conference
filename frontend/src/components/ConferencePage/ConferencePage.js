@@ -12,6 +12,7 @@ import {CONFERENCE_ITEMS} from "../../const/mockData";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
 import LogoutButton from "../LogoutButton/LogoutButton";
+import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -43,22 +44,24 @@ export default class ConferencePage extends Component {
             <div className={"conference"}>
                 <div className={"conference_title padding_side"}>
                     <div><Logo/></div>
-                    <LogoutButton/>
+                    <ChangeLocaleButton/>
                 </div>
-                <div className={"padding_side flex_right font_size_very_big color_blue bold conference_theme"}>
-                    <p className={"bg_yellow"}>Онлайн-конференция</p>
+                <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
+                    <p className={"uppercase"}>Онлайн-конференция</p>
                     <br/>
-                    <p className={"uppercase"}><span
-                        className={"bg_blue color_white"}>Актуальные вопросы и изменения</span> законодательства<br/>
-                        Российской Федерации в области валютного регулирования<br/>
-                        и валютного контроля</p>
+                    <p className={"uppercase large_title"}>Перезапуск<br/>воздушного транспорта</p>
                     <div className={"materials_and_time"}>
-                        <div onClick={() => {
-                            window.open('/assets/materials.zip', '_blank');
-                        }}>
-                            Материалы конференции
+                        <div>
+                            <div onClick={() => {
+                                window.open('/assets/materials.zip', '_blank');
+                            }}>
+                                Программа
+                            </div>
                         </div>
-                        <div>2 июня 2020 года 10:00</div>
+                        <div className={"uppercase"}>
+                            <div>16 июля 2020 года</div>
+                            <div>11:00 - 16:00 (GMT+3, Москва)</div>
+                        </div>
                     </div>
                 </div>
                 <div className={"broadcast_chat_container padding_side"}>

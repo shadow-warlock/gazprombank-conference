@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import AuthForm from "./AuthForm/AuthForm";
 import Logo from "../Logo/Logo";
 import "./AuthPage.css";
-import femida from "./../../assets/femida.png";
+import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 
 export default class AuthPage extends Component {
     render() {
@@ -18,6 +18,9 @@ export default class AuthPage extends Component {
                         <p className={"font_size_very_big bold uppercase"}>16 июля 2020 года</p>
                         <p className={"bold uppercase"}>11:00 - 16:00 (GMT+3, Москва)</p>
                         <AuthForm setUser={this.props.setUser}/>
+                    </div>
+                    <div>
+                        <ChangeLocaleButton/>
                     </div>
                 </div>
                 <div className={"logo_right"}>

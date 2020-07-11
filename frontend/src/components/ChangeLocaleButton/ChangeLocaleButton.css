@@ -1,0 +1,9 @@
+.change_locale_button {
+    color: #184b50;
+    display: flex;
+}
+
+.change_locale_button div{
+    margin: 3px;
+    cursor: pointer;
+}
