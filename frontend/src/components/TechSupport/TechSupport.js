@@ -7,11 +7,11 @@ export default class TechSupport extends Component {
         return (
             <div className={"tech_support"}>
                 <div>
-                    <p>Техническая поддержка</p>
+                    <p className={"bold uppercase"}>Техническая поддержка</p>
                     <div className={"login_supporters"}>
                         {TECH_SUPPORTERS.map(
                             (techSupporter) => <div key={techSupporter.phone} className={"supporter"}>
-                                <p>{techSupporter.name}</p>
+                                <p className={"bold"}>{techSupporter.name}</p>
                                 <p>
                                     <a href={"tel:" + techSupporter.phone}>{techSupporter.phone}</a>
                                 </p>
