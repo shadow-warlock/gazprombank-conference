@@ -1,8 +1,13 @@
 .auth_form {
     display: flex;
     flex-direction: column;
-    padding: 100px 30px 30px;
-    align-items: center;
+    padding: 100px 0 30px;
+}
+
+.auth_form .form_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .form_header {
