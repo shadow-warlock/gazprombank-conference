@@ -3,12 +3,16 @@
     justify-content: space-between;
 }
 
+.tech_support .mail {
+    display: none;
+}
+
 .tech_support .supporter {
     display: flex;
     justify-content: space-between;
 }
 
-.tech_support .supporter p{
+.tech_support .supporter p {
     margin-right: 20px;
 }
 

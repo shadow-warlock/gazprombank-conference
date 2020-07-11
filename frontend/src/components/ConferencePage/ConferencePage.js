@@ -53,7 +53,9 @@ export default class ConferencePage extends Component {
                         Российской Федерации в области валютного регулирования<br/>
                         и валютного контроля</p>
                     <div className={"materials_and_time"}>
-                        <div onClick={()=>{window.open('/assets/materials.zip', '_blank');}}>
+                        <div onClick={() => {
+                            window.open('/assets/materials.zip', '_blank');
+                        }}>
                             Материалы конференции
                         </div>
                         <div>2 июня 2020 года 10:00</div>
@@ -64,16 +66,11 @@ export default class ConferencePage extends Component {
                     <Chat user={this.props.user} chat={this.state.conference.chat}/>
                 </div>
                 <div className={"padding_side"}>
-                    <ConferenceProgram items={CONFERENCE_ITEMS}/>
-                </div>
-                <div className={"padding_side"}>
                     {this.state.conference.poll &&
                     <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
                           poll={this.state.conference.poll}/>}
                 </div>
-                <div className={"padding_side"}>
-                    <Footer/>
-                </div>
+                <Footer/>
                 <Websocket url={SERVER.WS}
                            onMessage={this.handleData.bind(this)}/>
             </div>
