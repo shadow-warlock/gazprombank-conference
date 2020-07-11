@@ -1,0 +1,27 @@
+{
+  "hello": "Syka, blat!",
+  "password": "password",
+  "sign_id": "sign in",
+  "conference": "online conference",
+  "restart": "restart",
+  "air_transport": "air transport",
+  "technical_support": "technical support",
+  "svetlana_pimenova": "Svetlana Pimenova",
+  "valeria_burskaya": "Valeria Burskaya",
+  "nikita_kachaev": "Nikita Kachaev",
+  "margarita_gukasova": "Nikita Kachaev",
+
+  "agenda": "agenda",
+  "broadcast": "Broadcast",
+  "chat": "Chat",
+  "conference_partner": "conference partner",
+  "organizer": "Organized by",
+  "ato_events": "ATO Events",
+  "more_than": "340+ events, 41 200 + attenders, over 23 years experience",
+  "personal_data_policy": "Personal Data Processing Policy",
+  "privacy_policy": "Privacy Policy",
+
+  "thank_you": "thank you",
+  "participation": "for your participation!"
+
+}
