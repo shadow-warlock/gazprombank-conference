@@ -13,6 +13,7 @@ import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
 import {LanguageContext} from "../App";
+import {conferenceDate, conferenceTime} from "../../const/mockData";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -66,14 +67,10 @@ export default class ConferencePage extends Component {
                         </div>
                         <div className={"uppercase"}>
                             <div>
-                                <LanguageContext.Consumer>
-                                    {value =>
-                                        <Moment format="D MMM YYYY" date={1594926995000} locale={value.lang}/>
-                                    }
-                                </LanguageContext.Consumer>
+                                <Moment format="D MMM YYYY" date={conferenceDate}/>
                             </div>
                             <div>
-                                11:00 - 16:00 (GMT+3, <FormattedMessage id={"moscow"}/>)
+                                {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
                             </div>
                         </div>
                     </div>
