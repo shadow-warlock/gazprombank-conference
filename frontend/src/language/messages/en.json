@@ -1,10 +1,10 @@
 {
-  "hello": "Syka, blat!",
   "password": "password",
-  "sign_id": "sign in",
+  "sign_in": "sign in",
   "conference": "online conference",
-  "restart": "restart",
+  "restart": "restart ",
   "air_transport": "air transport",
+  "moscow": "moscow",
   "technical_support": "technical support",
   "svetlana_pimenova": "Svetlana Pimenova",
   "valeria_burskaya": "Valeria Burskaya",

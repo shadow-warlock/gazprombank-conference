@@ -1,11 +1,10 @@
 {
-  "hello": "Петуч, блять!",
-
   "password": "пароль",
-  "sign_id": "войти",
+  "sign_in": "войти",
   "conference": "онлайн-конференция",
   "restart": "перезапуск",
   "air_transport": "воздушного транспорта",
+  "moscow": "москва",
   "technical_support": "Техническая поддержка",
   "svetlana_pimenova": "Светлана Пименова",
   "valeria_burskaya": "Валерия Бурская",

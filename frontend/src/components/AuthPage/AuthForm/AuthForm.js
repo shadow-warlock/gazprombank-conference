@@ -5,8 +5,9 @@ import Button from "../../Button/Button";
 import Input from "../../Input/Input";
 import "./AuthForm.css";
 import TechSupport from "../../TechSupport/TechSupport";
+import {FormattedMessage, injectIntl} from "react-intl";
 
-export default class AuthForm extends Component {
+class AuthForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -42,8 +43,10 @@ export default class AuthForm extends Component {
                         value={this.state.code}
                         onChange={this.changeCode}
                         type={"number"}
-                        placeholder={"Пароль"}/>
-                    <Button onClick={this.sendAuthFrom}>Войти</Button>
+                        placeholder={this.props.intl.formatMessage({id:"password"})}/>
+                    <Button onClick={this.sendAuthFrom}>
+                        <FormattedMessage id={"sign_in"}/>
+                    </Button>
                 </div>
                 <p>{this.state.error}</p>
                 <br/>
@@ -52,3 +55,5 @@ export default class AuthForm extends Component {
         );
     }
 }
+
+export default injectIntl(AuthForm);
