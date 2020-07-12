@@ -2,7 +2,7 @@
     width: 400px;
     display: flex;
     justify-content: space-between;
-    border-left: 1px solid var(--blue);
+    border-left: 1px solid var(--green-blue);
     /*padding-top: 5px;*/
     padding-right: 10px;
     margin-top: 20px;
@@ -21,7 +21,7 @@
 }
 
 .like_button:hover {
-    color: var(--blue);
+    color: var(--green-blue);
     cursor: pointer;
 }
 
@@ -52,10 +52,10 @@
 }
 
 .reply_button:hover{
-    color: var(--dark-violet);
+    color: var(--green-blue-dark);
 }
 
 .reply_to:hover{
     cursor: pointer;
-    color: var(--dark-violet);
+    color: var(--green-blue-dark);
 }
