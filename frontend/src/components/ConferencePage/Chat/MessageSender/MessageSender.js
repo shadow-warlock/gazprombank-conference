@@ -5,9 +5,10 @@ import {faCommentDots, faTimes} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../../const/const";
 import "./MessageSender.css";
+import {FormattedMessage, injectIntl} from "react-intl";
 
 
-export default class MessageSender extends Component {
+class MessageSender extends Component {
 
     constructor(props) {
         super(props);
@@ -35,7 +36,7 @@ export default class MessageSender extends Component {
 
     getReplyElement() {
         if (this.props.reply) {
-            let text = "Ответ для " + this.props.reply.user.name + " " + this.props.reply.user.surname;
+            let text = this.props.intl.formatMessage({id:"reply_to"}) + this.props.reply.user.name + " " + this.props.reply.user.surname;
             return (
                 <>
                     {text} <FontAwesomeIcon onClick={()=>{this.props.deleteReply();}} className={"cancel_reply"} icon={faTimes}/>
@@ -43,7 +44,7 @@ export default class MessageSender extends Component {
             );
         } else {
             return (
-                <>Напишите, пожалуйста, Ваш вопрос</>
+                <FormattedMessage id={"your_question"}/>
             )
         }
     }
@@ -61,9 +62,10 @@ export default class MessageSender extends Component {
                     onChange={(e) => {
                         this.setState({message: e.target.value});
                     }}
-                    placeholder={"Введите сообщение"}/>
+                    placeholder={this.props.intl.formatMessage({id:"input_message"})}/>
                 <FontAwesomeIcon onClick={this.send.bind(this)} className={"send_button"} icon={faCommentDots}/>
             </div>
         );
     }
 }
+export default injectIntl(MessageSender);

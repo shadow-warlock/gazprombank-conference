@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import ConferenceProgram from "./ConferenceProgram/ConferenceProgram";
 import Broadcast from "./Broadcast/Broadcast";
 import Chat from "./Chat/Chat";
 import Poll from "./Poll/Poll";
@@ -8,11 +7,14 @@ import axios from "axios";
 import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
 import Websocket from "react-websocket";
 import "./ConferencePage.css";
-import {CONFERENCE_ITEMS} from "../../const/mockData";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
-import LogoutButton from "../LogoutButton/LogoutButton";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
+import {FormattedDate, FormattedMessage} from "react-intl";
+import {LanguageContext} from "../App";
+import Moment from 'react-moment';
+import 'moment-timezone';
+import 'moment/locale/ru';
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -47,20 +49,34 @@ export default class ConferencePage extends Component {
                     <ChangeLocaleButton/>
                 </div>
                 <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
-                    <p className={"uppercase"}>Онлайн-конференция</p>
+                    <p className={"uppercase"}>
+                        <FormattedMessage id={"conference"}/>
+                    </p>
                     <br/>
-                    <p className={"uppercase large_title"}>Перезапуск<br/>воздушного транспорта</p>
+                    <p className={"uppercase large_title"}>
+                        <FormattedMessage id={"restart"}/>
+                        <br/>
+                        <FormattedMessage id={"air_transport"}/>
+                    </p>
                     <div className={"materials_and_time"}>
                         <div>
                             <div onClick={() => {
                                 window.open('/assets/materials.zip', '_blank');
                             }}>
-                                Программа
+                                <FormattedMessage id={"agenda"}/>
                             </div>
                         </div>
                         <div className={"uppercase"}>
-                            <div>16 июля 2020 года</div>
-                            <div>11:00 - 16:00 (GMT+3, Москва)</div>
+                            <div>
+                                <LanguageContext.Consumer>
+                                    {value =>
+                                        <Moment date={1594926995000} locale={value.lang}/>
+                                    }
+                                </LanguageContext.Consumer>
+                            </div>
+                            <div>
+                                11:00 - 16:00 (GMT+3, <FormattedMessage id={"moscow"}/>)
+                            </div>
                         </div>
                     </div>
                 </div>
