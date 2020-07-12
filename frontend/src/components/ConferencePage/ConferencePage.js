@@ -10,11 +10,8 @@ import "./ConferencePage.css";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
-import {FormattedDate, FormattedMessage} from "react-intl";
-import {LanguageContext} from "../App";
+import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
-import 'moment-timezone';
-import 'moment/locale/ru';
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -68,11 +65,7 @@ export default class ConferencePage extends Component {
                         </div>
                         <div className={"uppercase"}>
                             <div>
-                                <LanguageContext.Consumer>
-                                    {value =>
-                                        <Moment date={1594926995000} locale={value.lang}/>
-                                    }
-                                </LanguageContext.Consumer>
+                                <Moment fromNow ago date={1594926995000}/>
                             </div>
                             <div>
                                 11:00 - 16:00 (GMT+3, <FormattedMessage id={"moscow"}/>)

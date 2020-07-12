@@ -3,8 +3,6 @@ import "./Message.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart} from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
-import 'moment-timezone';
-import 'moment/locale/ru';
 import axios from "axios";
 import {API, AXIOS_CONFIG, ROLE} from "../../../../const/const";
 import {FormattedMessage, injectIntl} from "react-intl";
@@ -92,11 +90,7 @@ class Message extends Component {
                     <p onClick={this.removeMessage} className={"reply_button color_green_blue"}>
                         <FormattedMessage id={"delete"}/>
                     </p>}
-                    <LanguageContext.Consumer>
-                        {value =>
-                            <Moment className={"nowrap color_green_blue"} fromNow ago date={this.props.message.time} locale={value.lang}/>
-                        }
-                    </LanguageContext.Consumer>
+                    <Moment className={"nowrap color_green_blue"} fromNow ago date={this.props.message.time}/>
                 </div>
             </div>
         );

@@ -6,9 +6,11 @@ import ConferencePage from "./ConferencePage/ConferencePage";
 import "./App.css";
 import AdminPage from "./AdminPage/AdminPage";
 import "./mobile.css";
-import {FormattedMessage, IntlProvider} from "react-intl";
+import {IntlProvider} from "react-intl";
 import {changeLanguage, getLanguage, getMessages} from "../language/language";
-import Button from "./Button/Button";
+import Moment from "react-moment";
+import 'moment-timezone';
+import 'moment/locale/ru';
 
 export const LanguageContext = React.createContext({"change": ()=>{}, "lang": "ru"});
 
@@ -31,6 +33,7 @@ export default class App extends Component{
     }
 
     render(){
+        Moment.globalLocale = this.state.locale
         return (
             <LanguageContext.Provider value={{"change": this.changeLanguage.bind(this), "lang": this.state.locale}}>
                 <IntlProvider locale={this.state.locale} messages={this.state.messages}>
