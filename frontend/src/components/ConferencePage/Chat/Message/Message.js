@@ -7,8 +7,10 @@ import 'moment-timezone';
 import 'moment/locale/ru';
 import axios from "axios";
 import {API, AXIOS_CONFIG, ROLE} from "../../../../const/const";
+import {FormattedMessage, injectIntl} from "react-intl";
+import {LanguageContext} from "../../../App";
 
-export default class Message extends Component {
+class Message extends Component {
 
     constructor(props) {
         super(props);
@@ -52,7 +54,7 @@ export default class Message extends Component {
     }
 
     removeMessage() {
-        if (window.confirm("Вы хотите удалить сообщение?")) {
+        if (window.confirm(this.props.intl.formatMessage({id:"delete_confirm"}))) {
             axios.delete(API.MESSAGE(this.props.message.id), AXIOS_CONFIG).catch(e => console.log(e));
         }
     }
@@ -84,15 +86,21 @@ export default class Message extends Component {
                     <p onClick={() => {
                         this.props.onReply(this.props.message)
                     }} className={"reply_button"}>
-                        Ответить
+                        <FormattedMessage id={"reply"}/>
                     </p>
                     {this.props.user.role === ROLE.ADMIN &&
                     <p onClick={this.removeMessage} className={"reply_button"}>
-                        Удалить
+                        <FormattedMessage id={"delete"}/>
                     </p>}
-                    <Moment className={"nowrap color_blue"} fromNow ago date={this.props.message.time} locale={"ru"}/>
+                    <LanguageContext.Consumer>
+                        {value =>
+                            <Moment className={"nowrap color_blue"} fromNow ago date={this.props.message.time} locale={value.lang}/>
+                        }
+                    </LanguageContext.Consumer>
                 </div>
             </div>
         );
     }
 }
+
+export default injectIntl(Message)

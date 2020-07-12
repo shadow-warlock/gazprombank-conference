@@ -26,9 +26,9 @@ export default class AuthPage extends Component {
                                 month="long"
                                 day="2-digit"/>
                         </p>
-                        <p className={"bold uppercase"}>11:00 - 16:00 (GMT+3,
-                            <FormattedMessage id={"moscow"}/>
-                        )</p>
+                        <p className={"bold uppercase"}>
+                            11:00 - 16:00 (GMT+3, <FormattedMessage id={"moscow"}/>)
+                        </p>
                         <AuthForm setUser={this.props.setUser}/>
                     </div>
                     <div>

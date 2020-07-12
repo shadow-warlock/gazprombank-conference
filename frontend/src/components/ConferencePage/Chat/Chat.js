@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Message from "./Message/Message";
 import "./Chat.css";
 import MessageSender from "./MessageSender/MessageSender";
+import {FormattedMessage} from "react-intl";
 
 export default class Chat extends Component {
 
@@ -15,7 +16,9 @@ export default class Chat extends Component {
     render() {
         return (
             <div className={"chat"}>
-                <p className={"bold font_size_big text_center"}>Чат</p>
+                <p className={"bold font_size_big text_center"}>
+                    <FormattedMessage id={"chat"}/>
+                </p>
                 <MessageSender
                     deleteReply={()=>{this.setState({reply: null})}}
                     reply={this.state.reply}
