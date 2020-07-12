@@ -13,7 +13,7 @@
 }
 
 .chat_body {
-    padding: 5px;
+    padding: 15px;
     background-color: var(--light-green);
-    opacity: 0.75;
+    opacity: 0.85;
 }
