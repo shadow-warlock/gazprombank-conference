@@ -70,7 +70,7 @@ export default class ConferencePage extends Component {
                             <div>
                                 <LanguageContext.Consumer>
                                     {value =>
-                                        <Moment date={1594926995000} locale={value.lang}/>
+                                        <Moment format="D MMM YYYY" date={1594926995000} locale={value.lang}/>
                                     }
                                 </LanguageContext.Consumer>
                             </div>
