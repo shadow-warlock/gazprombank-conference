@@ -5,7 +5,7 @@ export default class Broadcast extends Component {
     render() {
         return (
             <div className={"broadcast"}>
-                <p className={"bold font_size_big text_center"}>Трансляция</p>
+                <p className={"bold font_size_big text_center color_white"}>Трансляция</p>
                 <div>
                     <iframe src={this.props.url}
                             className={"iframe"}
