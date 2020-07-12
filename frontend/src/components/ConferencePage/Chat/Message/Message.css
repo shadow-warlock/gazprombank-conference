@@ -2,7 +2,7 @@
     width: 400px;
     display: flex;
     justify-content: space-between;
-    border-left: 1px solid var(--green-blue);
+    /*border-left: 1px solid var(--green-blue);*/
     /*padding-top: 5px;*/
     padding-right: 10px;
     margin-top: 20px;
@@ -32,6 +32,12 @@
 .reply_and_time {
     display: flex;
     justify-content: flex-end;
+}
+
+.message_container{
+    /*background: linear-gradient(to left,transparent 50%, var(--green-blue) 200%);*/
+    /*border-left: 1px solid var(--green-blue);*/
+    background: radial-gradient(farthest-side at -25% 50%, rgba(36, 118, 124, 0.5), transparent);
 }
 
 .message_container .reply_button {

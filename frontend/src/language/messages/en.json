@@ -1,6 +1,7 @@
 {
   "password": "password",
   "sign_in": "sign in",
+  "log_out": "log out",
   "conference": "online conference",
   "restart": "restart ",
   "air_transport": "air transport",
