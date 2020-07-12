@@ -42,34 +42,36 @@ export default class ConferencePage extends Component {
             return "Loading";
         return (
             <div className={"conference"}>
-                <div className={"conference_title padding_side"}>
-                    <div><Logo/></div>
-                    <ChangeLocaleButton/>
-                </div>
-                <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
-                    <p className={"uppercase"}>
-                        <FormattedMessage id={"conference"}/>
-                    </p>
-                    <br/>
-                    <p className={"uppercase large_title"}>
-                        <FormattedMessage id={"restart"}/>
+                <div className={"top_container"}>
+                    <div className={"conference_title padding_side"}>
+                        <div><Logo/></div>
+                        <ChangeLocaleButton/>
+                    </div>
+                    <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
+                        <p className={"uppercase"}>
+                            <FormattedMessage id={"conference"}/>
+                        </p>
                         <br/>
-                        <FormattedMessage id={"air_transport"}/>
-                    </p>
-                    <div className={"materials_and_time"}>
-                        <div>
-                            <div onClick={() => {
-                                window.open('/assets/materials.zip', '_blank');
-                            }}>
-                                <FormattedMessage id={"agenda"}/>
-                            </div>
-                        </div>
-                        <div className={"uppercase"}>
+                        <p className={"uppercase large_title"}>
+                            <FormattedMessage id={"restart"}/>
+                            <br/>
+                            <FormattedMessage id={"air_transport"}/>
+                        </p>
+                        <div className={"materials_and_time"}>
                             <div>
-                                <Moment format="D MMM YYYY" date={conferenceDate}/>
+                                <div onClick={() => {
+                                    window.open('/assets/materials.zip', '_blank');
+                                }}>
+                                    <FormattedMessage id={"agenda"}/>
+                                </div>
                             </div>
-                            <div>
-                                {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
+                            <div className={"uppercase"}>
+                                <div>
+                                    <Moment format="D MMM YYYY" date={conferenceDate}/>
+                                </div>
+                                <div>
+                                    {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
+                                </div>
                             </div>
                         </div>
                     </div>
