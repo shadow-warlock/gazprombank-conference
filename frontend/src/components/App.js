@@ -10,6 +10,8 @@ import {FormattedMessage, IntlProvider} from "react-intl";
 import {changeLanguage, getLanguage, getMessages} from "../language/language";
 import Button from "./Button/Button";
 
+export const LanguageContext = React.createContext({"change": ()=>{}, "lang": "ru"});
+
 export default class App extends Component{
 
     constructor(props) {
@@ -30,26 +32,24 @@ export default class App extends Component{
 
     render(){
         return (
-            <IntlProvider locale={this.state.locale} messages={this.state.messages}>
-                <BrowserRouter>
-                    <Switch>
-                        <Route exact path="/">
-                            <Security roles={[ROLE.USER, ROLE.ADMIN]}>
-                                {user => <ConferencePage user={user}/>}
-                            </Security>
-                        </Route>
-                        <Route exact path="/admin">
-                            <Security roles={[ROLE.ADMIN]}>
-                                {user => <AdminPage/>}
-                            </Security>
-                        </Route>
-                        <Route exact path="/test">
-                            <FormattedMessage id={"hello"} values={{name: "Леонид"}}/>
-                            <Button onClick={this.changeLanguage.bind(this)}>changeLocale</Button>
-                        </Route>
-                    </Switch>
-                </BrowserRouter>
-            </IntlProvider>
+            <LanguageContext.Provider value={{"change": this.changeLanguage.bind(this), "lang": this.state.locale}}>
+                <IntlProvider locale={this.state.locale} messages={this.state.messages}>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/">
+                                <Security roles={[ROLE.USER, ROLE.ADMIN]}>
+                                    {user => <ConferencePage user={user}/>}
+                                </Security>
+                            </Route>
+                            <Route exact path="/admin">
+                                <Security roles={[ROLE.ADMIN]}>
+                                    {user => <AdminPage/>}
+                                </Security>
+                            </Route>
+                        </Switch>
+                    </BrowserRouter>
+                </IntlProvider>
+            </LanguageContext.Provider>
         );
     }
 }
