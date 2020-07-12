@@ -12,7 +12,6 @@ import Timer from "../../Utils/Timer";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
-import {LanguageContext} from "../App";
 import {conferenceDate, conferenceTime} from "../../const/mockData";
 
 export default class ConferencePage extends Component {

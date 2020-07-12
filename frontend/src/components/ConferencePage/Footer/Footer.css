@@ -72,3 +72,8 @@
 .footer .organization {
     text-align: center;
 }
+
+.footer .banner{
+    display: block;
+    width: 100%;
+}

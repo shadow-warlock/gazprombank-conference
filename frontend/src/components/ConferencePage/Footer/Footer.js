@@ -3,12 +3,23 @@ import "./Footer.css";
 import TechSupport from "../../TechSupport/TechSupport";
 import LogoutButton from "../../LogoutButton/LogoutButton";
 import {FormattedMessage} from "react-intl";
+import embraer from "../../../assets/embraer.jpeg";
+import rosneft_ru from "../../../assets/rosneft_ru.jpeg";
+import rosneft_en from "../../../assets/rosneft_en.jpeg";
+import {LanguageContext} from "../../App";
 
 export default class Footer extends Component {
 
     render() {
         return (
             <div className={"footer"}>
+                <img className={"banner"} src={embraer} alt={"embraer"}/>
+                <LanguageContext.Consumer>{
+                    value => <img className={"banner"}
+                                  src={value.lang === 'en' ? rosneft_en : rosneft_ru}
+                                  alt={"rosneft"}/>
+                }
+                </LanguageContext.Consumer>
                 <div className={"padding_side"}>
                     <TechSupport/>
                     <div className={"organization"}>
