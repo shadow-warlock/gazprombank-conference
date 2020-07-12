@@ -8,7 +8,7 @@
 }
 
 .footer .padding_side {
-    background-color: #dae9eb;
+    background-color: var(--light-green);
 }
 
 .footer .tech_support {

@@ -17,6 +17,7 @@ body {
     --font-size-big: calc(1.5 * var(--default-font-size));
     --font-size-very-big: calc(1.9 * var(--default-font-size));
     --input-width: 300px;
+    --light-green: #dae9eb;
     font-size: var(--default-font-size);
 }
 
