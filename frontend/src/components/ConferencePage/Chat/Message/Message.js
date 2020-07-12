@@ -85,11 +85,11 @@ class Message extends Component {
                 <div className={"padding_right reply_and_time"}>
                     <p onClick={() => {
                         this.props.onReply(this.props.message)
-                    }} className={"reply_button"}>
+                    }} className={"reply_button color_green_blue"}>
                         <FormattedMessage id={"reply"}/>
                     </p>
                     {this.props.user.role === ROLE.ADMIN &&
-                    <p onClick={this.removeMessage} className={"reply_button"}>
+                    <p onClick={this.removeMessage} className={"reply_button color_green_blue"}>
                         <FormattedMessage id={"delete"}/>
                     </p>}
                     <LanguageContext.Consumer>
