@@ -1,6 +1,7 @@
 .auth_page {
     background-color: var(--green-blue);
-    background-size: 500px, auto;
+    background-image: url(./../../assets/plane_lines.png);
+    background-size: cover;
     padding-top: 50px;
     padding-left: 100px;
     min-height: 100vh;
@@ -12,6 +13,7 @@
 }
 
 .auth_page_container {
+    flex-wrap: wrap-reverse;
     display: flex;
     justify-content: space-between;
 }

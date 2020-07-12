@@ -26,6 +26,7 @@
 }
 
 .login_supporters a {
+    white-space: nowrap;
     text-decoration: none;
     color: white;
 }
