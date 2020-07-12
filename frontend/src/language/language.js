@@ -1,3 +1,5 @@
+import moment from 'moment/min/moment-with-locales';
+import Moment from "react-moment";
 
 const cookieName = "language=";
 const supporterLanguages = ["ru", "en"];
@@ -18,6 +20,7 @@ export function getLanguage() {
 export function changeLanguage() {
     let index = supporterLanguages.indexOf(getLanguage());
     setLanguage(supporterLanguages[index ? 0 : 1]);
+
 }
 
 export function getMessages(){

@@ -35,3 +35,7 @@
 .send_message_container:hover .cancel_reply{
     display: initial;
 }
+
+.message_sender_header{
+    font-weight: bold;
+}
