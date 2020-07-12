@@ -3,12 +3,9 @@ import "./Message.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart} from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
-import 'moment-timezone';
-import 'moment/locale/ru';
 import axios from "axios";
 import {API, AXIOS_CONFIG, ROLE} from "../../../../const/const";
 import {FormattedMessage, injectIntl} from "react-intl";
-import {LanguageContext} from "../../../App";
 
 class Message extends Component {
 
@@ -85,18 +82,14 @@ class Message extends Component {
                 <div className={"padding_right reply_and_time"}>
                     <p onClick={() => {
                         this.props.onReply(this.props.message)
-                    }} className={"reply_button"}>
+                    }} className={"reply_button color_green_blue"}>
                         <FormattedMessage id={"reply"}/>
                     </p>
                     {this.props.user.role === ROLE.ADMIN &&
-                    <p onClick={this.removeMessage} className={"reply_button"}>
+                    <p onClick={this.removeMessage} className={"reply_button color_green_blue"}>
                         <FormattedMessage id={"delete"}/>
                     </p>}
-                    <LanguageContext.Consumer>
-                        {value =>
-                            <Moment className={"nowrap color_green_blue"} fromNow ago date={this.props.message.time} locale={value.lang}/>
-                        }
-                    </LanguageContext.Consumer>
+                    <Moment className={"nowrap color_green_blue"} fromNow ago date={this.props.message.time}/>
                 </div>
             </div>
         );

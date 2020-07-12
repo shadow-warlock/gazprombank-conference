@@ -10,11 +10,9 @@ import "./ConferencePage.css";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
-import {FormattedDate, FormattedMessage} from "react-intl";
-import {LanguageContext} from "../App";
+import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
-import 'moment-timezone';
-import 'moment/locale/ru';
+import {LanguageContext} from "../App";
 
 export default class ConferencePage extends Component {
     constructor(props) {
