@@ -28,5 +28,9 @@
   "personal_data_policy": "Personal Data Processing Policy",
   "privacy_policy": "Privacy Policy",
   "thank_you": "thank you",
-  "participation": "for your participation!"
+  "participation": "for your participation!",
+  "partner_organizer": "organizer",
+  "partner_sponsor": "sponsored by",
+  "general_media_partner": "general media partner",
+  "media_partners": "media partners"
 }

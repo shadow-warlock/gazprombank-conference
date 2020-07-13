@@ -13,6 +13,7 @@ import tkp from "../../../../assets/avia_images/tkp.png";
 import siren from "../../../../assets/avia_images/siren.png";
 import biletix from "../../../../assets/avia_images/biletix.png";
 import bbtr from "../../../../assets/avia_images/bbtr.png";
+import {FormattedMessage} from "react-intl";
 
 class Partners extends React.Component {
     render() {
@@ -21,21 +22,21 @@ class Partners extends React.Component {
                 <div>
                     <div className={"top_partners"}>
                         <div className={"partner_container"}>
-                            <p>организатор</p>
+                            <p><FormattedMessage id={"partner_organizer"}/></p>
                             <img src={ato} alt={"img"}/>
                         </div>
                         <div className={"partner_container"}>
-                            <p>спонсор</p>
+                            <p><FormattedMessage id={"partner_sponsor"}/></p>
                             <img src={embr} alt={"img"}/>
                         </div>
                         <div className={"partner_container"}>
-                            <p>спонсор</p>
+                            <p><FormattedMessage id={"partner_sponsor"}/></p>
                             <img src={rosneft1} alt={"img"}/>
                         </div>
                     </div>
                     <div>
                         <div className={"general_info_partner"}>
-                            <p>генеральный инфопартнер</p>
+                            <p><FormattedMessage id={"general_media_partner"}/></p>
                             <div>
                                 <img src={atoru} alt={"img"}/>
                                 <img src={ruinsaider} alt={"img"}/>
@@ -45,7 +46,7 @@ class Partners extends React.Component {
                 </div>
                 <div className={"information_partners"}>
                     <div>
-                        <p>Информационные партнеры</p>
+                        <p><FormattedMessage id={"media_partners"}/></p>
                     </div>
                     <div>
                         <div><img src={aviaport} alt={"img"}/></div>
