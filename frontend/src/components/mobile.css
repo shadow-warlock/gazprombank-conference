@@ -82,7 +82,7 @@
     }
 
     .conference .large_title {
-        font-size: calc(3 * var(--default-font-size));
+        font-size: calc(2.7 * var(--default-font-size));
     }
 
     div.padding_side.flex_right.font_size_very_big.color_blue.bold.conference_theme {
@@ -180,7 +180,6 @@
 
     .footer .tech_support .login_supporters .supporter {
         margin-bottom: 20px;
-        flex-direction: row;
     }
 
     .only_desktop {
@@ -189,6 +188,10 @@
 
     .only_mobile {
         display: block !important;
+    }
+
+    .footer .top_partners{
+        flex-wrap: wrap;
     }
 
     .footer .top_partners .partner_container {
