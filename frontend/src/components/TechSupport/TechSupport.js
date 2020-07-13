@@ -17,12 +17,14 @@ export default class TechSupport extends Component {
                                 <p className={"bold"}>
                                     <FormattedMessage id={techSupporter.name}/>
                                 </p>
-                                <p>
-                                    <a href={"tel:" + techSupporter.phone}>{techSupporter.phone}</a>
-                                </p>
-                                <p className={"mail"}>
-                                    <a href={"mailto:" + techSupporter.email}>{techSupporter.email}</a>
-                                </p>
+                                <div className={"supporter_contacts"}>
+                                    <p>
+                                        <a href={"tel:" + techSupporter.phone}>{techSupporter.phone}</a>
+                                    </p>
+                                    <p className={"mail"}>
+                                        <a href={"mailto:" + techSupporter.email}>{techSupporter.email}</a>
+                                    </p>
+                                </div>
                             </div>
                         )}
                     </div>

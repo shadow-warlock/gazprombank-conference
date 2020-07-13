@@ -45,7 +45,7 @@ p {
     color: var(--white-blue);
 }
 
-.color_green_blue{
+.color_green_blue {
     color: var(--green-blue);
 }
 
@@ -96,4 +96,8 @@ p {
 
 .bold {
     font-weight: bold;
+}
+
+.only_mobile {
+    display: none!important;
 }

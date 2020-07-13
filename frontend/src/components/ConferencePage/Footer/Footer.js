@@ -4,20 +4,29 @@ import TechSupport from "../../TechSupport/TechSupport";
 import LogoutButton from "../../LogoutButton/LogoutButton";
 import {FormattedMessage} from "react-intl";
 import embraer from "../../../assets/embraer.jpeg";
+import embraer_mobile from "../../../assets/embraer_mobile.png";
 import rosneft_ru from "../../../assets/rosneft_ru.jpeg";
+import rosneft_mobile_ru from "../../../assets/rosneft_mobile_ru.png";
 import rosneft_en from "../../../assets/rosneft_en.jpeg";
+import rosneft_mobile_en from "../../../assets/rosneft_mobile_en.png";
 import {LanguageContext} from "../../App";
 
 export default class Footer extends Component {
-
     render() {
         return (
             <div className={"footer"}>
-                <img className={"banner"} src={embraer} alt={"embraer"}/>
+                <img className={"banner only_desktop"} src={embraer} alt={"embraer"}/>
+                <img className={"banner only_mobile"} src={embraer_mobile} alt={"embraer"}/>
                 <LanguageContext.Consumer>{
-                    value => <img className={"banner"}
-                                  src={value.lang === 'en' ? rosneft_en : rosneft_ru}
-                                  alt={"rosneft"}/>
+                    value =>
+                        <>
+                            <img className={"banner only_desktop"}
+                                 src={value.lang === 'en' ? rosneft_en : rosneft_ru}
+                                 alt={"rosneft"}/>
+                            <img className={"banner only_mobile"}
+                                 src={value.lang === 'en' ? rosneft_mobile_en : rosneft_mobile_ru}
+                                 alt={"rosneft"}/>
+                        </>
                 }
                 </LanguageContext.Consumer>
                 <div className={"padding_side"}>
