@@ -1,5 +1,5 @@
 import React from "react";
-import "./FooterLogo.css"
+import "./Partners.css"
 import ato from "../../../../assets/avia_images/ato.png";
 import embr from "../../../../assets/avia_images/embr.png";
 import rosneft1 from "../../../../assets/avia_images/rosneft.png";
@@ -13,7 +13,7 @@ import tkp from "../../../../assets/avia_images/tkp.png";
 import siren from "../../../../assets/avia_images/siren.png";
 import biletix from "../../../../assets/avia_images/biletix.png";
 import bbtr from "../../../../assets/avia_images/bbtr.png";
-class FooterLogo extends React.Component{
+class Partners extends React.Component{
     render(){
         return(
             <div className={"footer_logo"}>
@@ -49,4 +49,4 @@ class FooterLogo extends React.Component{
         );
     }
 }
-export default FooterLogo;
+export default Partners;
