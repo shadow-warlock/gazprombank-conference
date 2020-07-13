@@ -184,11 +184,19 @@
     }
 
     .only_desktop {
-        display: none!important;
+        display: none !important;
     }
 
     .only_mobile {
-        display: block!important;
+        display: block !important;
+    }
+
+    .footer .top_partners .partner_container {
+        width: 50vw;
+    }
+
+    .footer .partners img{
+        width: 30vw;
     }
 }
 

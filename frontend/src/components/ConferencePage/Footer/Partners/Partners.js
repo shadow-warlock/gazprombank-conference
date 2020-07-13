@@ -13,40 +13,54 @@ import tkp from "../../../../assets/avia_images/tkp.png";
 import siren from "../../../../assets/avia_images/siren.png";
 import biletix from "../../../../assets/avia_images/biletix.png";
 import bbtr from "../../../../assets/avia_images/bbtr.png";
-class Partners extends React.Component{
-    render(){
-        return(
-            <div className={"footer_logo"}>
+
+class Partners extends React.Component {
+    render() {
+        return (
+            <div className={"partners uppercase"}>
                 <div>
-                    <p>организатор</p>
-                    <p>спонсор</p>
-                    <p>спонсор</p>
-                    <p id={"last"}>генеральный инфопартнер</p>
+                    <div className={"top_partners"}>
+                        <div className={"partner_container"}>
+                            <p>организатор</p>
+                            <img src={ato} alt={"img"}/>
+                        </div>
+                        <div className={"partner_container"}>
+                            <p>спонсор</p>
+                            <img src={embr} alt={"img"}/>
+                        </div>
+                        <div className={"partner_container"}>
+                            <p>спонсор</p>
+                            <img src={rosneft1} alt={"img"}/>
+                        </div>
+                    </div>
+                    <div>
+                        <div className={"general_info_partner"}>
+                            <p>генеральный инфопартнер</p>
+                            <div>
+                                <img src={atoru} alt={"img"}/>
+                                <img src={ruinsaider} alt={"img"}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <img src={ato} alt={"img"}/>
-                    <img src={embr} alt={"img"}/>
-                    <img src={rosneft1} alt={"img"}/>
-                    <img className={"last"} src={atoru} alt={"img"}/>
-                    <img className={"last"} src={ruinsaider} alt={"img"}/>
-                </div>
-                <div>
-                    <p>Информационный партнер</p>
-                </div>
-                <div className={"bottom_rows_logo"}>
-                    <img src={aviaport} alt={"img"}/>
-                    <img src={tp} alt={"img"}/>
-                    <img src={maa} alt={"img"}/>
-                    <img src={aviagor} alt={"img"}/>
-                </div>
-                <div className={"bottom_rows_logo"}>
-                    <img src={tkp} alt={"img"}/>
-                    <img src={siren} alt={"img"}/>
-                    <img src={biletix} alt={"img"}/>
-                    <img src={bbtr} alt={"img"}/>
+                <div className={"information_partners"}>
+                    <div>
+                        <p>Информационные партнеры</p>
+                    </div>
+                    <div>
+                        <div><img src={aviaport} alt={"img"}/></div>
+                        <div><img src={tp} alt={"img"}/></div>
+                        <div><img src={maa} alt={"img"}/></div>
+                        <div><img src={aviagor} alt={"img"}/></div>
+                        <div><img src={tkp} alt={"img"}/></div>
+                        <div><img src={siren} alt={"img"}/></div>
+                        <div><img src={biletix} alt={"img"}/></div>
+                        <div><img src={bbtr} alt={"img"}/></div>
+                    </div>
                 </div>
             </div>
         );
     }
 }
+
 export default Partners;
