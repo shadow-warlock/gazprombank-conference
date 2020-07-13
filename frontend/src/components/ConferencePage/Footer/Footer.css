@@ -51,6 +51,8 @@
 }
 
 .footer .bottom_footer > div > a {
+    color: white;
+    text-decoration: none;
     white-space: nowrap;
     margin: 5px 10px;
 }
@@ -73,7 +75,7 @@
     text-align: center;
 }
 
-.footer .banner{
+.footer .banner {
     display: block;
     width: 100%;
 }
