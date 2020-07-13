@@ -20,7 +20,7 @@ export default class Footer extends Component {
                     <img className={"banner only_desktop"} src={embraer} alt={"embraer"}/>
                     <img className={"banner only_mobile"} src={embraer_mobile} alt={"embraer"}/>
                 </a>
-               <Partners/>
+                <Partners/>
                 <LanguageContext.Consumer>{
                     value =>
                         <a href={value.lang === 'en' ? "http://www.rosneft-aero.ru/en/" : "http://www.rosneft-aero.ru/"}

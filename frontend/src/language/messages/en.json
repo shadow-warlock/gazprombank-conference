@@ -1,4 +1,5 @@
 {
+  "page_title": "Online conference restart air transport",
   "password": "password",
   "sign_in": "sign in",
   "log_out": "log out",
@@ -11,7 +12,6 @@
   "valeria_burskaya": "Valeria Burskaya",
   "nikita_kachaev": "Nikita Kachaev",
   "margarita_gukasova": "Nikita Kachaev",
-
   "agenda": "Agenda",
   "broadcast": "Broadcast",
   "chat": "Chat",
@@ -27,8 +27,6 @@
   "more_than": "340+ events, 41 200 + attenders, over 23 years experience",
   "personal_data_policy": "Personal Data Processing Policy",
   "privacy_policy": "Privacy Policy",
-
   "thank_you": "thank you",
   "participation": "for your participation!"
-
 }

@@ -6,7 +6,7 @@ import ConferencePage from "./ConferencePage/ConferencePage";
 import "./App.css";
 import AdminPage from "./AdminPage/AdminPage";
 import "./mobile.css";
-import {IntlProvider} from "react-intl";
+import {FormattedMessage, IntlProvider} from "react-intl";
 import {changeLanguage, getLanguage, getMessages} from "../language/language";
 import Moment from "react-moment";
 import 'moment-timezone';
