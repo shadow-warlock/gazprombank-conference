@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import "./App.css";
-import "./mobile.css";
 import {IntlProvider} from "react-intl";
 import {changeLanguage, getLanguage, getMessages} from "../language/language";
 import Moment from "react-moment";
