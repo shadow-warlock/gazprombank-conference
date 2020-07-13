@@ -1,5 +1,20 @@
 import React, {Component} from "react";
 import "./Footer.css";
+import ato from "./avia_images/ato.png";
+import atoru from "./avia_images/atoru.png";
+import atowhite from "./avia_images/atowhite.png";
+import aviagor from "./avia_images/aviagor.png";
+import aviaport from "./avia_images/aviaport.png";
+import bbtr from "./avia_images/bbtr.png";
+import biletix from "./avia_images/biletix.png";
+import embr from "./avia_images/embr.png";
+import maa from "./avia_images/maa.png";
+import rosneft1 from "./avia_images/rosneft.png";
+import ruinsaider from "./avia_images/ruinsaider.png";
+import siren from "./avia_images/siren.png";
+import tkp from "./avia_images/tkp.png";
+import tp from "./avia_images/tp.png";
+
 import TechSupport from "../../TechSupport/TechSupport";
 import LogoutButton from "../../LogoutButton/LogoutButton";
 import {FormattedMessage} from "react-intl";
@@ -14,6 +29,36 @@ export default class Footer extends Component {
         return (
             <div className={"footer"}>
                 <img className={"banner"} src={embraer} alt={"embraer"}/>
+                <div className={"footer_logo"}>
+                    <div>
+                        <p>организатор</p>
+                        <p>спонсор</p>
+                        <p>спонсор</p>
+                        <p id={"last"}>генеральный инфопартнер</p>
+                    </div>
+                    <div>
+                        <img src={ato} alt={"img"}/>
+                        <img src={embr} alt={"img"}/>
+                        <img src={rosneft1} alt={"img"}/>
+                        <img className={"last"} src={atoru} alt={"img"}/>
+                        <img className={"last"} src={ruinsaider} alt={"img"}/>
+                    </div>
+                    <div>
+                        <p>Информационный партнер</p>
+                    </div>
+                    <div className={"test"}>
+                        <img src={aviaport} alt={"img"}/>
+                        <img src={tp} alt={"img"}/>
+                        <img src={maa} alt={"img"}/>
+                        <img src={aviagor} alt={"img"}/>
+                    </div>
+                    <div className={"test"}>
+                        <img src={tkp} alt={"img"}/>
+                        <img src={siren} alt={"img"}/>
+                        <img src={biletix} alt={"img"}/>
+                        <img src={bbtr} alt={"img"}/>
+                    </div>
+                </div>
                 <LanguageContext.Consumer>{
                     value => <img className={"banner"}
                                   src={value.lang === 'en' ? rosneft_en : rosneft_ru}
