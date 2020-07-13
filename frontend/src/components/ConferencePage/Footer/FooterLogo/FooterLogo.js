@@ -33,7 +33,7 @@ class FooterLogo extends React.Component{
                 <div>
                     <p>Информационный партнер</p>
                 </div>
-                <div className={"test"}>
+                <div className={"bottom_rows_logo"}>
                     <img src={aviaport} alt={"img"}/>
                     <img src={tp} alt={"img"}/>
                     <img src={maa} alt={"img"}/>
