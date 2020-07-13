@@ -7,7 +7,7 @@ import embraer from "../../../assets/embraer.jpeg";
 import rosneft_ru from "../../../assets/rosneft_ru.jpeg";
 import rosneft_en from "../../../assets/rosneft_en.jpeg";
 import {LanguageContext} from "../../App";
-import FooterLogo from "./FooterLogo/FooterLogo";
+import Partners from "./Partners/Partners";
 
 export default class Footer extends Component {
 
@@ -15,7 +15,7 @@ export default class Footer extends Component {
         return (
             <div className={"footer"}>
                 <img className={"banner"} src={embraer} alt={"embraer"}/>
-               <FooterLogo/>
+               <Partners/>
                 <LanguageContext.Consumer>{
                     value => <img className={"banner"}
                                   src={value.lang === 'en' ? rosneft_en : rosneft_ru}
