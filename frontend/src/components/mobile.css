@@ -198,6 +198,10 @@
         width: 50vw;
     }
 
+    .footer .partners > div{
+        flex-wrap: wrap;
+    }
+
     .footer .partners img{
         width: 30vw;
     }

@@ -41,6 +41,7 @@
 
 .footer .bottom_footer {
     background-color: #4d4d4d;
+    padding-bottom: 50px;
     display: flex;
 }
 
@@ -72,9 +73,16 @@
 
 .footer .organization {
     text-align: center;
+    padding-bottom: 50px;
 }
+
+
 
 .footer .banner {
     display: block;
     width: 100%;
+}
+
+.footer > div > div{
+    /*padding-bottom: 50px;*/
 }
