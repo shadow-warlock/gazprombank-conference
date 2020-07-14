@@ -2,16 +2,16 @@ POST http://localhost:8000/api/seturl
 Content-Type: application/json
 
 {
-  "url": "https://facecast.net/v/lrsp2q"
+  "url": "https://facecast.net/v/fls0ex"
 }
 
 ###
 
-POST http://currency-control.ru/api/seturl
+POST https://airtransport-restart.ru/api/seturl
 Content-Type: application/json
 
 {
-  "url": "https://facecast.net/v/lrsp2q"
+  "url": "https://facecast.net/v/fls0ex"
 }
 
 ###
