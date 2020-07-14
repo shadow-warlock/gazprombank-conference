@@ -133,7 +133,7 @@ export const TECH_SUPPORTERS = [
     {
         name: "margarita_gukasova",
         phone: "+7 967 198-38-81",
-        email: "m.gusakova@atoevents.ru"
+        email: "m.gukasova@atoevents.ru"
     },
     {
         name: "valeria_burskaya",
@@ -143,7 +143,7 @@ export const TECH_SUPPORTERS = [
     {
         name: "nikita_kachaev",
         phone: "+7 964 500-25-33",
-        email: "n.kachaev@atoevents.ru"
+        email: "m.kachaev@atoevents.ru"
     }
 ];
 

@@ -67,7 +67,7 @@ export default class ConferencePage extends Component {
                             </div>
                             <div className={"uppercase"}>
                                 <div>
-                                    <Moment format="D MMM YYYY" date={conferenceDate}/>
+                                    <Moment format="D MMMM YYYY" date={conferenceDate}/>
                                 </div>
                                 <div>
                                     {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)

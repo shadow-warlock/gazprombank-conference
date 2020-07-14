@@ -11,7 +11,7 @@
   "svetlana_pimenova": "Svetlana Pimenova",
   "valeria_burskaya": "Valeria Burskaya",
   "nikita_kachaev": "Nikita Kachaev",
-  "margarita_gukasova": "Nikita Kachaev",
+  "margarita_gukasova": "Margarita Gukasova",
   "agenda": "Agenda",
   "broadcast": "Broadcast",
   "chat": "Chat",
@@ -30,7 +30,8 @@
   "thank_you": "thank you",
   "participation": "for your participation!",
   "partner_organizer": "organizer",
-  "partner_sponsor": "sponsored by",
+  "partner_sponsor": "sponsor",
+  "partner": "partner",
   "general_media_partner": "general media partner",
   "media_partners": "media partners"
 }

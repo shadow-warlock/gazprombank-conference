@@ -30,7 +30,7 @@ class Partners extends React.Component {
                             <img src={embr} alt={"img"}/>
                         </div>
                         <div className={"partner_container"}>
-                            <p><FormattedMessage id={"partner_sponsor"}/></p>
+                            <p><FormattedMessage id={"partner"}/></p>
                             <img src={rosneft1} alt={"img"}/>
                         </div>
                     </div>

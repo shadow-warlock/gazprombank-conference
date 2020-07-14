@@ -3,7 +3,7 @@ import AuthForm from "./AuthForm/AuthForm";
 import Logo from "../Logo/Logo";
 import "./AuthPage.css";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
-import {FormattedDate, FormattedMessage} from "react-intl";
+import {FormattedMessage} from "react-intl";
 import Moment from "react-moment";
 import {conferenceDate, conferenceTime} from "../../const/mockData";
 
@@ -22,7 +22,7 @@ export default class AuthPage extends Component {
                             <FormattedMessage id={"air_transport"}/>
                         </p>
                         <p className={"font_size_very_big bold uppercase"}>
-                            <Moment format="D MMM YYYY" date={conferenceDate}/>
+                            <Moment format="D MMMM, YYYY" date={conferenceDate}/>
                         </p>
                         <p className={"bold uppercase"}>
                             {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
