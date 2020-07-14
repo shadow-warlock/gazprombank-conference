@@ -6,6 +6,7 @@ import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from "react-moment";
 import {conferenceDate, conferenceTime} from "../../const/mockData";
+import AdditionalLogos from "./AdditionalLogos/AdditionalLogos";
 
 export default class AuthPage extends Component {
     render() {
@@ -31,6 +32,7 @@ export default class AuthPage extends Component {
                     </div>
                     <div>
                         <ChangeLocaleButton/>
+                        <AdditionalLogos/>
                     </div>
                 </div>
                 <div className={"logo_right"}>

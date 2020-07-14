@@ -7,6 +7,14 @@
         font-size: calc(2 * var(--default-font-size));
     }
 
+    .auth_page_container > div:nth-child(2) {
+        display: flex;
+    }
+
+    .auth_page .additional_logos {
+        flex-direction: row;
+    }
+
     .auth_page {
         padding: 10%;
     }
@@ -190,7 +198,7 @@
         display: block !important;
     }
 
-    .footer .top_partners{
+    .footer .top_partners {
         flex-wrap: wrap;
     }
 
@@ -198,11 +206,11 @@
         width: 50vw;
     }
 
-    .footer .partners > div{
+    .footer .partners > div {
         flex-wrap: wrap;
     }
 
-    .footer .partners img{
+    .footer .partners img {
         width: 30vw;
     }
 }

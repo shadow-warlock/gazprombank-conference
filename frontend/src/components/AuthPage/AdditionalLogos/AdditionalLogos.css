@@ -1,0 +1,10 @@
+.additional_logos{
+    display: flex;
+    flex-direction: column;
+}
+
+.additional_logos img{
+    margin: auto;
+    width: 50%;
+    height: auto;
+}

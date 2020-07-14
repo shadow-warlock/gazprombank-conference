@@ -1,6 +1,7 @@
 .change_locale_button {
     color: var(--green-blue-dark);
     display: flex;
+    justify-content: center;
 }
 
 .change_locale_button div {
