@@ -3,13 +3,15 @@ import "./Footer.css";
 import TechSupport from "../../TechSupport/TechSupport";
 import LogoutButton from "../../LogoutButton/LogoutButton";
 import {FormattedMessage} from "react-intl";
-import embraer from "../../../assets/embraer.jpeg";
-import embraer_mobile from "../../../assets/embraer_mobile.png";
+import embraer_desktop_ru from "../../../assets/embraer_desktop_ru.jpg";
+import embraer_desktop_en from "../../../assets/embraer_desktop_en.jpg";
+import embraer_mobile_en from "../../../assets/embraer_mobile_en.jpg";
+import embraer_mobile_ru from "../../../assets/embraer_mobile_ru.jpg";
 import rosneft_ru from "../../../assets/rosneft_ru.jpeg";
 import rosneft_mobile_ru from "../../../assets/rosneft_mobile_ru.png";
 import rosneft_en from "../../../assets/rosneft_en.jpeg";
 import rosneft_mobile_en from "../../../assets/rosneft_mobile_en.png";
-import {LanguageContext} from "../../App";
+    import {LanguageContext} from "../../App";
 import Partners from "./Partners/Partners";
 
 export default class Footer extends Component {
@@ -17,8 +19,27 @@ export default class Footer extends Component {
         return (
             <div className={"footer"}>
                 <a href={" https://embraer.com"} target={"_blank"}>
-                    <img className={"banner only_desktop"} src={embraer} alt={"embraer"}/>
-                    <img className={"banner only_mobile"} src={embraer_mobile} alt={"embraer"}/>
+
+                    <LanguageContext.Consumer>{
+                        (value) =>{
+                            if(value.lang === "en"){
+                                return (
+                                    <>
+                                        <img className={"banner only_desktop"} src={embraer_desktop_en} alt={"embraer"}/>
+                                        <img className={"banner only_mobile"} src={embraer_mobile_en} alt={"embraer"}/>
+                                    </>
+                                )
+                            }else{
+                                return (
+                                    <>
+                                        <img className={"banner only_desktop"} src={embraer_desktop_ru} alt={"embraer"}/>
+                                        <img className={"banner only_mobile"} src={embraer_mobile_ru} alt={"embraer"}/>
+                                    </>
+                                )
+                            }
+                        }
+                    }
+                    </LanguageContext.Consumer>
                 </a>
                 <Partners/>
                 <LanguageContext.Consumer>{
