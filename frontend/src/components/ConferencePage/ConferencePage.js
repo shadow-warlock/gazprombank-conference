@@ -13,6 +13,7 @@ import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
 import {conferenceDate, conferenceTime} from "../../const/mockData";
+import {LanguageContext} from "../App";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -59,11 +60,15 @@ export default class ConferencePage extends Component {
                         </p>
                         <div className={"materials_and_time"}>
                             <div>
-                                <div onClick={() => {
-                                    window.open('/assets/materials.zip', '_blank');
-                                }}>
-                                    <FormattedMessage id={"agenda"}/>
-                                </div>
+                                <LanguageContext.Consumer>
+                                    {value =>
+                                        <div onClick={() => {
+                                            window.open(value.lang === "en" ? '/assets/program_en.pdf' : '/assets/program_ru.pdf', '_blank');
+                                        }}>
+                                            <FormattedMessage id={"agenda"}/>
+                                        </div>
+                                    }
+                                </LanguageContext.Consumer>
                             </div>
                             <div className={"uppercase"}>
                                 <div>
