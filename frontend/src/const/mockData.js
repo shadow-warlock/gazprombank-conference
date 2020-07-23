@@ -131,11 +131,6 @@ export const TECH_SUPPORTERS = [
         email: "s.pimenova@atoevents.ru"
     },
     {
-        name: "margarita_gukasova",
-        phone: "+7 967 198-38-81",
-        email: "m.gusakova@atoevents.ru"
-    },
-    {
         name: "valeria_burskaya",
         phone: "+7 965 109-30-88",
         email: "v.burskaya@atoevents.ru"
@@ -144,9 +139,14 @@ export const TECH_SUPPORTERS = [
         name: "nikita_kachaev",
         phone: "+7 964 500-25-33",
         email: "n.kachaev@atoevents.ru"
+    },
+    {
+        name: "margarita_gukasova",
+        phone: "+7 967 198-38-81",
+        email: "m.gusakova@atoevents.ru"
     }
 ];
 
 
-export const conferenceDate = new Date("2020-07-16");
-export const conferenceTime = "11:00 - 16:00";
+export const conferenceDate = new Date("2020-07-30");
+export const conferenceTime = "11:00 - 14:00";

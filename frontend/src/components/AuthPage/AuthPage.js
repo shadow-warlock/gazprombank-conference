@@ -6,6 +6,7 @@ import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedDate, FormattedMessage} from "react-intl";
 import Moment from "react-moment";
 import {conferenceDate, conferenceTime} from "../../const/mockData";
+import car from "./../../assets/cordiant/car.png"
 
 export default class AuthPage extends Component {
     render() {
@@ -18,8 +19,11 @@ export default class AuthPage extends Component {
                         </p>
                         <br/>
                         <p className={"font_size_very_big uppercase nowrap bold color_white"}>
-                            <FormattedMessage id={"restart"}/>
-                            <FormattedMessage id={"air_transport"}/>
+                            <FormattedMessage id={"cordiant"}/>
+                            <FormattedMessage id={"optimization_tools"}/>
+                        </p>
+                        <p className={"font_size_very_big uppercase nowrap bold color_white"}>
+                            <FormattedMessage id={"car_park"}/>
                         </p>
                         <p className={"font_size_very_big bold uppercase"}>
                             <Moment format="D MMM YYYY" date={conferenceDate}/>
@@ -32,6 +36,9 @@ export default class AuthPage extends Component {
                     <div>
                         <ChangeLocaleButton/>
                     </div>
+                </div>
+                <div id={"car_image"}>
+                    <img src={car}/>
                 </div>
                 <div className={"logo_right"}>
                     <Logo/>
