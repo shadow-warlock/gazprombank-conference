@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./Footer.css";
-import TechSupport from "../../TechSupport/TechSupport";
+import TechSupport_ConferencePage from "../../TechSupport/TechSupport_ConferencePage";
 import LogoutButton from "../../LogoutButton/LogoutButton";
 import {FormattedMessage} from "react-intl";
 import cordiant from "../../../assets/cordiant/Professional-banner-adaptive-3450x360.png";
@@ -15,13 +15,13 @@ export default class Footer extends Component {
                 <img className={"banner"} src={cordiant} alt={"cordiant"}/>
                <Partners/>
                 <div className={"padding_side"}>
-                    <TechSupport/>
+                    <TechSupport_ConferencePage/>
                     <Logo/>
                 </div>
                 <div className={"bottom_footer color_white bold"}>
                     <div>
                         © 2020, <span className={"color_green_blue"}>
-                        <FormattedMessage id={"ato_events"}/>
+                        <FormattedMessage id={"cordiant_events"}/>
                     </span>
                     </div>
                     <div>

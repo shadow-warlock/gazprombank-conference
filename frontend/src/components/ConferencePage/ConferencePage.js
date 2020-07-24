@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import Broadcast from "./Broadcast/Broadcast";
 import Chat from "./Chat/Chat";
 import Poll from "./Poll/Poll";
-import Logo from "../Logo/Logo";
 import axios from "axios";
 import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
 import Websocket from "react-websocket";
@@ -13,6 +12,7 @@ import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
 import {conferenceDate} from "../../const/mockData";
+import LogoWhite from "../Logo/LogoWhite";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -43,7 +43,7 @@ export default class ConferencePage extends Component {
         return (
             <div className={"conference"}>
                 <div className={"conference_title padding_side"}>
-                    <div><Logo/></div>
+                    <div><LogoWhite/></div>
                     <ChangeLocaleButton/>
                 </div>
                 <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>

@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import "./TechSupport.css";
-import {TECH_SUPPORTERS, TECH_SUPPORTERS_ConferencePage} from "../../const/mockData";
+import { TECH_SUPPORTERS_ConferencePage} from "../../const/mockData";
 import {FormattedMessage} from "react-intl";
 
-export default class TechSupport extends Component {
+export default class TechSupport_ConferencePage extends Component {
     render() {
         return (
             <div className={"tech_support"}>
@@ -12,7 +12,7 @@ export default class TechSupport extends Component {
                         <FormattedMessage id={"technical_support"}/>
                     </p>
                     <div className={"login_supporters"}>
-                        {TECH_SUPPORTERS.map(
+                        {TECH_SUPPORTERS_ConferencePage.map(
                             (techSupporter) => <div key={techSupporter.phone} className={"supporter"}>
                                 <p className={"bold"}>
                                     <FormattedMessage id={techSupporter.name}/>

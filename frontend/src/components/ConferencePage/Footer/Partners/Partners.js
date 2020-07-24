@@ -21,20 +21,20 @@ class Partners extends React.Component {
                     <p>Информационные партнеры</p>
                 </div>
                 <div className={"bottom_rows_logo"}>
-                    <img src={trucks_on_the_road} alt={"img"}/>
-                    <img src={ati_su} alt={"img"}/>
-                    <img src={auto_review} alt={"img"}/>
-                    <img src={brother} alt={"img"}/>
-                    <img src={RAMR} alt={"img"}/>
+                    <img id={"logo_partners"} src={trucks_on_the_road} alt={"img"}/>
+                    <img id={"logo_partners"} src={ati_su} alt={"img"}/>
+                    <img id={"logo_partners"} src={auto_review} alt={"img"}/>
+                    <img id={"logo_partners"} src={brother} alt={"img"}/>
+                    <img id={"logo_partners"} src={RAMR} alt={"img"}/>
                 </div>
                 <div className={"bottom_rows_logo"}>
-                    <img src={business_navigator} alt={"img"}/>
-                    <img src={LogiRus} alt={"img"}/>
-                    <img src={colesaru} alt={"img"}/>
-                    <img src={logistics} alt={"img"}/>
-                    <img src={fifth_wheel} alt={"img"}/>
+                    <img id={"logo_partners"} src={business_navigator} alt={"img"}/>
+                    <img id={"logo_partners"} src={LogiRus} alt={"img"}/>
+                    <img id={"logo_partners"} src={colesaru} alt={"img"}/>
+                    <img id={"logo_partners"} src={logistics} alt={"img"}/>
+                    <img id={"logo_partners"} src={fifth_wheel} alt={"img"}/>
                 </div>
-                <div className={"bottom_rows_logo"}>
+                <div id={"logo_partners"} className={"bottom_rows_logo"}>
                     <img src={flight} alt={"img"}/>
                 </div>
             </div>

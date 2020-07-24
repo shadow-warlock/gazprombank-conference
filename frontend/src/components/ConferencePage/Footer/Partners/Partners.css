@@ -15,12 +15,17 @@
     text-align: center;
     text-transform: uppercase;
 }
-img>.last{
-    margin-left: 7%;
-}
-#last{
-    margin-left:10%;
-}
+/*img>.last{*/
+/*    margin-left: 7%;*/
+/*}*/
+/*#last{*/
+/*    margin-left:10%;*/
+/*}*/
 .bottom_rows_logo{
     margin:0 ;
+}
+#logo_partners{
+    margin: 5vw;
+    width: 20vw;
+    height: auto;
 }
