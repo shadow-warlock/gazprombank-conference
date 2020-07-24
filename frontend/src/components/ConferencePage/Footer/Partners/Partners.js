@@ -11,38 +11,12 @@ import LogiRus from "../../../../assets/cordiant_images/LogiRus.png"
 import logistics from "../../../../assets/cordiant_images/logistics.png"
 import RAMR from "../../../../assets/cordiant_images/RAMR.png"
 import trucks_on_the_road from "../../../../assets/cordiant_images/trucks_on_the_road.png"
-// import ato from "../../../../assets/avia_images/ato.png";
-// import embr from "../../../../assets/avia_images/embr.png";
-// import rosneft1 from "../../../../assets/avia_images/rosneft.png";
-// import atoru from "../../../../assets/avia_images/atoru.png";
-// import ruinsaider from "../../../../assets/avia_images/ruinsaider.png";
-// import aviaport from "../../../../assets/avia_images/aviaport.png";
-// import tp from "../../../../assets/avia_images/tp.png";
-// import maa from "../../../../assets/avia_images/maa.png";
-// import aviagor from "../../../../assets/avia_images/aviagor.png";
-// import tkp from "../../../../assets/avia_images/tkp.png";
-// import siren from "../../../../assets/avia_images/siren.png";
-// import biletix from "../../../../assets/avia_images/biletix.png";
-// import bbtr from "../../../../assets/avia_images/bbtr.png";
+
 
 class Partners extends React.Component {
     render() {
         return (
             <div className={"footer_logo"}>
-                {/*<div>*/}
-                {/*    <p>организатор</p>*/}
-                {/*    <p>спонсор</p>*/}
-                {/*    <p>спонсор</p>*/}
-                {/*    <p id={"last"}>генеральный инфопартнер</p>*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*    <img src={ato} alt={"img"}/>*/}
-                {/*    <img src={embr} alt={"img"}/>*/}
-                {/*    <img src={rosneft1} alt={"img"}/>*/}
-                {/*    <img className={"last"} src={atoru} alt={"img"}/>*/}
-                {/*    <img className={"last"} src={ruinsaider} alt={"img"}/>*/}
-                {/*</div>*/}
-                {/*<div>*/}
                 <div>
                     <p>Информационные партнеры</p>
                 </div>
