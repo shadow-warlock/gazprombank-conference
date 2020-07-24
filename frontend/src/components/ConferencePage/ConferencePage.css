@@ -1,12 +1,13 @@
 .conference {
-    background-color: var(--green-blue);
+    /*background-color: var(--green-blue);*/
+    background-image: url(./../../assets/cordiant/blue.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .conference .top_container{
     padding-top: 50px;
-    background-image: url(./../../assets/plane_lines.png);
+    /*background-image: url(./../../assets/cordiant/blue.png);*/
     background-size: cover;
 }
 

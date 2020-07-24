@@ -37,11 +37,13 @@ export default class AuthPage extends Component {
                         <ChangeLocaleButton/>
                     </div>
                 </div>
-                <div id={"car_image"}>
-                    <img src={car}/>
-                </div>
-                <div className={"logo_right"}>
-                    <Logo/>
+                <div id={"logo_image"}>
+                    <div id={"car_image"}>
+                        <img src={car} alt={"car"}/>
+                    </div>
+                    <div className={"logo_right"}>
+                        <Logo/>
+                    </div>
                 </div>
             </div>
         );

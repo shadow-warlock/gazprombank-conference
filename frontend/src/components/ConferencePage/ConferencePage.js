@@ -12,6 +12,7 @@ import Timer from "../../Utils/Timer";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
+import {conferenceDate} from "../../const/mockData";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -51,9 +52,11 @@ export default class ConferencePage extends Component {
                     </p>
                     <br/>
                     <p className={"uppercase large_title"}>
-                        <FormattedMessage id={"restart"}/>
+                        <FormattedMessage id={"cordiant"}/>
                         <br/>
-                        <FormattedMessage id={"air_transport"}/>
+                        <FormattedMessage id={"optimization_tools"}/>
+                        <br/>
+                        <FormattedMessage id={"car_park"}/>
                     </p>
                     <div className={"materials_and_time"}>
                         <div>
@@ -65,10 +68,11 @@ export default class ConferencePage extends Component {
                         </div>
                         <div className={"uppercase"}>
                             <div>
-                                <Moment fromNow ago date={1594926995000}/>
+                                {/*<Moment fromNow ago date={1594926995000}/>*/}
+                                <Moment format="D MMM YYYY" date={conferenceDate}/>
                             </div>
                             <div>
-                                11:00 - 16:00 (GMT+3, <FormattedMessage id={"moscow"}/>)
+                                11:00 - 14:00 (GMT+3, <FormattedMessage id={"moscow"}/>)
                             </div>
                         </div>
                     </div>

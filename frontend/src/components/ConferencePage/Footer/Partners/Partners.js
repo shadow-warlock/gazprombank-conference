@@ -13,25 +13,27 @@ import tkp from "../../../../assets/avia_images/tkp.png";
 import siren from "../../../../assets/avia_images/siren.png";
 import biletix from "../../../../assets/avia_images/biletix.png";
 import bbtr from "../../../../assets/avia_images/bbtr.png";
-class Partners extends React.Component{
-    render(){
-        return(
+
+class Partners extends React.Component {
+    render() {
+        return (
             <div className={"footer_logo"}>
+                {/*<div>*/}
+                {/*    <p>организатор</p>*/}
+                {/*    <p>спонсор</p>*/}
+                {/*    <p>спонсор</p>*/}
+                {/*    <p id={"last"}>генеральный инфопартнер</p>*/}
+                {/*</div>*/}
+                {/*<div>*/}
+                {/*    <img src={ato} alt={"img"}/>*/}
+                {/*    <img src={embr} alt={"img"}/>*/}
+                {/*    <img src={rosneft1} alt={"img"}/>*/}
+                {/*    <img className={"last"} src={atoru} alt={"img"}/>*/}
+                {/*    <img className={"last"} src={ruinsaider} alt={"img"}/>*/}
+                {/*</div>*/}
+                {/*<div>*/}
                 <div>
-                    <p>организатор</p>
-                    <p>спонсор</p>
-                    <p>спонсор</p>
-                    <p id={"last"}>генеральный инфопартнер</p>
-                </div>
-                <div>
-                    <img src={ato} alt={"img"}/>
-                    <img src={embr} alt={"img"}/>
-                    <img src={rosneft1} alt={"img"}/>
-                    <img className={"last"} src={atoru} alt={"img"}/>
-                    <img className={"last"} src={ruinsaider} alt={"img"}/>
-                </div>
-                <div>
-                    <p>Информационный партнер</p>
+                    <p>Информационные партнеры</p>
                 </div>
                 <div className={"bottom_rows_logo"}>
                     <img src={aviaport} alt={"img"}/>
@@ -49,4 +51,5 @@ class Partners extends React.Component{
         );
     }
 }
+
 export default Partners;
