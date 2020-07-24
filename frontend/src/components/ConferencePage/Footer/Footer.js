@@ -8,6 +8,7 @@ import rosneft_ru from "../../../assets/rosneft_ru.jpeg";
 import rosneft_en from "../../../assets/rosneft_en.jpeg";
 import {LanguageContext} from "../../App";
 import Partners from "./Partners/Partners";
+import Logo from "../../Logo/Logo";
 
 export default class Footer extends Component {
 
@@ -24,19 +25,20 @@ export default class Footer extends Component {
                 {/*</LanguageContext.Consumer>*/}
                 <div className={"padding_side"}>
                     <TechSupport/>
-                    <div className={"organization"}>
-                        <p className={"font_size_big color_green_blue bold"}>
-                            <FormattedMessage id={"organizer"}/>
-                            <FormattedMessage id={"ato_events"}/>
-                        </p>
-                        <p>
-                            <FormattedMessage id={"more_than"}/>
-                        </p>
-                        <p>
-                            <a className={"color_green_blue"} href={"://www.events.ato.ru"}>www.events.ato.ru</a> +7 495
-                            108-51-43
-                        </p>
-                    </div>
+                    <Logo/>
+                    {/*<div className={"organization"}>*/}
+                    {/*    <p className={"font_size_big color_green_blue bold"}>*/}
+                    {/*        <FormattedMessage id={"organizer"}/>*/}
+                    {/*        <FormattedMessage id={"ato_events"}/>*/}
+                    {/*    </p>*/}
+                    {/*    <p>*/}
+                    {/*        <FormattedMessage id={"more_than"}/>*/}
+                    {/*    </p>*/}
+                    {/*    <p>*/}
+                    {/*        <a className={"color_green_blue"} href={"://www.events.ato.ru"}>www.events.ato.ru</a> +7 495*/}
+                    {/*        108-51-43*/}
+                    {/*    </p>*/}
+                    {/*</div>*/}
                 </div>
                 <div className={"bottom_footer color_white bold"}>
                     <div>
