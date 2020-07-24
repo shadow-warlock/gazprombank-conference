@@ -29,7 +29,8 @@
 .broadcast_chat_container {
     padding-top: 50px;
     padding-bottom: 50px;
-    background: white url("./../../assets/airport_background.jpeg") no-repeat;
+    /*background: white url("./../../assets/airport_background.jpeg") no-repeat;*/
+    background: #6E6E6E;
     background-size: cover;
     display: flex;
     justify-content: space-between;
