@@ -1,63 +1,38 @@
 import React from "react";
 import "./Partners.css"
-import ato from "../../../../assets/avia_images/ato.png";
-import embr from "../../../../assets/avia_images/embr.png";
-import rosneft1 from "../../../../assets/avia_images/rosneft.png";
-import atoru from "../../../../assets/avia_images/atoru.png";
-import ruinsaider from "../../../../assets/avia_images/ruinsaider.png";
-import aviaport from "../../../../assets/avia_images/aviaport.png";
-import tp from "../../../../assets/avia_images/tp.png";
-import maa from "../../../../assets/avia_images/maa.png";
-import aviagor from "../../../../assets/avia_images/aviagor.png";
-import tkp from "../../../../assets/avia_images/tkp.png";
-import siren from "../../../../assets/avia_images/siren.png";
-import biletix from "../../../../assets/avia_images/biletix.png";
-import bbtr from "../../../../assets/avia_images/bbtr.png";
+import ati_su from "../../../../assets/cordiant_images/ati_su.png"
+import auto_review from "../../../../assets/cordiant_images/auto_review.png"
+import brother from "../../../../assets/cordiant_images/brother.png"
+import business_navigator from "../../../../assets/cordiant_images/business_navigator.png"
+import colesaru from "../../../../assets/cordiant_images/colesaru.png"
+import fifth_wheel from "../../../../assets/cordiant_images/fifth_wheel.png"
+import flight from "../../../../assets/cordiant_images/flight.png"
+import LogiRus from "../../../../assets/cordiant_images/LogiRus.png"
+import logistics from "../../../../assets/cordiant_images/logistics.png"
+import RAMR from "../../../../assets/cordiant_images/RAMR.png"
+import trucks_on_the_road from "../../../../assets/cordiant_images/trucks_on_the_road.png"
 import {FormattedMessage} from "react-intl";
+
 
 class Partners extends React.Component {
     render() {
         return (
-            <div className={"partners uppercase"}>
-                <div>
-                    <div className={"top_partners"}>
-                        <div className={"partner_container"}>
-                            <p><FormattedMessage id={"partner_organizer"}/></p>
-                            <img src={ato} alt={"img"}/>
-                        </div>
-                        <div className={"partner_container"}>
-                            <p><FormattedMessage id={"partner_sponsor"}/></p>
-                            <img src={embr} alt={"img"}/>
-                        </div>
-                        <div className={"partner_container"}>
-                            <p><FormattedMessage id={"partner"}/></p>
-                            <img src={rosneft1} alt={"img"}/>
-                        </div>
-                    </div>
-                    <div>
-                        <div className={"general_info_partner"}>
-                            <p><FormattedMessage id={"general_media_partner"}/></p>
-                            <div>
-                                <img src={atoru} alt={"img"}/>
-                                <img src={ruinsaider} alt={"img"}/>
-                            </div>
-                        </div>
-                    </div>
+            <div className={"footer_logo padding_side"}>
+                <div className={"text_center color_blue font_size_very_big"}>
+                    <p><FormattedMessage id={"information_partners"}/></p>
                 </div>
-                <div className={"information_partners"}>
-                    <div>
-                        <p><FormattedMessage id={"media_partners"}/></p>
-                    </div>
-                    <div>
-                        <div><img src={aviaport} alt={"img"}/></div>
-                        <div><img src={tp} alt={"img"}/></div>
-                        <div><img src={maa} alt={"img"}/></div>
-                        <div><img src={aviagor} alt={"img"}/></div>
-                        <div><img src={tkp} alt={"img"}/></div>
-                        <div><img src={siren} alt={"img"}/></div>
-                        <div><img src={biletix} alt={"img"}/></div>
-                        <div><img src={bbtr} alt={"img"}/></div>
-                    </div>
+                <div className={"logos"}>
+                    <img className={"partner_logo"} src={trucks_on_the_road} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={ati_su} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={auto_review} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={brother} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={RAMR} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={business_navigator} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={LogiRus} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={colesaru} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={logistics} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={fifth_wheel} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={flight} alt={"partner logo"}/>
                 </div>
             </div>
         );

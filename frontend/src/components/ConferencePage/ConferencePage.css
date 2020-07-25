@@ -1,12 +1,12 @@
 .conference {
-    background-color: var(--green-blue);
+    background-image: url(./../../assets/cordiant/blue.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-.conference .top_container{
+.conference .top_container {
     padding-top: 50px;
-    background-image: url(./../../assets/plane_lines.png);
+    /*background-image: url(./../../assets/cordiant/blue.png);*/
     background-size: cover;
 }
 
@@ -20,7 +20,8 @@
 }
 
 .conference_title {
-
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
 }
@@ -28,7 +29,7 @@
 .broadcast_chat_container {
     padding-top: 50px;
     padding-bottom: 50px;
-    background: white url("./../../assets/airport_background.jpeg") no-repeat;
+    background: #6E6E6E;
     background-size: cover;
     display: flex;
     justify-content: space-between;
@@ -52,21 +53,15 @@
     display: flex;
 }
 
-.materials_and_time > div:nth-child(1) {
-    background-color: #fe9a00;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
+.materials_and_time  .button {
     margin-right: 30px;
-    height: 100%;
 }
-
-.materials_and_time > div:nth-child(1):hover {
-    cursor: pointer;
+.materials_and_time > div:nth-child(1){
+    display: flex;
 }
 
 .materials_and_time > div:nth-child(2) {
-    text-align: left;
+    text-align: right;
 }
 
 .conference .large_title {

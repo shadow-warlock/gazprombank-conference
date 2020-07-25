@@ -1,6 +1,5 @@
 .auth_page {
-    background-color: var(--green-blue);
-    background-image: url(./../../assets/plane_lines.png);
+    background: linear-gradient(90deg, var(--blue) 60%, white 40%);
     background-size: cover;
     padding-top: 50px;
     padding-left: 100px;
@@ -8,11 +7,12 @@
     overflow: hidden;
 }
 
-.auth_page .font_size_very_big {
-    font-size: calc(2 * var(--default-font-size));
-}
-
 .auth_page_container {
+    background-image: url(./../../assets/cordiant/car.png);
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 60%;
+    background-repeat: no-repeat;
     flex-wrap: wrap-reverse;
     display: flex;
     justify-content: space-between;
@@ -22,22 +22,16 @@
     margin-right: 30px;
 }
 
-.auth_page_container img {
-    margin-top: 100px;
-    height: 100vh;
-}
-
 .bank_container {
     text-align: right;
 }
 
-.left_container {
-}
+
 
 .logo_right {
     text-align: right;
     padding-top: 10px;
-    padding-right: 100px;
+    padding-right: 50px;
     padding-bottom: 20px;
 }
 
@@ -47,4 +41,14 @@
     padding: 15px 30px;
     border-radius: 15px;
     width: fit-content;
+}
+
+img {
+    width: inherit;
+    height: auto;
+}
+
+
+.auth_page .tech_support {
+    margin-top: 100px;
 }

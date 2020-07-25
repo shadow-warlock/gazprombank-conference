@@ -6,6 +6,10 @@
     display: block;
 }
 
+.footer .mail {
+    display: block;
+}
+
 .footer .padding_side {
     background-color: var(--light-green);
 }
@@ -17,7 +21,7 @@
 }
 
 .footer .tech_support > div > p {
-    color: var(--green-blue);
+    color: var(--blue);
     font-size: var(--font-size-very-big);
     font-weight: bold;
 }
@@ -32,7 +36,7 @@
 .footer .tech_support .login_supporters .supporter {
     margin: 0 10px;
     flex-direction: column;
-    color: var(--green-blue);
+    color: var(--blue);
 }
 
 .footer .tech_support a {

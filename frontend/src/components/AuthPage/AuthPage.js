@@ -2,11 +2,9 @@ import React, {Component} from "react";
 import AuthForm from "./AuthForm/AuthForm";
 import Logo from "../Logo/Logo";
 import "./AuthPage.css";
-import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from "react-moment";
-import {conferenceDate, conferenceTime} from "../../const/mockData";
-import AdditionalLogos from "./AdditionalLogos/AdditionalLogos";
+import {conferenceTime} from "../../const/mockData";
 
 export default class AuthPage extends Component {
     render() {
@@ -14,29 +12,31 @@ export default class AuthPage extends Component {
             <div className={"auth_page color_white"}>
                 <div className={"auth_page_container"}>
                     <div className={"left_container"}>
-                        <p className={"bold font_size_big uppercase"}>
+                        <p className={"font_size_very_big uppercase"}>
                             <FormattedMessage id={"conference"}/>
                         </p>
-                        <br/>
+                        <p className={"font_size_very_big uppercase nowrap color_white"}>
+                            <FormattedMessage id={"cordiant"}/>
+                            <span className={"bold"}><FormattedMessage id={"optimization_tools"}/></span>
+                        </p>
                         <p className={"font_size_very_big uppercase nowrap bold color_white"}>
-                            <FormattedMessage id={"restart"}/>
-                            <FormattedMessage id={"air_transport"}/>
+                            <FormattedMessage id={"car_park"}/>
                         </p>
-                        <p className={"font_size_very_big bold uppercase"}>
-                            <Moment format="D MMMM, YYYY" date={conferenceDate}/>
+                        <br/>
+                        <p className={"font_size_big bold"}>
+                            <Moment format="D MMM YYYY" date={conferenceTime.date}/>
                         </p>
-                        <p className={"bold uppercase"}>
-                            {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
+                        <p className={"font_size_big bold"}>
+                            {conferenceTime.time} ({conferenceTime.timezone}, <FormattedMessage
+                            id={conferenceTime.city}/>)
                         </p>
                         <AuthForm setUser={this.props.setUser}/>
                     </div>
                     <div>
-                        <ChangeLocaleButton/>
-                        <AdditionalLogos/>
+                        <div className={"logo_right"}>
+                            <Logo/>
+                        </div>
                     </div>
-                </div>
-                <div className={"logo_right"}>
-                    <Logo/>
                 </div>
             </div>
         );

@@ -5,14 +5,14 @@ body {
     font-family: 'Open Sans', sans-serif;
     --green-blue: #24767c;
     --green-blue-dark: #16464c;
-    --blue: #1c58a5;
+    --blue: #005387;
     --white-blue: rgb(161, 232, 255);
     --violet: #430d7f;
     --dark-violet: #230668;
     --light-blue: #d7e5f7;
     --pink: rgb(194, 17, 161);
     --yellow: #ffcb00;
-    --default-font-size: 15px;
+    --default-font-size: 12px;
     --font-size-less: calc(0.7 * var(--default-font-size));
     --font-size-big: calc(1.5 * var(--default-font-size));
     --font-size-very-big: calc(1.9 * var(--default-font-size));
@@ -45,7 +45,7 @@ p {
     color: var(--white-blue);
 }
 
-.color_green_blue {
+.color_green_blue{
     color: var(--green-blue);
 }
 

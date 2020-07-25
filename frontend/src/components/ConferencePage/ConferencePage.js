@@ -2,18 +2,17 @@ import React, {Component} from "react";
 import Broadcast from "./Broadcast/Broadcast";
 import Chat from "./Chat/Chat";
 import Poll from "./Poll/Poll";
-import Logo from "../Logo/Logo";
 import axios from "axios";
 import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
 import Websocket from "react-websocket";
 import "./ConferencePage.css";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
-import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
-import {conferenceDate, conferenceTime} from "../../const/mockData";
-import {LanguageContext} from "../App";
+import {conferenceTime} from "../../const/mockData";
+import LogoWhite from "../Logo/LogoWhite";
+import Button from "../Button/Button";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -43,40 +42,36 @@ export default class ConferencePage extends Component {
             return "Loading";
         return (
             <div className={"conference"}>
-                <div className={"top_container"}>
-                    <div className={"conference_title padding_side"}>
-                        <div><Logo/></div>
-                        <ChangeLocaleButton/>
-                    </div>
-                    <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
-                        <p className={"uppercase"}>
-                            <FormattedMessage id={"conference"}/>
-                        </p>
-                        <br/>
-                        <p className={"uppercase large_title"}>
-                            <FormattedMessage id={"restart"}/>
+                <div className={"conference_title padding_side"}>
+                    <div><LogoWhite/></div>
+                </div>
+                <div className={"padding_side flex_right font_size_very_big color_white conference_theme"}>
+                    <p className={"uppercase"}>
+                        <FormattedMessage id={"free"}/> <FormattedMessage id={"conference"}/>
+                    </p>
+                    <p className={"uppercase"}>
+                        <FormattedMessage id={"cordiant"}/>
+                        <span className={"bold"}>
+                            <FormattedMessage id={"optimization_tools"}/>
                             <br/>
-                            <FormattedMessage id={"air_transport"}/>
-                        </p>
-                        <div className={"materials_and_time"}>
+                            <FormattedMessage id={"car_park"}/>
+                        </span>
+                    </p>
+                    <div className={"materials_and_time"}>
+                        <div>
+                            <Button onClick={() => {
+                                window.open('/assets/materials.zip', '_blank');
+                            }}>
+                                <FormattedMessage id={"agenda"}/>
+                            </Button>
+                        </div>
+                        <div className={"bold"}>
                             <div>
-                                <LanguageContext.Consumer>
-                                    {value =>
-                                        <div onClick={() => {
-                                            window.open(value.lang === "en" ? '/assets/program_en.pdf' : '/assets/program_ru.pdf', '_blank');
-                                        }}>
-                                            <FormattedMessage id={"agenda"}/>
-                                        </div>
-                                    }
-                                </LanguageContext.Consumer>
+                                <Moment format="D MMM YYYY" date={conferenceTime.date}/>
                             </div>
-                            <div className={"uppercase"}>
-                                <div>
-                                    <Moment format="D MMMM, YYYY" date={conferenceDate}/>
-                                </div>
-                                <div>
-                                    {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
-                                </div>
+                            <div>
+                                {conferenceTime.time} ({conferenceTime.timezone}, <FormattedMessage
+                                id={conferenceTime.city}/>)
                             </div>
                         </div>
                     </div>

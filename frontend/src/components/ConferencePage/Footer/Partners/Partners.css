@@ -1,41 +1,20 @@
-.footer .partners {
-    background-color: white;
-    color: gray;
-}
-
-.footer .partners > div {
+.footer .footer_logo {
     display: flex;
-}
-
-.footer .partners > div > div {
-    display: flex;
-}
-
-.footer .partners > div > div > div {
-    text-align: center;
-}
-
-.footer .partners .information_partners {
     flex-direction: column;
+    background-color: white;
+    height: 100%;
 }
 
-.footer .partners .information_partners > div {
-    justify-content: center;
+.footer .footer_logo div p {
+    margin: 50px auto;
+}
+
+.footer_logo .logos {
+    display: flex;
     flex-wrap: wrap;
 }
 
-.footer .partners .information_partners > div > div {
-    flex-basis: 25%;
-}
-
-.footer .partners img {
-    width: 20vw;
-}
-
-.footer .partners .general_info_partner > div {
-    display: flex;
-}
-
-.footer .partners .general_info_partner img {
-    width: 50%;
+.logos .partner_logo {
+    width: 14%;
+    margin: 3%;
 }
