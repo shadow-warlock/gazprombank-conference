@@ -19,7 +19,7 @@ export default class Footer extends Component {
                 </div>
                 <div className={"bottom_footer color_white bold"}>
                     <div>
-                        © 2020, <span className={"color_green_blue"}>
+                        © 2020, <span className={"color_blue"}>
                         <FormattedMessage id={"cordiant_events"}/>
                     </span>
                     </div>

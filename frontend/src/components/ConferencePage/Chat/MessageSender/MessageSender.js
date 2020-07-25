@@ -52,7 +52,7 @@ class MessageSender extends Component {
     render() {
         return (
             <div className={"send_message_container"}>
-                <div className={"color_green_blue message_sender_header"}>
+                <div className={"color_blue message_sender_header"}>
                     {this.getReplyElement()}
                 </div>
                 <TextareaAutosize

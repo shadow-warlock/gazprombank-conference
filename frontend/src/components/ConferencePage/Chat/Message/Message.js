@@ -65,7 +65,7 @@ class Message extends Component {
             <div className={"message_container"} id={"msg_" + this.props.message.id}>
                 <div className={"message"}>
                     <div>
-                        <p className={"uppercase bold color_green_blue name"}>{message.user.name} {message.user.surname}</p>
+                        <p className={"uppercase bold color_blue name"}>{message.user.name} {message.user.surname}</p>
                         <p className={"text"}>{this.getReplyToElement()} {message.text}</p>
                     </div>
                     <div>
@@ -74,7 +74,7 @@ class Message extends Component {
                             <FontAwesomeIcon onClick={() => {
                                 this.likeClick.bind(this)(myLike);
                             }}
-                                             className={"like_button " + (myLike && "color_green_blue")}
+                                             className={"like_button " + (myLike && "color_blue")}
                                              icon={faHeart}/>
                         </p>
                     </div>
@@ -82,14 +82,14 @@ class Message extends Component {
                 <div className={"padding_right reply_and_time"}>
                     <p onClick={() => {
                         this.props.onReply(this.props.message)
-                    }} className={"reply_button color_green_blue"}>
+                    }} className={"reply_button color_blue"}>
                         <FormattedMessage id={"reply"}/>
                     </p>
                     {this.props.user.role === ROLE.ADMIN &&
-                    <p onClick={this.removeMessage} className={"reply_button color_green_blue"}>
+                    <p onClick={this.removeMessage} className={"reply_button color_blue"}>
                         <FormattedMessage id={"delete"}/>
                     </p>}
-                    <Moment className={"nowrap color_green_blue"} fromNow ago date={this.props.message.time}/>
+                    <Moment className={"nowrap color_blue"} fromNow ago date={this.props.message.time}/>
                 </div>
             </div>
         );

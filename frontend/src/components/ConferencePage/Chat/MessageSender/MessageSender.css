@@ -1,16 +1,12 @@
 .send_message_container .textarea {
     width: 350px;
     resize: none;
-    border: 1px solid var(--green-blue);
+    border: 1px solid var(--blue);
     padding: 10px;
 }
 
-.send_message_container {
-    /*display: flex;*/
-}
-
 .send_message_container .send_button {
-    color: var(--green-blue);
+    color: var(--blue);
     height: 30px;
     width: 30px;
     margin-left: 10px;
@@ -19,13 +15,13 @@
 }
 
 .send_message_container .send_button:hover {
-    color: var(--green-blue-dark);
+    color: var(--dark-blue);
 }
 
 
 .send_message_container .cancel_reply:hover {
     cursor: pointer;
-    color: var(--green-blue);
+    color: var(--blue);
 }
 
 .cancel_reply{
