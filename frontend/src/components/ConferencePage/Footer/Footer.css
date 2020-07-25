@@ -1,11 +1,14 @@
 .footer > div {
     padding-top: 50px;
-    display: flex;
     padding-bottom: 50px;
 }
 
-.footer {
-    display: flex;
+.footer .mail {
+    display: block;
+}
+
+.footer .padding_side {
+    background-color: var(--light-green);
 }
 
 .footer .tech_support {
@@ -15,7 +18,7 @@
 }
 
 .footer .tech_support > div > p {
-    color: var(--blue);
+    color: var(--green-blue);
     font-size: var(--font-size-very-big);
     font-weight: bold;
 }
@@ -30,10 +33,47 @@
 .footer .tech_support .login_supporters .supporter {
     margin: 0 10px;
     flex-direction: column;
-    color: var(--blue);
+    color: var(--green-blue);
 }
 
 .footer .tech_support a {
     color: black;
 }
 
+.footer .bottom_footer {
+    background-color: #4d4d4d;
+    display: flex;
+}
+
+.footer .bottom_footer > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .bottom_footer > div > a {
+    white-space: nowrap;
+    margin: 5px 10px;
+}
+
+.footer .bottom_footer > div {
+    justify-content: center;
+    flex: 1;
+}
+
+.footer .bottom_footer > div:nth-child(1) > span {
+    margin-left: 10px;
+}
+
+.footer .bottom_footer > div:nth-child(2) {
+    flex: 2;
+}
+
+
+.footer .organization {
+    text-align: center;
+}
+
+.footer .banner{
+    display: block;
+    width: 100%;
+}

@@ -1,6 +1,7 @@
 .auth_page {
-    background-color: var(--light-blue);
-    background-size: 500px, auto;
+    background: linear-gradient( 90deg, #005387 60%, white 40%);
+    /*background-image: url(./../../assets/cordiant/car.png),linear-gradient( 90deg, #005285 60%, white 40%);*/
+    background-size: cover;
     padding-top: 50px;
     padding-left: 100px;
     min-height: 100vh;
@@ -8,12 +9,17 @@
 }
 
 .auth_page .font_size_very_big {
-    font-size: calc(2 * var(--default-font-size));
+    font-size: calc(1.2 * var(--default-font-size));
 }
 
 .auth_page_container {
+    flex-wrap: wrap-reverse;
     display: flex;
     justify-content: space-between;
+}
+
+.auth_page_container > div:nth-child(2) {
+    margin-right: 30px;
 }
 
 .auth_page_container img {
@@ -26,7 +32,6 @@
 }
 
 .left_container {
-    max-width: 40%;
 }
 
 .logo_right {
@@ -36,10 +41,26 @@
     padding-bottom: 20px;
 }
 
-.conference_time{
+.conference_time {
     background-color: var(--yellow);
     color: var(--blue);
     padding: 15px 30px;
     border-radius: 15px;
     width: fit-content;
 }
+#car_image{
+    position:fixed;
+    right: 0;
+    top:15vh;
+    width: 59vw;
+    /*min-width: 750px;*/
+    height: auto;
+}
+img{
+    width: inherit;
+    height: auto;
+}
+/*#logo_image{*/
+/*    display: flex;*/
+/*    flex-direction: column-reverse;*/
+/*}*/

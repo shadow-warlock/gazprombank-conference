@@ -124,21 +124,61 @@ export const CONFERENCE_ITEMS = [
     }
 ];
 
-export const TECH_SUPPORTERS = [
+export const TECH_SUPPORTERS_ConferencePage = [
     {
-        name: "Светлана Пименова",
-        phone: "+7 903 263-46-14"
+        name: "svetlana_pimenova",
+        phone: "+7 903 263-46-14",
+        email: "s.pimenova@atoevents.ru"
     },
     {
-        name: "Анна Торохова",
-        phone: "+7 964 539-83-98"
+        name: "alena_garanicheva",
+        phone: "+7 965 109-34-84",
+        email: "a.garanicheva@ato_events"
+    },
+    // {
+    //     name: "valeria_burskaya",
+    //     phone: "+7 965 109-30-88",
+    //     email: "v.burskaya@atoevents.ru"
+    // },
+    {
+        name: "nikita_kachaev",
+        phone: "+7 964 500-25-33",
+        email: "n.kachaev@atoevents.ru"
     },
     {
-        name: "Валерия Бурская",
-        phone: "+7 965 109-30-88"
-    },
-    {
-        name: "Никита Качаев",
-        phone: "+7 964 500-25-33"
+        name: "margarita_gukasova",
+        phone: "+7 967 198-38-81",
+        email: "m.gusakova@atoevents.ru"
     }
 ];
+export const TECH_SUPPORTERS = [
+    {
+        name: "svetlana_pimenova",
+        phone: "+7 903 263-46-14",
+        email: "s.pimenova@atoevents.ru"
+    },
+    // {
+    //     name: "alena_garanicheva",
+    //     phone: "+7 965 109-34-84",
+    //     email: "a.garanicheva@ato_events"
+    // },
+    {
+        name: "valeria_burskaya",
+        phone: "+7 965 109-30-88",
+        email: "v.burskaya@atoevents.ru"
+    },
+    {
+        name: "nikita_kachaev",
+        phone: "+7 964 500-25-33",
+        email: "n.kachaev@atoevents.ru"
+    },
+    {
+        name: "margarita_gukasova",
+        phone: "+7 967 198-38-81",
+        email: "m.gusakova@atoevents.ru"
+    }
+];
+
+
+export const conferenceDate = new Date("2020-07-30");
+export const conferenceTime = "11:00 - 14:00";

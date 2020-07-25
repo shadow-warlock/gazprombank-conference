@@ -1,0 +1,34 @@
+{
+  "password": "password",
+  "sign_in": "sign in",
+  "log_out": "log out",
+  "conference": "online conference",
+  "restart": "restart ",
+  "air_transport": "air transport",
+  "moscow": "moscow",
+  "technical_support": "technical support",
+  "svetlana_pimenova": "Svetlana Pimenova",
+  "valeria_burskaya": "Valeria Burskaya",
+  "nikita_kachaev": "Nikita Kachaev",
+  "margarita_gukasova": "Nikita Kachaev",
+
+  "agenda": "Agenda",
+  "broadcast": "Broadcast",
+  "chat": "Chat",
+  "your_question": "Please write your question",
+  "input_message": "Enter your message",
+  "reply": "reply",
+  "delete": "delete",
+  "reply_to": "Reply to ",
+  "delete_confirm": "Do you want to delete the message?",
+  "conference_partner": "conference partner",
+  "organizer": "Organized by ",
+  "ato_events": "ATO Events",
+  "more_than": "340+ events, 41 200 + attenders, over 23 years experience",
+  "personal_data_policy": "Personal Data Processing Policy",
+  "privacy_policy": "Privacy Policy",
+
+  "thank_you": "thank you",
+  "participation": "for your participation!"
+
+}

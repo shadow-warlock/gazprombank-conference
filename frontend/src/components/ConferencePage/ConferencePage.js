@@ -1,17 +1,18 @@
 import React, {Component} from "react";
-import ConferenceProgram from "./ConferenceProgram/ConferenceProgram";
 import Broadcast from "./Broadcast/Broadcast";
 import Chat from "./Chat/Chat";
 import Poll from "./Poll/Poll";
-import Logo from "../Logo/Logo";
 import axios from "axios";
 import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
 import Websocket from "react-websocket";
 import "./ConferencePage.css";
-import {CONFERENCE_ITEMS} from "../../const/mockData";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
-import LogoutButton from "../LogoutButton/LogoutButton";
+import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
+import {FormattedMessage} from "react-intl";
+import Moment from 'react-moment';
+import {conferenceDate} from "../../const/mockData";
+import LogoWhite from "../Logo/LogoWhite";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -42,21 +43,38 @@ export default class ConferencePage extends Component {
         return (
             <div className={"conference"}>
                 <div className={"conference_title padding_side"}>
-                    <div><Logo/></div>
-                    <LogoutButton/>
+                    <div><LogoWhite/></div>
+                    <ChangeLocaleButton/>
                 </div>
-                <div className={"padding_side flex_right font_size_very_big color_blue bold conference_theme"}>
-                    <p className={"bg_yellow"}>Онлайн-конференция</p>
+                <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
+                    <p className={"uppercase"}>
+                        <FormattedMessage id={"conference"}/>
+                    </p>
                     <br/>
-                    <p className={"uppercase"}><span
-                        className={"bg_blue color_white"}>Актуальные вопросы и изменения</span> законодательства<br/>
-                        Российской Федерации в области валютного регулирования<br/>
-                        и валютного контроля</p>
+                    <p className={"uppercase large_title"}>
+                        <FormattedMessage id={"cordiant"}/>
+                        <br/>
+                        <FormattedMessage id={"optimization_tools"}/>
+                        <br/>
+                        <FormattedMessage id={"car_park"}/>
+                    </p>
                     <div className={"materials_and_time"}>
-                        <div onClick={()=>{window.open('/assets/materials.zip', '_blank');}}>
-                            Материалы конференции
+                        <div>
+                            <div onClick={() => {
+                                window.open('/assets/materials.zip', '_blank');
+                            }}>
+                                <FormattedMessage id={"agenda"}/>
+                            </div>
                         </div>
-                        <div>2 июня 2020 года 10:00</div>
+                        <div className={"uppercase"}>
+                            <div>
+                                {/*<Moment fromNow ago date={1594926995000}/>*/}
+                                <Moment format="D MMM YYYY" date={conferenceDate}/>
+                            </div>
+                            <div>
+                                11:00 - 14:00 (GMT+3, <FormattedMessage id={"moscow"}/>)
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={"broadcast_chat_container padding_side"}>
@@ -64,16 +82,11 @@ export default class ConferencePage extends Component {
                     <Chat user={this.props.user} chat={this.state.conference.chat}/>
                 </div>
                 <div className={"padding_side"}>
-                    <ConferenceProgram items={CONFERENCE_ITEMS}/>
-                </div>
-                <div className={"padding_side"}>
                     {this.state.conference.poll &&
                     <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
                           poll={this.state.conference.poll}/>}
                 </div>
-                <div className={"padding_side"}>
-                    <Footer/>
-                </div>
+                <Footer/>
                 <Websocket url={SERVER.WS}
                            onMessage={this.handleData.bind(this)}/>
             </div>

@@ -11,3 +11,9 @@
     overflow-y: scroll;
     height: 500px;
 }
+
+.chat_body {
+    padding: 15px;
+    background-color: var(--light-green);
+    opacity: 0.85;
+}

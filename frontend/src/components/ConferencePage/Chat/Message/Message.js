@@ -66,7 +66,7 @@ export default class Message extends Component {
             <div className={"message_container"} id={"msg_" + this.props.message.id}>
                 <div className={"message"}>
                     <div>
-                        <p className={"uppercase bold color_blue name"}>{message.user.name} {message.user.surname}</p>
+                        <p className={"uppercase bold color_green_blue name"}>{message.user.name} {message.user.surname}</p>
                         <p className={"text"}>{this.getReplyToElement()} {message.text}</p>
                     </div>
                     <div>
@@ -75,7 +75,7 @@ export default class Message extends Component {
                             <FontAwesomeIcon onClick={() => {
                                 this.likeClick.bind(this)(myLike);
                             }}
-                                             className={"like_button " + (myLike && "color_blue")}
+                                             className={"like_button " + (myLike && "color_green_blue")}
                                              icon={faHeart}/>
                         </p>
                     </div>
@@ -90,7 +90,7 @@ export default class Message extends Component {
                     <p onClick={this.removeMessage} className={"reply_button"}>
                         Удалить
                     </p>}
-                    <Moment className={"nowrap color_blue"} fromNow ago date={this.props.message.time} locale={"ru"}/>
+                    <Moment className={"nowrap color_green_blue"} fromNow ago date={this.props.message.time} locale={"ru"}/>
                 </div>
             </div>
         );
