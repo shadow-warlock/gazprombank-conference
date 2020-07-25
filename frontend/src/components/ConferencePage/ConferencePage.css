@@ -58,13 +58,12 @@
 .materials_and_time  .button {
     margin-right: 30px;
 }
-
-.materials_and_time > div:nth-child(1):hover {
-    cursor: pointer;
+.materials_and_time > div:nth-child(1){
+    display: flex;
 }
 
 .materials_and_time > div:nth-child(2) {
-    text-align: left;
+    text-align: right;
 }
 
 .conference .large_title {

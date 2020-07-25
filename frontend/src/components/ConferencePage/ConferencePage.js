@@ -65,9 +65,8 @@ export default class ConferencePage extends Component {
                                 <FormattedMessage id={"agenda"}/>
                             </Button>
                         </div>
-                        <div className={"uppercase"}>
+                        <div className={"bold"}>
                             <div>
-                                {/*<Moment fromNow ago date={1594926995000}/>*/}
                                 <Moment format="D MMM YYYY" date={conferenceTime.date}/>
                             </div>
                             <div>
