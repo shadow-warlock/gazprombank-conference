@@ -179,6 +179,9 @@ export const TECH_SUPPORTERS = [
     }
 ];
 
-
-export const conferenceDate = new Date("2020-07-30");
-export const conferenceTime = "11:00 - 14:00";
+export const conferenceTime = {
+    date: new Date("2020-07-30"),
+    time: "11:00 - 14:00",
+    timezone: "GMT+3",
+    city: "moscow"
+};

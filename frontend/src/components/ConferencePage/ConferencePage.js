@@ -8,11 +8,11 @@ import Websocket from "react-websocket";
 import "./ConferencePage.css";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
-import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
-import {conferenceDate} from "../../const/mockData";
+import {conferenceTime} from "../../const/mockData";
 import LogoWhite from "../Logo/LogoWhite";
+import Button from "../Button/Button";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -44,35 +44,35 @@ export default class ConferencePage extends Component {
             <div className={"conference"}>
                 <div className={"conference_title padding_side"}>
                     <div><LogoWhite/></div>
-                    <ChangeLocaleButton/>
                 </div>
-                <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
+                <div className={"padding_side flex_right font_size_very_big color_white conference_theme"}>
                     <p className={"uppercase"}>
-                        <FormattedMessage id={"conference"}/>
+                        <FormattedMessage id={"free"}/> <FormattedMessage id={"conference"}/>
                     </p>
-                    <br/>
-                    <p className={"uppercase large_title"}>
+                    <p className={"uppercase"}>
                         <FormattedMessage id={"cordiant"}/>
-                        <br/>
-                        <FormattedMessage id={"optimization_tools"}/>
-                        <br/>
-                        <FormattedMessage id={"car_park"}/>
+                        <span className={"bold"}>
+                            <FormattedMessage id={"optimization_tools"}/>
+                            <br/>
+                            <FormattedMessage id={"car_park"}/>
+                        </span>
                     </p>
                     <div className={"materials_and_time"}>
                         <div>
-                            <div onClick={() => {
+                            <Button onClick={() => {
                                 window.open('/assets/materials.zip', '_blank');
                             }}>
                                 <FormattedMessage id={"agenda"}/>
-                            </div>
+                            </Button>
                         </div>
                         <div className={"uppercase"}>
                             <div>
                                 {/*<Moment fromNow ago date={1594926995000}/>*/}
-                                <Moment format="D MMM YYYY" date={conferenceDate}/>
+                                <Moment format="D MMM YYYY" date={conferenceTime.date}/>
                             </div>
                             <div>
-                                11:00 - 14:00 (GMT+3, <FormattedMessage id={"moscow"}/>)
+                                {conferenceTime.time} ({conferenceTime.timezone}, <FormattedMessage
+                                id={conferenceTime.city}/>)
                             </div>
                         </div>
                     </div>

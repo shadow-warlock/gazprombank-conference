@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 import "./AuthPage.css";
 import {FormattedMessage} from "react-intl";
 import Moment from "react-moment";
-import {conferenceDate, conferenceTime} from "../../const/mockData";
+import {conferenceTime} from "../../const/mockData";
 
 export default class AuthPage extends Component {
     render() {
@@ -24,10 +24,11 @@ export default class AuthPage extends Component {
                         </p>
                         <br/>
                         <p className={"font_size_big bold"}>
-                            <Moment format="D MMM YYYY" date={conferenceDate}/>
+                            <Moment format="D MMM YYYY" date={conferenceTime.date}/>
                         </p>
                         <p className={"font_size_big bold"}>
-                            {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
+                            {conferenceTime.time} ({conferenceTime.timezone}, <FormattedMessage
+                            id={conferenceTime.city}/>)
                         </p>
                         <AuthForm setUser={this.props.setUser}/>
                     </div>
