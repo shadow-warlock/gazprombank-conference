@@ -1,5 +1,5 @@
 .auth_page {
-    background: linear-gradient(90deg, #005387 60%, white 40%);
+    background: linear-gradient(90deg, var(--blue) 60%, white 40%);
     background-size: cover;
     padding-top: 50px;
     padding-left: 100px;
