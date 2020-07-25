@@ -1,31 +1,20 @@
-.footer .footer_logo{
-    display:flex;
+.footer .footer_logo {
+    display: flex;
     flex-direction: column;
     background-color: white;
     height: 100%;
 }
 
-.footer .footer_logo>div{
-    display: flex;
-    min-width: 20%;
+.footer .footer_logo div p {
+    margin: 50px auto;
+}
 
+.footer_logo .logos {
+    display: flex;
+    flex-wrap: wrap;
 }
-.footer .footer_logo div p{
-    min-width: 20%;
-    text-align: center;
-    text-transform: uppercase;
-}
-/*img>.last{*/
-/*    margin-left: 7%;*/
-/*}*/
-/*#last{*/
-/*    margin-left:10%;*/
-/*}*/
-.bottom_rows_logo{
-    margin:0 ;
-}
-#logo_partners{
-    margin: 5vw;
-    width: 20vw;
-    height: auto;
+
+.logos .partner_logo {
+    width: 14%;
+    margin: 3%;
 }
