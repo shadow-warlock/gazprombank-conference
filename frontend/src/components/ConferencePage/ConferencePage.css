@@ -1,7 +1,8 @@
-.conference {
+
+.conference_theme_container{
     background-image: url(./../../assets/cordiant/blue.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .conference .top_container {

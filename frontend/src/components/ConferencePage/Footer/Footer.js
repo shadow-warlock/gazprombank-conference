@@ -3,7 +3,8 @@ import "./Footer.css";
 import TechSupport from "../../TechSupport/TechSupport";
 import LogoutButton from "../../LogoutButton/LogoutButton";
 import {FormattedMessage} from "react-intl";
-import cordiant from "../../../assets/cordiant/Professional-banner-adaptive-3450x360.png";
+import cordiantBanner from "../../../assets/cordiant/cordiant_banner.png";
+import cordiantBannerMobile from "../../../assets/cordiant/cordiant_banner_mobile.jpg";
 import Partners from "./Partners/Partners";
 import Logo from "../../Logo/Logo";
 
@@ -11,7 +12,8 @@ export default class Footer extends Component {
     render() {
         return (
             <div className={"footer"}>
-                <img className={"banner"} src={cordiant} alt={"cordiant"}/>
+                <img className={"banner only_desctop"} src={cordiantBanner} alt={"cordiant banner"}/>
+                <img className={"banner only_mobile"} src={cordiantBannerMobile} alt={"cordiant banner"}/>
                 <Partners/>
                 <div className={"padding_side"}>
                     <TechSupport/>

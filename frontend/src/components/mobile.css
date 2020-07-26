@@ -11,6 +11,10 @@
         display: flex;
     }
 
+    .auth_page_container{
+        background-image: none;
+    }
+
     .auth_page .additional_logos {
         flex-direction: row;
     }
@@ -101,7 +105,7 @@
 
     .materials_and_time {
         font-size: var(--default-font-size);
-        /*flex-direction: column-reverse;*/
+        flex-direction: column-reverse;
         padding: 30px 0;
     }
 
@@ -263,6 +267,18 @@
 
     .message {
         width: auto;
+    }
+
+    .auth_page {
+        background: var(--blue);
+    }
+
+    .logo img:nth-child(1) {
+        display: none;
+    }
+
+    .logo img:nth-child(2) {
+        display: initial;
     }
 }
 

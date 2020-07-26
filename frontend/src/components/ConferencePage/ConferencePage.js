@@ -42,36 +42,38 @@ export default class ConferencePage extends Component {
             return "Loading";
         return (
             <div className={"conference"}>
-                <div className={"conference_title padding_side"}>
-                    <div><Logo alternativeColor={true}/></div>
-                </div>
-                <div className={"padding_side flex_right font_size_very_big color_white conference_theme"}>
-                    <p className={"uppercase"}>
-                        <FormattedMessage id={"free"}/> <FormattedMessage id={"conference"}/>
-                    </p>
-                    <p className={"uppercase"}>
-                        <FormattedMessage id={"cordiant"}/>
-                        <span className={"bold"}>
+                <div className={"conference_theme_container"}>
+                    <div className={"conference_title padding_side"}>
+                        <div><Logo alternativeColor={true}/></div>
+                    </div>
+                    <div className={"padding_side flex_right font_size_very_big color_white conference_theme"}>
+                        <p className={"uppercase"}>
+                            <FormattedMessage id={"free"}/> <FormattedMessage id={"conference"}/>
+                        </p>
+                        <p className={"uppercase"}>
+                            <FormattedMessage id={"cordiant"}/>
+                            <span className={"bold"}>
                             <FormattedMessage id={"optimization_tools"}/>
                             <br/>
                             <FormattedMessage id={"car_park"}/>
                         </span>
-                    </p>
-                    <div className={"materials_and_time"}>
-                        <div>
-                            <Button onClick={() => {
-                                window.open('/assets/materials.zip', '_blank');
-                            }}>
-                                <FormattedMessage id={"agenda"}/>
-                            </Button>
-                        </div>
-                        <div className={"bold"}>
+                        </p>
+                        <div className={"materials_and_time"}>
                             <div>
-                                <Moment format="D MMM YYYY" date={conferenceTime.date}/>
+                                <Button onClick={() => {
+                                    window.open('/assets/materials.zip', '_blank');
+                                }}>
+                                    <FormattedMessage id={"agenda"}/>
+                                </Button>
                             </div>
-                            <div>
-                                {conferenceTime.time} ({conferenceTime.timezone}, <FormattedMessage
-                                id={conferenceTime.city}/>)
+                            <div className={"bold"}>
+                                <div>
+                                    <Moment format="D MMM YYYY" date={conferenceTime.date}/>
+                                </div>
+                                <div>
+                                    {conferenceTime.time} ({conferenceTime.timezone}, <FormattedMessage
+                                    id={conferenceTime.city}/>)
+                                </div>
                             </div>
                         </div>
                     </div>
