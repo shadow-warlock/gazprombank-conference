@@ -12,14 +12,14 @@ export default class Footer extends Component {
         return (
             <div className={"footer"}>
                 <img className={"banner"} src={cordiant} alt={"cordiant"}/>
-               <Partners/>
+                <Partners/>
                 <div className={"padding_side"}>
                     <TechSupport/>
                     <Logo/>
                 </div>
                 <div className={"bottom_footer color_white bold"}>
                     <div>
-                        © 2020, <span className={"color_blue"}>
+                        © 2020, <span>
                         <FormattedMessage id={"cordiant_events"}/>
                     </span>
                     </div>

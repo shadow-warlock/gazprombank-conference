@@ -34,7 +34,7 @@ export default class AuthPage extends Component {
                     </div>
                     <div>
                         <div className={"logo_right"}>
-                            <Logo/>
+                            <Logo alternativeColor={true}/>
                         </div>
                     </div>
                 </div>

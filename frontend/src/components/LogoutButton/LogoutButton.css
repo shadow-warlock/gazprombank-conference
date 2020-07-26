@@ -1,15 +1,15 @@
 .logout_button {
     border-radius: 30px;
-    border: 1px solid var(--green-blue);
+    border: 1px solid white;
     background-color: transparent;
-    color: var(--green-blue);
+    color: white;
     font-weight: bold;
     padding: 0 30px;
     height: 30px;
 }
 
 .logout_button:hover{
-    background-color: var(--green-blue);
+    background-color: rgba(0, 0, 0, 0.2);
     color: white;
     cursor: pointer;
 }

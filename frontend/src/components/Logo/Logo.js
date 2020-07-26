@@ -6,8 +6,8 @@ import "./Logo.css";
 export default class Logo extends Component {
     render() {
         let logos = [
+            <img src={logo} alt={"cordiant logo"}/>,
             <img src={logo_blue} alt={"cordiant logo"}/>,
-            <img src={logo} alt={"cordiant logo"}/>
         ];
         return (
             <div className={"logo"}>

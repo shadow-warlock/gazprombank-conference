@@ -10,10 +10,6 @@
     display: block;
 }
 
-.footer .padding_side {
-    background-color: var(--light-green);
-}
-
 .footer .tech_support {
     padding-bottom: 100px;
     display: block;
@@ -21,9 +17,11 @@
 }
 
 .footer .tech_support > div > p {
+    font-weight: normal;
+    text-transform: none;
+    text-align: center;
     color: var(--blue);
     font-size: var(--font-size-very-big);
-    font-weight: bold;
 }
 
 .footer .tech_support .login_supporters {
@@ -44,7 +42,7 @@
 }
 
 .footer .bottom_footer {
-    background-color: #4d4d4d;
+    background-color: var(--blue);
     padding-bottom: 50px;
     display: flex;
 }
@@ -88,5 +86,9 @@
 }
 
 .footer > div > div{
-    /*padding-bottom: 50px;*/
+    text-align: center;
+}
+
+.footer .logo{
+    margin-bottom: 50px;
 }
