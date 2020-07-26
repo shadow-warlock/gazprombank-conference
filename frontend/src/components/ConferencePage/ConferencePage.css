@@ -67,3 +67,11 @@
 .conference .large_title {
     font-size: calc(4 * var(--default-font-size));
 }
+
+.conference .logo img:nth-child(1){
+    display: none;
+}
+
+.conference .logo img:nth-child(2){
+    display: initial;
+}
