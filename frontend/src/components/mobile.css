@@ -217,6 +217,10 @@
     .footer .partners img {
         width: 30vw;
     }
+
+    .logos .partner_logo{
+        width: 44%;
+    }
 }
 
 @media (max-width: 1200px) {

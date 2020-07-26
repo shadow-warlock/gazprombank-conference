@@ -12,7 +12,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className={"footer"}>
-                <img className={"banner only_desctop"} src={cordiantBanner} alt={"cordiant banner"}/>
+                <img className={"banner only_desktop"} src={cordiantBanner} alt={"cordiant banner"}/>
                 <img className={"banner only_mobile"} src={cordiantBannerMobile} alt={"cordiant banner"}/>
                 <Partners/>
                 <div className={"padding_side"}>
