@@ -4,3 +4,7 @@
     width: 100%;
     max-height: 50px;
 }
+
+.logo img:nth-child(2) {
+    display: none;
+}

@@ -1,12 +1,17 @@
 import React, {Component} from "react";
-import logo from "../../assets/cordiant/logo color.png";
+import logo_blue from "../../assets/cordiant/logo_blue.png";
+import logo from "../../assets/cordiant/logo.png";
 import "./Logo.css";
 
 export default class Logo extends Component {
     render() {
+        let logos = [
+            <img src={logo_blue} alt={"cordiant logo"}/>,
+            <img src={logo} alt={"cordiant logo"}/>
+        ];
         return (
             <div className={"logo"}>
-                <img src={logo} alt={"logo_bank"}/>
+                {this.props.alternativeColor ? logos.reverse() : logos}
             </div>
         );
     }

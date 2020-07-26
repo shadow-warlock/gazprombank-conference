@@ -11,8 +11,8 @@ import Timer from "../../Utils/Timer";
 import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
 import {conferenceTime} from "../../const/mockData";
-import LogoWhite from "../Logo/LogoWhite";
 import Button from "../Button/Button";
+import Logo from "../Logo/Logo";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -43,7 +43,7 @@ export default class ConferencePage extends Component {
         return (
             <div className={"conference"}>
                 <div className={"conference_title padding_side"}>
-                    <div><LogoWhite/></div>
+                    <div><Logo alternativeColor={true}/></div>
                 </div>
                 <div className={"padding_side flex_right font_size_very_big color_white conference_theme"}>
                     <p className={"uppercase"}>
