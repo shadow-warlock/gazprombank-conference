@@ -17,4 +17,5 @@
 .logos .partner_logo {
     width: 14%;
     margin: 3%;
+    height: intrinsic; /*safari fix*/
 }
