@@ -35,8 +35,8 @@ export default class AdminPage extends Component {
 
     render() {
         return (
-            <div className={"admin_page padding_side color_blue"}>
-                <p className={"uppercase color_blue font_size_very_big bold"}>Админ панель</p>
+            <div className={"admin_page padding_side color_white"}>
+                <p className={"uppercase font_size_very_big bold"}>Админ панель</p>
                 <LoaderCSV/>
                 <ChangePoll/>
                 <AddUserForm reload={this.loadUsers.bind(this)}/>
