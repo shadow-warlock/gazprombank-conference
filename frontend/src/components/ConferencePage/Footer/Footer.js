@@ -16,7 +16,7 @@ export default class Footer extends Component {
                 <img className={"banner only_mobile"} src={cordiantBannerMobile} alt={"cordiant banner"}/>
                 <Partners/>
                 <div className={"padding_side"}>
-                    <TechSupport/>
+                    <TechSupport />
                     <Logo/>
                 </div>
                 <div className={"bottom_footer color_white bold"}>

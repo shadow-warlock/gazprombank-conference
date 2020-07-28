@@ -14,17 +14,19 @@ export default class TechSupport extends Component {
                     <div className={"login_supporters"}>
                         {TECH_SUPPORTERS.map(
                             (techSupporter) =>
-                                <div key={techSupporter.phone} className={"supporter"}>
+                                <div key={techSupporter.phone} className={(this.props.auth ? "supporter_auth " : "")+"supporter"}>
                                     <p className={"bold"}>
                                         <FormattedMessage id={techSupporter.name}/>
                                     </p>
-                                    <div className={"supporter_contacts"}>
+                                    <div className={(this.props.auth ? "supporter_contacts_auth":"") + " supporter_contacts"} >
                                         <p>
                                             <a href={"tel:" + techSupporter.phone}>{techSupporter.phone}</a>
                                         </p>
                                         <p className={"mail"}>
                                             <a href={"mailto:" + techSupporter.email}>{techSupporter.email}</a>
                                         </p>
+                                        {techSupporter.description &&
+                                        <FormattedMessage id={techSupporter.description}/>}
                                     </div>
                                 </div>
                         )}

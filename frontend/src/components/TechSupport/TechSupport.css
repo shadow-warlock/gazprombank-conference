@@ -9,9 +9,12 @@
 
 .tech_support .supporter {
     display: flex;
+    /*justify-content: space-between;*/
+}
+.tech_support .supporter_auth {
+    display: flex;
     justify-content: space-between;
 }
-
 .tech_support .supporter p {
     margin-right: 20px;
 }
@@ -29,4 +32,11 @@
     white-space: nowrap;
     text-decoration: none;
     color: white;
+}
+.footer .tech_support .login_supporters .supporter .supporter_contacts{
+    color:black;
+    margin-top: 10px;
+}
+.supporter_contacts_auth{
+    text-align: right;
 }

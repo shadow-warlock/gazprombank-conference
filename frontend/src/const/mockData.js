@@ -143,7 +143,8 @@ export const TECH_SUPPORTERS = [
     {
         name: "margarita_gukasova",
         phone: "+7 967 198-38-81",
-        email: "m.gusakova@atoevents.ru"
+        email: "m.gusakova@atoevents.ru",
+        description: "online_network"
     }
 ];
 
