@@ -26,8 +26,8 @@ export default class Footer extends Component {
                     </span>
                     </div>
                     <div>
-                        <a target={"_blank"} href={"https://www.facebook.com/ATOEvents?fref=ts"}>Facebook</a>
-                        <a target={"_blank"} href={"https://www.youtube.com/user/eventsatoru"}>Youtube</a>
+                        {/*<a target={"_blank"} href={"https://www.facebook.com/ATOEvents?fref=ts"}>Facebook</a>*/}
+                        {/*<a target={"_blank"} href={"https://www.youtube.com/user/eventsatoru"}>Youtube</a>*/}
                         <a target={"_blank"}
                            href={"https://drive.google.com/file/d/1NIkpg7p6aCoaIuyqJ7-RbU928AxOt34R/view"}><FormattedMessage
                             id={"personal_data_policy"}/></a>
