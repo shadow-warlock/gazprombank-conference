@@ -50,7 +50,7 @@ class AuthForm extends Component {
                 </div>
                 <p>{this.state.error}</p>
                 <br/>
-                <TechSupport/>
+                <TechSupport auth={true}/>
             </div>
         );
     }
