@@ -133,12 +133,12 @@ export const TECH_SUPPORTERS = [
     {
         name: "alena_garanicheva",
         phone: "+7 965 109-34-84",
-        email: "a.garanicheva@ato_events"
+        email: "a.garanicheva@atoevents.ru"
     },
     {
         name: "nikita_kachaev",
         phone: "+7 964 500-25-33",
-        email: "n.kachaev@atoevents.ru"
+        email: "nikita.kachaev@gmail.com"
     },
     {
         name: "margarita_gukasova",

@@ -51,7 +51,7 @@
 
     .left_container .nowrap {
         white-space: normal;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     }
 
     .auth_form .input, .auth_form .button {

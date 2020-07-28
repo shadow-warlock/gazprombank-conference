@@ -10,6 +10,8 @@ import flight from "../../../../assets/cordiant_images/flight.png"
 import LogiRus from "../../../../assets/cordiant_images/LogiRus.png"
 import logistics from "../../../../assets/cordiant_images/logistics.png"
 import RAMR from "../../../../assets/cordiant_images/RAMR.png"
+import behind_the_wheel from "../../../../assets/cordiant_images/behind_the_weel.png"
+
 import trucks_on_the_road from "../../../../assets/cordiant_images/trucks_on_the_road.png"
 import {FormattedMessage} from "react-intl";
 
@@ -33,6 +35,7 @@ class Partners extends React.Component {
                     <img className={"partner_logo"} src={logistics} alt={"partner logo"}/>
                     <img className={"partner_logo"} src={fifth_wheel} alt={"partner logo"}/>
                     <img className={"partner_logo"} src={flight} alt={"partner logo"}/>
+                    <img className={"partner_logo"} src={behind_the_wheel} alt={"partner logo"}/>
                 </div>
             </div>
         );
