@@ -61,7 +61,7 @@ export default class ConferencePage extends Component {
                         <div className={"materials_and_time"}>
                             <div>
                                 <Button onClick={() => {
-                                    window.open('https://drive.google.com/file/d/1mXzjSjhMXwhPxNjgabuFyz2YCD8dRm24/view', '_blank');
+                                    window.open('https://drive.google.com/file/d/1pp70QKLpmTGQp4B0gN8ll3940nOO9Y9q/view?usp=sharing', '_blank');
                                 }}>
                                     <FormattedMessage id={"agenda"}/>
                                 </Button>
