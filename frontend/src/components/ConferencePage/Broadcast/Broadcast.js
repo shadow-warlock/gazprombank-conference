@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./Broadcast.css";
 import {FormattedMessage} from "react-intl";
+import {LanguageContext} from "../../App";
 
 export default class Broadcast extends Component {
     render() {
@@ -10,12 +11,16 @@ export default class Broadcast extends Component {
                     <FormattedMessage id={"broadcast"}/>
                 </p>
                 <div>
-                    <iframe src={this.props.url}
-                            className={"iframe"}
-                            title={"translation"}
-                            allowFullScreen>
-                        Your browser must be updated
-                    </iframe>
+                    <LanguageContext.Consumer>
+                        {value =>
+                            <iframe
+                                src={value.lang === "en" ? "https://www.youtube.com/embed/E-wU9CpofvM" : "https://www.youtube.com/embed/VFvjNIUHj7o"}
+                                className={"iframe"}
+                                title={"translation"}
+                                allowFullScreen>
+                                Your browser must be updated
+                            </iframe>}
+                    </LanguageContext.Consumer>
                 </div>
             </div>
         );
