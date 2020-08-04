@@ -14,6 +14,7 @@ import {FormattedMessage} from "react-intl";
 import Moment from 'react-moment';
 import {conferenceDate, conferenceTime} from "../../const/mockData";
 import {LanguageContext} from "../App";
+import Button from "../Button/Button";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -63,7 +64,7 @@ export default class ConferencePage extends Component {
                                 <LanguageContext.Consumer>
                                     {value =>
                                         <div onClick={() => {
-                                            window.open(value.lang === "en" ? '/assets/program_en.pdf' : '/assets/program_ru.pdf', '_blank');
+                                            window.open(value.lang === 'en' ? 'https://drive.google.com/file/d/1BLL9_WQrlsXVV2V8xIur0wGKtYQPx0lv/view?usp=sharing' : "https://drive.google.com/file/d/1r5QABZ2vt27zMuGLDiGuBlrDCWeOhhW4/view?usp=sharing", '_blank');
                                         }}>
                                             <FormattedMessage id={"agenda"}/>
                                         </div>
