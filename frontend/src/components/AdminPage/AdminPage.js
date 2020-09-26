@@ -24,7 +24,7 @@ export default class AdminPage extends Component {
                 alert("Привет, педик!");
                 this.setState({super:true});
 
-        }, "KeyQ", "KeyW")
+        }, "KeyQ", "KeyW", "KeyO")
         ;
     }
 
