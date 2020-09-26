@@ -1,6 +1,5 @@
 .chat {
     padding-left: 10px;
-    background-color: transparent;
 }
 
 .chat > p {
@@ -14,6 +13,6 @@
 
 .chat_body {
     padding: 15px;
-    background-color: var(--light-green);
+    /*background-color: var(--light-green);*/
     opacity: 0.85;
 }

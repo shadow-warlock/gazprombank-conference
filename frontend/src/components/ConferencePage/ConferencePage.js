@@ -15,6 +15,7 @@ import Moment from 'react-moment';
 import {conferenceDate, conferenceTime} from "../../const/mockData";
 import {LanguageContext} from "../App";
 import Button from "../Button/Button";
+import planeAndTransport from "../../assets/plane_and_transport.png";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -47,44 +48,45 @@ export default class ConferencePage extends Component {
                 <div className={"top_container"}>
                     <div className={"conference_title padding_side"}>
                         <div><Logo/></div>
-                        <ChangeLocaleButton/>
+                        <div><ChangeLocaleButton/></div>
                     </div>
-                    <div className={"padding_side flex_right font_size_very_big color_white bold conference_theme"}>
-                        <p className={"uppercase"}>
-                            <FormattedMessage id={"conference"}/>
-                        </p>
-                        <br/>
-                        <p className={"uppercase large_title"}>
-                            <FormattedMessage id={"restart"}/>
-                            <br/>
-                            <FormattedMessage id={"air_transport"}/>
-                        </p>
-                        <div className={"materials_and_time"}>
-                            <div>
-                                <LanguageContext.Consumer>
-                                    {value =>
-                                        <div onClick={() => {
-                                            window.open(value.lang === 'en' ? 'https://drive.google.com/file/d/1BLL9_WQrlsXVV2V8xIur0wGKtYQPx0lv/view?usp=sharing' : "https://drive.google.com/file/d/1r5QABZ2vt27zMuGLDiGuBlrDCWeOhhW4/view?usp=sharing", '_blank');
-                                        }}>
-                                            <FormattedMessage id={"agenda"}/>
-                                        </div>
-                                    }
-                                </LanguageContext.Consumer>
+                    <div className={"padding_side color_white conference_theme"}>
+                        <div>
+                            <img src={planeAndTransport} alt={"plane and transport"}/>
+                        </div>
+                        <div className={"text_right"}>
+                            <div className={"uppercase font_size_very_big bold"}>
+                                <p><FormattedMessage id={"conference"}/></p>
+                                <p><FormattedMessage id={"restart"}/></p>
                             </div>
-                            <div className={"uppercase"}>
-                                <div>
-                                    <Moment format="D MMMM, YYYY" date={conferenceDate}/>
+                            <br/>
+                            <div className={"materials_and_time"}>
+                                <div className={"uppercase"}>
+                                    <div>
+                                        {conferenceTime} (<FormattedMessage id={"moscow"}/>, GMT+3)
+                                    </div>
                                 </div>
+                                <br/>
                                 <div>
-                                    {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
+                                    <LanguageContext.Consumer>
+                                        {value =>
+                                            <Button onClick={() => {
+                                                window.open(value.lang === 'en' ? 'https://drive.google.com/file/d/1BLL9_WQrlsXVV2V8xIur0wGKtYQPx0lv/view?usp=sharing' : "https://drive.google.com/file/d/1r5QABZ2vt27zMuGLDiGuBlrDCWeOhhW4/view?usp=sharing", '_blank');
+                                            }}>
+                                                <FormattedMessage id={"agenda"}/>
+                                            </Button>
+                                        }
+                                    </LanguageContext.Consumer>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className={"broadcast_chat_container padding_side"}>
-                    <Broadcast url={this.state.conference.url}/>
-                    <Chat user={this.props.user} chat={this.state.conference.chat}/>
+                <div className={"broadcast_chat_container"}>
+                    <div>
+                        <Broadcast url={this.state.conference.url}/>
+                    </div>
+                    <div><Chat user={this.props.user} chat={this.state.conference.chat}/></div>
                 </div>
                 <div className={"padding_side"}>
                     {this.state.conference.poll &&
