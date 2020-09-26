@@ -3,12 +3,25 @@
         --default-font-size: 14px;
     }
 
+
+    .header {
+        flex-direction: column-reverse;
+    }
+
     .auth_page .font_size_very_big {
         font-size: calc(2 * var(--default-font-size));
     }
 
-    .auth_page_container > div:nth-child(2) {
-        display: flex;
+    .auth_page_container > div {
+        width: 100%;
+    }
+
+    .auth_page_container .text_right > .text_right {
+        text-align: left;
+    }
+
+    .auth_page_container .text_right > .text_right > p:nth-child(1) {
+        margin-bottom: 20px;
     }
 
     .auth_page .additional_logos {
@@ -19,11 +32,21 @@
         padding: 10%;
     }
 
+
+    .auth_page .login_supporters {
+        flex-direction: column;
+    }
+
+    .auth_page .login_supporters .supporter{
+        margin-bottom: 10px;
+    }
+
     .bank_container {
         display: none;
     }
 
     .left_container {
+        display: none;
         max-width: none;
         text-align: center;
     }
@@ -35,6 +58,10 @@
     .left_container .uppercase {
         white-space: initial;
         text-align: left;
+    }
+
+    .auth_page .tech_support {
+        background-image: none;
     }
 
     .tech_support .uppercase {
@@ -61,7 +88,19 @@
 
     .auth_form .form_div {
         justify-content: center;
+        flex-direction: column;
+        text-align: center;
     }
+
+
+    .auth_page_container > div:nth-child(2) {
+        margin-right: 0;
+    }
+
+    .auth_form .form_div > * {
+        margin: 10px auto;
+    }
+
 
     .tech_support .nowrap {
         white-space: initial;
@@ -70,6 +109,22 @@
     .tech_support .font_size_big {
         font-size: var(--default-font-size);
     }
+
+    .logo {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .change_locale_button {
+        margin-right: 0;
+        text-align: right;
+        justify-content: flex-end;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
 
     .logo_right {
         text-align: center;

@@ -1,13 +1,15 @@
+.footer {
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+}
+
 .footer > div {
     padding-top: 50px;
 }
 
 .footer .mail {
     display: block;
-}
-
-.footer .padding_side {
-    background-color: var(--light-green);
 }
 
 .footer .tech_support {
@@ -17,9 +19,8 @@
 }
 
 .footer .tech_support > div > p {
-    color: var(--green-blue);
+    text-align: center;
     font-size: var(--font-size-very-big);
-    font-weight: bold;
 }
 
 .footer .tech_support .login_supporters {
@@ -28,38 +29,28 @@
     display: flex;
 }
 
-
 .footer .tech_support .login_supporters .supporter {
     margin: 0 10px;
     flex-direction: column;
-    color: var(--green-blue);
 }
 
-.footer .tech_support a {
+.footer .tech_support a{
     color: black;
 }
 
-.footer .bottom_footer {
-    background-color: #4d4d4d;
-    padding-bottom: 50px;
-    display: flex;
+.footer .tech_support .mail a{
+    color: var(--red);
 }
 
-.footer .bottom_footer > div {
-    display: flex;
-    flex-wrap: wrap;
+.footer .bottom_footer {
+    padding-left: 30px;
 }
 
 .footer .bottom_footer > div > a {
-    color: white;
     text-decoration: none;
+    margin-right: 10px;
     white-space: nowrap;
-    margin: 5px 10px;
-}
-
-.footer .bottom_footer > div {
-    justify-content: center;
-    flex: 1;
+    color: red;
 }
 
 .footer .bottom_footer > div:nth-child(1) > span {
@@ -67,7 +58,8 @@
 }
 
 .footer .bottom_footer > div:nth-child(2) {
-    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -77,12 +69,7 @@
 }
 
 
-
 .footer .banner {
     display: block;
     width: 100%;
-}
-
-.footer > div > div{
-    /*padding-bottom: 50px;*/
 }

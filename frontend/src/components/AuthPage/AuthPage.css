@@ -20,14 +20,11 @@
     justify-content: space-around;
 }
 
-.auth_page_container >div{
+.auth_page_container > div {
     width: 50%;
 }
 
 .auth_page_container > div:nth-child(1) {
-    background-image: url("/assets/triangle-y.jpg");
-    background-repeat: no-repeat;
-    background-position-y: center;
     background-size: 15%;
 }
 
@@ -35,16 +32,38 @@
     margin-right: 30px;
 }
 
-.auth_page_container  .tech_support {
+.auth_page .tech_support {
     background-image: url("/assets/triangle-x.jpg");
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: right;
-    background-size: 30%;
+    background-size: 20%;
+    margin-right: 30px;
+    margin-bottom: 100px;
+}
+
+.auth_page .tech_support > div {
+    margin: auto;
+}
+
+.auth_page .tech_support > div > p {
+    text-align: center;
+}
+
+.auth_page .tech_support .login_supporters {
+    display: flex;
+}
+
+.auth_page .tech_support .login_supporters .supporter {
+    flex-direction: column;
 }
 
 .left_container img {
     width: 100%;
+    background-image: url(/assets/triangle-y.jpg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 15%;
 }
 
 .bank_container {
