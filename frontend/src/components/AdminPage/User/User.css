@@ -1,21 +1,28 @@
-.user_info{
+.user_info {
     font-weight: bold;
-    color: var(--yellow);
+    color: var(--red);
     margin: 10px;
     padding: 30px;
     width: 300px;
-    background-color: var(--blue);
+    background-color: white;
     border-radius: 10px;
 }
 
-.user_info button{
-    background-color: var(--green-blue);
+.user_info button {
+    border-color: red;
+    background-color: transparent;
 }
 
-.user_info .form_container{
+.user_info button:hover {
+    border-color: red;
+    background-color: var(--red);
+    color: white;
+}
+
+.user_info .form_container {
     width: initial;
 }
 
-.user_info .form_container > p:nth-child(1){
-    color: white;
+.user_info .form_container > p:nth-child(1) {
+    color: black;
 }

@@ -65,8 +65,8 @@ export default class AdminPage extends Component {
 
     render() {
         return (
-            <div className={"admin_page padding_side color_blue"}>
-                <p className={"uppercase color_blue font_size_very_big bold"}>Админ панель</p>
+            <div className={"admin_page padding_side color_white"}>
+                <p className={"uppercase color_white font_size_very_big bold"}>Админ панель</p>
                 {this.state.super ?
                     <>
                         <ChangeVideoLink/>

@@ -1,6 +1,5 @@
 .admin_page {
-    background-color: var(--green-blue);
-    /*background-color: var(--violet);*/
+    background-color: var(--red);
 }
 
 .pb_20 {
@@ -14,18 +13,18 @@
     justify-content: space-between;
 }
 
-.user_list{
+.user_list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.csv_buttons{
+.csv_buttons {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
 }
 
-.csv_buttons > .button{
+.csv_buttons > .button {
     margin-bottom: 20px;
 }

@@ -8,7 +8,7 @@ class Question extends React.Component {
 
     render() {
         return (
-            <div className={"color_blue"}>
+            <div className={"color_white"}>
                 <div className={"form_container"}>
                     <p>Вопрос: </p>
                     <div>
