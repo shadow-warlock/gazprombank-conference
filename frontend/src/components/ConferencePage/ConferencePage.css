@@ -30,7 +30,24 @@
 
 .conference_theme {
     display: flex;
+    margin-bottom: 100px;
 }
+
+.conference_theme > div:nth-child(1) {
+    background-image: url("/assets/triangle-y.jpg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 15%;
+}
+
+.conference_theme > div:nth-child(2) {
+    background-image: url("/assets/triangle-x.jpg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
+    background-size: 30%;
+}
+
 
 .conference_theme > div {
     width: 50%;
@@ -47,12 +64,12 @@
     justify-content: space-between;
 }
 
-.broadcast_chat_container > div{
+.broadcast_chat_container > div {
     padding-top: 150px;
 }
 
 .broadcast_chat_container > div:nth-child(1) {
-    background-color: var(--red);
+    width: 100%;
 }
 
 .broadcast_chat_container > div:nth-child(2) {

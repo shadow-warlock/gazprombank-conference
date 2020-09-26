@@ -21,7 +21,7 @@
 }
 
 .like_button:hover {
-    color: var(--green-blue);
+    color: var(--red);
     cursor: pointer;
 }
 
@@ -37,7 +37,7 @@
 .message_container{
     /*background: linear-gradient(to left,transparent 50%, var(--green-blue) 200%);*/
     /*border-left: 1px solid var(--green-blue);*/
-    background: radial-gradient(farthest-side at -25% 50%, rgba(36, 118, 124, 0.5), transparent);
+    background: radial-gradient(farthest-side at -25% 50%, rgb(255, 207, 207), transparent);
 }
 
 .message_container .reply_button {
@@ -53,15 +53,15 @@
 }
 
 .reply_button {
-    color: var(--blue);
+    /*color: var(--blue);*/
     cursor: pointer;
 }
 
 .reply_button:hover{
-    color: var(--green-blue-dark);
+    color: var(--red);
 }
 
 .reply_to:hover{
     cursor: pointer;
-    color: var(--green-blue-dark);
+    color: var(--red);
 }
