@@ -1,11 +1,14 @@
 .auth_page {
-    background-color: var(--green-blue);
-    background-image: url(./../../assets/plane_lines.png);
-    background-size: cover;
+    background-color: var(--red);
     padding-top: 50px;
     padding-left: 100px;
     min-height: 100vh;
     overflow: hidden;
+}
+
+.auth_page .header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .auth_page .font_size_very_big {
@@ -13,18 +16,20 @@
 }
 
 .auth_page_container {
-    flex-wrap: wrap-reverse;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.auth_page_container >div{
+    width: 50%;
 }
 
 .auth_page_container > div:nth-child(2) {
     margin-right: 30px;
 }
 
-.auth_page_container img {
-    margin-top: 100px;
-    height: 100vh;
+.left_container img {
+    width: 100%;
 }
 
 .bank_container {
@@ -32,6 +37,7 @@
 }
 
 .left_container {
+    width: 50%;
 }
 
 .logo_right {

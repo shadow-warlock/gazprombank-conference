@@ -12,11 +12,12 @@ body {
     --light-blue: #d7e5f7;
     --pink: rgb(194, 17, 161);
     --yellow: #ffcb00;
+    --red: #E60029;
     --default-font-size: 15px;
     --font-size-less: calc(0.7 * var(--default-font-size));
     --font-size-big: calc(1.5 * var(--default-font-size));
     --font-size-very-big: calc(1.9 * var(--default-font-size));
-    --input-width: 300px;
+    --input-width: 200px;
     --light-green: #dae9eb;
     font-size: var(--default-font-size);
 }
@@ -53,8 +54,16 @@ p {
     color: white;
 }
 
+.color_red{
+    color: var(--red);
+}
+
 .color_blue {
     color: var(--blue);
+}
+
+.bg_white{
+    background-color: white;
 }
 
 .bg_blue {
@@ -99,5 +108,5 @@ p {
 }
 
 .only_mobile {
-    display: none!important;
+    display: none !important;
 }

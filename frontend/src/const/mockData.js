@@ -149,4 +149,4 @@ export const TECH_SUPPORTERS = [
 
 
 export const conferenceDate = new Date("2020-07-16");
-export const conferenceTime = "11:00 - 16:00";
+export const conferenceTime = "10:00";

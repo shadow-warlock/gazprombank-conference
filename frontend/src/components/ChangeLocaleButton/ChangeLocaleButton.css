@@ -1,10 +1,12 @@
 .change_locale_button {
-    color: var(--green-blue-dark);
+    margin-right: 30px;
+    color: white;
     display: flex;
     justify-content: center;
 }
 
 .change_locale_button div {
+    padding: 3px;
     margin: 3px;
     cursor: pointer;
 }
