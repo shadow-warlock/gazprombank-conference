@@ -15,6 +15,7 @@ export default class AdminPage extends Component {
     render() {
         return (
             <div>
+                <p className={"uppercase font_size_big pb_20"}>Управление websocket</p>
                 <div>
                     <Button onClick={() => {
                         let self = this;
