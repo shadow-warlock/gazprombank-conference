@@ -92,7 +92,7 @@ export default class ConferencePage extends Component {
                           poll={this.state.conference.poll}/>}
                 </div>
                 <Footer/>
-                <Websocket url={SERVER.WS}
+                <Websocket url={SERVER.WS(this.state.conference.chat.port)}
                            onMessage={this.handleData.bind(this)}/>
             </div>
         );

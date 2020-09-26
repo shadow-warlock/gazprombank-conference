@@ -23,7 +23,9 @@ class WebSocketSender {
 
 
     public function send($type, $data){
-        $instance = stream_socket_client("tcp://127.0.0.1:2347");
+        $config = file_get_contents(__DIR__ . "/../../env.json");
+        $config = json_decode($config, true);
+        $instance = stream_socket_client("tcp://127.0.0.1:" . $config['WS_IN']);
         $json = $this->serializer->toJSON(["type" => $type, "data" => $data]);
         fwrite($instance, $json);
     }

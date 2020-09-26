@@ -6,6 +6,7 @@ import AddUserForm from "./AddUserForm/AddUserForm";
 import ChangePoll from "./ChangePoll/ChangePoll";
 import "./AdminPage.css";
 import LoaderCSV from "./LoadersCSV/LoaderCSV";
+import ChangeVideoLink from "./ChangeVideoLink/ChangeVideoLink";
 
 export default class AdminPage extends Component {
 
@@ -37,6 +38,7 @@ export default class AdminPage extends Component {
         return (
             <div className={"admin_page padding_side color_blue"}>
                 <p className={"uppercase color_blue font_size_very_big bold"}>Админ панель</p>
+                <ChangeVideoLink/>
                 <LoaderCSV/>
                 <ChangePoll/>
                 <AddUserForm reload={this.loadUsers.bind(this)}/>

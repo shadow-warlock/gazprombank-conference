@@ -5,14 +5,17 @@ use Workerman\Worker;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$ws_worker = new Worker('websocket://0.0.0.0:2348');
+$config = file_get_contents(__DIR__ . "/../env.json");
+$config = json_decode($config, true);
+
+$ws_worker = new Worker('websocket://0.0.0.0:' . $config["WS_OUT"]);
 
 $connections = [];
 // 4 processes
 //$ws_worker->count = 4;
 
-$ws_worker->onWorkerStart = function() use (&$connections){
-    $inner_tcp_worker = new Worker("tcp://127.0.0.1:2347");
+$ws_worker->onWorkerStart = function() use (&$connections, $config){
+    $inner_tcp_worker = new Worker("tcp://127.0.0.1:" . $config["WS_IN"]);
     $inner_tcp_worker->onMessage = function($connection, $data) use (&$connections) {
         foreach ($connections as $client) {
             $client->send($data);

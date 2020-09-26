@@ -1,6 +1,8 @@
 export const SERVER = {
     URL: "http://localhost:8000",
-    WS: 'ws://localhost:2348'
+    WS: (port) => {
+        return 'ws://localhost:' + port;
+    }
 };
 
 export const API = {
@@ -8,6 +10,7 @@ export const API = {
     CONFERENCE: SERVER.URL + "/api/conference",
     CONFERENCE_POLL: SERVER.URL + "/api/conference/poll",
     USER: SERVER.URL + "/api/user",
+    CONFERENCE_URL: SERVER.URL + "/api/seturl",
     POLL: SERVER.URL + "/api/poll",
     CONFERENCE_POLL_CSV: SERVER.URL + "/api/conference/poll/csv",
     USER_CODE_CSV: SERVER.URL + "/api/user/code/csv",

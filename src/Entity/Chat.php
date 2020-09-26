@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation\MaxDepth;
+use JMS\Serializer\Annotation\VirtualProperty;
 
 /**
  * @ORM\Entity(repositoryClass=ChatRepository::class)
@@ -42,6 +43,15 @@ class Chat
     public function getMessages(): Collection
     {
         return $this->messages;
+    }
+
+    /**
+     * @VirtualProperty()
+     */
+    public function getPort(): int{
+        $config = file_get_contents(__DIR__ . "/../../env.json");
+        $config = json_decode($config, true);
+        return $config["WS_OUT"];
     }
 
     public function addMessage(Message $message): self
