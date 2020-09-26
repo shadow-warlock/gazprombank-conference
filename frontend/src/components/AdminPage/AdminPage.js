@@ -7,6 +7,7 @@ import ChangePoll from "./ChangePoll/ChangePoll";
 import "./AdminPage.css";
 import LoaderCSV from "./LoadersCSV/LoaderCSV";
 import ChangeVideoLink from "./ChangeVideoLink/ChangeVideoLink";
+import ChatServerMenu from "./ChatServerMenu/ChatServerMenu";
 
 export default class AdminPage extends Component {
 
@@ -66,7 +67,12 @@ export default class AdminPage extends Component {
         return (
             <div className={"admin_page padding_side color_blue"}>
                 <p className={"uppercase color_blue font_size_very_big bold"}>Админ панель</p>
-                {this.state.super ? <ChangeVideoLink/> : ""}
+                {this.state.super ?
+                    <>
+                        <ChangeVideoLink/>
+                        <ChatServerMenu/>
+                    </>
+                    : ""}
                 <LoaderCSV/>
                 <ChangePoll/>
                 <AddUserForm reload={this.loadUsers.bind(this)}/>

@@ -8,6 +8,9 @@ export const SERVER = {
 export const API = {
     SESSION: SERVER.URL + "/api/session",
     CONFERENCE: SERVER.URL + "/api/conference",
+    WS_SERVER_START: SERVER.URL + "/api/chat/websocket/start",
+    WS_SERVER_STOP: SERVER.URL + "/api/chat/websocket/stop",
+    WS_SERVER_STATUS: SERVER.URL + "/api/chat/websocket/status",
     CONFERENCE_POLL: SERVER.URL + "/api/conference/poll",
     USER: SERVER.URL + "/api/user",
     CONFERENCE_URL: SERVER.URL + "/api/seturl",
