@@ -21,7 +21,6 @@ export default class AdminPage extends Component {
     componentDidMount() {
         this.loadUsers();
         this.runOnKeys(() =>{
-                alert("Привет, педик!");
                 this.setState({super:true});
 
         }, "KeyQ", "KeyW", "KeyO")
