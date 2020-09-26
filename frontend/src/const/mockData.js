@@ -124,24 +124,38 @@ export const CONFERENCE_ITEMS = [
     }
 ];
 
+export const USE = {
+    MAIN: "main",
+    AUTH: "auth"
+}
+
 export const TECH_SUPPORTERS = [
     {
+        use: [USE.MAIN, USE.AUTH],
         role: "participation",
         name: "alena_garanicheva",
-        phone: "+7 965 263-46-14",
+        phone: "+7 (965) 109-3484",
+        email: "a.garanicheva@atoevents.ru"
+    },
+    {
+        use: [USE.MAIN, USE.AUTH],
+        role: "participation",
+        name: "elizaveta_clavskaya",
+        phone: "+7 (965) 118-6831",
+        email: "e.slavskaya@atoevents.ru"
+    },
+    {
+        use: [USE.AUTH],
+        name: "svetlana_pimenova",
+        phone: "+7 (903) 263-4614",
         email: "s.pimenova@atoevents.ru"
     },
     {
-        role: "participation",
-        name: "elizaveta_clavskaya",
-        phone: "+7 967 198-38-81",
-        email: "m.gukasova@atoevents.ru"
-    },
-    {
+        use: [USE.MAIN],
         role: "agenda",
-        name: "svetlana_pimenova",
-        phone: "+7 965 109-30-88",
-        email: "v.burskaya@atoevents.ru"
+        name: "anastasia_zamotina",
+        phone: "+7 (967) 198-3892",
+        email: "a.zamotina@atoevents.ru"
     }
 ];
 

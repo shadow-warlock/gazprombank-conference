@@ -6,6 +6,7 @@ import Input from "../../Input/Input";
 import "./AuthForm.css";
 import TechSupport from "../../TechSupport/TechSupport";
 import {FormattedMessage, injectIntl} from "react-intl";
+import {USE} from "../../../const/mockData";
 
 class AuthForm extends Component {
     constructor(props) {
@@ -50,7 +51,7 @@ class AuthForm extends Component {
                 </div>
                 <p>{this.state.error}</p>
                 <br/>
-                <TechSupport role={false}/>
+                <TechSupport role={false} use={USE.AUTH}/>
             </div>
         );
     }

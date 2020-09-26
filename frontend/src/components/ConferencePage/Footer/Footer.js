@@ -3,13 +3,14 @@ import "./Footer.css";
 import TechSupport from "../../TechSupport/TechSupport";
 import LogoutButton from "../../LogoutButton/LogoutButton";
 import {FormattedMessage} from "react-intl";
+import {USE} from "../../../const/mockData";
 
 export default class Footer extends Component {
     render() {
         return (
             <div className={"footer"}>
                 <div className={"padding_side"}>
-                    <TechSupport role={true}/>
+                    <TechSupport role={true} use={USE.MAIN}/>
                 </div>
                 <div className={"bottom_footer color_white bold"}>
                     <div>
