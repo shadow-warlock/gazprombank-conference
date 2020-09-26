@@ -126,24 +126,22 @@ export const CONFERENCE_ITEMS = [
 
 export const TECH_SUPPORTERS = [
     {
-        name: "svetlana_pimenova",
-        phone: "+7 903 263-46-14",
+        role: "participation",
+        name: "alena_garanicheva",
+        phone: "+7 965 263-46-14",
         email: "s.pimenova@atoevents.ru"
     },
     {
-        name: "margarita_gukasova",
+        role: "participation",
+        name: "elizaveta_clavskaya",
         phone: "+7 967 198-38-81",
         email: "m.gukasova@atoevents.ru"
     },
     {
-        name: "valeria_burskaya",
+        role: "agenda",
+        name: "svetlana_pimenova",
         phone: "+7 965 109-30-88",
         email: "v.burskaya@atoevents.ru"
-    },
-    {
-        name: "nikita_kachaev",
-        phone: "+7 964 500-25-33",
-        email: "m.kachaev@atoevents.ru"
     }
 ];
 

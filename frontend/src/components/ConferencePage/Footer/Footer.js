@@ -56,7 +56,7 @@ export default class Footer extends Component {
                 }
                 </LanguageContext.Consumer>
                 <div className={"padding_side"}>
-                    <TechSupport/>
+                    <TechSupport role={true}/>
                     <div className={"organization"}>
                         <p className={"font_size_big color_green_blue bold"}>
                             <FormattedMessage id={"organizer"}/>

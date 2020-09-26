@@ -16,6 +16,7 @@ export default class TechSupport extends Component {
                             (techSupporter) =>
                                 <div key={techSupporter.phone} className={"supporter"}>
                                     <p className={"bold"}>
+                                        {this.props.role ? <><FormattedMessage id={techSupporter.role}/>{": "}</> : ""}
                                         <FormattedMessage id={techSupporter.name}/>
                                     </p>
                                     <div className={"supporter_contacts"}>
