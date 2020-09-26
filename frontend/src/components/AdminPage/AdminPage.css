@@ -2,6 +2,19 @@
     background-color: var(--red);
 }
 
+#root > .admin_page > div:nth-child(2) > input{
+    width: 100%;
+}
+
+#root > .admin_page > div:nth-child(3){
+    margin-top: 50px;
+}
+
+#root > .admin_page > div:nth-child(3) > div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+}
+
 .pb_20 {
     padding-bottom: 20px;
 }
