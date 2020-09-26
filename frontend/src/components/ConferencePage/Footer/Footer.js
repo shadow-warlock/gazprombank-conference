@@ -15,18 +15,23 @@ export default class Footer extends Component {
                 <div className={"bottom_footer color_white bold"}>
                     <div>
                         © 2020, <span className={"color_green_blue"}>
-                        <FormattedMessage id={"ato_events"}/>
+                        ETO Events
                     </span>
                     </div>
                     <div>
-                        <a target={"_blank"} href={"https://www.facebook.com/ATOEvents?fref=ts"}>Facebook</a>
-                        <a target={"_blank"} href={"https://www.youtube.com/user/eventsatoru"}>Youtube</a>
-                        <a target={"_blank"}
-                           href={"https://drive.google.com/file/d/1NIkpg7p6aCoaIuyqJ7-RbU928AxOt34R/view"}><FormattedMessage
-                            id={"personal_data_policy"}/></a>
                         <a target={"_blank"}
                            href={"https://events.ato.ru/upload/FILES/privacy_policy_ru.pdf"}><FormattedMessage
                             id={"privacy_policy"}/></a>
+                        |
+                        <a target={"_blank"}
+                           href={"https://drive.google.com/file/d/1NIkpg7p6aCoaIuyqJ7-RbU928AxOt34R/view"}><FormattedMessage
+                            id={"personal_data_policy"}/></a>
+
+                        <a target={"_blank"} href={"https://www.facebook.com/ATOEvents?fref=ts"}>Facebook</a>
+                        <a target={"_blank"} href={"https://www.youtube.com/user/eventsatoru"}>Youtube</a>
+                    </div>
+                    <div>
+                        <FormattedMessage id={"contacts"}/> {": +7 (495) 108-5143"}
                     </div>
                     <div>
                         <LogoutButton/>

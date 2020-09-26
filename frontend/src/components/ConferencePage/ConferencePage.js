@@ -56,8 +56,8 @@ export default class ConferencePage extends Component {
                         </div>
                         <div className={"text_right"}>
                             <div className={"uppercase font_size_very_big bold"}>
-                                <p><FormattedMessage id={"conference"}/></p>
-                                <p><FormattedMessage id={"restart"}/></p>
+                                <p><FormattedMessage id={"online_conferences"}/></p>
+                                <p><FormattedMessage id={"the_ato_events"}/></p>
                             </div>
                             <br/>
                             <div className={"materials_and_time"}>
@@ -73,7 +73,7 @@ export default class ConferencePage extends Component {
                                             <Button onClick={() => {
                                                 window.open(value.lang === 'en' ? 'https://drive.google.com/file/d/1BLL9_WQrlsXVV2V8xIur0wGKtYQPx0lv/view?usp=sharing' : "https://drive.google.com/file/d/1r5QABZ2vt27zMuGLDiGuBlrDCWeOhhW4/view?usp=sharing", '_blank');
                                             }}>
-                                                <FormattedMessage id={"agenda"}/>
+                                                <FormattedMessage id={"agendas"}/>
                                             </Button>
                                         }
                                     </LanguageContext.Consumer>

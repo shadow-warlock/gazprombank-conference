@@ -160,5 +160,5 @@ export const TECH_SUPPORTERS = [
 ];
 
 
-export const conferenceDate = new Date("2020-07-16");
+export const conferenceDate = new Date("2020-10-01");
 export const conferenceTime = "10:00";
