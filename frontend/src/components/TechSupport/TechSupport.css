@@ -3,9 +3,6 @@
     justify-content: space-between;
 }
 
-.tech_support .mail {
-    display: none;
-}
 
 .tech_support .supporter {
     display: flex;

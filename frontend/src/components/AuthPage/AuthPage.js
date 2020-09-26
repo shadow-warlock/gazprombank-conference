@@ -5,8 +5,9 @@ import "./AuthPage.css";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import Moment from "react-moment";
-import {conferenceDate, conferenceTime} from "../../const/mockData";
+import {conferenceDate, conferenceTime, USE} from "../../const/mockData";
 import planeAndTransport from "../../assets/plane_and_transport.png";
+import TechSupport from "../TechSupport/TechSupport";
 
 export default class AuthPage extends Component {
     render() {
@@ -45,6 +46,7 @@ export default class AuthPage extends Component {
                         </div>
                     </div>
                 </div>
+                <TechSupport role={false} use={USE.AUTH}/>
             </div>
         );
     }
