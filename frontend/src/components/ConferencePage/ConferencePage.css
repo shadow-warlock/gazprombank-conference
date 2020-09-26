@@ -4,7 +4,7 @@
     background-size: 100%;
 }
 
-.conference .top_container{
+.conference .top_container {
     padding-top: 50px;
     /*background-image: url(./../../assets/plane_lines.png);*/
     background-size: cover;
@@ -20,18 +20,45 @@
 }
 
 .conference_title {
-
     display: flex;
     justify-content: space-between;
 }
 
+.conference_title .change_locale_button {
+    margin-right: 0;
+}
+
+.conference_theme {
+    display: flex;
+}
+
+.conference_theme > div {
+    width: 50%;
+}
+
+.conference_theme img {
+    width: 100%;
+}
+
 .broadcast_chat_container {
     padding-top: 50px;
-    padding-bottom: 50px;
-    background: white url("./../../assets/airport_background.jpeg") no-repeat;
     background-size: cover;
     display: flex;
     justify-content: space-between;
+}
+
+.broadcast_chat_container > div{
+    padding-top: 150px;
+}
+
+.broadcast_chat_container > div:nth-child(1) {
+    background-color: var(--red);
+}
+
+.broadcast_chat_container > div:nth-child(2) {
+    background-color: white;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .padding_side {
@@ -44,29 +71,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-
-
-.materials_and_time {
-    padding: 150px 0;
-    display: flex;
-}
-
-.materials_and_time > div:nth-child(1) {
-    background-color: #fe9a00;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    margin-right: 30px;
-    height: 100%;
-}
-
-.materials_and_time > div:nth-child(1):hover {
-    cursor: pointer;
-}
-
-.materials_and_time > div:nth-child(2) {
-    text-align: left;
 }
 
 .conference .large_title {

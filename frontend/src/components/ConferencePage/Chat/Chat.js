@@ -16,7 +16,7 @@ export default class Chat extends Component {
     render() {
         return (
             <div className={"chat"}>
-                <p className={"bold font_size_big text_center color_white"}>
+                <p className={"bold font_size_big text_center"}>
                     <FormattedMessage id={"chat"}/>
                 </p>
                 <div className={"chat_body"}>
