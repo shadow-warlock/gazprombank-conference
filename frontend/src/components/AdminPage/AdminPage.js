@@ -13,12 +13,19 @@ export default class AdminPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            users: []
+            users: [],
+            super: false
         };
     }
 
     componentDidMount() {
         this.loadUsers();
+        this.runOnKeys(() =>{
+                alert("Привет, педик!");
+                this.setState({super:true});
+
+        }, "KeyQ", "KeyW")
+        ;
     }
 
     loadUsers() {
@@ -34,11 +41,33 @@ export default class AdminPage extends Component {
         });
     }
 
+    runOnKeys(func, ...codes) {
+        let pressed = new Set();
+
+        document.addEventListener('keydown', function (event) {
+            pressed.add(event.code);
+
+            for (let code of codes) { // все ли клавиши из набора нажаты?
+                if (!pressed.has(code)) {
+                    return;
+                }
+            }
+            pressed.clear();
+
+            func();
+        });
+
+        document.addEventListener('keyup', function (event) {
+            pressed.delete(event.code);
+        });
+
+    }
+
     render() {
         return (
             <div className={"admin_page padding_side color_blue"}>
                 <p className={"uppercase color_blue font_size_very_big bold"}>Админ панель</p>
-                <ChangeVideoLink/>
+                {this.state.super ? <ChangeVideoLink/> : ""}
                 <LoaderCSV/>
                 <ChangePoll/>
                 <AddUserForm reload={this.loadUsers.bind(this)}/>

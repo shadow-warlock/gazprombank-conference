@@ -43,6 +43,23 @@ class InitController extends AbstractController {
     }
 
     /**
+     * @Route("/api/init/admin", methods={"GET"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function initAdmin(Request $request) {
+        $user = new User();
+        $user->setRole(User::ROLE_ADMIN);
+        $user->setName("Администратор");
+        $user->setSurname("портала");
+        $user->setCode(10);
+        $manager = $this->getDoctrine()->getManager();
+        $manager->persist($user);
+        $manager->flush();
+        return new JsonResponse($user->getCode(), 200, [], true);
+    }
+
+    /**
      * @Route("/api/seturl", name="set_url", methods={"POST"})
      */
     public function setConferenceUrl(Request $request) {
