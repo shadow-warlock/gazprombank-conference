@@ -24,8 +24,23 @@
     width: 50%;
 }
 
+.auth_page_container > div:nth-child(1) {
+    background-image: url("/assets/triangle-y.jpg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 15%;
+}
+
 .auth_page_container > div:nth-child(2) {
     margin-right: 30px;
+}
+
+.auth_page_container  .tech_support {
+    background-image: url("/assets/triangle-x.jpg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
+    background-size: 30%;
 }
 
 .left_container img {
