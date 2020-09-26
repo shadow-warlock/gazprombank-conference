@@ -37,12 +37,30 @@
         flex-direction: column;
     }
 
-    .auth_page .login_supporters .supporter{
+    .auth_page .login_supporters .supporter {
         margin-bottom: 10px;
     }
 
     .bank_container {
         display: none;
+    }
+
+    .conference_theme > div {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .conference_theme > div:nth-child(1) {
+        display: none;
+    }
+
+    .conference_theme > div:nth-child(2) {
+        background-image: none;
+    }
+
+    .broadcast_chat_container > div {
+        padding-top: 0;
     }
 
     .left_container {
@@ -70,6 +88,7 @@
 
     .tech_support .supporter {
         text-align: left;
+        margin-left: 50px;
     }
 
     .left_container .nowrap {
@@ -137,11 +156,10 @@
     }
 
     .conference_title {
-        display: block;
         text-align: center;
         padding-bottom: 30px;
-        /*display: flex;*/
-        /*flex-direction: column-reverse;*/
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .conference .large_title {
@@ -155,9 +173,26 @@
     }
 
     .materials_and_time {
+        text-align: center;
         font-size: var(--default-font-size);
         /*flex-direction: column-reverse;*/
         padding: 30px 0;
+    }
+
+
+    .footer .bottom_footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .footer .bottom_footer a {
+        white-space: normal !important;
+    }
+
+
+    .broadcast_chat_container > div:nth-child(2) {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .materials_and_time > div {
@@ -208,7 +243,7 @@
 
 
     .footer {
-        display: block;
+        flex-direction: column-reverse
     }
 
     .footer > div {
