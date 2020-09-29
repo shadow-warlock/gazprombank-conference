@@ -88,3 +88,7 @@
     border-radius: 15px;
     width: fit-content;
 }
+
+.upper{
+    text-transform: uppercase
+}

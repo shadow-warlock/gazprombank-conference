@@ -3,13 +3,13 @@ import AuthForm from "./AuthForm/AuthForm";
 import Logo from "../Logo/Logo";
 import "./AuthPage.css";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
-import {FormattedMessage} from "react-intl";
+import {FormattedMessage, injectIntl} from "react-intl";
 import Moment from "react-moment";
 import {conferenceDate, conferenceTime, USE} from "../../const/mockData";
 import planeAndTransport from "../../assets/plane_and_transport.png";
 import TechSupport from "../TechSupport/TechSupport";
 
-export default class AuthPage extends Component {
+class AuthPage extends Component {
     render() {
         return (
             <div className={"auth_page color_white"}>
@@ -39,7 +39,7 @@ export default class AuthPage extends Component {
                                 </p>
                                 <br/>
                                 <p className={"bold"}>
-                                    <Moment format="D MMMM YYYY" date={conferenceDate}/>{", "}
+                                    <Moment className={"upper"} format={this.props.intl.formatMessage({id:"date_format"})} date={conferenceDate}/>{", "}
                                     {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
                                 </p>
                             </div>
@@ -52,3 +52,4 @@ export default class AuthPage extends Component {
         );
     }
 }
+export default injectIntl(AuthPage);
