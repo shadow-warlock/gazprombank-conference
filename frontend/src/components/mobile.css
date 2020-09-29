@@ -140,11 +140,6 @@
         justify-content: flex-end;
     }
 
-    .logo img {
-        width: 100px;
-    }
-
-
     .logo_right {
         text-align: center;
         padding: 10px 0;
