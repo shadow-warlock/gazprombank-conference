@@ -1,11 +1,12 @@
 {
 
-  "page_title": "ATOEVENTS",
+  "page_title": "ATO Events Online",
   "online_conferences": "Онлайн-конференции",
   "the_ato_events": "ato events",
   "agendas": "Программы мероприятий",
   "conference": "онлайн-конференция",
-  "conference_theme": "Грузовые автоперевозки – 2020: Вызовы и возможности. Новая реальность",
+  "conference_theme": "Грузовые автоперевозки – 2020: Вызовы и возможности.",
+  "conference_theme2": "Новая реальность",
   "password": "пароль",
   "sign_in": "войти",
   "log_out": "выйти",

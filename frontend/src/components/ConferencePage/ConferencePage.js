@@ -70,7 +70,7 @@ export default class ConferencePage extends Component {
                                     <Button onClick={() => {
                                         window.open("https://drive.google.com/drive/folders/1SxokJ-TRGjgeNlIQFl9wYpJzuHGkK8Sx", '_blank');
                                     }}>
-                                        <FormattedMessage id={"agendas"}/>
+                                        <FormattedMessage id={"agenda"}/>
                                     </Button>
                                 </div>
                             </div>
