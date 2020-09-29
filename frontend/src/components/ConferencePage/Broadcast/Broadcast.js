@@ -14,7 +14,7 @@ export default class Broadcast extends Component {
                     <LanguageContext.Consumer>
                         {value =>
                             <iframe
-                                src={value.lang === "en" ? "https://www.youtube.com/embed/E-wU9CpofvM" : "https://www.youtube.com/embed/VFvjNIUHj7o"}
+                                src={this.props.url}
                                 className={"iframe"}
                                 title={"translation"}
                                 allowFullScreen>
