@@ -31,11 +31,6 @@ class AuthPage extends Component {
                                 </p>
                                 <p className={"bold font_size_big uppercase color_white"}>
                                     <FormattedMessage id={"conference_theme"}/>
-                                    <div><FormattedMessage id={"conference_theme2"}/></div>
-                                </p>
-                                <br/>
-                                <p className={"bold font_size_big uppercase color_white"}>
-                                    <FormattedMessage id={"prize"}/>
                                 </p>
                                 <br/>
                                 <p className={"bold"}>
