@@ -67,11 +67,17 @@ export default class ConferencePage extends Component {
                                 </div>
                                 <br/>
                                 <div>
-                                    <Button onClick={() => {
-                                        window.open("https://drive.google.com/drive/folders/1SxokJ-TRGjgeNlIQFl9wYpJzuHGkK8Sx", '_blank');
-                                    }}>
-                                        <FormattedMessage id={"agenda"}/>
-                                    </Button>
+                                    <LanguageContext.Consumer>{
+                                        value =>
+                                            <Button onClick={() => {
+                                                window.open(value.lang === "ru"
+                                                    ? "https://drive.google.com/drive/folders/10ZTWtJ38phoptxfn6C8LlxJcMLV-I-ZD?usp=sharing"
+                                                    : "https://drive.google.com/drive/folders/1Vcm4_GqKZEAW91RjqBweUmb7iPkB79Uz?usp=sharing",
+                                                    '_blank');
+                                            }}>
+                                                <FormattedMessage id={"agenda"}/>
+                                            </Button>}
+                                    </LanguageContext.Consumer>
                                 </div>
                             </div>
                         </div>

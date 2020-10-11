@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import "./ChangeLocaleButton.css";
-import {getLanguage} from "../../language/language";
 import {LanguageContext} from "../App";
 
 class ChangeLocaleButton extends Component {
