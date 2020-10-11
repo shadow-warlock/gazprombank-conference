@@ -90,7 +90,7 @@ export default class Poll extends Component {
 
     render() {
         return (
-            <div className={"poll color_blue"}>
+            <div className={"poll color_white"}>
                 <p className={"bold font_size_very_big uppercase"}>{this.props.poll.name}{this.state.time !== null &&
                 <span className={"font_size_default"}>Закончится через {this.state.time}...</span>}</p>
                 {this.getPoll()}
