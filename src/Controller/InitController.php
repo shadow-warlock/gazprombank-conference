@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class InitController extends AbstractController {
 
-    const URL = "https://facecast.net/v/ly5olv";
+    const URL = "https://facecast.net/v/1n3qdm";
 
     /**
      * @Route("/api/init", name="init", methods={"GET"})
