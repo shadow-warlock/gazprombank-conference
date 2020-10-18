@@ -160,5 +160,9 @@ export const TECH_SUPPORTERS = [
 ];
 
 
-export const conferenceDate = new Date("2020-10-13");
-export const conferenceTime = "10:00";
+export const conferenceDate = new Date("2020-10-27");
+export const conferenceTime = "11:00";
+export const agendaURL = {
+    "en": "https://drive.google.com/drive/mobile/folders/10ZTWtJ38phoptxfn6C8LlxJcMLV-I-ZD?usp=sharing",
+    "ru": "https://drive.google.com/drive/mobile/folders/10ZTWtJ38phoptxfn6C8LlxJcMLV-I-ZD?usp=sharing"
+};

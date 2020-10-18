@@ -11,7 +11,7 @@ import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
-import {conferenceTime} from "../../const/mockData";
+import {agendaURL, conferenceTime} from "../../const/mockData";
 import {LanguageContext} from "../App";
 import Button from "../Button/Button";
 import planeAndTransport from "../../assets/plane_and_transport.png";
@@ -71,8 +71,8 @@ export default class ConferencePage extends Component {
                                         value =>
                                             <Button onClick={() => {
                                                 window.open(value.lang === "ru"
-                                                    ? "https://drive.google.com/drive/folders/10ZTWtJ38phoptxfn6C8LlxJcMLV-I-ZD?usp=sharing"
-                                                    : "https://drive.google.com/drive/folders/1Vcm4_GqKZEAW91RjqBweUmb7iPkB79Uz?usp=sharing",
+                                                    ? agendaURL.ru
+                                                    : agendaURL.en,
                                                     '_blank');
                                             }}>
                                                 <FormattedMessage id={"agenda"}/>
