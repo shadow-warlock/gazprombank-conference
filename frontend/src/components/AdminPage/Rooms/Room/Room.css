@@ -1,0 +1,28 @@
+.room_info {
+    font-weight: bold;
+    color: var(--red);
+    margin: 10px;
+    padding: 30px;
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.room_info button {
+    border-color: red;
+    background-color: transparent;
+}
+
+.room_info button:hover {
+    border-color: red;
+    background-color: var(--red);
+    color: white;
+}
+
+.room_info .form_container {
+    width: initial;
+}
+
+.room_info .form_container > p:nth-child(1) {
+    color: black;
+}

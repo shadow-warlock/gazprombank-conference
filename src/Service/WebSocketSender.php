@@ -8,6 +8,8 @@ class WebSocketSender {
 
     private JSONer $serializer;
     const MESSAGE = "message";
+    const CREATE_ROOM = "create room";
+    const DELETE_ROOM = "delete room";
     const LIKE = "like";
     const POLL = "poll";
     const DELETE_LIKE = "delete like";

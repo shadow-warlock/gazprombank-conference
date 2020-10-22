@@ -1,0 +1,10 @@
+.content{
+    display: flex;
+    margin: 20px;
+    justify-content: space-around;
+}
+.content #main-video {
+    width: 30%;
+    margin: auto 0;
+    border: 3px solid red;
+}

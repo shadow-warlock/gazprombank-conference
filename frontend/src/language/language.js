@@ -1,5 +1,3 @@
-import moment from 'moment/min/moment-with-locales';
-import Moment from "react-moment";
 
 const cookieName = "language=";
 const supporterLanguages = ["ru", "en"];

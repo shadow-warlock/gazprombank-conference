@@ -8,6 +8,7 @@ import "./AdminPage.css";
 import LoaderCSV from "./LoadersCSV/LoaderCSV";
 import ChangeVideoLink from "./ChangeVideoLink/ChangeVideoLink";
 import ChatServerMenu from "./ChatServerMenu/ChatServerMenu";
+import Rooms from "./Rooms/Rooms";
 
 export default class AdminPage extends Component {
 
@@ -74,6 +75,7 @@ export default class AdminPage extends Component {
                     </>
                     : ""}
                 <LoaderCSV/>
+                <Rooms/>
                 <ChangePoll/>
                 <AddUserForm reload={this.loadUsers.bind(this)}/>
                 <div className={"user_list"}>{this.state.users.map(user =>

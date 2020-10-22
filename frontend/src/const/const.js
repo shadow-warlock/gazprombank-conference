@@ -8,6 +8,7 @@ export const SERVER = {
 export const API = {
     SESSION: SERVER.URL + "/api/session",
     CONFERENCE: SERVER.URL + "/api/conference",
+    ROOM: SERVER.URL + "/api/room",
     WS_SERVER_START: SERVER.URL + "/api/chat/websocket/start",
     WS_SERVER_STOP: SERVER.URL + "/api/chat/websocket/stop",
     WS_SERVER_STATUS: SERVER.URL + "/api/chat/websocket/status",
@@ -22,7 +23,9 @@ export const API = {
     CHAT_MESSAGE: (id) => {return SERVER.URL + "/api/chat/" + id + "/message"},
     MESSAGE_LIKE: (id) => {return SERVER.URL + "/api/message/" + id + "/like"},
     QUESTION_ANSWER: (id) => {return SERVER.URL + "/api/question/" + id + "/answer"},
-    USER_CODE: (id) => {return SERVER.URL + "/api/user/" + id + "/code"}
+    USER_CODE: (id) => {return SERVER.URL + "/api/user/" + id + "/code"},
+    ROOM_TOKEN: (id) => {return SERVER.URL + "/api/room/" + id + "/token"},
+    ROOM_ID: (id) => {return SERVER.URL + "/api/room/" + id}
 };
 
 

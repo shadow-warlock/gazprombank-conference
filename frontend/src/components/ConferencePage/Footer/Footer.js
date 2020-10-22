@@ -15,10 +15,12 @@ export default class Footer extends Component {
                         <br/>
                         <br/>
                         <a target={"_blank"}
+                           rel="noopener noreferrer"
                            href={"https://events.ato.ru/upload/FILES/privacy_policy_ru.pdf"}><FormattedMessage
                             id={"privacy_policy"}/></a>
                         <br/>
                         <a target={"_blank"}
+                           rel="noopener noreferrer"
                            href={"https://drive.google.com/file/d/1NIkpg7p6aCoaIuyqJ7-RbU928AxOt34R/view"}><FormattedMessage
                             id={"personal_data_policy"}/></a>
                         <br/>
@@ -27,8 +29,8 @@ export default class Footer extends Component {
                         <a href={"tel:+7 (495) 108-5143"}> {": +7 (495) 108-5143"}</a>
                         <br/>
                         <br/>
-                        <a target={"_blank"} href={"https://www.facebook.com/ATOEvents?fref=ts"}>Facebook</a>
-                        <a target={"_blank"} href={"https://www.youtube.com/user/eventsatoru"}>Youtube</a>
+                        <a target={"_blank"} rel="noopener noreferrer" href={"https://www.facebook.com/ATOEvents?fref=ts"}>Facebook</a>
+                        <a target={"_blank"} rel="noopener noreferrer" href={"https://www.youtube.com/user/eventsatoru"}>Youtube</a>
                         <br/>
                         <br/>
                         <LogoutButton/>

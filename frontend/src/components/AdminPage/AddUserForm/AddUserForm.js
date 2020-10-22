@@ -80,7 +80,7 @@ export default class AddUserForm extends Component {
                         <div className={"form_container"}>
                             <p>Админ: </p>
                             <Input type="checkbox" checked={this.state.role}
-                                   onClick={(e) => {
+                                   onChange={(e) => {
                                        this.setState({role: !this.state.role})
                                    }}/>
                         </div>

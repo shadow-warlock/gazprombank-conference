@@ -45,7 +45,8 @@ export default class User extends Component {
                 <div className={"pb_20"}>
                     <Button
                         onClick={this.generatePassword.bind(this)}>Сменить код
-                    </Button></div>
+                    </Button>
+                </div>
                 <Button
                     onClick={this.delete.bind(this)}>
                     Удалить
