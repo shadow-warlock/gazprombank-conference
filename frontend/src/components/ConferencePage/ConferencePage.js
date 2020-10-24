@@ -15,12 +15,14 @@ import {agendaURL, conferenceTime} from "../../const/mockData";
 import {LanguageContext} from "../App";
 import Button from "../Button/Button";
 import planeAndTransport from "../../assets/plane_and_transport.png";
+import Rooms from "../Rooms/Rooms";
 
 export default class ConferencePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            conference: null
+            conference: null,
+            roomsHandler: null
         }
         this.timer = new Timer();
     }
@@ -37,6 +39,12 @@ export default class ConferencePage extends Component {
         ).catch(e => {
             console.error(e);
         });
+    }
+
+    setRoomsHandler(handler){
+        this.setState({
+            roomsHandler: handler
+        })
     }
 
     render() {
@@ -89,6 +97,7 @@ export default class ConferencePage extends Component {
                     </div>
                     <div><Chat user={this.props.user} chat={this.state.conference.chat}/></div>
                 </div>
+                <Rooms handlerSetter={this.setRoomsHandler.bind(this)} admin={false}/>
                 <div className={"padding_side"}>
                     {this.state.conference.poll &&
                     <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
@@ -159,7 +168,9 @@ export default class ConferencePage extends Component {
                 }
                 return;
             default:
-                console.log(data);
+                if(this.state.roomsHandler){
+                    this.state.roomsHandler(data);
+                }
         }
         this.setState({
             conference: conf

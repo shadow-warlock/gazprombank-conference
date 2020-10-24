@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {API, AXIOS_CONFIG} from "../../../../const/const";
-import Button from "../../../Button/Button";
-import Input from "../../../Input/Input";
+import {API, AXIOS_CONFIG} from "../../../const/const";
+import Button from "../../Button/Button";
+import Input from "../../Input/Input";
 
 const buttonText = [
     "Добавить комнату",
@@ -37,7 +37,15 @@ export default class AddRoomForm extends Component {
                 visible: true
             })
         }).catch(e => {
-            console.log(e);
+            if(e.response && e.response.status){
+                switch (e.response.status){
+                    case 400:
+                        alert("Достигнуто максимальное количество комнат");
+                        break;
+                    default:
+                        alert("Не удалось получить доступ к комнате");
+                }
+            }
         });
     }
 

@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import { OpenVidu } from 'openvidu-browser';
+import {OpenVidu} from 'openvidu-browser';
 import axios from 'axios';
 import UserVideo from "./UserVideo/UserVideo";
 import {API, AXIOS_CONFIG} from "../../const/const";
-import Button from "../Button/Button";
+import Button, {OFF} from "../Button/Button";
 import "./RoomPage.css";
 
 class RoomPage extends Component {
@@ -16,6 +16,9 @@ class RoomPage extends Component {
             myUserName: this.props.user.name + " " + this.props.user.surname,
             session: undefined,
             mainStreamManager: undefined,
+            publisher: undefined,
+            audio: true,
+            video: true,
             subscribers: [],
             room: null
         };
@@ -49,6 +52,7 @@ class RoomPage extends Component {
                     default:
                         alert("Не удалось получить доступ к комнате");
                 }
+                this.leaveSession();
             }
         });
     }
@@ -128,8 +132,8 @@ class RoomPage extends Component {
                             let publisher = this.OV.initPublisher(undefined, {
                                 audioSource: undefined, // The source of audio. If undefined default microphone
                                 videoSource: undefined, // The source of video. If undefined default webcam
-                                publishAudio: true, // Whether you want to start publishing with your audio unmuted or not
-                                publishVideo: true, // Whether you want to start publishing with your video enabled or not
+                                publishAudio: this.state.audio, // Whether you want to start publishing with your audio unmuted or not
+                                publishVideo: this.state.video, // Whether you want to start publishing with your video enabled or not
                                 resolution: '640x480', // The resolution of your video
                                 frameRate: 30, // The frame rate of your video
                                 insertMode: 'APPEND', // How the video is inserted in the target element 'video-container'
@@ -138,6 +142,7 @@ class RoomPage extends Component {
                             mySession.publish(publisher);
                             this.setState({
                                 mainStreamManager: publisher,
+                                publisher: publisher,
                             });
                         })
                         .catch((error) => {
@@ -147,6 +152,7 @@ class RoomPage extends Component {
             },
         );
     }
+
 
     leaveSession() {
         const mySession = this.state.session;
@@ -160,40 +166,62 @@ class RoomPage extends Component {
             session: undefined,
             subscribers: [],
             mainStreamManager: undefined,
+            publisher: undefined
         });
     }
 
     render() {
         const mySessionId = this.state.mySessionId;
-
         return (
             <div className="container">
-                {this.state.session === undefined ? (
+                {this.state.session === undefined || this.state.publisher === undefined ? (
                         <div id="session-header">
-                            <h1 id="session-title">{mySessionId}{this.state.room === null ? " Загрузка..." : <Button onClick={this.joinSession}>Войти</Button>}</h1>
+                            <h1 id="session-title">
+                                {mySessionId}
+                                {this.state.room === null ?
+                                    " Загрузка..." :
+                                    this.state.session === undefined ? <Button onClick={this.joinSession}>Войти</Button> : " Подключение..."}
+                            </h1>
                         </div>
 
                 ) : null}
 
-                {this.state.session !== undefined ? (
+                {this.state.session !== undefined && this.state.publisher !== undefined ? (
                     <div id="session">
                         <div id="session-header">
-                            <h1 id="session-title">{mySessionId}<Button onClick={this.leaveSession}>Выйти</Button></h1>
+                            <h1 id="session-title">{mySessionId}
+                                <Button onClick={this.leaveSession}>Выйти</Button>
+                                <Button
+                                    className={this.state.video ? "" : OFF}
+                                    onClick={()=>{this.state.publisher.publishVideo(!this.state.video); this.setState({video: !this.state.video})}}>
+                                        Видео
+                                </Button>
+                                <Button
+                                    className={this.state.audio ? "" : OFF}
+                                    onClick={()=>{this.state.publisher.publishAudio(!this.state.audio); this.setState({audio: !this.state.audio})}}>
+                                        Звук
+                                </Button>
+                            </h1>
                         </div>
-                        <div className={"content"}>
-                            {this.state.mainStreamManager !== undefined ? (
-                                <div id="main-video" className="col-md-6">
-                                    <UserVideo streamManager={this.state.mainStreamManager} />
-                                </div>
+                        <div id="video-container">
+                            {this.state.publisher !== undefined ? (
+                                <UserVideo
+                                    publisher
+                                    onClick={() => this.handleMainVideoStream(this.state.publisher)}
+                                    streamManager={this.state.publisher} />
                             ) : null}
-                            <div id="video-container" className="col-md-6">
-                                {this.state.subscribers.map((sub, i) => (
-                                    <div key={i} className="stream-container col-md-6 col-xs-6" onClick={() => this.handleMainVideoStream(sub)}>
-                                        <UserVideo streamManager={sub} />
-                                    </div>
-                                ))}
-                            </div>
+                            {this.state.subscribers.map((sub, i) => (
+                                <UserVideo
+                                    key={i}
+                                    onClick={() => this.handleMainVideoStream(sub)}
+                                    streamManager={sub} />
+                            ))}
                         </div>
+                        {this.state.mainStreamManager !== undefined ? (
+                            <div id="main-video">
+                                <UserVideo streamManager={this.state.mainStreamManager} />
+                            </div>
+                        ) : null}
                     </div>
                 ) : null}
             </div>
@@ -208,7 +236,18 @@ class RoomPage extends Component {
                 .then((response) => {
                     resolve(response.data);
                 })
-                .catch((error) => reject(error));
+                .catch((e) => {
+                    if(e.response && e.response.status){
+                        switch (e.response.status){
+                            case 400:
+                                alert("Комната переполнена");
+                                break;
+                            default:
+                                alert("Не удалось получить доступ к комнате");
+                        }
+                        this.leaveSession();
+                    }
+                });
         });
     }
 }

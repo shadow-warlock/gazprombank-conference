@@ -7,13 +7,13 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $config = file_get_contents(__DIR__ . "/../env.json");
 $config = json_decode($config, true);
-if( !isset($config["SSL"]) && !$config["SSL"]){
+if( !isset($config["SSL"]) || !$config["SSL"]){
     $ws_worker = new Worker('websocket://0.0.0.0:' . $config["WS_OUT"]);
 }else{
     $context = array(
         'ssl' => array(
-            'local_cert'  => '/etc/letsencrypt/live/'.$config["SSL"].'/fullchain.pem',
-            'local_pk'    => '/etc/letsencrypt/live/'.$config["SSL"].'/privkey.pem',
+            'local_cert'  => __DIR__ . '/ssl/fullchain.pem',
+            'local_pk'    => __DIR__ . '/ssl/privkey.pem',
             'verify_peer' => false,
         )
     );

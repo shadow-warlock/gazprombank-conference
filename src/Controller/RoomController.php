@@ -13,6 +13,7 @@ use App\Service\JSONer;
 use App\Service\VideoConnector;
 use App\Service\WebSocketSender;
 use DateTime;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,7 +42,8 @@ class RoomController extends AbstractController {
     }
 
     /**
-     * @Route("/api/room/{id}", methods={"GET"})
+     * @Route("/api/room/{code}", methods={"GET"})
+     * @ParamConverter("room", options={"mapping": {"code": "code"}})
      * @param  Room  $room
      *
      * @return JsonResponse
@@ -79,10 +81,11 @@ class RoomController extends AbstractController {
         if($count >= 20)
             throw new BadRequestHttpException("max room count");
         $room->setVisible($data["visible"]);
+        $room->setCode(sha1($data['name']));
         $entityManager->persist($room);
-        $connector->createOrGetSession($room);
+        $connector->createSession($room);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::CREATE_ROOM, $room);
+        $wsSender->send(WebSocketSender::CREATE_ROOM, null);
         $json = $serializer->toJSON($room);
         return new JsonResponse($json, 201, [], true);
     }
@@ -103,7 +106,7 @@ class RoomController extends AbstractController {
         $entityManager->remove($room);
         $connector->deleteSession($room);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::DELETE_ROOM, $room);
+        $wsSender->send(WebSocketSender::DELETE_ROOM, null);
         $json = $serializer->toJSON($room);
         return new JsonResponse($json, 200, [], true);
     }
@@ -115,12 +118,12 @@ class RoomController extends AbstractController {
      * @return JsonResponse
      */
     public function createToken(Room $room, VideoConnector $connector) {
-        if($room->getVisible()){
-            $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
-        }else{
-            $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+        $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
+        $sessionId = $connector->createSession($room);
+        $session = $connector->getSession($room);
+        if($session['connections']['numberOfElements'] >= 20){
+            throw new BadRequestHttpException(json_encode($session['connections']['numberOfElements']));
         }
-        $sessionId = $connector->createOrGetSession($room);
         $token = $connector->createToken($sessionId);
         return new JsonResponse($token, 200, [], false);
     }

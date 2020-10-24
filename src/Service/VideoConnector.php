@@ -24,20 +24,20 @@ class VideoConnector
         $this->client = $client;
     }
 
-    public function createOrGetSession(Room $room){
+    public function createSession(Room $room){
         $response = $this->client->request("POST", $this->url . self::SESSION, [
             "verify_peer"=>false,"verify_host"=>false,
             'headers' => [
                 'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),
                 'Content-Type' => 'application/json'
             ],
-            'body' => json_encode(['customSessionId' => $room->getName()])
+            'body' => json_encode(['customSessionId' => $room->getCode()])
         ]);
         $code = $response->getStatusCode();
         if($code !== 409){
             return $response->toArray()["id"];
         }else{
-            return $room->getName();
+            return $room->getCode();
         }
     }
 
@@ -54,17 +54,29 @@ class VideoConnector
     }
 
     public function deleteSession(Room $room){
-        $response = $this->client->request("DELETE", $this->url . self::SESSION . '/' . $room->getName(), [
+        $response = $this->client->request("DELETE", $this->url . self::SESSION . '/' . $room->getCode(), [
             "verify_peer"=>false,"verify_host"=>false,
             'headers' => [
                 'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),
                 'Content-Type' => 'application/x-www-form-urlencoded'
             ],
-            'body' => json_encode(['customSessionId' => $room->getName()])
+            'body' => json_encode(['customSessionId' => $room->getCode()])
         ]);
         $code = $response->getStatusCode();
         if($code !== 204 && $code !== 404){
             throw new \LogicException();
         }
+    }
+
+    public function getSession(Room $room){
+        $response = $this->client->request("GET", $this->url . self::SESSION . '/' . $room->getCode(), [
+            "verify_peer"=>false,"verify_host"=>false,
+            'headers' => [
+                'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),
+                'Content-Type' => 'application/x-www-form-urlencoded'
+            ],
+            'body' => json_encode(['customSessionId' => $room->getCode()])
+        ]);
+        return $response->toArray();
     }
 }

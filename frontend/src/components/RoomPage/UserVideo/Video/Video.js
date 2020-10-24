@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "./Video.css";
 export default class Video extends Component {
 
     constructor(props) {
@@ -20,7 +20,7 @@ export default class Video extends Component {
     }
 
     render() {
-        return <video autoPlay={true} ref={this.videoRef} />;
+        return <video className={"video"} autoPlay={true} ref={this.videoRef} />;
     }
 
 }
