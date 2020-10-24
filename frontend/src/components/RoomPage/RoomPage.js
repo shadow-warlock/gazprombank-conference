@@ -138,7 +138,12 @@ class RoomPage extends Component {
                                 frameRate: 30, // The frame rate of your video
                                 insertMode: 'APPEND', // How the video is inserted in the target element 'video-container'
                                 mirror: false, // Whether to mirror your local video or not
-                            }, (error)=>{alert(error.name);this.leaveSession();});
+                            }, (error)=>{
+                                if(error !== undefined && error.name === "DEVICE_ACCESS_DENIED"){
+                                    alert(error.name);
+                                    this.leaveSession();
+                                }
+                            });
                             mySession.publish(publisher);
                             this.setState({
                                 mainStreamManager: publisher,
