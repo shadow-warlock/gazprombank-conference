@@ -138,7 +138,7 @@ class RoomPage extends Component {
                                 frameRate: 30, // The frame rate of your video
                                 insertMode: 'APPEND', // How the video is inserted in the target element 'video-container'
                                 mirror: false, // Whether to mirror your local video or not
-                            });
+                            }, (error)=>{alert(error.name);this.leaveSession();});
                             mySession.publish(publisher);
                             this.setState({
                                 mainStreamManager: publisher,
@@ -204,12 +204,10 @@ class RoomPage extends Component {
                             </h1>
                         </div>
                         <div id="video-container">
-                            {this.state.publisher !== undefined ? (
-                                <UserVideo
-                                    publisher
-                                    onClick={() => this.handleMainVideoStream(this.state.publisher)}
-                                    streamManager={this.state.publisher} />
-                            ) : null}
+                            <UserVideo
+                                publisher
+                                onClick={() => this.handleMainVideoStream(this.state.publisher)}
+                                streamManager={this.state.publisher}/>
                             {this.state.subscribers.map((sub, i) => (
                                 <UserVideo
                                     key={i}

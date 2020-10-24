@@ -63,9 +63,9 @@ class VideoConnector
             'body' => json_encode(['customSessionId' => $room->getCode()])
         ]);
         $code = $response->getStatusCode();
-        if($code !== 204 && $code !== 404){
-            throw new \LogicException();
-        }
+//        if($code !== 204 && $code !== 404){
+//            throw new \LogicException();
+//        }
     }
 
     public function getSession(Room $room){
