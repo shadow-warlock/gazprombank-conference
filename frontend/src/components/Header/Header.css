@@ -1,0 +1,13 @@
+.header {
+  padding-top: 70px;
+}
+
+.header__content {
+    max-width: var(--content-width);
+    
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
