@@ -19,11 +19,18 @@ body {
     --font-size-very-big: calc(1.9 * var(--default-font-size));
     --input-width: 200px;
     --light-green: #dae9eb;
+    --dark-blue: #212353;
     font-size: var(--default-font-size);
 }
 
 p {
     margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .uppercase {
