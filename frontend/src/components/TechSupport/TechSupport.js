@@ -21,7 +21,7 @@ export default class TechSupport extends Component {
                                         <a href={"tel:" + techSupporter.phone}>{techSupporter.phone}</a>
                                     </li>
                                     <li className="tech-support__item">
-                                        <a href={"mailto:" + techSupporter.email}>{techSupporter.email}</a>
+                                        <a className="tech-support__mail" href={"mailto:" + techSupporter.email}>{techSupporter.email}</a>
                                     </li>
                                 </ul>
                             : ""
