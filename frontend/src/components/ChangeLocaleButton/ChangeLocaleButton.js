@@ -7,15 +7,15 @@ class ChangeLocaleButton extends Component {
         return (
             <LanguageContext.Consumer>{
                 value =>
-                <div className={"uppercase bold change_locale_button"}>
+                <div className="lang-switcher">
                     <div
                         onClick={value.lang === "ru" ? ()=>{} : value.change}
-                        className={value.lang === "ru" ? "color_red bg_white" : ""}>
+                        className={'lang-switcher__item '.concat(value.lang === "ru" ? "lang-switcher__item--active" : "")}>
                         ru
                     </div>
                     <div
                         onClick={value.lang === "en" ? ()=>{} : value.change}
-                        className={value.lang === "en" ? "color_red bg_white" : ""}>
+                        className={'lang-switcher__item '.concat(value.lang === "en" ? "lang-switcher__item--active" : "")}>
                         en
                     </div>
                 </div>

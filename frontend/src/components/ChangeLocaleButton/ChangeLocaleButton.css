@@ -1,12 +1,17 @@
-.change_locale_button {
-    margin-right: 30px;
-    color: white;
+.lang-switcher {
     display: flex;
-    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
 }
 
-.change_locale_button div {
-    padding: 3px;
-    margin: 3px;
+.lang-switcher__item {
+    padding: 3px 5px;
+
     cursor: pointer;
+}
+
+.lang-switcher__item--active {
+    color: var(--red);
+    background-color: #fff;
 }
