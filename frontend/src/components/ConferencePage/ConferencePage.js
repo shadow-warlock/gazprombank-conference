@@ -28,6 +28,8 @@ export default class ConferencePage extends Component {
 
     componentDidMount() {
         let self = this;
+        this.setState({ conference: {chat: {port: 132, messages: []}}})
+        return
         axios.get(API.CONFERENCE, AXIOS_CONFIG).then(
             res => {
                 this.messagesSort(res.data.chat.messages);

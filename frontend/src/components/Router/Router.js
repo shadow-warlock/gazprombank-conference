@@ -17,9 +17,9 @@ class Router extends Component{
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
-                        <Security roles={[ROLE.USER, ROLE.ADMIN]}>
+                        {/* <Security roles={[ROLE.USER, ROLE.ADMIN]}> */}
                             {user => <ConferencePage user={user}/>}
-                        </Security>
+                        {/* </Security> */}
                     </Route>
                     <Route exact path="/admin">
                         <Security roles={[ROLE.ADMIN]}>

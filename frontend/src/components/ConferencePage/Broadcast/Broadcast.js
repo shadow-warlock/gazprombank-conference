@@ -6,16 +6,16 @@ import {LanguageContext} from "../../App";
 export default class Broadcast extends Component {
     render() {
         return (
-            <div className={"broadcast"}>
-                <p className={"bold font_size_big text_center color_white"}>
+            <div className="broadcast">
+                <h1 className="broadcast__title">
                     <FormattedMessage id={"broadcast"}/>
-                </p>
-                <div>
+                </h1>
+                <div className="broadcast__window">
                     <LanguageContext.Consumer>
                         {value =>
                             <iframe
                                 src={value.lang === "en" ? this.props.url : this.props.url}
-                                className={"iframe"}
+                                className="iframe"
                                 title={"translation"}
                                 allowFullScreen>
                                 Your browser must be updated

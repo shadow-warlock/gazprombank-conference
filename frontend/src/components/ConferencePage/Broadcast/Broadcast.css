@@ -1,8 +1,15 @@
-.iframe {
+.broadcast__window {
     width: 50vw;
     height: 30vw;
 }
 
-.broadcast > p {
-    padding-bottom: 30px;
+.iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.broadcast__title {
+    color: var(--dark-blue);
+    text-align: center;
+    font-size: 2rem;
 }
