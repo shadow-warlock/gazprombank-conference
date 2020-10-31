@@ -70,9 +70,9 @@
     justify-content: flex-end;
 }
 
-.auth-page__footer li, a, h3 {
-    color: #fff !important;
-
+.auth-page__footer .auth-white,
+.auth-white a {
+    color: #fff;
 }
 
 /* auth-page triangles */
