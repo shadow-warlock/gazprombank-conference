@@ -1,94 +1,96 @@
-.auth_page {
+.auth-page {
     background-color: var(--red);
-    padding-top: 50px;
-    padding-left: 100px;
-    min-height: 100vh;
-    overflow: hidden;
+    height: 100vh;
 }
 
-.auth_page .header {
-    display: flex;
-    justify-content: space-between;
-}
+.auth-page__content {
+    max-width: var(--content-width);
+    margin: 0 auto;
 
-.auth_page .font_size_very_big {
-    font-size: calc(2 * var(--default-font-size));
-}
+    min-height: calc(100% - 330px);
 
-.auth_page_container {
-    display: flex;
-    justify-content: space-around;
-}
-
-.auth_page_container > div {
-    width: 50%;
-}
-
-.auth_page_container > div:nth-child(1) {
-    background-size: 15%;
-}
-
-.auth_page_container > div:nth-child(2) {
-    margin-right: 30px;
-}
-
-.auth_page .tech_support {
-    background-image: url("/assets/triangle-x.jpg");
-    background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-position-x: right;
-    background-size: 20%;
-    margin-right: 30px;
-    margin-bottom: 100px;
-}
-
-.auth_page .tech_support > div {
-    margin: auto;
-}
-
-.auth_page .tech_support > div > p {
-    text-align: center;
-}
-
-.auth_page .tech_support .login_supporters {
     display: flex;
 }
 
-.auth_page .tech_support .login_supporters .supporter {
+.auth-page__image-side {
+    position: relative;
+
+    flex: 1;
+}
+
+.auth-page__main-img {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    z-index: 1;
+    max-width: 900px;
+}
+
+.auth-page__info-side {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+}
+
+.auth-page__title, .auth-page__conf-theme {
+    margin: 0;
+
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: 600;
+    font-size: 3rem; 
+}
+
+.auth-page__title {
+    margin-top: 6rem;
+}
+
+.auth-page__time {
+    margin-top: 3.3rem;
+    font-size: 1.3rem; 
+    font-weight: 600;
+}
+
+.auth-page__footer {
+    max-width: var(--content-width);
+    margin: 0 auto;
+
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 15rem;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-page__footer li, a, h3 {
+    color: #fff !important;
+
+}
+
+/* auth-page triangles */
+.auth-page__left-triangles {
+    position: absolute;
+    top: 15rem;
+    left: 0.4rem;
+    display: flex;
     flex-direction: column;
 }
 
-.left_container img {
-    width: 100%;
-    background-image: url(/assets/triangle-y.jpg);
-    background-repeat: no-repeat;
-    background-position-y: center;
-    background-size: 15%;
+.auth-page__left-triangle:first-child {
+    margin-bottom: 0.3rem;
 }
 
-.bank_container {
-    text-align: right;
+.auth-page__bottom-triangles {
+    position: absolute;
+    bottom: -1rem;
+    right: -2rem;
+    display: flex;
 }
 
-.left_container {
-    width: 50%;
-}
-
-.logo_right {
-    text-align: right;
-    padding-top: 10px;
-    padding-right: 100px;
-    padding-bottom: 20px;
-}
-
-.conference_time {
-    background-color: var(--yellow);
-    color: var(--blue);
-    padding: 15px 30px;
-    border-radius: 15px;
-    width: fit-content;
-}
-
-.upper{
-    text-transform: uppercase
+.auth-page__bottom-triangle:first-child {
+    margin-right: 1.1rem;
 }

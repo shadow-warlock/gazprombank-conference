@@ -8,41 +8,44 @@ import Moment from "react-moment";
 import {conferenceDate, conferenceTime, USE} from "../../const/mockData";
 import planeAndTransport from "../../assets/plane_and_transport.png";
 import TechSupport from "../TechSupport/TechSupport";
+import Header from "../Header/Header";
 
 class AuthPage extends Component {
     render() {
         return (
-            <div className={"auth_page color_white"}>
-                <div className={"header"}>
-                    <div className={"logo_right"}>
-                        <Logo/>
+            <div className="auth-page">
+                <Header />
+                <section className="auth-page__content">
+                    <div className="auth-page__image-side">
+                        <img className="auth-page__main-img" src={planeAndTransport} alt={"plane and transport"}/>
+                        <div className="auth-page__left-triangles">
+                            <span className="triangle auth-page__left-triangle"></span>
+                            <span className="triangle auth-page__left-triangle"></span>
+                        </div>
                     </div>
-                    <div><ChangeLocaleButton/></div>
-                </div>
-                <div className={"auth_page_container"}>
-                    <div className={"left_container"}>
-                        <img src={planeAndTransport} alt={"plane and transport"}/>
-                    </div>
-                    <div>
-                        <div className={"text_right"}>
-                            <div className={"text_right"}>
-                                <p className={"bold font_size_very_big uppercase"}>
-                                    <FormattedMessage id={"conference"}/>
-                                </p>
-                                <p className={"bold font_size_very_big uppercase color_white"}>
-                                    <FormattedMessage id={"conference_theme"}/>
-                                </p>
-                                <br/>
-                                <p className={"bold"}>
-                                    <Moment className={"upper"} format={this.props.intl.formatMessage({id:"date_format"})} date={conferenceDate}/>{", "}
-                                    {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
-                                </p>
-                            </div>
+                    <div className="auth-page__info-side">
+                        <h1 className="auth-page__title">
+                            <FormattedMessage id={"conference"}/>
+                        </h1>
+                        <h1 className="auth-page__conf-theme">
+                            <FormattedMessage id={"conference_theme"}/>
+                        </h1>
+                        <span className="auth-page__time">
+                            <Moment className={"upper"} format={this.props.intl.formatMessage({id:"date_format"})} date={conferenceDate}/>{", "}
+                            {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
+                        </span>
+                        <div className="auth-page__form">
                             <AuthForm setUser={this.props.setUser}/>
                         </div>
                     </div>
-                </div>
-                <TechSupport role={false} use={USE.AUTH}/>
+                </section>
+                <footer className="auth-page__footer">
+                    <TechSupport role={false} use={USE.AUTH}/>
+                    <div className="auth-page__bottom-triangles">
+                        <span className="small-triangle auth-page__bottom-triangle"></span>
+                        <span className="small-triangle auth-page__bottom-triangle"></span>
+                    </div>
+                </footer>
             </div>
         );
     }
