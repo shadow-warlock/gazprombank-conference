@@ -38,8 +38,8 @@ class AuthForm extends Component {
 
     render() {
         return (
-            <div className={"auth_form"}>
-                <div className={"form_div"}>
+            <div className={"auth-form"}>
+                <div className={"auth-form__form"}>
                     <Input
                         value={this.state.code}
                         onChange={this.changeCode}
@@ -49,7 +49,7 @@ class AuthForm extends Component {
                         <FormattedMessage id={"sign_in"}/>
                     </Button>
                 </div>
-                <p>{this.state.error}</p>
+                <p className="auth-form__error">{this.state.error}</p>
             </div>
         );
     }

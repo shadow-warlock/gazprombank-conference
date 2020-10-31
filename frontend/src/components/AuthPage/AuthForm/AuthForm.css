@@ -1,23 +1,8 @@
-.auth_form {
-    display: flex;
-    flex-direction: column;
-    padding: 100px 0 30px;
+.auth-form input {
+    margin-right: 2rem;
 }
 
-.auth_form .form_div {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.form_header {
-    margin-bottom: 20px;
-}
-
-.auth_form .input {
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-
-.auth_form .button {
-    margin-bottom: 20px;
+.auth-form__error {
+    margin-top: 1rem;
+    text-align: right;
 }

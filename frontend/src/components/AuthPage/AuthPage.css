@@ -54,6 +54,10 @@
     font-weight: 600;
 }
 
+.auth-page__form {
+    margin-top: 4rem;
+}
+
 .auth-page__footer {
     max-width: var(--content-width);
     margin: 0 auto;
