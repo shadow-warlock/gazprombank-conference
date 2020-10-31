@@ -2,19 +2,20 @@ import React, {Component} from "react";
 import Broadcast from "./Broadcast/Broadcast";
 import Chat from "./Chat/Chat";
 import Poll from "./Poll/Poll";
-import Logo from "../Logo/Logo";
 import axios from "axios";
 import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
 import Websocket from "react-websocket";
 import "./ConferencePage.css";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
-import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
 import {agendaURL, conferenceTime} from "../../const/mockData";
 import {LanguageContext} from "../App";
 import Button from "../Button/Button";
 import planeAndTransport from "../../assets/plane_and_transport.png";
+import Header from "../Header/Header";
+import Logo from "../Logo/Logo";
+
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -43,52 +44,64 @@ export default class ConferencePage extends Component {
         if (this.state.conference === null)
             return "Loading";
         return (
-            <div className={"conference"}>
-                <div className={"top_container"}>
-                    <div className={"conference_title padding_side"}>
-                        <div><Logo/></div>
-                        <div><ChangeLocaleButton/></div>
-                    </div>
-                    <div className={"padding_side color_white conference_theme"}>
-                        <div>
-                            <img src={planeAndTransport} alt={"plane and transport"}/>
-                        </div>
-                        <div className={"text_right"}>
-                            <div className={"uppercase font_size_very_big bold"}>
-                                <p><FormattedMessage id={"online_conferences"}/></p>
-                                <p><FormattedMessage id={"the_ato_events"}/></p>
-                            </div>
-                            <br/>
-                            <div className={"materials_and_time"}>
-                                <div className={"uppercase"}>
-                                    <div>
-                                        {conferenceTime} (<FormattedMessage id={"moscow"}/>, GMT+3)
-                                    </div>
-                                </div>
-                                <br/>
-                                <div>
-                                    <LanguageContext.Consumer>{
-                                        value =>
-                                            <Button onClick={() => {
-                                                window.open(value.lang === "ru"
-                                                    ? agendaURL.ru
-                                                    : agendaURL.en,
-                                                    '_blank');
-                                            }}>
-                                                <FormattedMessage id={"agenda"}/>
-                                            </Button>}
-                                    </LanguageContext.Consumer>
-                                </div>
+            <div className="conference">
+                <Header />
+                <div className="conference__content">
+                    <section className="conference__presentation-block">
+                        <div className="conference__image-side">
+                            <img className="plane-transport" src={planeAndTransport} alt={"plane and transport"}/>
+
+                            <div className="left-triangles">
+                                <span className="triangle left-triangles__item"></span>
+                                <span className="triangle left-triangles__item"></span>
                             </div>
                         </div>
+                        <div className="conference__info-side">
+                            <h1 className="conference__title">
+                                    <FormattedMessage id={"online_conferences"}/>
+                            </h1>
+                            <h1 className="conference__title">
+                                <FormattedMessage id={"the_ato_events"}/>
+                            </h1>
+                            <div className="conference__time">
+                                {conferenceTime} (<FormattedMessage id={"moscow"}/>, GMT+3)
+                            </div>
+                            <div className="conference__btn">
+                                <LanguageContext.Consumer>{
+                                    value =>
+                                        <Button onClick={() => {
+                                            window.open(value.lang === "ru"
+                                                ? agendaURL.ru
+                                                : agendaURL.en,
+                                                '_blank');
+                                        }}>
+                                            <FormattedMessage id={"agenda"}/>
+                                        </Button>}
+                                </LanguageContext.Consumer>
+                            </div>
+
+                            <div className="bottom-triangles">
+                                <span className="small-triangle bottom-triangles__item"></span>
+                                <span className="small-triangle bottom-triangles__item"></span>
+                            </div>
+                        </div>
+                    </section>
+                    <div className="conference__bottom-logo">
+                        <Logo />
                     </div>
                 </div>
-                <div className={"broadcast_chat_container"}>
-                    <div className={"text_center"}>
-                        <Broadcast url={this.state.conference.url}/>
-                    </div>
-                    <div><Chat user={this.props.user} chat={this.state.conference.chat}/></div>
+
+                <div className="conference__broadcast-content">
+                    <section className="conference__broadcast-block">
+                        <div className="conference__broadcast">
+                            <Broadcast url={this.state.conference.url}/>
+                        </div>
+                        <div className="conference__chat">
+                            <Chat user={this.props.user} chat={this.state.conference.chat}/>
+                        </div>
+                    </section>
                 </div>
+
                 <div className={"padding_side"}>
                     {this.state.conference.poll &&
                     <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}

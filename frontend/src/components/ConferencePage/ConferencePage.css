@@ -1,95 +1,117 @@
 .conference {
     background-color: var(--red);
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
-.conference .top_container {
-    padding-top: 50px;
-    /*background-image: url(./../../assets/plane_lines.png);*/
-    background-size: cover;
-}
+/* conference top section */
+.conference__content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    height: 105vh;
 
-.logout {
-    color: white;
-}
-
-.logout:hover {
-    cursor: pointer;
-    color: var(--pink)
-}
-
-.conference_title {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-.conference_title .change_locale_button {
-    margin-right: 0;
-}
-
-.conference_theme {
+.conference__presentation-block {
     display: flex;
-    margin-bottom: 100px;
+    height: 100%;
+
+    color: #fff;
 }
 
-.conference_theme > div:nth-child(1) {
-    background-image: url("/assets/triangle-y.jpg");
-    background-repeat: no-repeat;
-    background-position-y: center;
-    background-size: 15%;
+.conference__image-side {
+    flex: 1 1 auto;
+
+    position: relative;
 }
 
-.conference_theme > div:nth-child(2) {
-    background-image: url("/assets/triangle-x.jpg");
-    background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-position-x: right;
-    background-size: 30%;
+.plane-transport {
+    width: 1100px;
+    height: auto;
+
+    position: absolute;
+    top: -2rem;
 }
 
+.conference__info-side {
+    margin-top: 10rem;
 
-.conference_theme > div {
-    width: 50%;
-}
+    position: relative;
 
-.conference_theme img {
-    width: 100%;
-}
-
-.broadcast_chat_container {
-    padding-top: 50px;
-    background-size: cover;
-    display: flex;
-    justify-content: space-between;
-}
-
-.broadcast_chat_container > div {
-    padding-top: 150px;
-}
-
-.broadcast_chat_container > div:nth-child(1) {
-    width: 100%;
-}
-
-.broadcast_chat_container > div:nth-child(2) {
-    background-color: white;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.padding_side {
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.conference .flex_right {
-    text-align: right;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.conference .large_title {
-    font-size: calc(4 * var(--default-font-size));
+.conference__title {
+    margin: 0;
+
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: 600;
+    font-size: 3.4rem; 
+}
+
+.conference__time {
+    margin-top: 3.3rem;
+    font-size: 1.2rem; 
+}
+
+.conference__btn {
+    margin-top: 1rem;
+}
+
+.conference__bottom-logo {
+    margin-bottom: 0.8rem;
+}
+
+/* triangles */
+.left-triangles,
+.bottom-triangles {
+    position: absolute;
+    display: flex;
+}
+
+.left-triangles {
+    top: 17rem;
+    left: 0.4rem;
+    flex-direction: column;
+}
+
+.bottom-triangles {
+    bottom: 8rem;
+    right: -3rem;
+    flex-direction: row;
+}
+
+.left-triangles__item:first-child {
+    margin-bottom: 0.3rem;
+}
+
+.bottom-triangles__item:first-child {
+    margin-right: 1.1rem;
+}
+
+.triangle {
+    border: 60px solid transparent;
+    border-left: 60px solid #fff;
+    border-top: 60px solid #fff;
+}
+
+.small-triangle {
+    border: 40px solid transparent;
+    border-left: 40px solid #fff;
+    border-top: 40px solid #fff;
+}
+
+/* broadcast-block */
+.conference__broadcast-content {
+    background-color: #fff;
+}
+.conference__broadcast-block {
+    max-width: var(--content-width); 
+    margin: 0 auto;
+
+    display: flex;
 }
