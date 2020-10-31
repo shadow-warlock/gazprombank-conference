@@ -1,6 +1,7 @@
 .auth-page {
     background-color: var(--red);
     height: 100vh;
+    overflow-y: scroll;
 }
 
 .auth-page__content {
@@ -10,9 +11,11 @@
     min-height: calc(100% - 330px);
 
     display: flex;
+    align-items: center;
 }
 
 .auth-page__image-side {
+    height: 600px;
     position: relative;
 
     flex: 1;
