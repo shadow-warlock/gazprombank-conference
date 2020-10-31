@@ -109,9 +109,12 @@
 .conference__broadcast-content {
     background-color: #fff;
 }
+
 .conference__broadcast-block {
+    padding-top: 1.2rem;
     max-width: var(--content-width); 
     margin: 0 auto;
 
     display: flex;
+    justify-content: space-around;
 }

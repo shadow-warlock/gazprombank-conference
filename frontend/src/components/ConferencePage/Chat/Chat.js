@@ -16,17 +16,17 @@ export default class Chat extends Component {
     render() {
         return (
             <div className={"chat"}>
-                <p className={"bold font_size_big text_center"}>
+                <h1 className="chat__title">
                     <FormattedMessage id={"chat"}/>
-                </p>
-                <div className={"chat_body"}>
+                </h1>
+                <div className={"chat__body"}>
                     <MessageSender
                         deleteReply={() => {
                             this.setState({reply: null})
                         }}
                         reply={this.state.reply}
                         chatId={this.props.chat.id}/>
-                    <div className={"messages"}>
+                    <div className={"chat__messages"}>
                         {this.props.chat.messages.map((message) =>
                             <Message
                                 onReply={(reply) => {

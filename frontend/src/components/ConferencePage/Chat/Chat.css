@@ -1,18 +1,17 @@
-.chat {
-    padding-left: 10px;
+.chat__title {
+    margin: 0;
+    color: var(--dark-blue);
+    text-align: center;
+    font-size: 2rem;
 }
 
-.chat > p {
-    padding-bottom: 30px;
-}
-
-.messages {
+.chat__messages {
     overflow-y: scroll;
-    height: 500px;
+    height: 511px;
 }
 
-.chat_body {
-    padding: 15px;
-    /*background-color: var(--light-green);*/
-    opacity: 0.85;
+.chat__body {
+    margin-top: 1rem;
+    border: 1px solid lightgrey;
+    padding: 0.2rem;
 }
