@@ -17,12 +17,12 @@
     display: flex;
 }
 
-.conf_item_image{
+.conf_item_image {
     filter: grayscale(100%);
     width: 150px;
 }
 
-.rectangle_image{
+.rectangle_image {
     width: 150px;
     margin-right: 50px;
     height: 150px;

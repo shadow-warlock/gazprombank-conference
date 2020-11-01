@@ -1,25 +1,31 @@
-import React, {Component} from "react";
-import "./Broadcast.css";
-import {FormattedMessage} from "react-intl";
-import {LanguageContext} from "../../App";
+import React, { Component } from 'react';
+import './Broadcast.css';
+import { FormattedMessage } from 'react-intl';
+import { LanguageContext } from '../../App';
 
 export default class Broadcast extends Component {
     render() {
         return (
             <div className="broadcast">
                 <h1 className="broadcast__title">
-                    <FormattedMessage id={"broadcast"}/>
+                    <FormattedMessage id={'broadcast'} />
                 </h1>
                 <div className="broadcast__window">
                     <LanguageContext.Consumer>
-                        {value =>
+                        {(value) => (
                             <iframe
-                                src={value.lang === "en" ? this.props.url : this.props.url}
+                                src={
+                                    value.lang === 'en'
+                                        ? this.props.url
+                                        : this.props.url
+                                }
                                 className="iframe"
-                                title={"translation"}
-                                allowFullScreen>
+                                title={'translation'}
+                                allowFullScreen
+                            >
                                 Your browser must be updated
-                            </iframe>}
+                            </iframe>
+                        )}
                     </LanguageContext.Consumer>
                 </div>
             </div>

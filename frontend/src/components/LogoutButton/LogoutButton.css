@@ -7,7 +7,7 @@
     height: 30px;
 }
 
-.logout_button:hover{
+.logout_button:hover {
     background-color: var(--primary-color);
     color: white;
     cursor: pointer;

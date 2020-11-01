@@ -1,29 +1,27 @@
-import React, {Component} from "react";
-import {injectIntl} from "react-intl";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Security from "../Security/Security";
-import {ROLE} from "../../const/const";
-import ConferencePage from "../ConferencePage/ConferencePage";
-import "./../App.css";
-import AdminPage from "../AdminPage/AdminPage";
+import React, { Component } from 'react';
+import { injectIntl } from 'react-intl';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Security from '../Security/Security';
+import { ROLE } from '../../const/const';
+import ConferencePage from '../ConferencePage/ConferencePage';
+import './../App.css';
+import AdminPage from '../AdminPage/AdminPage';
 import '../adaptivity/main.css';
 
-class Router extends Component{
-
-
-    render(){
-        document.title = this.props.intl.formatMessage({id:"page_title"})
+class Router extends Component {
+    render() {
+        document.title = this.props.intl.formatMessage({ id: 'page_title' });
         return (
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
                         <Security roles={[ROLE.USER, ROLE.ADMIN]}>
-                            {user => <ConferencePage user={user}/>}
+                            {(user) => <ConferencePage user={user} />}
                         </Security>
                     </Route>
                     <Route exact path="/admin">
                         <Security roles={[ROLE.ADMIN]}>
-                            {user => <AdminPage/>}
+                            {() => <AdminPage />}
                         </Security>
                     </Route>
                 </Switch>
@@ -32,4 +30,4 @@ class Router extends Component{
     }
 }
 
-export default injectIntl(Router)
+export default injectIntl(Router);

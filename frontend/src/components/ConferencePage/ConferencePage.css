@@ -31,7 +31,7 @@
 
     position: absolute;
     left: -3rem;
-    bottom: -4rem; 
+    bottom: -4rem;
     z-index: 2;
 }
 
@@ -53,12 +53,12 @@
     text-transform: uppercase;
     text-align: right;
     font-weight: 600;
-    font-size: 3.4rem; 
+    font-size: 3.4rem;
 }
 
 .conference__time {
     margin-top: 3.3rem;
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
 }
 
 .conference__btn {
@@ -93,7 +93,6 @@
     margin-right: 1.1rem;
 }
 
-
 /* bottom section */
 .conference__bottom-section {
     min-height: 100vh;
@@ -126,7 +125,7 @@
 }
 
 .conference__broadcast-wrapper {
-    max-width: var(--content-width); 
+    max-width: var(--content-width);
     margin: 0 auto;
 }
 

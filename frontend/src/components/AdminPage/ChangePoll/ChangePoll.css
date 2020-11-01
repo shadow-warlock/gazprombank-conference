@@ -3,13 +3,11 @@
     padding-bottom: 50px;
 }
 
-
 .close_poll_button {
     padding-left: 10px;
     color: var(--blue);
     cursor: pointer;
 }
-
 
 .close_poll_button:hover {
     color: var(--yellow);
@@ -39,4 +37,3 @@
     cursor: pointer;
     color: var(--yellow);
 }
-

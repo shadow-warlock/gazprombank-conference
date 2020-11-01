@@ -22,20 +22,19 @@
     color: var(--primary-color);
 }
 
-
 .send_message_container .cancel_reply:hover {
     cursor: pointer;
     color: var(--primary-color);
 }
 
-.cancel_reply{
+.cancel_reply {
     display: none;
 }
 
-.send_message_container:hover .cancel_reply{
+.send_message_container:hover .cancel_reply {
     display: initial;
 }
 
-.message_sender_header{
+.message_sender_header {
     font-weight: bold;
 }

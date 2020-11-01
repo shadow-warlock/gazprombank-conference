@@ -1,52 +1,52 @@
 @media all and (max-width: 1820px) {
-  .bottom-triangles {
-    right: 0;
-  }
+    .bottom-triangles {
+        right: 0;
+    }
 }
 
 @media all and (max-width: 1500px) {
-  .plane-transport {
-    max-width: 900px;
-    bottom: 0;
-  }
-} 
+    .plane-transport {
+        max-width: 900px;
+        bottom: 0;
+    }
+}
 
 @media all and (max-width: 1310px) {
-  .plane-transport {
-    max-width: 600px;
-    bottom: 9rem;
-    left: 0;
-  }
+    .plane-transport {
+        max-width: 600px;
+        bottom: 9rem;
+        left: 0;
+    }
 
-  .conference__title {
-    font-size: 3rem;
-  }
+    .conference__title {
+        font-size: 3rem;
+    }
 }
 
 @media all and (max-width: 1000px) {
-  .plane-transport {
-    display: none;
-  }
+    .plane-transport {
+        display: none;
+    }
 }
 
 @media all and (max-width: 767px) {
-  .conference__image-side,
-  .bottom-triangles {
-    display: none;
-  }
+    .conference__image-side,
+    .bottom-triangles {
+        display: none;
+    }
 
-  .conference__info-side {
-    align-items: center;
-  }
+    .conference__info-side {
+        align-items: center;
+    }
 
-  .conference__title {
-    text-align: center;
-    font-size: 2.5rem;
-  }
+    .conference__title {
+        text-align: center;
+        font-size: 2.5rem;
+    }
 }
 
 @media all and (max-width: 540px) {
-  .conference__title {
-    font-size: 2rem;
-  }
+    .conference__title {
+        font-size: 2rem;
+    }
 }

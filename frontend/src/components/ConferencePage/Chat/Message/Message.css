@@ -16,7 +16,7 @@
     word-break: break-word;
     padding-left: 20px;
 }
-.like_button{
+.like_button {
     margin-left: 5px;
 }
 
@@ -34,10 +34,14 @@
     justify-content: flex-end;
 }
 
-.message_container{
+.message_container {
     /*background: linear-gradient(to left,transparent 50%, var(--green-blue) 200%);*/
     /*border-left: 1px solid var(--green-blue);*/
-    background: radial-gradient(farthest-side at -25% 50%, rgb(255, 207, 207), transparent);
+    background: radial-gradient(
+        farthest-side at -25% 50%,
+        rgb(255, 207, 207),
+        transparent
+    );
 }
 
 .message_container .reply_button {
@@ -57,11 +61,11 @@
     cursor: pointer;
 }
 
-.reply_button:hover{
+.reply_button:hover {
     color: var(--primary-color);
 }
 
-.reply_to:hover{
+.reply_to:hover {
     cursor: pointer;
     color: var(--primary-color);
 }

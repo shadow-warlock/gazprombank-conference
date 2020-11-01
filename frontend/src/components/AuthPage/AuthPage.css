@@ -40,13 +40,14 @@
     color: var(--tertiary-color);
 }
 
-.auth-page__title, .auth-page__conf-theme {
+.auth-page__title,
+.auth-page__conf-theme {
     margin: 0;
 
     text-transform: uppercase;
     text-align: right;
     font-weight: 600;
-    font-size: 3rem; 
+    font-size: 3rem;
 }
 
 .auth-page__title {
@@ -55,7 +56,7 @@
 
 .auth-page__time {
     margin-top: 3.3rem;
-    font-size: 1.3rem; 
+    font-size: 1.3rem;
     font-weight: 600;
 }
 

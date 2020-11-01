@@ -7,7 +7,7 @@ html {
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    --primary-color: #E60029;
+    --primary-color: #e60029;
     --tertiary-color: #fff;
     --secondary-color: #212353;
     --green-blue: #24767c;
@@ -19,9 +19,9 @@ body {
     --light-blue: #d7e5f7;
     --pink: rgb(194, 17, 161);
     --yellow: #ffcb00;
-    --font-size-less: 0.7rem; 
-    --font-size-big: 1.5rem; 
-    --font-size-very-big: 1.9rem; 
+    --font-size-less: 0.7rem;
+    --font-size-big: 1.5rem;
+    --font-size-very-big: 1.9rem;
     --input-width: 200px;
     --light-green: #dae9eb;
     --content-width: 1730px;
@@ -65,7 +65,7 @@ ul {
     color: white;
 }
 
-.color_red{
+.color_red {
     color: var(--primary-color);
 }
 
@@ -73,7 +73,7 @@ ul {
     color: var(--blue);
 }
 
-.bg_white{
+.bg_white {
     background-color: white;
 }
 
@@ -86,7 +86,7 @@ ul {
 }
 
 .font_size_default {
-    font-size: 1rem; 
+    font-size: 1rem;
 }
 
 .font_size_less {
