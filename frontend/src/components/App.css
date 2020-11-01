@@ -122,3 +122,15 @@ ul {
 .only_mobile {
     display: none !important;
 }
+
+.triangle {
+    border: 60px solid transparent;
+    border-left: 60px solid #fff;
+    border-top: 60px solid #fff;
+}
+
+.small-triangle {
+    border: 40px solid transparent;
+    border-left: 40px solid #fff;
+    border-top: 40px solid #fff;
+}

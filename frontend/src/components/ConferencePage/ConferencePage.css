@@ -1,22 +1,20 @@
 .conference {
     background-color: var(--red);
+    margin: 0;
+    padding: 0;
 }
 
-/* conference top section */
+.conference__top-section {
+    color: #fff;
+    height: calc(100vh - 147px);
+}
+
 .conference__content {
     max-width: var(--content-width);
     margin: 0 auto;
-    height: 105vh;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.conference__presentation-block {
-    display: flex;
     height: 100%;
 
-    color: #fff;
+    display: flex;
 }
 
 .conference__image-side {
@@ -30,18 +28,20 @@
     height: auto;
 
     position: absolute;
-    top: -2rem;
+    left: -3rem;
+    bottom: -4rem; 
 }
 
 .conference__info-side {
-    margin-top: 10rem;
-
     position: relative;
 
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-end;
+    box-sizing: border-box;
+    padding-bottom: 20%;
 }
 
 .conference__title {
@@ -62,10 +62,6 @@
     margin-top: 1rem;
 }
 
-.conference__bottom-logo {
-    margin-bottom: 0.8rem;
-}
-
 /* triangles */
 .left-triangles,
 .bottom-triangles {
@@ -74,13 +70,13 @@
 }
 
 .left-triangles {
-    top: 17rem;
+    top: 30vh;
     left: 0.4rem;
     flex-direction: column;
 }
 
 .bottom-triangles {
-    bottom: 8rem;
+    bottom: 1rem;
     right: -3rem;
     flex-direction: row;
 }
@@ -93,28 +89,38 @@
     margin-right: 1.1rem;
 }
 
-.triangle {
-    border: 60px solid transparent;
-    border-left: 60px solid #fff;
-    border-top: 60px solid #fff;
+
+/* bottom section */
+.conference__bottom-section {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.small-triangle {
-    border: 40px solid transparent;
-    border-left: 40px solid #fff;
-    border-top: 40px solid #fff;
+.conference__bottom-logo {
+    max-width: var(--content-width);
+    margin: 0 auto;
+
+    display: flex;
 }
 
 /* broadcast-block */
 .conference__broadcast-content {
+    flex: 1;
+
     background-color: #fff;
 }
 
-.conference__broadcast-block {
-    padding-top: 1.2rem;
+.conference__broadcast-wrapper {
     max-width: var(--content-width); 
     margin: 0 auto;
+}
+
+.conference__broadcast-block {
+    box-sizing: border-box;
+    padding-top: 1rem;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }

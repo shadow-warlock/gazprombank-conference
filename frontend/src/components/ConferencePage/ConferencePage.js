@@ -48,68 +48,72 @@ export default class ConferencePage extends Component {
         return (
             <div className="conference">
                 <Header />
-                <div className="conference__content">
-                    <section className="conference__presentation-block">
-                        <div className="conference__image-side">
-                            <img className="plane-transport" src={planeAndTransport} alt={"plane and transport"}/>
+                    <section className="conference__top-section">
+                        <div className="conference__content">
+                            <div className="conference__image-side">
+                                <img className="plane-transport" src={planeAndTransport} alt={"plane and transport"}/>
 
-                            <div className="left-triangles">
-                                <span className="triangle left-triangles__item"></span>
-                                <span className="triangle left-triangles__item"></span>
+                                <div className="left-triangles">
+                                    <span className="triangle left-triangles__item"></span>
+                                    <span className="triangle left-triangles__item"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div className="conference__info-side">
-                            <h1 className="conference__title">
-                                    <FormattedMessage id={"online_conferences"}/>
-                            </h1>
-                            <h1 className="conference__title">
-                                <FormattedMessage id={"the_ato_events"}/>
-                            </h1>
-                            <div className="conference__time">
-                                {conferenceTime} (<FormattedMessage id={"moscow"}/>, GMT+3)
-                            </div>
-                            <div className="conference__btn">
-                                <LanguageContext.Consumer>{
-                                    value =>
-                                        <Button onClick={() => {
-                                            window.open(value.lang === "ru"
-                                                ? agendaURL.ru
-                                                : agendaURL.en,
-                                                '_blank');
-                                        }}>
-                                            <FormattedMessage id={"agenda"}/>
-                                        </Button>}
-                                </LanguageContext.Consumer>
-                            </div>
+                            <div className="conference__info-side">
+                                <h1 className="conference__title">
+                                        <FormattedMessage id={"online_conferences"}/>
+                                </h1>
+                                <h1 className="conference__title">
+                                    <FormattedMessage id={"the_ato_events"}/>
+                                </h1>
+                                <div className="conference__time">
+                                    {conferenceTime} (<FormattedMessage id={"moscow"}/>, GMT+3)
+                                </div>
+                                <div className="conference__btn">
+                                    <LanguageContext.Consumer>{
+                                        value =>
+                                            <Button onClick={() => {
+                                                window.open(value.lang === "ru"
+                                                    ? agendaURL.ru
+                                                    : agendaURL.en,
+                                                    '_blank');
+                                            }}>
+                                                <FormattedMessage id={"agenda"}/>
+                                            </Button>}
+                                    </LanguageContext.Consumer>
+                                </div>
 
-                            <div className="bottom-triangles">
-                                <span className="small-triangle bottom-triangles__item"></span>
-                                <span className="small-triangle bottom-triangles__item"></span>
+                                <div className="bottom-triangles">
+                                    <span className="small-triangle bottom-triangles__item"></span>
+                                    <span className="small-triangle bottom-triangles__item"></span>
+                                </div>
                             </div>
                         </div>
                     </section>
-                    <div className="conference__bottom-logo">
-                        <Logo />
-                    </div>
-                </div>
 
-                <div className="conference__broadcast-content">
-                    <section className="conference__broadcast-block">
-                        <div className="conference__broadcast">
-                            <Broadcast url={this.state.conference.url}/>
+                    <section className="conference__bottom-section">
+                        <header>
+                            <div className="conference__bottom-logo">
+                                <Logo />
+                            </div>
+                        </header>
+                        <div className="conference__broadcast-content">
+                            <div className="conference__broadcast-wrapper">
+                                <div className="conference__broadcast-block">
+                                    <Broadcast url={this.state.conference.url}/>
+                                    <Chat user={this.props.user} chat={this.state.conference.chat}/>
+                                </div>
+                            </div>
                         </div>
-                        <div className="conference__chat">
-                            <Chat user={this.props.user} chat={this.state.conference.chat}/>
+
+                        <div className={"padding_side"}>
+                            {this.state.conference.poll &&
+                            <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
+                                poll={this.state.conference.poll}/>}
                         </div>
+
+                        <Footer/>
                     </section>
-                </div>
 
-                <div className={"padding_side"}>
-                    {this.state.conference.poll &&
-                    <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
-                          poll={this.state.conference.poll}/>}
-                </div>
-                <Footer/>
                 <Websocket url={SERVER.WS(this.state.conference.chat.port)}
                            onMessage={this.handleData.bind(this)}/>
             </div>
