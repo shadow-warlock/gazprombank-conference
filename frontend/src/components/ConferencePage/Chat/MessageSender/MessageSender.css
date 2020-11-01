@@ -1,5 +1,5 @@
 .send_message_container .textarea {
-    width: 350px;
+    width: 75%;
     resize: none;
     border: 1px solid var(--red);
     padding: 10px;

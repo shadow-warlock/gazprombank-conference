@@ -1,0 +1,16 @@
+@media all and (max-width: 1220px) {
+    .footer__content {
+        justify-content: center;
+    }
+
+    .footer__tech-support {
+        justify-content: center;
+    }
+
+    .privacy__contacts,
+    .privacy__title,
+    .privacy__policy-row {
+        text-align: center;
+    }
+
+}

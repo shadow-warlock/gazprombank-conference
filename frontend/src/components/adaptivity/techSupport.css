@@ -1,0 +1,10 @@
+@media all and (max-width: 756px) {
+    .tech-support__support {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .tech-support__item {
+        text-align: center;
+    }
+}

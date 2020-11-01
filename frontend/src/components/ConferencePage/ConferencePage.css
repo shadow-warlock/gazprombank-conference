@@ -30,12 +30,13 @@
     position: absolute;
     left: -3rem;
     bottom: -4rem; 
+    z-index: 2;
 }
 
 .conference__info-side {
     position: relative;
 
-    flex: 1;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,6 +68,7 @@
 .bottom-triangles {
     position: absolute;
     display: flex;
+    z-index: 2;
 }
 
 .left-triangles {
@@ -122,5 +124,6 @@
     padding-top: 1rem;
 
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }

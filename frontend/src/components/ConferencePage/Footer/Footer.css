@@ -1,6 +1,9 @@
 .footer {
+    margin: 0;
+    padding-bottom: 1.3rem;
+    box-sizing: border-box;
+
     background-color: #fff;
-    height: 200px;
 }
 
 .footer__content {
@@ -8,8 +11,15 @@
     margin: 0 auto;
 
     display: flex;
-    align-items: flex-end;
+    flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.footer__tech-support {
+    flex: auto;
+
+    display: flex;
+    justify-content: flex-end;
 }
 
 .footer__tech-support .tech-support__mail {
@@ -17,9 +27,11 @@
     color: var(--red);
 }
 
+/* privacy block */
 .privacy {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end; 
 }
 
 .privacy a {
@@ -35,6 +47,10 @@
     margin-right: 20px;
 }
 
+.privacy__contacts a:first-child {
+    white-space: nowrap;
+}
+
 .privacy__policy-row a:first-child::after {
-    content: '|'
+    content: '|';
 }

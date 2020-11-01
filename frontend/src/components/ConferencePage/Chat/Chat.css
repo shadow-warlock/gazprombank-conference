@@ -1,3 +1,7 @@
+.chat {
+    max-width: 300px;
+}
+
 .chat__title {
     margin: 0;
     color: var(--dark-blue);
