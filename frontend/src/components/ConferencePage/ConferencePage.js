@@ -96,22 +96,24 @@ export default class ConferencePage extends Component {
                                 <Logo />
                             </div>
                         </header>
-                        <div className="conference__broadcast-content">
-                            <div className="conference__broadcast-wrapper">
-                                <div className="conference__broadcast-block">
-                                    <Broadcast url={this.state.conference.url}/>
-                                    <Chat user={this.props.user} chat={this.state.conference.chat}/>
+                        <div className="conference__bottom-body">
+                            <div className="conference__broadcast-content">
+                                <div className="conference__broadcast-wrapper">
+                                    <div className="conference__broadcast-block">
+                                        <Broadcast url={this.state.conference.url}/>
+                                        <Chat user={this.props.user} chat={this.state.conference.chat}/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className={"padding_side"}>
-                            {this.state.conference.poll &&
-                            <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
-                                poll={this.state.conference.poll}/>}
-                        </div>
+                            <div className={"padding_side"}>
+                                {this.state.conference.poll &&
+                                <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
+                                    poll={this.state.conference.poll}/>}
+                            </div>
 
-                        <Footer/>
+                            <Footer/>
+                        </div>
                     </section>
 
                 <Websocket url={SERVER.WS(this.state.conference.chat.port)}
