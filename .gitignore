@@ -11,6 +11,6 @@
 /.idea/
 /composer.lock
 /symfony.lock
-/frontend/package-lock.json
+# /frontend/package-lock.json
 /websocketServer/composer.lock
 /websocketServer/vendor/
