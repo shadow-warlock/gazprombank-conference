@@ -21,12 +21,6 @@
     .conference__title {
         font-size: 3rem;
     }
-}
-
-@media all and (max-width: 1000px) {
-    .plane-transport {
-        display: none;
-    }
 
     .conference__broadcast-block {
         flex-direction: column;
@@ -36,7 +30,24 @@
 
     .broadcast__window {
         width: 80vw;
+        height: 500px;
         margin-bottom: 1rem;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .plane-transport {
+        display: none;
+    }
+
+    .broadcast__window {
+        width: 95vw;
+        height: 370px;
+    }
+
+    .broadcast__title,
+    .chat__title {
+        font-size: 1.5rem;
     }
 }
 
@@ -54,20 +65,18 @@
         text-align: center;
         font-size: 2.5rem;
     }
-
-    .broadcast__window {
-        width: 95vw;
-        height: 20vh;
-    }
-
-    .broadcast__title,
-    .chat__title {
-        font-size: 1.5rem;
-    }
 }
 
 @media all and (max-width: 540px) {
     .conference__title {
         font-size: 2rem;
+    }
+
+    .broadcast__window {
+        height: 270px;
+    }
+
+    .chat {
+        width: 95%;
     }
 }
