@@ -1,6 +1,6 @@
 .user_info {
     font-weight: bold;
-    color: var(--red);
+    color: var(--primary-color);
     margin: 10px;
     padding: 30px;
     width: 300px;
@@ -15,7 +15,7 @@
 
 .user_info button:hover {
     border-color: red;
-    background-color: var(--red);
+    background-color: var(--primary-color);
     color: white;
 }
 

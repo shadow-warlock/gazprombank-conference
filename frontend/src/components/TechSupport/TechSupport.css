@@ -10,7 +10,7 @@
 }
 
 .tech-support__title {
-    color: var(--dark-blue);
+    color: var(--secondary-color);
 }
 
 .tech-support__title::first-letter {
@@ -27,11 +27,11 @@
 
 .tech-support__support {
     line-height: 1.6;
-    color: var(--dark-blue);
+    color: var(--secondary-color);
 }
 
 
 .tech-support__item a {
     text-decoration: none;
-    color: var(--dark-blue);
+    color: var(--secondary-color);
 }

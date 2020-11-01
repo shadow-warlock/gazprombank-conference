@@ -1,7 +1,7 @@
 .send_message_container .textarea {
     width: 75%;
     resize: none;
-    border: 1px solid var(--red);
+    border: 1px solid var(--primary-color);
     padding: 10px;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .send_message_container .send_button {
-    /*color: var(--red);*/
+    /*color: var(--primary-color);*/
     height: 30px;
     width: 30px;
     margin-left: 10px;
@@ -19,13 +19,13 @@
 }
 
 .send_message_container .send_button:hover {
-    color: var(--red);
+    color: var(--primary-color);
 }
 
 
 .send_message_container .cancel_reply:hover {
     cursor: pointer;
-    color: var(--red);
+    color: var(--primary-color);
 }
 
 .cancel_reply{

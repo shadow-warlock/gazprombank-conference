@@ -21,7 +21,7 @@
 }
 
 .like_button:hover {
-    color: var(--red);
+    color: var(--primary-color);
     cursor: pointer;
 }
 
@@ -58,10 +58,10 @@
 }
 
 .reply_button:hover{
-    color: var(--red);
+    color: var(--primary-color);
 }
 
 .reply_to:hover{
     cursor: pointer;
-    color: var(--red);
+    color: var(--primary-color);
 }

@@ -3,7 +3,7 @@
     padding-bottom: 1.3rem;
     box-sizing: border-box;
 
-    background-color: #fff;
+    background-color: var(--tertiary-color);
 }
 
 .footer__content {
@@ -24,7 +24,7 @@
 
 .footer__tech-support .tech-support__mail {
     text-decoration: underline !important;
-    color: var(--red);
+    color: var(--primary-color);
 }
 
 /* privacy block */
@@ -36,11 +36,11 @@
 
 .privacy a {
     text-decoration: none;
-    color: var(--dark-blue);
+    color: var(--secondary-color);
 }
 
 .privacy__title {
-    color: var(--dark-blue);
+    color: var(--secondary-color);
 }
 
 .privacy__contacts a {

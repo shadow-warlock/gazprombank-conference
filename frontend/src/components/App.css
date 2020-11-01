@@ -7,6 +7,9 @@ html {
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    --primary-color: #E60029;
+    --tertiary-color: #fff;
+    --secondary-color: #212353;
     --green-blue: #24767c;
     --green-blue-dark: #16464c;
     --blue: #1c58a5;
@@ -16,16 +19,12 @@ body {
     --light-blue: #d7e5f7;
     --pink: rgb(194, 17, 161);
     --yellow: #ffcb00;
-    --red: #E60029;
-    --default-font-size: 15px;
-    --font-size-less: calc(0.7 * var(--default-font-size));
-    --font-size-big: calc(1.5 * var(--default-font-size));
-    --font-size-very-big: calc(1.9 * var(--default-font-size));
+    --font-size-less: 0.7rem; 
+    --font-size-big: 1.5rem; 
+    --font-size-very-big: 1.9rem; 
     --input-width: 200px;
     --light-green: #dae9eb;
-    --dark-blue: #212353;
     --content-width: 1730px;
-    font-size: var(--default-font-size);
 }
 
 p {
@@ -67,7 +66,7 @@ ul {
 }
 
 .color_red{
-    color: var(--red);
+    color: var(--primary-color);
 }
 
 .color_blue {
@@ -87,7 +86,7 @@ ul {
 }
 
 .font_size_default {
-    font-size: var(--default-font-size);
+    font-size: 1rem; 
 }
 
 .font_size_less {
@@ -125,12 +124,12 @@ ul {
 
 .triangle {
     border: 60px solid transparent;
-    border-left: 60px solid #fff;
-    border-top: 60px solid #fff;
+    border-left: 60px solid var(--tertiary-color);
+    border-top: 60px solid var(--tertiary-color);
 }
 
 .small-triangle {
     border: 40px solid transparent;
-    border-left: 40px solid #fff;
-    border-top: 40px solid #fff;
+    border-left: 40px solid var(--tertiary-color);
+    border-top: 40px solid var(--tertiary-color);
 }

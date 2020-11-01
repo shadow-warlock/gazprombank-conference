@@ -4,7 +4,7 @@
 
 .chat__title {
     margin: 0;
-    color: var(--dark-blue);
+    color: var(--secondary-color);
     text-align: center;
     font-size: 2rem;
 }

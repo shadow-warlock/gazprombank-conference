@@ -1,11 +1,11 @@
 .conference {
-    background-color: var(--red);
+    background-color: var(--primary-color);
     margin: 0;
     padding: 0;
 }
 
 .conference__top-section {
-    color: #fff;
+    color: var(--tertiary-color);
     height: calc(100vh - 147px);
 }
 
@@ -111,7 +111,7 @@
 .conference__broadcast-content {
     flex: 1;
 
-    background-color: #fff;
+    background-color: var(--tertiary-color);
 }
 
 .conference__broadcast-wrapper {
