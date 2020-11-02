@@ -1,21 +1,35 @@
+@media all and (max-height: 840px) {
+    .plane-transport {
+        display: none;
+    }
+}
+
+@media all and (max-height: 550px) {
+    .bottom-triangles,
+    .left-triangles {
+        display: none;
+    }
+
+    .conference__info-side {
+        padding-bottom: 1rem;
+    }
+
+    .conference__time {
+        margin: 0;
+    }
+}
+
 @media all and (max-width: 1820px) {
     .bottom-triangles {
         right: 0;
     }
 }
 
-@media all and (max-width: 1500px) {
-    .plane-transport {
-        max-width: 900px;
-        bottom: 0;
-    }
-}
-
-@media all and (max-width: 1310px) {
+@media all and (max-width: 1532px) {
     .plane-transport {
         max-width: 600px;
-        bottom: 9rem;
-        left: 0;
+        bottom: 2rem;
+        left: 5rem;
     }
 
     .conference__title {
@@ -49,10 +63,20 @@
     .chat__title {
         font-size: 1.5rem;
     }
+
+    .conference__image-side {
+        display: none;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .conference__content,
+    .conference__bottom-logo {
+        padding: 0 1rem;
+    }
 }
 
 @media all and (max-width: 767px) {
-    .conference__image-side,
     .bottom-triangles {
         display: none;
     }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Logo from '../Logo/Logo';
 import ChangeLocaleButton from '../ChangeLocaleButton/ChangeLocaleButton';
-import './Header.css'
+import './Header.css';
 
 const Header = () => {
     return (
@@ -16,7 +16,7 @@ const Header = () => {
                 </div>
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

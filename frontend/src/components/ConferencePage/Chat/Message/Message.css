@@ -1,5 +1,5 @@
 .message {
-    width: 400px;
+    width: auto;
     display: flex;
     justify-content: space-between;
     /*border-left: 1px solid var(--green-blue);*/

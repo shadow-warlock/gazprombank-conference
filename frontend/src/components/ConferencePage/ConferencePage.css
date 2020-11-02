@@ -12,7 +12,7 @@
 .conference__content {
     max-width: var(--content-width);
     box-sizing: border-box;
-    padding: 0 0.5rem;
+    padding: 0 3rem;
     margin: 0 auto;
     height: 100%;
 
@@ -80,7 +80,7 @@
 }
 
 .bottom-triangles {
-    bottom: 1rem;
+    bottom: 2rem;
     right: -3rem;
     flex-direction: row;
 }
@@ -104,6 +104,8 @@
 .conference__bottom-logo {
     max-width: var(--content-width);
     margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 3rem;
     display: flex;
 }
 

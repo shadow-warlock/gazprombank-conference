@@ -3,6 +3,7 @@ import './Footer.css';
 import TechSupport from '../../TechSupport/TechSupport';
 import { FormattedMessage } from 'react-intl';
 import { USE } from '../../../const/mockData';
+import LogoutButton from '../../LogoutButton/LogoutButton';
 
 export default class Footer extends Component {
     render() {
@@ -52,7 +53,9 @@ export default class Footer extends Component {
                                 Youtube
                             </a>
                         </span>
-                        {/* <LogoutButton/> */}
+                        <div className="footer__logout-btn">
+                            <LogoutButton />
+                        </div>
                     </div>
                     <div className="footer__tech-support">
                         <TechSupport role={true} use={USE.MAIN} />
