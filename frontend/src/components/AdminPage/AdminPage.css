@@ -1,5 +1,13 @@
 .admin_page {
     background-color: var(--primary-color);
+    overflow-x: hidden;
+}
+
+.admin_page__content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 2rem;
 }
 
 #root > .admin_page > div:nth-child(2) > input {

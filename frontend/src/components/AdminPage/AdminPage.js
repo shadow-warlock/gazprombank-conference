@@ -69,28 +69,34 @@ export default class AdminPage extends Component {
     render() {
         return (
             <div className={'admin_page padding_side color_white'}>
-                <p className={'uppercase color_white font_size_very_big bold'}>
-                    Админ панель
-                </p>
-                {this.state.super ? (
-                    <>
-                        <ChangeVideoLink />
-                        <ChatServerMenu />
-                    </>
-                ) : (
-                    ''
-                )}
-                <LoaderCSV />
-                <ChangePoll />
-                <AddUserForm reload={this.loadUsers.bind(this)} />
-                <div className={'user_list'}>
-                    {this.state.users.map((user) => (
-                        <User
-                            key={user.id}
-                            reload={this.loadUsers.bind(this)}
-                            user={user}
-                        />
-                    ))}
+                <div className="admin_page__content">
+                    <p
+                        className={
+                            'uppercase color_white font_size_very_big bold'
+                        }
+                    >
+                        Админ панель
+                    </p>
+                    {this.state.super ? (
+                        <>
+                            <ChangeVideoLink />
+                            <ChatServerMenu />
+                        </>
+                    ) : (
+                        ''
+                    )}
+                    <LoaderCSV />
+                    <ChangePoll />
+                    <AddUserForm reload={this.loadUsers.bind(this)} />
+                    <div className={'user_list'}>
+                        {this.state.users.map((user) => (
+                            <User
+                                key={user.id}
+                                reload={this.loadUsers.bind(this)}
+                                user={user}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         );
