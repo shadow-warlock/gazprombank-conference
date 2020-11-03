@@ -2,6 +2,12 @@
     padding-top: 70px;
 }
 
+.header__lang-switcher{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .header__content {
     max-width: var(--content-width);
     box-sizing: border-box;
