@@ -66,8 +66,7 @@
 
 .auth-page__footer {
     max-width: var(--content-width);
-    margin: 0 auto;
-
+    margin: 0 auto 50px;
     position: relative;
     box-sizing: border-box;
     padding-right: 15rem;
