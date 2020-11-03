@@ -9,7 +9,7 @@
 .footer__content {
     max-width: var(--content-width);
     box-sizing: border-box;
-    padding: 0 0.5rem;
+    padding: 0 3rem;
     margin: 0 auto;
 
     display: flex;
