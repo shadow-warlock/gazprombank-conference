@@ -155,24 +155,22 @@ export const TECH_SUPPORTERS = [
     },
     {
         use: [USE.AUTH],
-        name: 'svetlana_pimenova',
-        phone: '+7 (903) 263-4614',
-        email: 's.pimenova@atoevents.ru',
+        name: 'amir_manzhukov',
+        phone: '+7 (962) 945-5129',
+        email: 'a.manzhukov@atoevents.ru',
     },
     {
         use: [USE.MAIN],
         role: 'agenda',
-        name: 'anastasia_zamotina',
-        phone: '+7 (967) 198-3892',
-        email: 'a.zamotina@atoevents.ru',
+        name: 'valeriya_burskaya',
+        phone: '+7 (965) 109-3088',
+        email: 'v.burskaya@atoevents.ru',
     },
 ];
 
-export const conferenceDate = new Date('2020-10-27');
-export const conferenceTime = '11:00';
+export const conferenceDate = new Date('2020-11-11');
+export const conferenceTime = '10:00';
 export const agendaURL = {
-    en:
-        'https://drive.google.com/drive/mobile/folders/10ZTWtJ38phoptxfn6C8LlxJcMLV-I-ZD?usp=sharing',
-    ru:
-        'https://drive.google.com/drive/mobile/folders/10ZTWtJ38phoptxfn6C8LlxJcMLV-I-ZD?usp=sharing',
+    en: 'https://www.events.ato.ru/aof2020-agenda-e',
+    ru: 'https://www.events.ato.ru/aof2020-agenda-r',
 };
