@@ -50,6 +50,7 @@ $ws_worker->onConnect = function ($connection) use (&$connections) {
             $connections[$chat][] = $connection;
         }
     };
+
 };
 
 //$ws_worker->onMessage = function($connection, $data) {
@@ -57,10 +58,12 @@ $ws_worker->onConnect = function ($connection) use (&$connections) {
 //};
 
 $ws_worker->onClose = function ($connection) use (&$connections) {
-    $connection->onClose = function ($connection, $header) use (&$connections)  {
-        var_dump("jija");
-    };
-
+    foreach ($connections as $chat){
+        $index = array_search($connection, $chat);
+        if($index !== false){
+            unset($connections[$index]);
+        }
+    }
 };
 
 Worker::runAll();
