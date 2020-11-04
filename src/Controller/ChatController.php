@@ -49,13 +49,14 @@ class ChatController extends AbstractController {
         } else {
             throw new BadRequestHttpException("field text must be over 2 symbols in length");
         }
-        $message->setChat($entityManager->find(Chat::class, $id));
+        $chat = $entityManager->find(Chat::class, $id);
+        $message->setChat($chat);
         $message->setUser($this->getUser());
         $message->setReplyTo(isset($data['replyTo']) ? $entityManager->find(Message::class, $data['replyTo']) : null);
         $message->setTime();
         $entityManager->persist($message);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::MESSAGE, $message);
+        $wsSender->send(WebSocketSender::MESSAGE, $message, $chat);
         $json = $serializer->toJSON($message);
         return new JsonResponse($json, 201, [], true);
     }
@@ -76,7 +77,7 @@ class ChatController extends AbstractController {
         }
         $entityManager->remove($message);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::DELETE_MESSAGE, ["messageId"=>$id]);
+        $wsSender->send(WebSocketSender::DELETE_MESSAGE, ["messageId"=>$id], $message->getChat());
         return new JsonResponse("", 204, [], true);
     }
 
@@ -100,7 +101,7 @@ class ChatController extends AbstractController {
         $like->setTime();
         $entityManager->persist($like);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::LIKE, $like);
+        $wsSender->send(WebSocketSender::LIKE, $like, $message->getChat());
         $json = $serializer->toJSON($like);
         return new JsonResponse($json, 201, [], true);
     }
@@ -152,7 +153,7 @@ class ChatController extends AbstractController {
         $entityManager->remove($like);
         $entityManager->flush();
         $wsData = ["messageId" => $id, "likeId" => $likeId];
-        $wsSender->send(WebSocketSender::DELETE_LIKE, $wsData);
+        $wsSender->send(WebSocketSender::DELETE_LIKE, $wsData, $message->getChat());
         return $this->json(true, 204);
     }
 }

@@ -1,10 +1,12 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {OpenVidu} from 'openvidu-browser';
 import axios from 'axios';
 import UserVideo from "./UserVideo/UserVideo";
-import {API, AXIOS_CONFIG} from "../../const/const";
+import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
 import Button, {OFF} from "../Button/Button";
 import "./RoomPage.css";
+import Chat from "../ConferencePage/Chat/Chat";
+import Websocket from "react-websocket";
 
 class RoomPage extends Component {
 
@@ -31,6 +33,7 @@ class RoomPage extends Component {
         this.onbeforeunload = this.onbeforeunload.bind(this);
     }
 
+
     loadRoom(id){
         let self = this;
         axios.get(API.ROOM_ID(id), AXIOS_CONFIG).then(
@@ -38,7 +41,7 @@ class RoomPage extends Component {
                 self.setState({
                     room: res.data,
                     mySessionId: res.data.name
-                });
+                }, this.joinSession);
             }
         ).catch(e => {
             if(e.response && e.response.status){
@@ -60,7 +63,6 @@ class RoomPage extends Component {
     componentDidMount() {
         window.addEventListener('beforeunload', this.onbeforeunload);
         this.loadRoom(this.props.room);
-        // this.joinSession();
     }
 
     componentWillUnmount() {
@@ -138,11 +140,6 @@ class RoomPage extends Component {
                                 frameRate: 30, // The frame rate of your video
                                 insertMode: 'APPEND', // How the video is inserted in the target element 'video-container'
                                 mirror: false, // Whether to mirror your local video or not
-                            }, (error)=>{
-                                if(error !== undefined && error.name === "DEVICE_ACCESS_DENIED"){
-                                    alert(error.name);
-                                    this.leaveSession();
-                                }
                             });
                             mySession.publish(publisher);
                             this.setState({
@@ -185,7 +182,7 @@ class RoomPage extends Component {
                                 {mySessionId}
                                 {this.state.room === null ?
                                     " Загрузка..." :
-                                    this.state.session === undefined ? <Button onClick={this.joinSession}>Войти</Button> : " Подключение..."}
+                                    this.state.session === undefined ? "" : " Подключение..."}
                             </h1>
                         </div>
 
@@ -195,7 +192,6 @@ class RoomPage extends Component {
                     <div id="session">
                         <div id="session-header">
                             <h1 id="session-title">{mySessionId}
-                                <Button onClick={this.leaveSession}>Выйти</Button>
                                 <Button
                                     className={this.state.video ? "" : OFF}
                                     onClick={()=>{this.state.publisher.publishVideo(!this.state.video); this.setState({video: !this.state.video})}}>
@@ -227,8 +223,48 @@ class RoomPage extends Component {
                         ) : null}
                     </div>
                 ) : null}
+                {this.state.room ?
+                    <Fragment>
+                        <Chat user={this.props.user} chat={this.state.room.chat}/>
+                        <Websocket url={SERVER.WS(this.state.room.chat.port) + "?chat=" + this.state.room.chat.id}
+                                   onMessage={this.handleData.bind(this)}/>
+                    </Fragment>
+                    : ""}
             </div>
         );
+    }
+
+    handleData(json) {
+        let data = JSON.parse(json);
+        let room = Object.assign({}, this.state.room);
+        let messageIndex;
+        switch (data.type) {
+            case "message":
+                room.chat.messages.unshift(data.data);
+                break;
+            case "delete message":
+                room.chat.messages = room.chat.messages.filter((message) => {
+                    return message.id !== data.data.messageId;
+                });
+                break;
+            case "like":
+                messageIndex = room.chat.messages.findIndex((message) => {
+                    return message.id === data.data.message.id;
+                });
+                room.chat.messages[messageIndex].likes.push(data.data);
+                break;
+            case "delete like":
+                messageIndex = room.chat.messages.findIndex((message) => {
+                    return message.id === data.data.messageId;
+                });
+                room.chat.messages[messageIndex].likes = room.chat.messages[messageIndex].likes.filter((like) => {
+                    return like.id !== data.data.likeId
+                });
+                break;
+        }
+        this.setState({
+            room: room
+        });
     }
 
 

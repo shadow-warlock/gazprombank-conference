@@ -25,7 +25,8 @@ class VideoConnector
     }
 
     public function createSession(Room $room){
-        $response = $this->client->request("POST", $this->url . self::SESSION, [
+        $url = str_replace("{num}", $room->getVideo(), $this->url);
+        $response = $this->client->request("POST", $url . self::SESSION, [
             "verify_peer"=>false,"verify_host"=>false,
             'headers' => [
                 'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),
@@ -41,20 +42,22 @@ class VideoConnector
         }
     }
 
-    public function createToken(string $sessionId){
-        $response = $this->client->request("POST", $this->url . self::TOKEN, [
+    public function createToken(Room $room){
+        $url = str_replace("{num}", $room->getVideo(), $this->url);
+        $response = $this->client->request("POST", $url . self::TOKEN, [
             "verify_peer"=>false,"verify_host"=>false,
             'headers' => [
                 'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),
                 'Content-Type' => 'application/json'
             ],
-            'body' => json_encode(['session' => $sessionId])
+            'body' => json_encode(['session' => $room->getCode()])
         ]);
         return $response->toArray()["token"];
     }
 
     public function deleteSession(Room $room){
-        $response = $this->client->request("DELETE", $this->url . self::SESSION . '/' . $room->getCode(), [
+        $url = str_replace("{num}", $room->getVideo(), $this->url);
+        $response = $this->client->request("DELETE", $url . self::SESSION . '/' . $room->getCode(), [
             "verify_peer"=>false,"verify_host"=>false,
             'headers' => [
                 'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),
@@ -69,7 +72,9 @@ class VideoConnector
     }
 
     public function getSession(Room $room){
-        $response = $this->client->request("GET", $this->url . self::SESSION . '/' . $room->getCode(), [
+        $url = str_replace("{num}", $room->getVideo(), $this->url);
+
+        $response = $this->client->request("GET", $url . self::SESSION . '/' . $room->getCode(), [
             "verify_peer"=>false,"verify_host"=>false,
             'headers' => [
                 'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),

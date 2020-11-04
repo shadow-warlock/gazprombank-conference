@@ -55,7 +55,8 @@ class PollController extends AbstractController {
         $entityManager->persist($conference);
         $entityManager->flush();
         $json = $serializer->toJSON($poll);
-        $wsSender->send(WebSocketSender::POLL, $poll);
+        $conference = $this->getDoctrine()->getRepository(Conference::class)->findAll()[0] ?? null;
+        $wsSender->send(WebSocketSender::POLL, $poll, $conference->getChat());
         return new JsonResponse($json, 201, [], true);
     }
 

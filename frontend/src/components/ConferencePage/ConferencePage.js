@@ -104,7 +104,7 @@ export default class ConferencePage extends Component {
                           poll={this.state.conference.poll}/>}
                 </div>
                 <Footer/>
-                <Websocket url={SERVER.WS(this.state.conference.chat.port)}
+                <Websocket url={SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id}
                            onMessage={this.handleData.bind(this)}/>
             </div>
         );
@@ -157,7 +157,6 @@ export default class ConferencePage extends Component {
                 break;
             case "poll":
                 conf.poll = data.data;
-                console.log(data.data);
                 if (this.state.conference.poll) {
                     this.timer.start(() => {
                             this.setState({conference: conf});

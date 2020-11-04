@@ -95,7 +95,8 @@ class ConferenceController extends AbstractController {
         $conference->setPoll(null);
         $entityManager->persist($conference);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::POLL, null);
+        $conference = $this->getDoctrine()->getRepository(Conference::class)->findAll()[0] ?? null;
+        $wsSender->send(WebSocketSender::POLL, null, $conference->getChat());
         return $this->json(true, 204);
     }
 
