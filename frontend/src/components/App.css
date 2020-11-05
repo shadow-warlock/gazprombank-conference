@@ -7,7 +7,7 @@ html {
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    --primary-color: #e60029;
+    --primary-color: #0066cc;
     --tertiary-color: #fff;
     --secondary-color: #212353;
     --green-blue: #24767c;
@@ -122,14 +122,18 @@ ul {
     display: none !important;
 }
 
-.triangle {
-    border: 60px solid transparent;
-    border-left: 60px solid var(--tertiary-color);
-    border-top: 60px solid var(--tertiary-color);
+.field-name {
+    font-weight: bold;
 }
 
-.small-triangle {
-    border: 40px solid transparent;
-    border-left: 40px solid var(--tertiary-color);
-    border-top: 40px solid var(--tertiary-color);
+.field-phone {
+    text-decoration: none;
+    color: var(--tertiary-color);
+}
+
+.field-email,
+.field-role {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
 }
