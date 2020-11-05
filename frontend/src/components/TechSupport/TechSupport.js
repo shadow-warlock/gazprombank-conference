@@ -5,52 +5,46 @@ import { FormattedMessage } from 'react-intl';
 
 export default class TechSupport extends Component {
     render() {
+        const techSupporters = TECH_SUPPORTERS.filter((ts) =>
+            ts.use.includes(this.props.use)
+        );
+
+        if (!techSupporters.length) return <></>;
+
         return (
             <div className="tech-support">
-                <h3 className="tech-support__title auth-white">
+                <h5 className="tech-support__title auth-white">
                     <FormattedMessage id={'technical_support'} />
-                </h3>
+                </h5>
                 <div className={'tech-support__supporters'}>
-                    {TECH_SUPPORTERS.map((techSupporter) =>
-                        techSupporter.use.includes(this.props.use) ? (
-                            <ul
-                                key={techSupporter.phone}
-                                className="tech-support__support"
+                    {techSupporters.map((techSupporter) => (
+                        <div
+                            key={techSupporter.phone}
+                            className="tech-support__support"
+                        >
+                            {this.props.role && (
+                                <span className="contacts__field field-role">
+                                    <FormattedMessage id={techSupporter.role} />
+                                    :
+                                </span>
+                            )}
+                            <span className="tech-support__field field-name">
+                                <FormattedMessage id={techSupporter.name} />
+                            </span>
+                            <a
+                                className="tech-support__field field-phone"
+                                href={'tel:' + techSupporter.phone}
                             >
-                                <li className="tech-support__item auth-white">
-                                    {this.props.role ? (
-                                        <>
-                                            <FormattedMessage
-                                                id={techSupporter.role}
-                                            />
-                                            {': '}
-                                        </>
-                                    ) : (
-                                        ''
-                                    )}
-                                    <FormattedMessage id={techSupporter.name} />
-                                </li>
-                                <li className="tech-support__item">
-                                    <a
-                                        className="auth-white"
-                                        href={'tel:' + techSupporter.phone}
-                                    >
-                                        {techSupporter.phone}
-                                    </a>
-                                </li>
-                                <li className="tech-support__item">
-                                    <a
-                                        className="tech-support__mail auth-white"
-                                        href={'mailto:' + techSupporter.email}
-                                    >
-                                        {techSupporter.email}
-                                    </a>
-                                </li>
-                            </ul>
-                        ) : (
-                            ''
-                        )
-                    )}
+                                {techSupporter.phone}
+                            </a>
+                            <a
+                                className="tech-support__field field-email"
+                                href={'mailto:' + techSupporter.email}
+                            >
+                                {techSupporter.email}
+                            </a>
+                        </div>
+                    ))}
                 </div>
             </div>
         );
