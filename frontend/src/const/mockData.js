@@ -153,24 +153,21 @@ export const TECH_SUPPORTERS = [
         phone: '+7 (965) 118-6831',
         email: 'e.slavskaya@atoevents.ru',
     },
+];
+
+export const CONTACTS = [
     {
-        use: [USE.AUTH],
-        name: 'amir_manzhukov',
-        phone: '+7 (962) 945-5129',
-        email: 'a.manzhukov@atoevents.ru',
-    },
-    {
-        use: [USE.MAIN],
+        use: [USE.MAIN, USE.AUTH],
         role: 'agenda',
-        name: 'valeriya_burskaya',
-        phone: '+7 (965) 109-3088',
-        email: 'v.burskaya@atoevents.ru',
+        name: 'igor_smirnov',
+        phone: '+7 (965) 236-88 97',
+        email: 'i.smirnov@wwe-conferences.com',
     },
 ];
 
-export const conferenceDate = new Date('2020-11-11');
-export const conferenceTime = '10:00';
+export const conferenceDate = new Date('2020-11-12');
+export const conferenceTime = '09:30';
 export const agendaURL = {
-    en: 'https://www.events.ato.ru/aof2020-agenda-e',
+    en: '',
     ru: 'https://www.events.ato.ru/aof2020-agenda-r',
 };
