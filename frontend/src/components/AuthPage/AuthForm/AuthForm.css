@@ -1,8 +1,9 @@
 .auth-form input {
-    margin-right: 2rem;
+    margin-right: 4rem;
 }
 
 .auth-form__error {
     margin-top: 1rem;
-    text-align: right;
+    font-weight: bold;
+    text-align: center;
 }

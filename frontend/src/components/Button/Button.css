@@ -16,3 +16,8 @@
     cursor: pointer;
     background-color: rgba(0, 102, 204, 0.5);
 }
+
+input[type='number']::-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+}
