@@ -142,16 +142,16 @@ export const TECH_SUPPORTERS = [
     {
         use: [USE.MAIN, USE.AUTH],
         role: 'participation',
-        name: 'alena_garanicheva',
-        phone: '+7 (965) 109-3484',
-        email: 'a.garanicheva@atoevents.ru',
+        name: 'svetlana_pimenova',
+        phone: '+7 (903) 263-46-14',
+        email: 's.pimenova@atoevents.ru',
     },
     {
         use: [USE.MAIN, USE.AUTH],
         role: 'participation',
-        name: 'elizaveta_clavskaya',
-        phone: '+7 (965) 118-6831',
-        email: 'e.slavskaya@atoevents.ru',
+        name: 'nikita_kachaev',
+        phone: '+7 (964) 500-25-33',
+        email: 'nikita.kachaev@gmail.com',
     },
 ];
 
