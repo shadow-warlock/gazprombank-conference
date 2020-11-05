@@ -1,18 +1,21 @@
-.input {
+.password-input {
     text-align: center;
-    border: 2px solid white;
-    padding: 10px 30px;
-    width: calc(var(--input-width) - 62px);
-    background-color: white;
-    color: red;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
+    width: calc(var(--input-width) - 54px);
+    -moz-appearance: textfield;
 }
 
-.input::placeholder {
-    background-color: transparent;
-    color: red;
+.password-input::-webkit-outer-spin-button,
+.password-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.password-input::placeholder {
+    color: var(--tertiary-color);
+}
+
+.password-input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .input[type='checkbox'] {
