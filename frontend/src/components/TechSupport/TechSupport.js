@@ -5,52 +5,50 @@ import { FormattedMessage } from 'react-intl';
 
 export default class TechSupport extends Component {
     render() {
+        const techSupporters = TECH_SUPPORTERS.filter((ts) =>
+            ts.use.includes(this.props.use)
+        );
+
+        if (!techSupporters.length) return <></>;
+
         return (
             <div className="tech-support">
-                <h3 className="tech-support__title auth-white">
+                <h3 className="tech-support__title">
                     <FormattedMessage id={'technical_support'} />
                 </h3>
                 <div className={'tech-support__supporters'}>
-                    {TECH_SUPPORTERS.map((techSupporter) =>
-                        techSupporter.use.includes(this.props.use) ? (
-                            <ul
-                                key={techSupporter.phone}
-                                className="tech-support__support"
-                            >
-                                <li className="tech-support__item auth-white">
-                                    {this.props.role ? (
-                                        <>
+                    {techSupporters.map((techSupporter) => (
+                        <div
+                            key={techSupporter.phone}
+                            className="tech-support__support"
+                        >
+                            <span className="tech-support__field field-name">
+                                {this.props.role && (
+                                    <>
+                                        <span className="tech-support__field field-role">
                                             <FormattedMessage
                                                 id={techSupporter.role}
                                             />
-                                            {': '}
-                                        </>
-                                    ) : (
-                                        ''
-                                    )}
-                                    <FormattedMessage id={techSupporter.name} />
-                                </li>
-                                <li className="tech-support__item">
-                                    <a
-                                        className="auth-white"
-                                        href={'tel:' + techSupporter.phone}
-                                    >
-                                        {techSupporter.phone}
-                                    </a>
-                                </li>
-                                <li className="tech-support__item">
-                                    <a
-                                        className="tech-support__mail auth-white"
-                                        href={'mailto:' + techSupporter.email}
-                                    >
-                                        {techSupporter.email}
-                                    </a>
-                                </li>
-                            </ul>
-                        ) : (
-                            ''
-                        )
-                    )}
+                                        </span>
+                                        :&nbsp;
+                                    </>
+                                )}
+                                <FormattedMessage id={techSupporter.name} />
+                            </span>
+                            <a
+                                className="tech-support__field field-phone"
+                                href={'tel:' + techSupporter.phone}
+                            >
+                                {techSupporter.phone}
+                            </a>
+                            <a
+                                className="tech-support__field field-mail"
+                                href={'mailto:' + techSupporter.email}
+                            >
+                                {techSupporter.email}
+                            </a>
+                        </div>
+                    ))}
                 </div>
             </div>
         );

@@ -1,12 +1,16 @@
 .button {
-    border: 2px solid white;
-    padding: 10px 30px;
+    box-sizing: border-box;
     width: var(--input-width);
+    padding: 0.6em 2em;
+
+    border: 2px solid white;
+
     background-color: white;
     color: red;
-    font-size: 1rem;
+    font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .button:hover {

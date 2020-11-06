@@ -1,8 +1,4 @@
-.auth-form input {
-    margin-right: 2rem;
-}
-
 .auth-form__error {
-    margin-top: 1rem;
+    margin-top: 1em;
     text-align: right;
 }
