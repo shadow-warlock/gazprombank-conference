@@ -45,77 +45,64 @@ export default class ConferencePage extends Component {
         return (
             <div className="conference">
                 <Header />
-                <section className="conference__top-section">
-                    <div className="conference__content">
-                        <div className="conference__image-side">
-                            <img
-                                className="plane-transport"
-                                src={planeAndTransport}
-                                alt={'plane and transport'}
-                            />
+                <section className="conference__content content">
+                    <img
+                        className="conference__main-img"
+                        src={planeAndTransport}
+                        alt={'plane and transport'}
+                    />
 
-                            <div className="left-triangles">
-                                <span className="triangle left-triangles__item"/>
-                                <span className="triangle left-triangles__item"/>
-                            </div>
+                    <div className="conference__left-triangles">
+                        <span className="triangle left-triangles__item" />
+                        <span className="triangle left-triangles__item" />
+                    </div>
+                    <div className="conference__info-block">
+                        <h1 className="conference__title">
+                            <FormattedMessage id={'online_conferences'} />
+                        </h1>
+                        <h1 className="conference__title">
+                            <FormattedMessage id={'the_ato_events'} />
+                        </h1>
+                        <div className="conference__time">
+                            {conferenceTime} (
+                            <FormattedMessage id={'moscow'} />, GMT+3)
                         </div>
-                        <div className="conference__info-side">
-                            <h1 className="conference__title">
-                                <FormattedMessage id={'online_conferences'} />
-                            </h1>
-                            <h1 className="conference__title">
-                                <FormattedMessage id={'the_ato_events'} />
-                            </h1>
-                            <div className="conference__time">
-                                {conferenceTime} (
-                                <FormattedMessage id={'moscow'} />, GMT+3)
-                            </div>
-                            <div className="conference__btn">
-                                <LanguageContext.Consumer>
-                                    {(value) => (
-                                        <Button
-                                            onClick={() => {
-                                                window.open(
-                                                    value.lang === 'ru'
-                                                        ? agendaURL.ru
-                                                        : agendaURL.en,
-                                                    '_blank'
-                                                );
-                                            }}
-                                        >
-                                            <FormattedMessage id={'agenda'} />
-                                        </Button>
-                                    )}
-                                </LanguageContext.Consumer>
-                            </div>
-
-                            <div className="bottom-triangles">
-                                <span className="small-triangle bottom-triangles__item"/>
-                                <span className="small-triangle bottom-triangles__item"/>
-                            </div>
+                        <div className="conference__btn">
+                            <LanguageContext.Consumer>
+                                {(value) => (
+                                    <Button
+                                        onClick={() => {
+                                            window.open(
+                                                value.lang === 'ru'
+                                                    ? agendaURL.ru
+                                                    : agendaURL.en,
+                                                '_blank'
+                                            );
+                                        }}
+                                    >
+                                        <FormattedMessage id={'agenda'} />
+                                    </Button>
+                                )}
+                            </LanguageContext.Consumer>
                         </div>
+                    </div>
+                    <div className="conference__bottom-triangles">
+                        <span className="small-triangle bottom-triangles__item" />
+                        <span className="small-triangle bottom-triangles__item" />
+                    </div>
+                    <div className="conference__bottom-logo">
+                        <Logo />
                     </div>
                 </section>
 
                 <section className="conference__bottom-section">
-                    <header>
-                        <div className="conference__bottom-logo">
-                            <Logo />
-                        </div>
-                    </header>
-                    <div className="conference__bottom-body">
-                        <div className="conference__broadcast-content">
-                            <div className="conference__broadcast-wrapper">
-                                <div className="conference__broadcast-block">
-                                    <Broadcast
-                                        url={this.state.conference.url}
-                                    />
-                                    <Chat
-                                        user={this.props.user}
-                                        chat={this.state.conference.chat}
-                                    />
-                                </div>
-                            </div>
+                    <div className="conference__bottom-content content">
+                        <div className="conference__broadcast-block">
+                            <Broadcast url={this.state.conference.url} />
+                            <Chat
+                                user={this.props.user}
+                                chat={this.state.conference.chat}
+                            />
                         </div>
 
                         <div className={'padding_side'}>
@@ -128,7 +115,6 @@ export default class ConferencePage extends Component {
                                 />
                             )}
                         </div>
-
                         <Footer />
                     </div>
                 </section>
