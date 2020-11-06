@@ -32,11 +32,6 @@
         padding: 10%;
     }
 
-
-    .auth_page .login_supporters {
-        flex-direction: column;
-    }
-
     .auth_page .login_supporters .supporter {
         margin-bottom: 10px;
     }

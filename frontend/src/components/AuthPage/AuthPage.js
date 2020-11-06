@@ -16,36 +16,27 @@ class AuthPage extends Component {
             <div className={"auth_container"}>
                 <Sponsors/>
                 <div className={"auth_page color_white"}>
-                    <div className={"header"}>
-                        <div className={"logo_right"}>
-                            <Logo/>
-                        </div>
-                        <div><ChangeLocaleButton/></div>
-                    </div>
-                    <div className={"auth_page_container"}>
-                        <div className={"left_container"}>
-                            <img src={planeAndTransport} alt={"plane and transport"}/>
-                        </div>
+                    <div className={"info"}>
                         <div>
-                            <div className={"text_right"}>
-                                <div className={"text_right"}>
-                                    <p className={"bold font_size_very_big uppercase"}>
-                                        <FormattedMessage id={"conference"}/>
-                                    </p>
-                                    <p className={"bold font_size_very_big uppercase color_white"}>
-                                        <FormattedMessage id={"conference_theme"}/>
-                                    </p>
-                                    <br/>
-                                    <p className={"bold"}>
-                                        <Moment className={"upper"} format={this.props.intl.formatMessage({id:"date_format"})} date={conferenceDate}/>{", "}
-                                        {conferenceTime} (GMT+3, <FormattedMessage id={"moscow"}/>)
-                                    </p>
-                                </div>
-                                <AuthForm setUser={this.props.setUser}/>
+                            <div>
+                                <p className={"bold conference-type"}>
+                                    <FormattedMessage id={"conference"}/>
+                                </p>
+                                <p className={"bold uppercase conference-name"}>
+                                    <FormattedMessage id={"conference_theme"}/>
+                                </p>
+                                <p className={"bold conference-time"}>
+                                    <FormattedMessage id={"conference_time"}/>
+                                </p>
                             </div>
+                            <AuthForm setUser={this.props.setUser}/>
                         </div>
+                        <TechSupport role={false} use={USE.AUTH}/>
                     </div>
-                    <TechSupport role={false} use={USE.AUTH}/>
+                    <div className={"image"}>
+                        <img src={planeAndTransport} alt={"plane and transport"}/>
+                        <Logo/>
+                    </div>
                 </div>
             </div>
         );

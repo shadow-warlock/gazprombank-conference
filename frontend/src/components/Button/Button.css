@@ -1,12 +1,12 @@
 .button {
-    border: 2px solid white;
+    border: solid white;
+    border-width: 1px 0;
     padding: 10px 30px;
     width: var(--input-width);
     background-color: white;
-    color: red;
+    color: var(--theme-color);
     font-size: var(--default-font-size);
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .button.off{

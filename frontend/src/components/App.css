@@ -20,6 +20,7 @@ body {
     --input-width: 200px;
     --light-green: #dae9eb;
     --theme-color: #334B92;
+    --link-color: #658BFC;
     font-size: var(--default-font-size);
 }
 

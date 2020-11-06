@@ -1,12 +1,12 @@
 .auth_form {
     display: flex;
     flex-direction: column;
-    padding: 100px 0 30px;
+    padding: 80px 0 30px;
 }
 
 .auth_form .form_div {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .form_header {
