@@ -19,6 +19,7 @@ body {
     --font-size-very-big: calc(1.9 * var(--default-font-size));
     --input-width: 200px;
     --light-green: #dae9eb;
+    --theme-color: #334B92;
     font-size: var(--default-font-size);
 }
 
