@@ -7,7 +7,7 @@ import './Header.css';
 const Header = () => {
     return (
         <header className="header">
-            <div className="header__content">
+            <div className="header__content content">
                 <div className="header__logo">
                     <Logo />
                 </div>

@@ -13,19 +13,17 @@ class AuthPage extends Component {
         return (
             <div className="auth-page">
                 <Header />
-                <section className="auth-page__content">
-                    <div className="auth-page__image-side">
-                        <img
-                            className="auth-page__main-img"
-                            src={planeAndTransport}
-                            alt={'plane and transport'}
-                        />
-                        <div className="auth-page__left-triangles">
-                            <span className="triangle auth-page__left-triangle"></span>
-                            <span className="triangle auth-page__left-triangle"></span>
-                        </div>
+                <section className="auth-page__content content">
+                    <div className="auth-page__left-triangles">
+                        <span className="triangle auth-page__left-triangle"></span>
+                        <span className="triangle auth-page__left-triangle"></span>
                     </div>
-                    <div className="auth-page__info-side">
+                    <img
+                        className="auth-page__main-img"
+                        src={planeAndTransport}
+                        alt={'plane and transport'}
+                    />
+                    <div className="auth-page__info-block">
                         <h1 className="auth-page__title">
                             <FormattedMessage id={'conference'} />
                         </h1>

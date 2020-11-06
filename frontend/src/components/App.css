@@ -123,13 +123,20 @@ ul {
 }
 
 .triangle {
-    border: 60px solid transparent;
-    border-left: 60px solid var(--tertiary-color);
-    border-top: 60px solid var(--tertiary-color);
+    border: 4em solid transparent;
+    border-left: 4em solid var(--tertiary-color);
+    border-top: 4em solid var(--tertiary-color);
 }
 
 .small-triangle {
-    border: 40px solid transparent;
-    border-left: 40px solid var(--tertiary-color);
-    border-top: 40px solid var(--tertiary-color);
+    border: 2.7em solid transparent;
+    border-left: 2.7em solid var(--tertiary-color);
+    border-top: 2.7em solid var(--tertiary-color);
+}
+
+.content {
+    max-width: var(--content-width);
+    box-sizing: border-box;
+    padding: 0 4em;
+    margin: 0 auto;
 }
