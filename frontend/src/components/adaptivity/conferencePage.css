@@ -1,106 +1,122 @@
-@media all and (max-height: 840px) {
-    .plane-transport {
+@media all and (max-height: 640px) {
+    .conference__bottom-triangles,
+    .conference__main-img {
         display: none;
     }
 }
 
-@media all and (max-height: 550px) {
-    .bottom-triangles,
-    .left-triangles {
+@media all and (max-height: 640px) {
+    .conference__left-triangles,
+    .conference__bottom-logo {
+        display: none;
+    }
+}
+
+@media all and (max-width: 1410px), (max-height: 800px) {
+    .conference {
+        font-size: 0.8rem;
+    }
+}
+
+@media all and (max-width: 1128px) {
+    .conference__broadcast-block {
+        display: block;
+    }
+
+    .conference__broadcast-block .broadcast__window {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    .conference__broadcast-block .chat {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .conference .footer__content {
+        flex-direction: column-reverse;
+    }
+
+    .conference .footer__privacy {
+        margin-top: 2em;
+        align-items: center;
+        width: 100%;
+    }
+
+    .conference__main-img {
         display: none;
     }
 
-    .conference__info-side {
-        padding-bottom: 1rem;
+    .conference__content {
+        justify-content: flex-end;
+    }
+}
+
+@media all and (max-width: 786px) {
+    .conference .footer__tech-support .tech-support__supporters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .conference .footer__privacy {
+        align-items: flex-start;
+    }
+
+    .conference .tech-support__support {
+        margin-left: 0;
+    }
+
+    .conference .tech-support__title {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .conference__broadcast-block .chat {
+        width: 100%;
+    }
+
+    .conference__broadcast-block .broadcast__title,
+    .conference__broadcast-block .chat__title {
+        font-size: 2em;
+        text-align: left;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .conference__left-triangles {
+        display: none;
+    }
+}
+
+@media all and (max-width: 564px) {
+    .conference__content {
+        justify-content: flex-start;
+    }
+
+    .conference__info-block {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .conference__title {
+        font-size: 2em;
+        text-align: left;
+    }
+}
+
+@media all and (max-width: 440px) {
+    .conference__title {
+        font-size: 1.6em;
+        text-align: left;
     }
 
     .conference__time {
-        margin: 0;
-    }
-}
-
-@media all and (max-width: 1820px) {
-    .bottom-triangles {
-        right: 0;
-    }
-}
-
-@media all and (max-width: 1532px) {
-    .plane-transport {
-        max-width: 600px;
-        bottom: 2rem;
-        left: 5rem;
+        font-size: 1.2em;
+        margin-top: 1.5em;
     }
 
-    .conference__title {
-        font-size: 3rem;
-    }
-
-    .conference__broadcast-block {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .broadcast__window {
-        width: 80vw;
-        height: 500px;
-        margin-bottom: 1rem;
-    }
-}
-
-@media all and (max-width: 1000px) {
-    .plane-transport {
-        display: none;
-    }
-
-    .broadcast__window {
-        width: 95vw;
-        height: 370px;
-    }
-
-    .broadcast__title,
-    .chat__title {
-        font-size: 1.5rem;
-    }
-
-    .conference__image-side {
-        display: none;
-    }
-}
-
-@media all and (max-width: 720px) {
-    .conference__content,
-    .conference__bottom-logo {
-        padding: 0 1rem;
-    }
-}
-
-@media all and (max-width: 767px) {
-    .bottom-triangles {
-        display: none;
-    }
-
-    .conference__info-side {
-        align-items: center;
-    }
-
-    .conference__title {
-        text-align: center;
-        font-size: 2.5rem;
-    }
-}
-
-@media all and (max-width: 540px) {
-    .conference__title {
-        font-size: 2rem;
-    }
-
-    .broadcast__window {
-        height: 270px;
-    }
-
-    .chat {
-        width: 95%;
+    .conference__btn {
+        margin-top: 1.5em;
+        font-size: 1em;
     }
 }
