@@ -1,6 +1,7 @@
 .password-input {
     text-align: center;
-    width: calc(var(--input-width) - 54px);
+    box-sizing: border-box;
+    width: var(--input-width);
     -moz-appearance: textfield;
 }
 
