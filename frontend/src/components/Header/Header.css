@@ -1,16 +1,15 @@
 .header {
     background-color: var(--tertiary-color);
-    padding: 2rem 4rem;
+    padding: 1.6em 4em;
 }
 
 .header__content {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin-left: 2rem;
 }
 
 .header__logo {
     max-width: 250px;
-    margin-right: 4rem;
+    margin: 0 2em;
 }

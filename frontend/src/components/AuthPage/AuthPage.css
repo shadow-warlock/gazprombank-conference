@@ -11,6 +11,7 @@
     -o-background-size: cover;
     background-size: cover;
     overflow-x: hidden;
+    font-size: 1rem;
 }
 
 .auth-page__content {
@@ -22,34 +23,43 @@
 
 /* auth page top block */
 .auth-page__main-block {
+    margin: 0;
+    padding: 0 6em;
     flex: 1;
-    padding: 0 4rem;
+    display: flex;
+    align-items: flex-end;
 }
 
 .auth-page__general {
-    height: 100%;
-    max-width: 1000px;
+    max-width: 56em;
     text-align: center;
     box-sizing: border-box;
 }
 
 .auth-page__title {
-    margin: 0;
-    padding: 10vh 0 0;
-    font-size: 1.8rem;
+    margin: 2em 0 0;
+    font-size: 1.8em;
     text-transform: capitalize;
 }
 
 .auth-page__conf-theme {
-    margin: 2.4rem 0;
-    font-size: 3rem;
+    margin: 1em 0;
+    font-size: 2.7em;
     text-transform: uppercase;
 }
 
 .auth-page__time {
     margin: 0 0 2.8rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.2em;
+}
+
+.auth-page__form {
+    margin-bottom: 1.5em;
+}
+
+.auth-page__form .auth-form input {
+    margin-bottom: 0.3em;
 }
 
 /* auth page bottom block */
@@ -58,14 +68,9 @@
 
     display: flex;
     align-items: center;
-}
-
-.auth-page__tech-content {
-    margin: 0 5rem;
-    padding-bottom: 4rem;
-    width: 100%;
+    padding: 0 6em;
 }
 
 .auth-page__contacts {
-    padding-bottom: 2.5rem;
+    margin-bottom: 2.5em;
 }

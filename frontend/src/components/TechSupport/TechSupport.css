@@ -1,6 +1,6 @@
 .tech-support__title {
-    margin: 0 0 1rem;
-    font-size: 1.2rem;
+    margin: 0;
+    font-size: 1.2em;
 }
 
 .tech-support__title::first-letter {
@@ -10,10 +10,12 @@
 .tech-support__supporters {
     display: flex;
     flex-flow: row wrap;
+    margin-bottom: 2em;
 }
 
 .tech-support__support {
-    margin-right: 2.5rem;
+    margin-top: 1em;
+    margin-right: 2.5em;
     display: flex;
     flex-direction: column;
 }

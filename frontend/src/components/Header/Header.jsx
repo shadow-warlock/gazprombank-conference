@@ -1,6 +1,6 @@
 import React from 'react';
 
-import gazprombankLogo from '../../assets/fin_images/logo_blue.png';
+import gazprombankLogo from '../../assets/fin_images/gazprom.png';
 import wweLogo from '../../assets/fin_images/wwe.png';
 import lathamLogo from '../../assets/fin_images/latham.png';
 import cliffordLogo from '../../assets/fin_images/clifford.png';

@@ -55,8 +55,8 @@ export default class ConferencePage extends Component {
                             />
 
                             <div className="left-triangles">
-                                <span className="triangle left-triangles__item"/>
-                                <span className="triangle left-triangles__item"/>
+                                <span className="triangle left-triangles__item" />
+                                <span className="triangle left-triangles__item" />
                             </div>
                         </div>
                         <div className="conference__info-side">
@@ -90,8 +90,8 @@ export default class ConferencePage extends Component {
                             </div>
 
                             <div className="bottom-triangles">
-                                <span className="small-triangle bottom-triangles__item"/>
-                                <span className="small-triangle bottom-triangles__item"/>
+                                <span className="small-triangle bottom-triangles__item" />
+                                <span className="small-triangle bottom-triangles__item" />
                             </div>
                         </div>
                     </div>
