@@ -1,8 +1,10 @@
 @media all and (max-height: 900px), (max-width: 964px) {
     .auth-page {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
+}
 
+@media all and (max-width: 812px) {
     .auth-page__general,
     .auth-form__error {
         text-align: left;
@@ -13,15 +15,13 @@
     }
 }
 
-@media all and (max-width: 990px), (max-height: 570px) {
-    .auth-page {
-        background: #191c2f;
-    }
-}
-
 @media all and (max-width: 678px) {
     .auth-page__conf-theme {
         font-size: 2.4em;
+    }
+    .auth-page__main-block,
+    .auth-page__tech-block {
+        padding: 0 3em;
     }
 }
 

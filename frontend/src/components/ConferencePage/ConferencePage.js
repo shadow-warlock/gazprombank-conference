@@ -16,9 +16,7 @@ import {
 } from '../../const/mockData';
 import { LanguageContext } from '../App';
 import Button from '../Button/Button';
-import planeAndTransport from '../../assets/plane_and_transport.png';
 import Header from '../Header/Header';
-import Logo from '../Logo/Logo';
 import Moment from 'react-moment';
 
 class ConferencePage extends Component {

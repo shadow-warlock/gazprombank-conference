@@ -31,8 +31,8 @@ class AuthPage extends Component {
                                     date={conferenceDate}
                                 />
                                 {', '}
-                                {conferenceTime} (GMT+3,{' '}
-                                <FormattedMessage id={'moscow'} />)
+                                {conferenceTime} (
+                                <FormattedMessage id={'moscow'} />,{' GMT+3'})
                             </div>
                             <div className="auth-page__form">
                                 <AuthForm setUser={this.props.setUser} />

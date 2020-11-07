@@ -160,7 +160,7 @@ export const CONTACTS = [
         use: [USE.MAIN, USE.AUTH],
         role: 'agenda',
         name: 'igor_smirnov',
-        phone: '+7 (965) 236-88 97',
+        phone: '+7 (965) 236 88 97',
         email: 'i.smirnov@wwe-conferences.com',
     },
 ];
