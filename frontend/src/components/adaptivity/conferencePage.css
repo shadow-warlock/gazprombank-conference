@@ -1,13 +1,18 @@
-@media all and (max-height: 640px) {
-    .conference__bottom-triangles,
+@media all and (max-height: 620px) {
+    .conference__bottom-logo {
+        display: none;
+    }
+}
+
+@media all and (max-height: 510px) {
     .conference__main-img {
         display: none;
     }
 }
 
-@media all and (max-height: 640px) {
+@media all and (max-height: 440px) {
     .conference__left-triangles,
-    .conference__bottom-logo {
+    .conference__bottom-triangles {
         display: none;
     }
 }
