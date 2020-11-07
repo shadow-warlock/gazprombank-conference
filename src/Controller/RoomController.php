@@ -13,6 +13,9 @@ use App\Service\JSONer;
 use App\Service\VideoConnector;
 use App\Service\WebSocketSender;
 use DateTime;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -25,6 +28,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class RoomController extends AbstractController {
+
+    const ROOM_COUNT = 6;
+
     /**
      * @Route("/api/room", methods={"GET"})
      * @param  JSONer  $serializer
@@ -44,17 +50,19 @@ class RoomController extends AbstractController {
     /**
      * @Route("/api/room/{code}", methods={"GET"})
      * @ParamConverter("room", options={"mapping": {"code": "code"}})
-     * @param  Room  $room
+     * @param  Room    $room
+     *
+     * @param  JSONer  $serializer
      *
      * @return JsonResponse
      */
-    public function getRoom(Room $room) {
+    public function getRoom(Room $room, JSONer $serializer) {
         if($room->getVisible()){
             $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
         }else{
             $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
         }
-        return $this->json($room);
+        return new JsonResponse($serializer->toJSON($room), 200, [], true);
     }
 
 
@@ -78,16 +86,37 @@ class RoomController extends AbstractController {
             throw new BadRequestHttpException("room name must be over 2 symbols in length");
         }
         $count = $entityManager->getRepository(Room::class)->count([]);
-        if($count >= 20)
+        if($count >= self::ROOM_COUNT)
             throw new BadRequestHttpException("max room count");
         $room->setVisible($data["visible"]);
-        $room->setCode(sha1($data['name']));
+        $room->setCode(sha1($data['name'] . time()));
+        $room->setVideo($this->findVideoServerNum($entityManager));
+        if(isset($data["sponsor"])){
+            $room->setSponsor($data["sponsor"]);
+        }
+        $chat = new Chat();
+        $room->setChat($chat);
+        $entityManager->persist($chat);
         $entityManager->persist($room);
         $connector->createSession($room);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::CREATE_ROOM, null);
+        $conference = $this->getDoctrine()->getRepository(Conference::class)->findAll()[0] ?? null;
+        $wsSender->send(WebSocketSender::CREATE_ROOM, null, $conference->getChat());
         $json = $serializer->toJSON($room);
         return new JsonResponse($json, 201, [], true);
+    }
+
+    public function findVideoServerNum(ObjectManager $manager){
+        $num = null;
+        $i = 1;
+        while ($num === null || $i <= self::ROOM_COUNT){
+            $room = $manager->getRepository(Room::class)->findOneBy(['video' => $i]);
+            if($room === null){
+                return $i;
+            }
+            $i++;
+        }
+        return null;
     }
 
 
@@ -106,7 +135,28 @@ class RoomController extends AbstractController {
         $entityManager->remove($room);
         $connector->deleteSession($room);
         $entityManager->flush();
-        $wsSender->send(WebSocketSender::DELETE_ROOM, null);
+        $conference = $this->getDoctrine()->getRepository(Conference::class)->findAll()[0] ?? null;
+        $wsSender->send(WebSocketSender::DELETE_ROOM, null, $conference->getChat());
+        $json = $serializer->toJSON($room);
+        return new JsonResponse($json, 200, [], true);
+    }
+
+    /**
+     * @Route("/api/room/{id}", methods={"PATCH"})
+     * @param  Room             $room
+     * @param  WebSocketSender  $wsSender
+     * @param  JSONer           $serializer
+     * @param  Request          $request
+     * @return JsonResponse
+     */
+    public function editRoom(Room $room, WebSocketSender $wsSender, JSONer $serializer, Request $request) {
+        $this->denyAccessUnlessGranted(User::ROLE_ADMIN);
+        $data = json_decode($request->getContent(), true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $room->setName($data['name']);
+        $entityManager->flush();
+        $conference = $this->getDoctrine()->getRepository(Conference::class)->findAll()[0] ?? null;
+        $wsSender->send(WebSocketSender::EDIT_ROOM, null, $conference->getChat());
         $json = $serializer->toJSON($room);
         return new JsonResponse($json, 200, [], true);
     }
@@ -124,8 +174,10 @@ class RoomController extends AbstractController {
         if($session['connections']['numberOfElements'] >= 20){
             throw new BadRequestHttpException(json_encode($session['connections']['numberOfElements']));
         }
-        $token = $connector->createToken($sessionId);
+        $token = $connector->createToken($room);
         return new JsonResponse($token, 200, [], false);
     }
+
+
 
 }

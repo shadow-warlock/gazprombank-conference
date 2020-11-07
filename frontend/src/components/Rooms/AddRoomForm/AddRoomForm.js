@@ -3,6 +3,7 @@ import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
 import Button from "../../Button/Button";
 import Input from "../../Input/Input";
+import {sponsors} from "../../../const/mockData";
 
 const buttonText = [
     "Добавить комнату",
@@ -16,7 +17,8 @@ export default class AddRoomForm extends Component {
         this.state = {
             isOpen: false,
             name: "",
-            visible: true
+            visible: true,
+            sponsor: ""
         };
     }
 
@@ -28,7 +30,8 @@ export default class AddRoomForm extends Component {
 
         let obj = {
             name: this.state.name,
-            visible: this.state.visible
+            visible: this.state.visible,
+            sponsor: sponsors.indexOf(this.state.sponsor) !== -1 ? this.state.sponsor : null
         };
         axios.post(API.ROOM, obj, AXIOS_CONFIG).then(res => {
             this.props.reload();
@@ -50,6 +53,8 @@ export default class AddRoomForm extends Component {
     }
 
     render() {
+        let options = sponsors.map((sponsor)=>{return <option key={sponsor} value={sponsor}>{sponsor}</option>});
+        options.push(<option key={-1} value={null}>Без спонсора</option>);
         return (
             <div className={"pb_20 color_white"}>
                 <Button onClick={() => {
@@ -67,6 +72,15 @@ export default class AddRoomForm extends Component {
                                    onChange={(e) => {
                                        this.setState({name: e.target.value})
                                    }}/>
+                        </div>
+                        <div className={"form_container"}>
+                            <p>Спонсор: </p>
+                            <select value={this.state.sponsor}
+                                   onChange={(e) => {
+                                       this.setState({sponsor: e.target.value})
+                                   }}>
+                                {options}
+                            </select>
                         </div>
                         <div className={"form_container"}>
                             <p>Видимость: </p>

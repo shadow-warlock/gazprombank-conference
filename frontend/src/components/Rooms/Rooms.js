@@ -25,6 +25,7 @@ export default class Rooms extends Component {
         switch (data.type) {
             case "delete room":
             case "create room":
+            case "edit room":
                 this.loadRooms.bind(this)();
                 break;
         }

@@ -41,7 +41,6 @@ export default class ChangeVideoLink extends Component {
                 <br/>
                 <Button
                     onClick={()=>{
-                        console.log({url: this.state.url});
                         axios.post(API.CONFERENCE_URL, {url: this.state.url}, AXIOS_CONFIG).then(
                             res => {
                                 alert("Ссылка на конференцию успешно изменена");
