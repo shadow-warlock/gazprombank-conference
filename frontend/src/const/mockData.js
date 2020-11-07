@@ -191,13 +191,17 @@ export const agendaURL = {
     "ru": "https://www.events.ato.ru/wof2020-agenda-r"
 };
 
-export const PARTNERS = [
+export const SPONSORS = [
     {
         id: "alfa",
         role: "general_insurance_partner",
         logo: {
             ru: alfa_ru,
             en: alfa_en
+        },
+        link: {
+            ru: "https://www.alfastrah.ru/",
+            en: "https://www.alfastrah.ru/en/company/"
         }
     },
     {
@@ -206,6 +210,10 @@ export const PARTNERS = [
         logo: {
             ru: lufthansa,
             en: lufthansa
+        },
+        link: {
+            ru: "https://www.lufthansa-technik.com/",
+            en: "https://www.lufthansa-technik.com/"
         }
     },
     {
@@ -214,6 +222,10 @@ export const PARTNERS = [
         logo: {
             ru: embraer,
             en: embraer
+        },
+        link: {
+            ru: "https://embraer.com/",
+            en: "https://embraer.com/"
         }
     },
     {
@@ -222,6 +234,10 @@ export const PARTNERS = [
         logo: {
             ru: whiteNcase,
             en: whiteNcase
+        },
+        link: {
+            ru: "https://www.whitecase.com/",
+            en: "https://www.whitecase.com/"
         }
     },
     {
@@ -230,6 +246,10 @@ export const PARTNERS = [
         logo: {
             ru: sita,
             en: sita
+        },
+        link: {
+            ru: "https://www.sita.aero/",
+            en: "https://www.sita.aero/"
         }
     }
 ]
