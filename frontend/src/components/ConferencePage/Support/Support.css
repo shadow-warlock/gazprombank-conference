@@ -1,0 +1,99 @@
+.support_container {
+    background: var(--advanced-theme-color);
+    color: white;
+    padding: 140px 270px 170px 270px;
+}
+
+.support_container .tech_support .header {
+    text-transform: none;
+    font-size: 36px;
+}
+
+.support_container .tech_support .login_supporters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.support_container .tech_support .login_supporters .supporter {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.support_container .tech_support .login_supporters .supporter p {
+    margin-right: 0;
+}
+
+.support_container .tech_support .container {
+    width: 100%;
+}
+
+@media all and (max-width: 1500px) {
+    .support_container {
+        padding: 100px 170px 120px 170px;
+    }
+}
+
+@media all and (max-width: 1300px) {
+    .support_container .tech_support .login_supporters {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .support_container .tech_support .login_supporters .supporter {
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+
+    .support_container {
+        padding-left: 130px;
+    }
+
+    .support_container .tech_support .header {
+        margin-left: 40px;
+    }
+}
+
+@media all and (max-width: 803px) {
+    .support_container {
+        padding: 75px 90px 90px 50px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .support_container .tech_support .header {
+        text-align: left;
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 602px) {
+    .support_container {
+        padding: 60px 70px 70px 30px;
+    }
+}
+
+@media all and (max-width: 562px) {
+    .support_container {
+        padding-left: 70px;
+    }
+
+    .support_container .tech_support .login_supporters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .support_container .tech_support .login_supporters .supporter {
+        margin-left: 0;
+    }
+
+    .support_container .tech_support .header {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 419px) {
+    .support_container .tech_support .header {
+        font-size: 26px;
+    }
+}

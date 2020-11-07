@@ -1,0 +1,136 @@
+.partners-networking {
+    padding: 160px 115px 180px 115px;
+}
+
+.partners-networking h3 {
+    font-size: 36px;
+    color: var(--theme-color);
+    margin: 0;
+    text-align: center;
+}
+
+.partners-networking .partners {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.partners-networking .partners .partner {
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.partners-networking .partners .logo {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners-networking .partners .role {
+    color: var(--theme-color);
+    text-align: center;
+    font-size: 18px;
+    height: 50px;
+    margin-bottom: 50px;
+}
+
+.partners-networking .partners .button {
+    display: block;
+    color: white;
+    background: var(--theme-color);
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+@media all and (max-width: 1500px) {
+    .partners-networking .partners .logo {
+        height: 37px;
+    }
+
+    .partners-networking .partners .logo img {
+        width: 80%;
+    }
+
+    .partners-networking .partners .role {
+        height: 75px;
+    }
+}
+
+@media all and (max-width: 1300px) {
+    .partners-networking {
+        padding: 80px 60px 90px 60px;
+    }
+
+    .partners-networking .partners {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .partners-networking .partners .partner {
+        width: 30%;
+        margin-top: 100px;
+    }
+
+    .partners-networking .partners {
+        margin-top: 0;
+    }
+}
+
+@media all and (max-width: 1036px) {
+    .partners-networking .partners .partner {
+        width: 45%;
+        margin-top: 80px;
+    }
+
+    .partners-networking .partners .role {
+        height: 70px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .partners-networking .partners .button {
+        margin-top: 30px;
+    }
+
+    .partners-networking .partners {
+        justify-content: space-between;
+    }
+}
+
+@media all and (max-width: 736px) {
+    .partners-networking .partners .partner {
+        width: 40%;
+    }
+
+    .partners-networking h3 {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 419px) {
+    .partners-networking h3 {
+        font-size: 26px;
+    }
+
+    .partners-networking {
+        padding: 50px 40px 60px 40px;
+    }
+
+    .partners-networking .partners .partner {
+        width: 100%;
+        padding: 0;
+        margin-top: 70px;
+    }
+
+    .partners-networking .partners .role {
+        height: unset;
+    }
+}

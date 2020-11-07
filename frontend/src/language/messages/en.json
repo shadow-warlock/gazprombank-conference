@@ -9,11 +9,13 @@
   "password": "Password",
   "sign_in": "Join",
   "log_out": "log out",
-  "technical_support": "technical support",
+  "technical_support": "TECHNICAL SUPPORT",
   "svetlana_pimenova": "Svetlana Pimenova",
   "elizaveta_clavskaya": "Elizaveta Slavskaya",
   "alena_garanicheva": "Alena Garanicheva",
   "anastasia_zamotina": "Anastasia Zamotina",
+  "amir_manzhukov": "Amir Manzhukov",
+  "vladislav_nemtinov": "Vladislav Nemtinov",
   "moscow": "Moscow",
   "broadcast": "Broadcast",
   "chat": "Chat",
@@ -28,5 +30,10 @@
   "agenda": "Agenda",
   "personal_data_policy": "Personal Data Processing Policy",
   "privacy_policy": "Privacy Policy",
-  "contacts": "Contacts"
+  "contacts": "Contacts",
+  "partners_networking": "Online networking with partners",
+  "general_insurance_partner": "General insurance partner",
+  "general_award_partner": "Wings of the Future Award general partner",
+  "partner": "Partner",
+  "online_networking": "Online networking"
 }

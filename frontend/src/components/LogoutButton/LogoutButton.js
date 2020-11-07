@@ -16,7 +16,9 @@ export default class LogoutButton extends Component {
 
     render() {
         return (
-            <button className={"logout_button font_size_less"} onClick={this.logout}><FormattedMessage id={"log_out"}/></button>
+            <button className={"logout_button font_size_less"} onClick={this.logout}>
+                <FormattedMessage id={"log_out"}/>
+            </button>
         );
     }
 }

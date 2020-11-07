@@ -1,3 +1,10 @@
+import alfa_ru from "../assets/sponsors/alfa_ru.svg";
+import alfa_en from "../assets/sponsors/alfa_en.svg";
+import lufthansa from "../assets/sponsors/lufthansa.svg";
+import embraer from "../assets/sponsors/embraer.svg";
+import whiteNcase from "../assets/sponsors/whiteNcase.svg";
+import sita from "../assets/sponsors/sita.svg";
+
 export const CONFERENCE_ITEMS = [
     {
         id: 0,
@@ -145,22 +152,37 @@ export const TECH_SUPPORTERS = [
         email: "e.slavskaya@atoevents.ru"
     },
     {
-        use: [USE.AUTH],
-        name: "svetlana_pimenova",
-        phone: "+7 (903) 263-4614",
-        email: "s.pimenova@atoevents.ru"
+        use: [USE.MAIN, USE.AUTH],
+        role: "participation",
+        name: "amir_manzhukov",
+        phone: "+7 (962) 945-5129",
+        email: "a.manzhukov@atoevents.ru"
     },
+
     {
         use: [USE.MAIN],
-        role: "agenda",
-        name: "anastasia_zamotina",
-        phone: "+7 (967) 198-3892",
-        email: "a.zamotina@atoevents.ru"
-    }
+        role: "participation",
+        name: "vladislav_nemtinov",
+        phone: "+7 (965) 118-7175",
+        email: "v.nemtinov@atoevents.ru"
+    },
+    // {
+    //     use: [USE.AUTH],
+    //     name: "svetlana_pimenova",
+    //     phone: "+7 (903) 263-4614",
+    //     email: "s.pimenova@atoevents.ru"
+    // },
+    // {
+    //     use: [USE.MAIN],
+    //     role: "agenda",
+    //     name: "anastasia_zamotina",
+    //     phone: "+7 (967) 198-3892",
+    //     email: "a.zamotina@atoevents.ru"
+    // }
 ];
 
 
-export const sponsors = ["alfa", "lufthansa", "embraer", "white&case", "sita"];
+export const sponsors = ["alfa", "lufthansa", "embraer", "whiteNcase", "sita"];
 
 export const conferenceDate = new Date("2020-10-27");
 export const conferenceTime = "11:00";
@@ -168,3 +190,46 @@ export const agendaURL = {
     "en": "https://www.events.ato.ru/wof2020-agenda-e",
     "ru": "https://www.events.ato.ru/wof2020-agenda-r"
 };
+
+export const PARTNERS = [
+    {
+        id: "alfa",
+        role: "general_insurance_partner",
+        logo: {
+            ru: alfa_ru,
+            en: alfa_en
+        }
+    },
+    {
+        id: "lufthansa",
+        role: "partner",
+        logo: {
+            ru: lufthansa,
+            en: lufthansa
+        }
+    },
+    {
+        id: "embraer",
+        role: "partner",
+        logo: {
+            ru: embraer,
+            en: embraer
+        }
+    },
+    {
+        id: "whiteNcase",
+        role: "partner",
+        logo: {
+            ru: whiteNcase,
+            en: whiteNcase
+        }
+    },
+    {
+        id: "sita",
+        role: "general_award_partner",
+        logo: {
+            ru: sita,
+            en: sita
+        }
+    }
+]

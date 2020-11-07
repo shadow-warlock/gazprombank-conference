@@ -10,12 +10,14 @@
   "date_format":"D MMMM YYYY",
   "password": "Пароль",
   "sign_in": "Войти",
-  "log_out": "выйти",
+  "log_out": "Выйти",
   "technical_support": "Техническая поддержка",
   "svetlana_pimenova": "Светлана Пименова",
   "elizaveta_clavskaya": "Елизавета Славская",
   "alena_garanicheva": "Алена Гараничева",
   "anastasia_zamotina": "Анастасия Замотина",
+  "amir_manzhukov": "Амир Манжуков",
+  "vladislav_nemtinov": "Владислав Немтинов",
   "moscow": "Москва",
   "broadcast": "Трансляция",
   "chat": "Чат",
@@ -30,5 +32,10 @@
   "agenda": "Программа",
   "personal_data_policy": "Политика обработки персональных данных",
   "privacy_policy": "Политика конфиденциальности",
-  "contacts": "Обратная связь"
+  "contacts": "Обратная связь",
+  "partners_networking": "Онлайн - нетворкинг с партнерами",
+  "general_insurance_partner": "Генеральный страховой партнер",
+  "general_award_partner": "Генеральный партнер премии «Крылья будущего»",
+  "partner": "Партнер",
+  "online_networking": "Онлайн - нетворкинг"
 }

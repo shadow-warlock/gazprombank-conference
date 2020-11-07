@@ -11,11 +11,15 @@ import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
-import {agendaURL, conferenceTime} from "../../const/mockData";
+import {agendaURL, conferenceTime, USE} from "../../const/mockData";
 import {LanguageContext} from "../App";
 import Button from "../Button/Button";
 import planeAndTransport from "../../assets/plane_and_transport.png";
 import Rooms from "../Rooms/Rooms";
+import PartnersNetworking from "./PartnersNetworking/PartnersNetworking";
+import TechSupport from "../TechSupport/TechSupport";
+import Support from "./Support/Support";
+import CommonNetworking from "./CommonNetworking/CommonNetworking";
 
 export default class ConferencePage extends Component {
     constructor(props) {
@@ -83,15 +87,21 @@ export default class ConferencePage extends Component {
                     </div>
                 </div>
 
-                <Rooms handlerSetter={this.setRoomsHandler.bind(this)} admin={false}/>
-                <div className={"padding_side"}>
-                    {this.state.conference.poll &&
-                    <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}
-                          poll={this.state.conference.poll}/>}
-                </div>
+                <PartnersNetworking/>
+                <CommonNetworking/>
+                <Support/>
                 <Footer/>
-                <Websocket url={SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id}
-                           onMessage={this.handleData.bind(this)}/>
+
+
+                {/*<Rooms handlerSetter={this.setRoomsHandler.bind(this)} admin={false}/>*/}
+                {/*<div className={"padding_side"}>*/}
+                {/*    {this.state.conference.poll &&*/}
+                {/*    <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}*/}
+                {/*          poll={this.state.conference.poll}/>}*/}
+                {/*</div>*/}
+                {/*<Footer/>*/}
+                {/*<Websocket url={SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id}*/}
+                {/*           onMessage={this.handleData.bind(this)}/>*/}
             </>
         );
     }

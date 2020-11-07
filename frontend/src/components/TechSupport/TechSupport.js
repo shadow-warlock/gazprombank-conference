@@ -7,8 +7,8 @@ export default class TechSupport extends Component {
     render() {
         return (
             <div className={"tech_support"}>
-                <div>
-                    <p className={"bold uppercase"}>
+                <div className={"container"}>
+                    <p className={"bold uppercase header"}>
                         <FormattedMessage id={"technical_support"}/>
                     </p>
                     <div className={"login_supporters"}>

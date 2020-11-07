@@ -1,75 +1,60 @@
 .footer {
+    background: var(--theme-color);
+    padding: 40px 110px 40px 270px;
+    color: white;
+    font-size: 12px;
     display: flex;
-    background-color: white;
-    justify-content: space-around;
-}
-
-.footer > div {
-    padding-top: 50px;
-}
-
-.footer .mail {
-    display: block;
-}
-
-.footer .tech_support {
-    padding-bottom: 100px;
-    display: block;
-    width: 100%;
-}
-
-.footer .tech_support > div > p {
-    text-align: center;
-    font-size: var(--font-size-very-big);
-}
-
-.footer .tech_support .login_supporters {
+    align-items: center;
     justify-content: space-between;
-    padding-top: 50px;
-    display: flex;
 }
-
-.footer .tech_support .login_supporters .supporter {
-    margin: 0 10px;
-    flex-direction: column;
-}
-
-.footer .tech_support a{
-    color: black;
-}
-
-.footer .tech_support .mail a{
-    color: var(--red);
-}
-
-.footer .bottom_footer {
-    padding-left: 30px;
-}
-
-.footer .bottom_footer > div > a {
+.footer a {
+    color: white;
     text-decoration: none;
-    margin-right: 10px;
-    white-space: nowrap;
-    color: red;
 }
 
-.footer .bottom_footer > div:nth-child(1) > span {
-    margin-left: 10px;
+.footer .logout-button {
+    margin-top: 20px;
 }
 
-.footer .bottom_footer > div:nth-child(2) {
-    display: flex;
-    flex-wrap: wrap;
+.footer .info {
+    line-height: 25px;
 }
 
-
-.footer .organization {
-    text-align: center;
-    padding-bottom: 50px;
+.footer .info .contacts a {
+    margin-right: 20px;
 }
 
+@media all and (max-width: 1500px) {
+    .footer {
+        padding-left: 170px;
+    }
+}
 
-.footer .banner {
-    display: block;
-    width: 100%;
+@media all and (max-width: 1050px) {
+    .footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .footer .logo {
+        margin-bottom: 30px;
+    }
+}
+
+@media all and (max-width: 803px) {
+    .footer {
+        padding-left: 90px;
+    }
+}
+
+@media all and (max-width: 360px) {
+    .footer {
+        padding: 40px;
+    }
+
+    .footer .logo img {
+        height: 60px;
+    }
 }
