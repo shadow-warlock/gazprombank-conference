@@ -9,12 +9,13 @@ export function setLanguage(lang) {
 }
 
 export function getLanguage() {
-    let cookies = document.cookie.split('; ');
-    let langCookie = cookies.find((element) => {
-        return element.startsWith(cookieName);
-    });
-    let lang = langCookie ? langCookie.replace(cookieName, '') : defaultLang;
-    return lang;
+    // let cookies = document.cookie.split('; ');
+    // let langCookie = cookies.find((element) => {
+    //     return element.startsWith(cookieName);
+    // });
+    // let lang = langCookie ? langCookie.replace(cookieName, '') : defaultLang;
+    // return lang;
+    return 'ru';
 }
 
 export function changeLanguage() {

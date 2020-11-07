@@ -21,7 +21,7 @@
 }
 
 .like_button:hover {
-    color: var(--primary-color);
+    color: red;
     cursor: pointer;
 }
 
@@ -39,7 +39,7 @@
     /*border-left: 1px solid var(--green-blue);*/
     background: radial-gradient(
         farthest-side at -25% 50%,
-        rgb(255, 207, 207),
+        #a1cbf5,
         transparent
     );
 }
