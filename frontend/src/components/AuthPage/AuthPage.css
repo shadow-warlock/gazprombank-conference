@@ -37,12 +37,13 @@
     align-items: flex-end;
 
     color: var(--tertiary-color);
+    margin-bottom: 10em;
 }
 
 .auth-page__title,
 .auth-page__conf-theme {
     margin: 0;
-    font-size: 2.7em;
+    font-size: 2.4em;
     text-transform: uppercase;
     text-align: right;
 }
