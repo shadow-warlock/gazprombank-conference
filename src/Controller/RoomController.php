@@ -37,13 +37,16 @@ class RoomController extends AbstractController {
      *
      * @return JsonResponse
      */
-    public function getRooms(JSONer $serializer) {
+    public function getRooms(Request $request, JSONer $serializer) {
         $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
-
+        $sponsor = $request->get('sponsor', 'None');
+        if($sponsor === 'null')
+            $sponsor = null;
+        $criteria = $sponsor !== 'None' ? ['sponsor' => $sponsor] : [];
         if(array_search(User::ROLE_ADMIN, $this->getUser()->getRoles()) !== true)
-            $rooms = $this->getDoctrine()->getRepository(Room::class)->findBy([]);
+            $rooms = $this->getDoctrine()->getRepository(Room::class)->findBy($criteria);
         else
-            $rooms = $this->getDoctrine()->getRepository(Room::class)->findBy(["visible" => true]);
+            $rooms = $this->getDoctrine()->getRepository(Room::class)->findBy(array_merge(["visible" => true], $criteria));
         return new JsonResponse($serializer->toJSON($rooms), 200, [], true);
     }
 

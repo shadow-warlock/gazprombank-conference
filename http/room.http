@@ -1,0 +1,4 @@
+GET http://localhost:8000/api/room?sponsor=null
+Accept: application/json
+
+###
