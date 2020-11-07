@@ -9,7 +9,7 @@ export default class Logo extends Component {
         return (
             <LanguageContext.Consumer>{
                 value =>
-                    <a href={ATO_LINK[value.lang]}>
+                    <a target={'_blank'} href={ATO_LINK[value.lang]}>
                         <div className={"logo"}>
                             <img src={logo} alt={"logo_bank"}/>
                         </div>

@@ -13,7 +13,7 @@ class Sponsors extends Component {
                         value =>
                             <Fragment>
                                 {SPONSORS.map((sponsor)=>{
-                                    return <div><a href={"#"}><img src={sponsor.logo[value.lang]} alt={sponsor.id}/></a></div>;
+                                    return <div key={sponsor.id}><a target={'_blank'} href={sponsor.link[value.lang]}><img src={sponsor.logo[value.lang]} alt={sponsor.id}/></a></div>;
                                 })}
                             </Fragment>
 
