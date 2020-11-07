@@ -14,11 +14,17 @@
 
 @media all and (max-width: 1410px), (max-height: 800px) {
     .conference {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
-@media all and (max-width: 1128px) {
+@media all and (max-width: 1251px) {
+    .conference .tech-support__support {
+        margin-right: 0;
+    }
+}
+
+@media all and (max-width: 1164px) {
     .conference__broadcast-block {
         display: block;
     }
@@ -50,9 +56,13 @@
     .conference__content {
         justify-content: flex-end;
     }
+
+    .conference .header__logo {
+        margin-left: 0;
+    }
 }
 
-@media all and (max-width: 786px) {
+@media all and (max-width: 896px) {
     .conference .footer__tech-support .tech-support__supporters {
         flex-direction: column;
         align-items: flex-start;
@@ -88,12 +98,13 @@
     }
 }
 
-@media all and (max-width: 564px) {
+@media all and (max-width: 573px) {
     .conference__content {
         justify-content: flex-start;
     }
 
     .conference__info-block {
+        margin-top: 5em;
         width: 100%;
         align-items: flex-start;
     }
@@ -104,7 +115,7 @@
     }
 }
 
-@media all and (max-width: 440px) {
+@media all and (max-width: 495px) {
     .conference__title {
         font-size: 1.6em;
         text-align: left;
