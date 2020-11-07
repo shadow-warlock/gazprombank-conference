@@ -16,7 +16,8 @@
 
 .common-networking .log-in .header {
     font-size: 36px;
-    margin-bottom: 100px;
+    margin: 0 30px 100px 30px;
+    text-align: center;
 }
 
 .common-networking .log-in .button {
@@ -44,8 +45,30 @@
     }
 }
 
-@media all and (max-width: 768px) {
-    .common-networking .sponsor-banner img {
+@media all and (max-width: 540px) {
+    .common-networking .log-in {
+        margin-top: 70px;
+    }
 
+    .common-networking .log-in .header {
+        margin-bottom: 60px;
+    }
+
+    .common-networking .log-in .button {
+        margin-top: 60px;
+    }
+
+    .common-networking .log-in .header {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 419px) {
+    .common-networking .log-in .header {
+        font-size: 26px;
+    }
+
+    .common-networking .icon {
+        width: 100px;
     }
 }

@@ -48,7 +48,7 @@ class CommonNetworking extends Component {
 
                 <div className={"log-in"}>
                     <div className={'header bold'}><FormattedMessage id={"online_networking"}/></div>
-                    <img src={onlineNetworking} alt={"Online networking"}/>
+                    <img src={onlineNetworking} alt={"Online networking"} className={"icon"}/>
                     <a href={"#"} className={"button"}><FormattedMessage id={"sign_in"}/></a>
                 </div>
             </div>
