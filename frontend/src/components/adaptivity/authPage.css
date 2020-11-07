@@ -32,6 +32,10 @@
     .auth-page__main-img {
         display: none;
     }
+
+    .auth-page .header__logo {
+        margin-left: 0;
+    }
 }
 
 @media all and (max-width: 680px) {
