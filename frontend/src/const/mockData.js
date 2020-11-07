@@ -181,8 +181,10 @@ export const TECH_SUPPORTERS = [
     // }
 ];
 
-
-export const sponsors = ["alfa", "lufthansa", "embraer", "whiteNcase", "sita"];
+export const ATO_LINK = {
+    ru: "https://events.ato.ru/",
+    en: "https://events.ato.ru/eng/"
+}
 
 export const conferenceDate = new Date("2020-10-27");
 export const conferenceTime = "11:00";
