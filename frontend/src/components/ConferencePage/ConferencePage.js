@@ -51,52 +51,38 @@ export default class ConferencePage extends Component {
         if (this.state.conference === null)
             return "Loading";
         return (
-            <div className={"conference"}>
-                <div className={"top_container"}>
-                    <div className={"conference_title padding_side"}>
-                        <div><Logo/></div>
-                        <div><ChangeLocaleButton/></div>
-                    </div>
-                    <div className={"padding_side color_white conference_theme"}>
-                        <div>
-                            <img src={planeAndTransport} alt={"plane and transport"}/>
+            <>
+                <div className={"conference"}>
+                    <div className={"top_container"}>
+                        <div className={"header"}>
+                            <p className={"bold conference-type"}>
+                                <FormattedMessage id={"conference"}/>
+                            </p>
+                            <p className={"bold uppercase conference-name"}>
+                                <FormattedMessage id={"conference_theme"}/>
+                            </p>
+                            <p className={"bold conference-time"}>
+                                <FormattedMessage id={"conference_time"}/>
+                            </p>
                         </div>
-                        <div className={"text_right"}>
-                            <div className={"uppercase font_size_very_big bold"}>
-                                <p><FormattedMessage id={"online_conferences"}/></p>
-                                <p><FormattedMessage id={"the_ato_events"}/></p>
-                            </div>
-                            <br/>
-                            <div className={"materials_and_time"}>
-                                <div className={"uppercase"}>
-                                    <div>
-                                        {conferenceTime} (<FormattedMessage id={"moscow"}/>, GMT+3)
-                                    </div>
-                                </div>
-                                <br/>
-                                <div>
-                                    <LanguageContext.Consumer>{
-                                        value =>
-                                            <Button onClick={() => {
-                                                window.open(value.lang === "ru"
-                                                    ? agendaURL.ru
-                                                    : agendaURL.en,
-                                                    '_blank');
-                                            }}>
-                                                <FormattedMessage id={"agenda"}/>
-                                            </Button>}
-                                    </LanguageContext.Consumer>
-                                </div>
-                            </div>
+                        <div className={"lang-n-program"}>
+                            <LanguageContext.Consumer>{
+                                value =>
+                                    <a href={value.lang === "ru" ? agendaURL.ru : agendaURL.en}
+                                       target={"_blank"}>
+                                        <FormattedMessage id={"agenda"}/>
+                                    </a>
+                            }</LanguageContext.Consumer>
+                            <ChangeLocaleButton/>
                         </div>
                     </div>
-                </div>
-                <div className={"broadcast_chat_container"}>
-                    <div className={"text_center"}>
-                        <Broadcast url={this.state.conference.url}/>
+
+                    <div className={"broadcast_chat_container"}>
+                        <div><Broadcast url={this.state.conference.url}/></div>
+                        <div><Chat user={this.props.user} chat={this.state.conference.chat}/></div>
                     </div>
-                    <div><Chat user={this.props.user} chat={this.state.conference.chat}/></div>
                 </div>
+
                 <Rooms handlerSetter={this.setRoomsHandler.bind(this)} admin={false}/>
                 <div className={"padding_side"}>
                     {this.state.conference.poll &&
@@ -106,7 +92,7 @@ export default class ConferencePage extends Component {
                 <Footer/>
                 <Websocket url={SERVER.WS(this.state.conference.chat.port)}
                            onMessage={this.handleData.bind(this)}/>
-            </div>
+            </>
         );
     }
 

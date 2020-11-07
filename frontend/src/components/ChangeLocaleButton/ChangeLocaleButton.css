@@ -9,10 +9,22 @@
     padding: 3px;
     margin: 3px;
     cursor: pointer;
-    color: var(--theme-color);
+    color: white;
 }
 
 .change_locale_button div.active {
+    color: var(--theme-color);
+    background: white;
+}
+
+.change_locale_button div.white_bg {
+    padding: 3px;
+    margin: 3px;
+    cursor: pointer;
+    color: var(--theme-color);
+}
+
+.change_locale_button div.active.white_bg {
     color: white;
     background: var(--theme-color);
 }

@@ -2,13 +2,11 @@ import React, {Component} from "react";
 import AuthForm from "./AuthForm/AuthForm";
 import Logo from "../Logo/Logo";
 import "./AuthPage.css";
-import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
-import {FormattedMessage, injectIntl} from "react-intl";
-import Moment from "react-moment";
-import {conferenceDate, conferenceTime, USE} from "../../const/mockData";
+import {USE} from "../../const/mockData";
 import planeAndTransport from "../../assets/plane_and_transport.png";
 import TechSupport from "../TechSupport/TechSupport";
 import Sponsors from "./Sponsors";
+import ConferenceName from "../ConferenceName/ConferenceName";
 
 class AuthPage extends Component {
     render() {
@@ -18,17 +16,7 @@ class AuthPage extends Component {
                 <div className={"auth_page color_white"}>
                     <div className={"info"}>
                         <div>
-                            <div>
-                                <p className={"bold conference-type"}>
-                                    <FormattedMessage id={"conference"}/>
-                                </p>
-                                <p className={"bold uppercase conference-name"}>
-                                    <FormattedMessage id={"conference_theme"}/>
-                                </p>
-                                <p className={"bold conference-time"}>
-                                    <FormattedMessage id={"conference_time"}/>
-                                </p>
-                            </div>
+                            <ConferenceName/>
                             <AuthForm setUser={this.props.setUser}/>
                         </div>
                         <TechSupport role={false} use={USE.AUTH}/>
@@ -42,4 +30,4 @@ class AuthPage extends Component {
         );
     }
 }
-export default injectIntl(AuthPage);
+export default AuthPage;

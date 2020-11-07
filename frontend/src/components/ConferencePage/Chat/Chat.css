@@ -1,5 +1,4 @@
 .chat {
-    padding-left: 10px;
 }
 
 .chat > p {
@@ -7,8 +6,8 @@
 }
 
 .messages {
-    overflow-y: scroll;
-    height: 500px;
+    overflow-y: auto;
+    max-height: 392px;
 }
 
 .chat_body {

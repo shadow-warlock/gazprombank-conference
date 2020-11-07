@@ -296,10 +296,6 @@
 }
 
 @media (max-width: 1200px) {
-    .broadcast_chat_container {
-        display: block;
-    }
-
     .broadcast_chat_container.padding_side {
         padding-left: 0;
         padding-right: 0;
@@ -313,11 +309,6 @@
 
     .broadcast > div {
         display: flex;
-    }
-
-    .broadcast_chat_container .iframe {
-        flex: 1;
-        height: 500px;
     }
 
     .chat {

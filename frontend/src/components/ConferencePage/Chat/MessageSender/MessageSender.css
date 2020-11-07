@@ -1,7 +1,7 @@
 .send_message_container .textarea {
     width: 350px;
     resize: none;
-    border: 1px solid var(--red);
+    border: 1px solid var(--theme-color);
     padding: 10px;
 }
 
@@ -18,14 +18,22 @@
     cursor: pointer;
 }
 
+.send_message_container .chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 .send_message_container .send_button:hover {
-    color: var(--red);
+    color: var(--theme-color);
+    opacity: 0.9;
 }
 
 
 .send_message_container .cancel_reply:hover {
     cursor: pointer;
-    color: var(--red);
+    color: var(--theme-color);
 }
 
 .cancel_reply{
@@ -38,4 +46,5 @@
 
 .message_sender_header{
     font-weight: bold;
+    margin-bottom: 10px;
 }

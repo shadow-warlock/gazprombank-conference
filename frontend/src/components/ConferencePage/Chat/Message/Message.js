@@ -65,7 +65,7 @@ class Message extends Component {
             <div className={"message_container"} id={"msg_" + this.props.message.id}>
                 <div className={"message"}>
                     <div>
-                        <p className={"uppercase bold color_red"}>{message.user.name} {message.user.surname}</p>
+                        <p className={"uppercase bold"}>{message.user.name} {message.user.surname}</p>
                         <p className={"text"}>{this.getReplyToElement()} {message.text}</p>
                     </div>
                     <div>
@@ -89,7 +89,7 @@ class Message extends Component {
                     <p onClick={this.removeMessage} className={"reply_button"}>
                         <FormattedMessage id={"delete"}/>
                     </p>}
-                    <Moment className={"nowrap color_red"} fromNow ago date={this.props.message.time}/>
+                    <Moment className={"nowrap"} fromNow ago date={this.props.message.time}/>
                 </div>
             </div>
         );

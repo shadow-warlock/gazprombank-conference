@@ -10,12 +10,12 @@ class ChangeLocaleButton extends Component {
                 <div className={"uppercase bold change_locale_button"}>
                     <div
                         onClick={value.lang === "ru" ? ()=>{} : value.change}
-                        className={value.lang === "ru" ? "active" : ""}>
+                        className={`${value.lang === "ru" ? "active" : ""} ${this.props.onWhiteBg ? "white_bg" : ""}`}>
                         ru
                     </div>
                     <div
                         onClick={value.lang === "en" ? ()=>{} : value.change}
-                        className={value.lang === "en" ? "active" : ""}>
+                        className={`${value.lang === "en" ? "active" : ""} ${this.props.onWhiteBg ? "white_bg" : ""}`}>
                         en
                     </div>
                 </div>

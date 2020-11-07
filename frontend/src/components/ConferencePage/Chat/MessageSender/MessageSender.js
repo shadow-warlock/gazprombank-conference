@@ -52,18 +52,20 @@ class MessageSender extends Component {
     render() {
         return (
             <div className={"send_message_container"}>
-                <div className={"color_red message_sender_header"}>
+                <div className={"message_sender_header"}>
                     {this.getReplyElement()}
                 </div>
-                <TextareaAutosize
-                    maxRows={10}
-                    className={"textarea"}
-                    value={this.state.message}
-                    onChange={(e) => {
-                        this.setState({message: e.target.value});
-                    }}
-                    placeholder={this.props.intl.formatMessage({id:"input_message"})}/>
-                <FontAwesomeIcon onClick={this.send.bind(this)} className={"send_button"} icon={faCommentDots}/>
+                <div className={"chat-input"}>
+                    <TextareaAutosize
+                        maxRows={10}
+                        className={"textarea"}
+                        value={this.state.message}
+                        onChange={(e) => {
+                            this.setState({message: e.target.value});
+                        }}
+                        placeholder={this.props.intl.formatMessage({id:"input_message"})}/>
+                    <FontAwesomeIcon onClick={this.send.bind(this)} className={"send_button"} icon={faCommentDots}/>
+                </div>
             </div>
         );
     }

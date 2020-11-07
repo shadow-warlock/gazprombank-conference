@@ -4,8 +4,6 @@
     justify-content: space-between;
     /*border-left: 1px solid var(--green-blue);*/
     /*padding-top: 5px;*/
-    padding-right: 10px;
-    margin-top: 20px;
 }
 
 .message .name {
@@ -21,8 +19,9 @@
 }
 
 .like_button:hover {
-    color: var(--red);
+    color: var(--theme-color);
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .padding_right {
@@ -34,10 +33,13 @@
     justify-content: flex-end;
 }
 
-.message_container{
+.message_container {
     /*background: linear-gradient(to left,transparent 50%, var(--green-blue) 200%);*/
     /*border-left: 1px solid var(--green-blue);*/
     background: radial-gradient(farthest-side at -25% 50%, rgb(255, 207, 207), transparent);
+    background: #e2e5f1;
+    padding: 10px 20px;
+    margin-top: 15px;
 }
 
 .message_container .reply_button {
@@ -58,10 +60,12 @@
 }
 
 .reply_button:hover{
-    color: var(--red);
+    color: var(--theme-color);
+    opacity: 0.8;
 }
 
 .reply_to:hover{
     cursor: pointer;
-    color: var(--red);
+    color: var(--theme-color);
+    opacity: 0.8;
 }

@@ -18,7 +18,7 @@ class Sponsors extends Component {
                     <div><img src={whiteNcase} alt={"whiteNcase"}/></div>
                     <div><img src={sita} alt={"sita"}/></div>
                 </div>
-                <div><ChangeLocaleButton/></div>
+                <div><ChangeLocaleButton onWhiteBg={true}/></div>
             </div>
         )
     }
