@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import ChangeLocaleButton from "../../ChangeLocaleButton/ChangeLocaleButton";
 import "./Sponsors.css";
 import {LanguageContext} from "../../App";
-import {PARTNERS} from "../../../const/mockData";
+import {SPONSORS} from "../../../const/mockData";
 
 class Sponsors extends Component {
     render() {
@@ -12,7 +12,7 @@ class Sponsors extends Component {
                     <LanguageContext.Consumer>{
                         value =>
                             <Fragment>
-                                {PARTNERS.map((sponsor)=>{
+                                {SPONSORS.map((sponsor)=>{
                                     return <div><a href={"#"}><img src={sponsor.logo[value.lang]} alt={sponsor.id}/></a></div>;
                                 })}
                             </Fragment>

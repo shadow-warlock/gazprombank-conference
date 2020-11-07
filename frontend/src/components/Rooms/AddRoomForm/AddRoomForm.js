@@ -3,7 +3,7 @@ import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../const/const";
 import Button from "../../Button/Button";
 import Input from "../../Input/Input";
-import {PARTNERS, sponsors} from "../../../const/mockData";
+import {SPONSORS} from "../../../const/mockData";
 
 const buttonText = [
     "Добавить комнату",
@@ -31,7 +31,7 @@ export default class AddRoomForm extends Component {
         let obj = {
             name: this.state.name,
             visible: this.state.visible,
-            sponsor: PARTNERS.map(partner => partner.id).indexOf(this.state.sponsor) !== -1 ? this.state.sponsor : null
+            sponsor: SPONSORS.map(partner => partner.id).indexOf(this.state.sponsor) !== -1 ? this.state.sponsor : null
         };
         axios.post(API.ROOM, obj, AXIOS_CONFIG).then(res => {
             this.props.reload();
@@ -53,7 +53,7 @@ export default class AddRoomForm extends Component {
     }
 
     render() {
-        let options = PARTNERS.map((sponsor)=>{return <option key={sponsor.id} value={sponsor.id}>{sponsor.id}</option>});
+        let options = SPONSORS.map((sponsor)=>{return <option key={sponsor.id} value={sponsor.id}>{sponsor.id}</option>});
         options.push(<option key={-1} value={null}>Без спонсора</option>);
         return (
             <div className={"pb_20 color_white"}>
