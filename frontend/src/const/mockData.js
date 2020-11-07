@@ -169,7 +169,7 @@ export const TECH_SUPPORTERS = [
 ];
 
 export const conferenceDate = new Date('2020-11-11');
-export const conferenceTime = '10:00';
+export const conferenceTime = '10:30';
 export const agendaURL = {
     en: 'https://www.events.ato.ru/aof2020-agenda-e',
     ru: 'https://www.events.ato.ru/aof2020-agenda-r',
