@@ -1,141 +1,65 @@
 .conference {
-    background-color: var(--primary-color);
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1rem;
 }
 
 .conference__top-section {
-    color: var(--tertiary-color);
-    height: calc(100vh - 147px);
-}
-
-.conference__content {
-    max-width: var(--content-width);
-    box-sizing: border-box;
-    padding: 0 3rem;
-    margin: 0 auto;
-    height: 100%;
+    min-height: calc(100vh - 107px);
+    background-image: url('../../assets/fin_images/gaz_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    font-size: 1rem;
 
     display: flex;
+    justify-content: center;
 }
 
-.conference__image-side {
-    flex: 1 1 auto;
-
-    position: relative;
-}
-
-.plane-transport {
-    width: 1100px;
-    height: auto;
-
-    position: absolute;
-    left: -3rem;
-    bottom: -4rem;
-    z-index: 2;
-}
-
-.conference__info-side {
-    position: relative;
-
-    flex: 1 1 auto;
+.conference__general {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    box-sizing: border-box;
-    padding-bottom: 20%;
+    align-items: center;
+
+    text-align: center;
+    color: var(--tertiary-color);
+    max-width: 1100px;
+    padding-bottom: 2em;
 }
 
 .conference__title {
-    margin: 0;
+    margin: 4rem 0 1rem;
+    font-size: 2em;
+}
 
+.conference__conf-theme {
+    margin: 0;
     text-transform: uppercase;
-    text-align: right;
-    font-weight: 600;
-    font-size: 3.4rem;
+    font-size: 3.3em;
 }
 
 .conference__time {
-    margin-top: 3.3rem;
-    font-size: 1.2rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1.6em;
 }
 
-.conference__btn {
-    margin-top: 1rem;
-}
-
-/* triangles */
-.left-triangles,
-.bottom-triangles {
-    position: absolute;
-    display: flex;
-    z-index: 2;
-}
-
-.left-triangles {
-    top: 30vh;
-    left: 0.4rem;
-    flex-direction: column;
-}
-
-.bottom-triangles {
-    bottom: 2rem;
-    right: -3rem;
-    flex-direction: row;
-}
-
-.left-triangles__item:first-child {
-    margin-bottom: 0.3rem;
-}
-
-.bottom-triangles__item:first-child {
-    margin-right: 1.1rem;
-}
-
-/* bottom section */
 .conference__bottom-section {
-    min-height: 100vh;
-
     display: flex;
     flex-direction: column;
-}
-
-.conference__bottom-logo {
-    max-width: var(--content-width);
-    margin: 0 auto;
-    box-sizing: border-box;
-    padding: 0 3rem;
-    display: flex;
-}
-
-.conference__bottom-body {
-    height: 100%;
-    flex: 1;
-
-    background-color: #fff;
-
-    display: flex;
-    flex-direction: column;
-}
-
-/* broadcast-block */
-.conference__broadcast-content {
-    flex: 1;
-
-    background-color: var(--tertiary-color);
-}
-
-.conference__broadcast-wrapper {
-    max-width: var(--content-width);
-    margin: 0 auto;
 }
 
 .conference__broadcast-block {
-    box-sizing: border-box;
-    padding-top: 1rem;
-
+    flex: 1;
     display: flex;
-    flex-flow: row wrap;
     justify-content: space-evenly;
+
+    padding: 3em 0 5em;
 }

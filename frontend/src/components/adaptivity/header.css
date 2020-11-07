@@ -3,7 +3,6 @@
         padding: 1.6em 3em;
     }
 }
-
 @media all and (max-width: 1010px) {
     .header__logo {
         max-width: 180px;
@@ -14,7 +13,7 @@
     }
 }
 
-@media all and (max-width: 765px) {
+@media all and (max-width: 818px) {
     .header__content {
         justify-content: center;
     }
@@ -31,14 +30,14 @@
     }
 }
 
-@media all and (max-width: 430px) {
+@media all and (max-width: 467px) {
     .header__content::after {
         display: none;
     }
 
     .header__content {
         flex-direction: column-reverse;
-        padding: 0 2em;
+        padding: 0 1em;
     }
 
     .header__logo {

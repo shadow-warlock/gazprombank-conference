@@ -1,106 +1,104 @@
-@media all and (max-height: 840px) {
-    .plane-transport {
-        display: none;
-    }
-}
-
-@media all and (max-height: 550px) {
-    .bottom-triangles,
-    .left-triangles {
-        display: none;
+@media all and (max-width: 1440px), (max-height: 720px) {
+    .conference__general {
+        max-width: 700px;
     }
 
-    .conference__info-side {
-        padding-bottom: 1rem;
+    .conference__conf-theme {
+        font-size: 2.2em;
     }
 
+    .conference__title,
     .conference__time {
-        margin: 0;
+        font-size: 1.2em;
+    }
+
+    .conference__btn {
+        font-size: 0.85em;
     }
 }
 
-@media all and (max-width: 1820px) {
-    .bottom-triangles {
-        right: 0;
+@media all and (max-width: 450px) and (max-height: 550px) {
+    .conference__top-section {
+        background: var(--secondary-color);
     }
 }
 
-@media all and (max-width: 1532px) {
-    .plane-transport {
-        max-width: 600px;
-        bottom: 2rem;
-        left: 5rem;
-    }
-
-    .conference__title {
-        font-size: 3rem;
-    }
-
+@media all and (max-width: 1132px), (max-height: 720px) {
     .conference__broadcast-block {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     }
 
     .broadcast__window {
-        width: 80vw;
-        height: 500px;
-        margin-bottom: 1rem;
+        width: 90vw;
+        height: 40vw;
+    }
+
+    .conference .broadcast {
+        margin-bottom: 2em;
     }
 }
 
-@media all and (max-width: 1000px) {
-    .plane-transport {
-        display: none;
+@media all and (max-width: 940px) {
+    .footer {
+        padding: 5em 2em;
+    }
+    .footer__content {
+        flex-direction: column;
     }
 
-    .broadcast__window {
-        width: 95vw;
-        height: 370px;
+    .footer__contacts {
+        margin-bottom: 2em;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .conference__general {
+        max-width: 500px;
     }
 
+    .conference__conf-theme {
+        font-size: 1.7em;
+    }
+
+    .conference__title,
+    .conference__time {
+        font-size: 1em;
+    }
+
+    .conference__btn {
+        font-size: 0.8em;
+    }
+
+    .tech-support__supporters {
+        flex-wrap: wrap;
+    }
+}
+
+@media all and (max-width: 520px) {
+    .conference__general {
+        width: 100%;
+        align-items: flex-start;
+        padding: 2em 2em;
+    }
+
+    .conference__conf-theme,
     .broadcast__title,
     .chat__title {
-        font-size: 1.5rem;
+        font-size: 1.7em;
+        text-align: left;
     }
 
-    .conference__image-side {
-        display: none;
-    }
-}
-
-@media all and (max-width: 720px) {
-    .conference__content,
-    .conference__bottom-logo {
-        padding: 0 1rem;
-    }
-}
-
-@media all and (max-width: 767px) {
-    .bottom-triangles {
-        display: none;
-    }
-
-    .conference__info-side {
-        align-items: center;
-    }
-
-    .conference__title {
-        text-align: center;
-        font-size: 2.5rem;
-    }
-}
-
-@media all and (max-width: 540px) {
-    .conference__title {
-        font-size: 2rem;
-    }
-
-    .broadcast__window {
-        height: 270px;
+    .conference__btn {
+        font-size: 0.75em;
     }
 
     .chat {
-        width: 95%;
+        margin: 0 2em;
+        width: auto;
+    }
+
+    .broadcast__title {
+        margin: 0 0.4em;
     }
 }

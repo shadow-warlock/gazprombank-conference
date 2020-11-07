@@ -169,5 +169,6 @@ export const conferenceDate = new Date('2020-11-12');
 export const conferenceTime = '09:30';
 export const agendaURL = {
     en: '',
-    ru: 'https://www.events.ato.ru/aof2020-agenda-r',
+    ru:
+        'https://wwe-conferences.com/wp-content/uploads/2020/11/MOSPF20_rus.pdf',
 };
