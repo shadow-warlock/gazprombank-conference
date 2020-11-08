@@ -143,14 +143,14 @@ export const TECH_SUPPORTERS = [
         use: [USE.MAIN, USE.AUTH],
         role: 'participation',
         name: 'svetlana_pimenova',
-        phone: '+7 (903) 263-46-14',
+        phone: '+7 903 263-46-14',
         email: 's.pimenova@atoevents.ru',
     },
     {
         use: [USE.MAIN, USE.AUTH],
         role: 'participation',
         name: 'nikita_kachaev',
-        phone: '+7 (964) 500-25-33',
+        phone: '+7 964 500-25-33',
         email: 'nikita.kachaev@gmail.com',
     },
 ];
@@ -160,7 +160,7 @@ export const CONTACTS = [
         use: [USE.MAIN, USE.AUTH],
         role: 'agenda',
         name: 'igor_smirnov',
-        phone: '+7 (965) 236 88 97',
+        phone: '+7 965 236 88 97',
         email: 'i.smirnov@wwe-conferences.com',
     },
 ];
