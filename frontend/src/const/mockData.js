@@ -300,7 +300,7 @@ export const SPONSORS = [
             ru: "https://www.alfastrah.ru/",
             en: "https://www.alfastrah.ru/en/company/"
         },
-        video: "https://www.youtube.com/embed/-pWc5Ts6Di0",
+        video: "https://www.youtube.com/embed/-pWc5Ts6Di0?autoplay=1",
         presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
         description: alfaDescription,
         contacts: <>
@@ -324,7 +324,7 @@ export const SPONSORS = [
             ru: "https://www.lufthansa-technik.com/",
             en: "https://www.lufthansa-technik.com/"
         },
-        video: "https://www.youtube.com/embed/tv6fTh9StOQ",
+        video: "https://www.youtube.com/embed/tv6fTh9StOQ?autoplay=1",
         presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
         description: lufthansaDescription,
         contacts: <>
@@ -348,7 +348,7 @@ export const SPONSORS = [
             ru: "https://embraer.com/",
             en: "https://embraer.com/"
         },
-        video: "https://www.youtube.com/embed/x3tQelTkTBc",
+        video: "https://www.youtube.com/embed/x3tQelTkTBc?autoplay=1",
         presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
         description: embraerDescription,
         contacts: <>
@@ -372,7 +372,7 @@ export const SPONSORS = [
             ru: "https://www.whitecase.com/",
             en: "https://www.whitecase.com/"
         },
-        video: "https://www.youtube.com/embed/x3tQelTkTBc",
+        video: "https://www.youtube.com/embed/x3tQelTkTBc?autoplay=1",
         presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
         description: whiteNcaseDescription,
         contacts: <>
@@ -396,7 +396,7 @@ export const SPONSORS = [
             ru: "https://www.sita.aero/",
             en: "https://www.sita.aero/"
         },
-        video: "https://www.youtube.com/embed/x3tQelTkTBc",
+        video: "https://www.youtube.com/embed/x3tQelTkTBc?autoplay=1",
         presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
         description: sitaDescription,
         contacts: <>
