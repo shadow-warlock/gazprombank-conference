@@ -28,10 +28,11 @@ export default class AddRoomForm extends Component {
             return;
         }
 
+
         let obj = {
             name: this.state.name,
             visible: this.state.visible,
-            sponsor: SPONSORS.map(partner => partner.id).indexOf(this.state.sponsor) !== -1 ? this.state.sponsor : null
+            sponsor: (SPONSORS.map(partner => partner.id).indexOf(this.state.sponsor) !== -1) ? this.state.sponsor : null
         };
         axios.post(API.ROOM, obj, AXIOS_CONFIG).then(res => {
             this.props.reload();
