@@ -1,0 +1,236 @@
+.sponsor-meeting .header {
+    padding: 100px 100px 80px 100px;
+    color: var(--theme-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sponsor-meeting .header .name {
+    font-size: 48px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.sponsor-meeting .header .name a {
+    color: var(--theme-color);
+    text-decoration: none;
+}
+
+.sponsor-meeting .header .logo {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.sponsor-meeting .body {
+    background: var(--theme-color);
+    padding: 0 115px 125px 115px;
+}
+
+.sponsor-meeting .body .meeting-video {
+    width: 100%;
+}
+
+.sponsor-meeting .body .meeting-video iframe {
+    width: 100%;
+    height: 700px;
+}
+
+.sponsor-meeting .body .buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sponsor-meeting .body .buttons a {
+    width: calc(50% - 60px);
+    position: relative;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 25px;
+}
+
+.sponsor-meeting .body .buttons a.video-meeting {
+    background: #E60029;
+}
+
+.sponsor-meeting .body .buttons a.presentation {
+    background: #2E305D;
+}
+
+.sponsor-meeting .body .buttons a img {
+    position: absolute;
+    right: 32px;
+    top: calc(50% - 22px)
+}
+
+.sponsor-meeting .body .description {
+    background: white;
+    color: var(--theme-color);
+    font-size: 24px;
+    padding: 110px 75px 90px 75px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sponsor-meeting .body .description .contacts {
+    text-align: left;
+    margin-top: 170px;
+    font-size: 16px;
+}
+
+.sponsor-meeting .body .description .contacts a {
+    color: var(--theme-color);
+    text-decoration: none;
+}
+
+.sponsor-meeting .body .description p {
+    padding-bottom: 20px;
+}
+
+@media all and (max-width: 1350px) {
+    .sponsor-meeting .header {
+        padding: 70px 70px 50px 70px;
+    }
+
+    .sponsor-meeting .header .name {
+        font-size: 36px;
+    }
+
+    .sponsor-meeting .header .logo {
+        height: unset;
+    }
+
+    .sponsor-meeting .body .meeting-video iframe {
+        height: 500px;
+    }
+
+    .sponsor-meeting .body .buttons a {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .sponsor-meeting .body .buttons a {
+        font-size: 26px;
+    }
+
+    .sponsor-meeting .body .buttons a img {
+        width: 30px;
+        top: calc(50% - 15px);
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .sponsor-meeting .body .buttons a {
+        font-size: 20px;
+    }
+
+    .sponsor-meeting .body .buttons a {
+        padding: 20px;
+        width: calc(50% - 50px);
+    }
+}
+
+@media all and (max-width: 900px) {
+    .sponsor-meeting .header {
+        padding: 50px 50px 30px 50px;
+    }
+
+    .sponsor-meeting .header .name {
+        font-size: 26px;
+    }
+
+    .sponsor-meeting .header .logo {
+        height: 30px;
+    }
+
+    .sponsor-meeting .body .meeting-video iframe {
+        height: 350px;
+    }
+
+    .sponsor-meeting .body .buttons {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .sponsor-meeting .body .buttons a {
+        width: calc(100% - 40px);
+        margin-top: 35px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .sponsor-meeting .header {
+        flex-direction: row;
+    }
+
+    .sponsor-meeting .body .description {
+        font-size: 20px;
+        padding: 70px 70px 80px 70px;
+    }
+
+    .sponsor-meeting .body .description .contacts {
+        margin-top: 100px;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .sponsor-meeting .body .meeting-video iframe {
+        height: 250px;
+    }
+}
+
+@media all and (max-width: 620px) {
+    .sponsor-meeting .body {
+        background: var(--theme-color);
+        padding: 0 60px 55px 60px;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .sponsor-meeting .body .description {
+        font-size: 18px;
+        padding: 50px 50px 70px 50px;
+    }
+
+    .sponsor-meeting .body .description .contacts {
+        margin-top: 80px;
+    }
+}
+
+@media all and (max-width: 450px) {
+    .sponsor-meeting .body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sponsor-meeting .body .buttons {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .sponsor-meeting .body .buttons a img {
+        display: none;
+    }
+
+    .sponsor-meeting .body .description {
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 16px;
+    }
+
+    .sponsor-meeting .body .description .contacts {
+        font-size: 14px;
+        margin-top: 60px;
+    }
+}
+
+@media all and (max-width: 380px) {
+    .sponsor-meeting .header .logo {
+        height: 25px;
+    }
+}

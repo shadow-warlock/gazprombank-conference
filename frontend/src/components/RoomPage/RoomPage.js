@@ -7,6 +7,17 @@ import Button, {OFF} from "../Button/Button";
 import "./RoomPage.css";
 import Chat from "../ConferencePage/Chat/Chat";
 import Websocket from "react-websocket";
+import exit from "./../../assets/room_icons/exit.svg";
+import {SPONSORS} from "../../const/mockData";
+import StreamerName from "./StreamerName/StreamerName";
+import { Icon, InlineIcon } from '@iconify/react';
+import speakerSimpleHigh from '@iconify/icons-ph/speaker-simple-high';
+import speakerSimpleXLight from '@iconify/icons-ph/speaker-simple-x-light';
+import microphoneIcon from '@iconify/icons-ph/microphone';
+import microphoneSlash from '@iconify/icons-ph/microphone-slash';
+import videoCamera from '@iconify/icons-ph/video-camera';
+import videoCameraSlash from '@iconify/icons-ph/video-camera-slash';
+import {FormattedMessage} from "react-intl";
 
 class RoomPage extends Component {
 
@@ -21,6 +32,7 @@ class RoomPage extends Component {
             publisher: undefined,
             audio: true,
             video: true,
+            sound: true,
             subscribers: [],
             room: null
         };
@@ -174,63 +186,77 @@ class RoomPage extends Component {
 
     render() {
         const mySessionId = this.state.mySessionId;
+        let sponsor = this.state.room ? SPONSORS.findObject("id", this.state.room.sponsor) : null;
+        let {room, mainStreamManager, publisher} = this.state;
+
+
         return (
-            <div className="container">
-                {this.state.session === undefined || this.state.publisher === undefined ? (
-                        <div id="session-header">
-                            <h1 id="session-title">
-                                {mySessionId}
-                                {this.state.room === null ?
-                                    " Загрузка..." :
-                                    this.state.session === undefined ? "" : " Подключение..."}
-                            </h1>
-                        </div>
-
-                ) : null}
-
-                {this.state.session !== undefined && this.state.publisher !== undefined ? (
-                    <div id="session">
-                        <div id="session-header">
-                            <h1 id="session-title">{mySessionId}
-                                <Button
-                                    className={this.state.video ? "" : OFF}
-                                    onClick={()=>{this.state.publisher.publishVideo(!this.state.video); this.setState({video: !this.state.video})}}>
-                                        Видео
-                                </Button>
-                                <Button
-                                    className={this.state.audio ? "" : OFF}
-                                    onClick={()=>{this.state.publisher.publishAudio(!this.state.audio); this.setState({audio: !this.state.audio})}}>
-                                        Звук
-                                </Button>
-                            </h1>
-                        </div>
-                        <div id="video-container">
-                            <UserVideo
-                                publisher
-                                onClick={() => this.handleMainVideoStream(this.state.publisher)}
-                                streamManager={this.state.publisher}/>
-                            {this.state.subscribers.map((sub, i) => (
-                                <UserVideo
-                                    key={i}
-                                    onClick={() => this.handleMainVideoStream(sub)}
-                                    streamManager={sub} />
-                            ))}
-                        </div>
-                        {this.state.mainStreamManager !== undefined ? (
-                            <div id="main-video">
-                                <UserVideo streamManager={this.state.mainStreamManager} />
-                            </div>
-                        ) : null}
+            sponsor && this.state.session !== undefined && this.state.publisher !== undefined
+            ? <div className={"room"}>
+                    <div className={"header bold uppercase"}>
+                        <div className={"name"}>{ room.name }</div>
+                        <a href={sponsor.id ? `/meeting/${sponsor.id}` : '/'}><img alt={"exit"} src={exit}/></a>
                     </div>
-                ) : null}
-                {this.state.room ?
-                    <Fragment>
-                        <Chat user={this.props.user} chat={this.state.room.chat}/>
-                        <Websocket url={SERVER.WS(this.state.room.chat.port) + "?chat=" + this.state.room.chat.id}
-                                   onMessage={this.handleData.bind(this)}/>
-                    </Fragment>
-                    : ""}
-            </div>
+                    <div className={"body"}>
+                        <div className={"chat-and-cameras"}>
+                            <div className={"chat_container"}>
+                                <Chat user={this.props.user} chat={room.chat}/>
+                                <Websocket url={SERVER.WS(room.chat.port) + "?chat=" + room.chat.id}
+                                           onMessage={this.handleData.bind(this)}/>
+                            </div>
+                            <div className={"main-cameras"}>
+                                <div className={"main-speaker"}>
+                                    <div className={"video_container"}>
+                                        <UserVideo streamManager={this.state.mainStreamManager} sound={this.state.sound} />
+                                        <StreamerName streamer={mainStreamManager}/>
+                                    </div>
+                                </div>
+                                <div className={"user"}>
+                                    <div className={"video_container"}>
+                                        <UserVideo
+                                            onClick={() => this.handleMainVideoStream(this.state.publisher)}
+                                            streamManager={this.state.publisher} sound={this.state.sound}/>
+
+                                        <StreamerName streamer={publisher} publisher/>
+
+                                        <div className={"icons"}>
+                                            <Icon icon={this.state.sound ? speakerSimpleHigh : speakerSimpleXLight}
+                                                  onClick={()=>{
+                                                      this.setState({sound: !this.state.sound})}}/>
+
+                                            <Icon icon={this.state.audio ? microphoneIcon : microphoneSlash}
+                                                  onClick={()=>{
+                                                      this.state.publisher.publishAudio(!this.state.audio);
+                                                      this.setState({audio: !this.state.audio})}}/>
+
+                                            <Icon icon={this.state.video ? videoCamera : videoCameraSlash}
+                                                  onClick={()=>{
+                                                      this.state.publisher.publishVideo(!this.state.video);
+                                                      this.setState({video: !this.state.video})}}/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={"speakers"}>
+                            <div className={`video_container ${this.state.subscribers.length ? "" : "not-grid"}`}>
+                                {
+                                    this.state.subscribers.length
+                                        ? this.state.subscribers.map((sub, i) => (
+                                            <div className={"item"} key={i}>
+                                                <UserVideo
+                                                    onClick={() => this.handleMainVideoStream(sub)}
+                                                    streamManager={sub} sound={this.state.sound}/>
+                                                <StreamerName streamer={sub}/>
+                                            </div>
+                                        ))
+                                        : <div className={"no-other-users bold"}><FormattedMessage id={"no_other_users"}/></div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            : "Loading..."
         );
     }
 

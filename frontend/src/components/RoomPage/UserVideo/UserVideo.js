@@ -14,8 +14,7 @@ export default class UserVideoComponent extends Component {
             <>
             {this.props.streamManager !== undefined ? (
                     <div className={"streamcomponent" + (this.props.publisher ? " publisher" : "")} onClick={this.props.onClick ? this.props.onClick : ()=>{}}>
-                        <Video streamManager={this.props.streamManager} />
-                        <div><p>{this.getNicknameTag()}</p></div>
+                        <Video streamManager={this.props.streamManager} sound={this.props.sound} />
                     </div>
                 ) : null}
             </>

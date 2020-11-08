@@ -91,17 +91,8 @@ export default class ConferencePage extends Component {
                 <CommonNetworking/>
                 <Support/>
                 <Footer/>
-
-
-                {/*<Rooms handlerSetter={this.setRoomsHandler.bind(this)} admin={false}/>*/}
-                {/*<div className={"padding_side"}>*/}
-                {/*    {this.state.conference.poll &&*/}
-                {/*    <Poll timer={this.timer} user={this.props.user} addAnswer={this.addAnswer.bind(this)}*/}
-                {/*          poll={this.state.conference.poll}/>}*/}
-                {/*</div>*/}
-                {/*<Footer/>*/}
-                {/*<Websocket url={SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id}*/}
-                {/*           onMessage={this.handleData.bind(this)}/>*/}
+                <Websocket url={SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id}
+                           onMessage={this.handleData.bind(this)}/>
             </>
         );
     }

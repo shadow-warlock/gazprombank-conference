@@ -5,6 +5,7 @@ import Moment from "react-moment";
 import 'moment-timezone';
 import 'moment/locale/ru';
 import Router from "./Router/Router";
+import {findObject} from "../Utils/finctions";
 
 export const LanguageContext = React.createContext({"change": ()=>{}, "lang": "ru"});
 
@@ -16,6 +17,8 @@ export default class App extends Component{
             locale: getLanguage(),
             messages: getMessages()
         }
+
+        Array.prototype.findObject = findObject;
     }
 
     changeLanguage(){

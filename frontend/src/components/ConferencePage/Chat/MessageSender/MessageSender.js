@@ -6,6 +6,8 @@ import axios from "axios";
 import {API, AXIOS_CONFIG} from "../../../../const/const";
 import "./MessageSender.css";
 import {FormattedMessage, injectIntl} from "react-intl";
+import { Icon, InlineIcon } from '@iconify/react';
+import roundSend from '@iconify/icons-ic/round-send';
 
 
 class MessageSender extends Component {
@@ -64,7 +66,8 @@ class MessageSender extends Component {
                             this.setState({message: e.target.value});
                         }}
                         placeholder={this.props.intl.formatMessage({id:"input_message"})}/>
-                    <FontAwesomeIcon onClick={this.send.bind(this)} className={"send_button"} icon={faCommentDots}/>
+                    <Icon icon={roundSend} onClick={this.send.bind(this)} className={"send_button"} />
+                    {/*<FontAwesomeIcon onClick={this.send.bind(this)} className={"send_button"} icon={faCommentDots}/>*/}
                 </div>
             </div>
         );

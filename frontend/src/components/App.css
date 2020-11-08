@@ -19,8 +19,11 @@ body {
     --font-size-very-big: calc(1.9 * var(--default-font-size));
     --input-width: 200px;
     --light-green: #dae9eb;
-    --theme-color: #334B92;
+    --theme-color: #334b92;
     --advanced-theme-color: #12296D;
+    --dark-text-color : #2E305D;
+    --light-text-color : #C7CADD;
+    --light-theme-color: #F5F5FB;
     --link-color: #658BFC;
     font-size: var(--default-font-size);
 }

@@ -9,6 +9,7 @@ import AdminPage from "../AdminPage/AdminPage";
 import "./../mobile.css";
 import RoomPage from "../RoomPage/RoomPage";
 import Rotation from "react-rotation";
+import SponsorMeeting from "../SponsorMeeting/SponsorMeeting";
 
 class Router extends Component{
 
@@ -28,19 +29,17 @@ class Router extends Component{
                             {user => <RoomPage room={props.match.params.id} user={user}/>}
                         </Security>)
                     }}/>
+                    <Route exact path="/meeting/:sponsor">
+                        <Security roles={[ROLE.USER, ROLE.ADMIN]}>
+                            {user => <SponsorMeeting user={user}/>}
+                        </Security>
+                    </Route>
                     <Route exact path="/admin">
                         <Security roles={[ROLE.ADMIN]}>
                             {user => <AdminPage/>}
                         </Security>
                     </Route>
-                    <Route exact path={"/test"}>
-                        <Rotation autoPlay={2000} cycle={true}>
-                            <img className={'frame'} src='/assets/speakers/grishin.jpg' />
-                            <img className={'frame'} src='/assets/speakers/kamishev.jpg' />
-                            <img className={'frame'} src='/assets/speakers/lopatnikova.jpg' />
-                            <img className={'frame'} src='/assets/speakers/melnikov.jpg' />
-                        </Rotation>
-                    </Route>
+
                 </Switch>
             </BrowserRouter>
         );

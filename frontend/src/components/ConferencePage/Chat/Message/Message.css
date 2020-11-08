@@ -37,7 +37,7 @@
     /*background: linear-gradient(to left,transparent 50%, var(--green-blue) 200%);*/
     /*border-left: 1px solid var(--green-blue);*/
     background: radial-gradient(farthest-side at -25% 50%, rgb(255, 207, 207), transparent);
-    background: #e2e5f1;
+    background: var(--light-theme-color);
     padding: 10px 20px;
     margin-top: 15px;
 }

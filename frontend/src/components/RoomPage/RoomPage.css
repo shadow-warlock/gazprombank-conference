@@ -1,18 +1,281 @@
-#video-container{
+.room .header {
+    padding: 15px 35px 30px 35px;
+    background: var(--theme-color);
+    color: white;
+    font-size: 36px;
     display: flex;
-    height: 150px;
-    margin: 20px;
-    justify-content: space-around;
-}
-#session-header{
-    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-#session{
+.room .header .name {
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+.room .header img {
+    margin-top: 15px;
+    display: block;
+}
+
+.room .body {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.room .body .chat-and-cameras {
+    display: flex;
+}
+
+.room .body .chat_container {
+    order: 1;
+    width: calc(50% - 25px);
+    margin-right: 25px;
+    color: var(--theme-color)
+}
+
+.room .body .chat_container .chat {
+    width: 100%;
+}
+
+.room .body .chat_container .chat .messages {
+    max-height: 650px;
+}
+
+.room .body .chat_container .chat .message {
+    width: 100%;
+}
+
+.room .body .chat_container .chat .chat_body {
+    padding: 0;
+}
+
+.room .body .main-cameras {
+    order: 2;
+    width: calc(50% - 25px);
+    margin-right: 25px;
     display: flex;
     flex-direction: column;
 }
 
-#main-video{
-    margin: auto;
+.room .body .main-cameras .main-speaker,
+.room .body .main-cameras .user {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
+.room .body .main-cameras .user .video_container {
+    margin-top: 25px;
+}
+
+.room .body .main-cameras .user .icons {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.room .body .main-cameras .user .icons svg {
+    color: var(--theme-color);
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.room .body .main-cameras .user .icons svg:hover {
+    opacity: 0.8;
+}
+
+.room .body .main-cameras .name {
+    color: var(--dark-text-color);
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.room .body .video_container {
+    background: var(--light-theme-color);
+    padding: 30px;
+    width: calc(100% - 60px);
+    border-radius: 30px;
+}
+
+.room .body .video_container video {
+    width: 100%;
+    border-radius: 30px;
+    float: initial;
+}
+
+.room .body .speakers {
+    order: 3;
+    width: 50%;
+    color: var(--dark-text-color)
+}
+
+.room .body .speakers .video_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 25px;
+}
+
+.room .body .speakers .item .name {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.room .body .speakers .no-other-users {
+    text-align: center;
+}
+
+.room .body .speakers .video_container.not-grid {
+    display: block;
+}
+
+@media all and (max-width: 1800px) {
+    .room .body .speakers .video_container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media all and (max-width: 1600px) {
+    .room .body .speakers .video_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room .body .speakers {
+        width: 40%;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    .room .body .chat_container .chat {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .room .body .main-cameras .name {
+        font-size: 20px;
+    }
+
+    .room .body .main-cameras .user .icons svg {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .room .body .chat-and-cameras {
+        flex-direction: column-reverse;
+    }
+
+    .room .body .main-cameras {
+        flex-direction: row-reverse;
+        margin-bottom: 25px;
+    }
+
+    .room .body .chat-and-cameras {
+        width: 60%;
+    }
+
+    .room .body .speakers {
+        width: 40%;
+    }
+
+    .room .body .main-cameras .user .video_container {
+        margin-top: 0;
+    }
+
+    .room .body .chat_container,
+    .room .body .main-cameras {
+        width: calc(100% - 25px);
+    }
+
+    .room .body .main-cameras .user {
+        margin-right: 25px;
+    }
+
+    .room .body .speakers .video_container {
+        max-height: 1050px;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .room .body {
+        flex-direction: column;
+    }
+
+    .room .body .chat-and-cameras {
+        width: 100%;
+    }
+
+    .room .body .speakers {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .room .body .speakers .video_container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .room .body .chat_container,
+    .room .body .main-cameras {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .room .body .chat_container .chat .messages {
+        max-height: 400px;
+    }
+
+    .room .body .speakers .video_container {
+        max-height: unset;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .room .header {
+        flex-direction: row;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .room .body .speakers .video_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media all and (max-width: 600px) {
+    .room .header {
+        font-size: 26px;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .room .body .main-cameras {
+        flex-direction: column-reverse;
+    }
+
+    .room .body .speakers .video_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room .body .chat_container .chat .messages {
+        max-height: 350px;
+    }
+
+    .room .body .main-cameras .user {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .room .body .speakers .video_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

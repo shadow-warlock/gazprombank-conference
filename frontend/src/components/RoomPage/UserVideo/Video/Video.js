@@ -20,7 +20,7 @@ export default class Video extends Component {
     }
 
     render() {
-        return <video className={"video"} autoPlay={true} ref={this.videoRef} />;
+        return <video className={"video"} autoPlay={true} ref={this.videoRef} muted={!this.props.sound} />;
     }
 
 }
