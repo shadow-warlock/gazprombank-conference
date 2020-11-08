@@ -23,7 +23,7 @@
     }
 }
 
-@media all and (max-width: 1132px), (max-height: 720px) {
+@media all and (max-width: 1132px) {
     .conference__broadcast-block {
         flex-direction: column;
         align-items: center;
