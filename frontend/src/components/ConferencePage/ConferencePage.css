@@ -119,34 +119,47 @@
 }
 
 @media all and (max-width: 1700px) {
-    .broadcast_chat_container {
-        display: block;
-        padding-top: 75px;
+    .conference .broadcast_chat_container > div:nth-child(2) {
+        width: 370px;
     }
+}
 
-    .broadcast_chat_container > div:nth-child(2) {
-        margin-left: 0;
-        margin-top: 30px;
+@media all and (max-width: 1470px) {
+    .conference .broadcast_chat_container .iframe {
+        width: 40vw;
     }
+}
 
-    .broadcast_chat_container .iframe {
-        flex: 1;
-        height: 600px;
-        width: 100%;
-    }
-
-    .message {
-        width: 100%;
+@media all and (max-width: 1200px) {
+    .conference .broadcast_chat_container > div:nth-child(2) {
+        width: 320px;
+        padding: 30px;
     }
 }
 
 @media all and (max-width: 1000px) {
-    .broadcast_chat_container .iframe {
+    .conference .broadcast_chat_container .iframe {
         height: 400px;
+        width: 100%;
     }
 
     .messages {
         max-height: 250px;
+    }
+
+    .conference .broadcast_chat_container {
+        display: block;
+        padding-top: 75px;
+    }
+
+    .conference .broadcast_chat_container > div:nth-child(2) {
+        margin-left: 0;
+        margin-top: 30px;
+        width: calc(100% - 60px);
+    }
+
+    .message {
+        width: 100%;
     }
 }
 
@@ -174,7 +187,7 @@
 }
 
 @media all and (max-width: 600px) {
-    .broadcast_chat_container .iframe {
+    .conference .broadcast_chat_container .iframe {
         height: 250px;
     }
 }

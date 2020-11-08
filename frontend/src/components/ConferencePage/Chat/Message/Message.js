@@ -79,7 +79,7 @@ class Message extends Component {
                         </p>
                     </div>
                 </div>
-                <div className={"padding_right reply_and_time"}>
+                <div className={"reply_and_time"}>
                     <p onClick={() => {
                         this.props.onReply(this.props.message)
                     }} className={"reply_button"}>
