@@ -54,6 +54,16 @@
 .conference__bottom-section {
     display: flex;
     flex-direction: column;
+
+    background-color: var(--tertiary-color);
+    background-image: url('../../assets/fin_images/bgc_icons.png');
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-attachment: local;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: 1100px;
 }
 
 .conference__broadcast-block {
