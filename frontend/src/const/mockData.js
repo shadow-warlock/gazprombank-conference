@@ -390,7 +390,7 @@ export const SPONSORS = [
             en: "https://www.sita.aero/"
         },
         video: "https://www.youtube.com/embed/1Zrn5cPget4?autoplay=1",
-        presentation: "https://drive.google.com/file/d/1faPMk24Qlc2eAYgaSe7FC3lUNrFEo5O5/view?usp=sharing",
+        presentation: "https://drive.google.com/file/d/1FOV7mqTVMU9EQ1m7YLheL4gvH-5VEMH0/view",
         description: sitaDescription,
         contacts: <>
             Dmitry Krasnov<br/>
