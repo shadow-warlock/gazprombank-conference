@@ -84,9 +84,9 @@ class SponsorMeeting extends Component {
                         </a>
                     </div>
 
-                    <div className={"description bold"}>
+                    <div className={"description"}>
                         { this.sponsor.description }
-                        <div className={"contacts"}>{ this.sponsor.contacts }</div>
+                        <div className={"contacts bold"}>{ this.sponsor.contacts }</div>
                     </div>
                 </div>
             </div>

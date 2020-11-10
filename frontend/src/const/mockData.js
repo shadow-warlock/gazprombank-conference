@@ -260,31 +260,28 @@ let embraerDescription = <>
 </>
 
 let whiteNcaseDescription = <>
-    <p>A global aerospace company headquartered in Brazil, Embraer has businesses in Commercial and Executive
-        aviation, Defense &amp; Security and Agricultural Aviation. The company designs, develops, manufactures and
-        markets aircraft and systems, providing Services &amp; Support to customers after-sales.</p>
-    <p>Since it was founded in 1969, Embraer has delivered more than 8,000 aircraft. On average, about every 10
-        seconds an aircraft manufactured by Embraer takes off somewhere in the world, transporting over 145 million
-        passengers a year.</p>
-    <p>Embraer is the leading manufacturer of commercial jets up to 150 seats and the main exporter of high value-
-        added goods in Brazil. The company maintains industrial units, offices, service and parts distribution centers,
-        among other activities, across the Americas, Africa, Asia and Europe.</p>
-    <p>In Russia and the CIS the are over 60 Embraer aircraft operating with seven airlines, such as S7 and
-        PegasFly. Air Astana is operating Embraer&#39;s new E2, and will soon be joined by Belavia.</p>
+    <p>Global law firm White &amp; Case advises major airlines, financial institutions, lessors, as well as regional and
+        cargo airlines, engine and aircraft manufacturers, export credit agencies, insurance companies and industry
+        consultants on a wide range of legal issues, including restructuring of cross-border operating lease
+        agreements, financing with the support of export credit agencies, maintenance contracts, repossession
+        matters, tax and customs issues and many more. White &amp; Case also actively participates in the Executive
+        Committee of the Aviation Working Group established in connection with the ratification of the Cape Town
+        Convention in Russia and worldwide.</p>
 </>;
 
 let sitaDescription = <>
-    <p>A global aerospace company headquartered in Brazil, Embraer has businesses in Commercial and Executive
-        aviation, Defense &amp; Security and Agricultural Aviation. The company designs, develops, manufactures and
-        markets aircraft and systems, providing Services &amp; Support to customers after-sales.</p>
-    <p>Since it was founded in 1969, Embraer has delivered more than 8,000 aircraft. On average, about every 10
-        seconds an aircraft manufactured by Embraer takes off somewhere in the world, transporting over 145 million
-        passengers a year.</p>
-    <p>Embraer is the leading manufacturer of commercial jets up to 150 seats and the main exporter of high value-
-        added goods in Brazil. The company maintains industrial units, offices, service and parts distribution centers,
-        among other activities, across the Americas, Africa, Asia and Europe.</p>
-    <p>In Russia and the CIS the are over 60 Embraer aircraft operating with seven airlines, such as S7 and
-        PegasFly. Air Astana is operating Embraer&#39;s new E2, and will soon be joined by Belavia.</p>
+    <p>About SITA</p>
+    <p>SITA is the IT provider for the air transport industry, delivering solutions for airlines, airports, aircraft
+        and governments. Our technology powers more seamless, safe and sustainable air travel.</p>
+    <p>Today, SITA’s solutions drive operational efficiencies at more than 1,000 airports while delivering the
+        promise of the connected aircraft to more than 400 customers on 18,000 aircraft globally.</p>
+    <p>SITA also provides the technology solutions that help more than 40 governments strike the balance of
+        secure borders and seamless travel. Our communications network connects every corner of the globe
+        and bridges 60% of the air transport community’s data exchange.</p>
+    <p>SITA is 100% owned by the industry and driven by its needs. It is one of the most internationally
+        diverse companies, with a presence in 200 countries and territories.</p>
+    <p>SITA’s subsidiaries and joint ventures include SITA Switzerland Sàrl, branded SITA FOR AIRCRAFT,
+        CHAMP Cargosystems and Aviareto. For further information, go to www.sita.aero</p>
 </>;
 
 export const SPONSORS = [
@@ -301,15 +298,14 @@ export const SPONSORS = [
             en: "https://www.alfastrah.ru/en/company/"
         },
         video: "https://www.youtube.com/embed/-pWc5Ts6Di0?autoplay=1",
-        presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
+        presentation: "https://drive.google.com/file/d/1zeicNtGOMSy6poPNKgKkUTLx8thvEfH5/view?usp=sharing",
         description: alfaDescription,
         contacts: <>
-            Denis Kanevskiy<br/>
-            General Manager Russia & CIS<br/>
-            Lufthansa Technik AG<br/>
-            <a href={"mailto:denis.kanevskiy@lht.dlh.de"}>denis.kanevskiy@lht.dlh.de</a><br/>
-            Phone: <a href={"tel:+74959375103"}>+7 495 937 51 03 ext. 140</a><br/>
-            <a href={"www.lufthansa-technik.com"} target={"_blank"}>www.lufthansa-technik.com</a>
+            Nikolay Manizer<br/>
+            Head of Airline Management<br/>
+            <a href={"tel:+79031864208"}>+7 (903) 186-42-08</a><br/>
+            <a href={"mailto:manizernp@alfastrah.ru"}>manizernp@alfastrah.ru</a><br/>
+            {/*<a href={"www.lufthansa-technik.com"} target={"_blank"}>www.lufthansa-technik.com</a>*/}
         </>
     },
     {
@@ -349,15 +345,13 @@ export const SPONSORS = [
             en: "https://embraer.com/"
         },
         video: "https://www.youtube.com/embed/x3tQelTkTBc?autoplay=1",
-        presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
+        presentation: "https://drive.google.com/file/d/1dZv171uM28_c9Kq8xblITP8IiNn7fAG-/view?usp=sharing",
         description: embraerDescription,
         contacts: <>
-            Denis Kanevskiy<br/>
-            General Manager Russia & CIS<br/>
-            Lufthansa Technik AG<br/>
-            <a href={"mailto:denis.kanevskiy@lht.dlh.de"}>denis.kanevskiy@lht.dlh.de</a><br/>
-            Phone: <a href={"tel:+74959375103"}>+7 495 937 51 03 ext. 140</a><br/>
-            <a href={"www.lufthansa-technik.com"} target={"_blank"}>www.lufthansa-technik.com</a>
+            Pawel Skuteli<br/>
+            Airline Marketing Manager<br/>
+            <a href={"tel:+31202158306"}>+31 20 215 8306</a><br/>
+            <a href={"mailto:pawel.skuteli@nl.embraer.com"}>pawel.skuteli@nl.embraer.com</a><br/>
         </>
     },
     {
@@ -372,16 +366,15 @@ export const SPONSORS = [
             ru: "https://www.whitecase.com/",
             en: "https://www.whitecase.com/"
         },
-        video: "https://www.youtube.com/embed/x3tQelTkTBc?autoplay=1",
-        presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
+        video: "https://www.youtube.com/embed/zcbgBB6VSqA?autoplay=1",
+        presentation: "https://drive.google.com/file/d/1o1gjydrzfsNTJyGJ4x-NQnSXsOGq4UW5/view?usp=sharing",
         description: whiteNcaseDescription,
         contacts: <>
-            Denis Kanevskiy<br/>
-            General Manager Russia & CIS<br/>
+            Natalya Nikitina<br/>
+            Partner, Head of Aviation Practice, Moscow Office, White & Case<br/>
             Lufthansa Technik AG<br/>
-            <a href={"mailto:denis.kanevskiy@lht.dlh.de"}>denis.kanevskiy@lht.dlh.de</a><br/>
-            Phone: <a href={"tel:+74959375103"}>+7 495 937 51 03 ext. 140</a><br/>
-            <a href={"www.lufthansa-technik.com"} target={"_blank"}>www.lufthansa-technik.com</a>
+            <a href={"tel:+74957873027"}>+7 495 787 3027</a><br/>
+            <a href={"mailto:nnikitina@whitecase.com"}>nnikitina@whitecase.com</a><br/>
         </>
     },
     {
@@ -396,16 +389,14 @@ export const SPONSORS = [
             ru: "https://www.sita.aero/",
             en: "https://www.sita.aero/"
         },
-        video: "https://www.youtube.com/embed/x3tQelTkTBc?autoplay=1",
-        presentation: "https://drive.google.com/file/d/1IRDHmPKnF0AsTktCzNr4oLACzGY_W2GY/view?usp=sharing",
+        video: "https://www.youtube.com/embed/1Zrn5cPget4?autoplay=1",
+        presentation: "https://drive.google.com/file/d/1faPMk24Qlc2eAYgaSe7FC3lUNrFEo5O5/view?usp=sharing",
         description: sitaDescription,
         contacts: <>
-            Denis Kanevskiy<br/>
-            General Manager Russia & CIS<br/>
-            Lufthansa Technik AG<br/>
-            <a href={"mailto:denis.kanevskiy@lht.dlh.de"}>denis.kanevskiy@lht.dlh.de</a><br/>
-            Phone: <a href={"tel:+74959375103"}>+7 495 937 51 03 ext. 140</a><br/>
-            <a href={"www.lufthansa-technik.com"} target={"_blank"}>www.lufthansa-technik.com</a>
+            Dmitry Krasnov<br/>
+            Vice President Russia & CIS<br/>
+            <a href={"tel:+79104068630"}>+7 (910) 406-8630</a><br/>
+            <a href={"mailto:dmitry.krasnov@sita.aero"}>dmitry.krasnov@sita.aero</a><br/>
         </>
     }
 ];
