@@ -43,17 +43,18 @@ class RoomPage extends Component {
         this.handleChangeUserName = this.handleChangeUserName.bind(this);
         this.handleMainVideoStream = this.handleMainVideoStream.bind(this);
         this.onbeforeunload = this.onbeforeunload.bind(this);
+        this.reconnect = this.reconnect.bind(this);
     }
 
 
-    loadRoom(id){
+    loadRoom(id, handler){
         let self = this;
         axios.get(API.ROOM_ID(id), AXIOS_CONFIG).then(
             res => {
                 self.setState({
                     room: res.data,
                     mySessionId: res.data.name
-                }, this.joinSession);
+                }, handler ? handler : ()=>{});
             }
         ).catch(e => {
             if(e.response && e.response.status){
@@ -74,7 +75,25 @@ class RoomPage extends Component {
 
     componentDidMount() {
         window.addEventListener('beforeunload', this.onbeforeunload);
-        this.loadRoom(this.props.room);
+        this.loadRoom(this.props.room, ()=>{this.joinSession(); this.reconnect()});
+    }
+
+    reconnect(){
+        this.socket = new WebSocket(SERVER.WS(this.state.room.chat.port) + "?chat=" + this.state.room.chat.id);
+        this.socket.onmessage = (event)=>{this.handleData(event.data)};
+        this.socket.onclose = this.reconnect;
+        this.socket.onerror = this.reconnect;
+        this.pongTime = Date.now();
+        this.pingPongInterval = setInterval(()=>{
+            this.socket.send("ping");
+            setTimeout(()=>{
+                if(Date.now() - this.pongTime > 2000){
+                    this.socket.close();
+                    clearInterval(this.pingPongInterval);
+                    this.loadRoom(this.props.room);
+                }
+            }, 1000);
+        }, 10000);
     }
 
     componentWillUnmount() {
@@ -201,8 +220,6 @@ class RoomPage extends Component {
                         <div className={"chat-and-cameras"}>
                             <div className={"chat_container"}>
                                 <Chat user={this.props.user} chat={room.chat}/>
-                                <Websocket url={SERVER.WS(room.chat.port) + "?chat=" + room.chat.id}
-                                           onMessage={this.handleData.bind(this)}/>
                             </div>
                             <div className={"main-cameras"}>
                                 <div className={"main-speaker"}>
@@ -265,6 +282,9 @@ class RoomPage extends Component {
         let room = Object.assign({}, this.state.room);
         let messageIndex;
         switch (data.type) {
+            case "pong":
+                this.pongTime = Date.now();
+                break;
             case "message":
                 room.chat.messages.unshift(data.data);
                 break;

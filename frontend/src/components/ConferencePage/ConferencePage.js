@@ -1,23 +1,16 @@
 import React, {Component} from "react";
 import Broadcast from "./Broadcast/Broadcast";
 import Chat from "./Chat/Chat";
-import Poll from "./Poll/Poll";
-import Logo from "../Logo/Logo";
 import axios from "axios";
 import {API, AXIOS_CONFIG, SERVER} from "../../const/const";
-import Websocket from "react-websocket";
 import "./ConferencePage.css";
 import Footer from "./Footer/Footer";
 import Timer from "../../Utils/Timer";
 import ChangeLocaleButton from "../ChangeLocaleButton/ChangeLocaleButton";
 import {FormattedMessage} from "react-intl";
-import {agendaURL, conferenceTime, USE} from "../../const/mockData";
+import {agendaURL} from "../../const/mockData";
 import {LanguageContext} from "../App";
-import Button from "../Button/Button";
-import planeAndTransport from "../../assets/plane_and_transport.png";
-import Rooms from "../Rooms/Rooms";
 import PartnersNetworking from "./PartnersNetworking/PartnersNetworking";
-import TechSupport from "../TechSupport/TechSupport";
 import Support from "./Support/Support";
 import CommonNetworking from "./CommonNetworking/CommonNetworking";
 
@@ -29,20 +22,47 @@ export default class ConferencePage extends Component {
             roomsHandler: null
         }
         this.timer = new Timer();
+        this.reconnect = this.reconnect.bind(this);
     }
 
     componentDidMount() {
+        this.loadConference(this.reconnect);
+    }
+
+    loadConference(handler = null){
         let self = this;
         axios.get(API.CONFERENCE, AXIOS_CONFIG).then(
             res => {
-                this.messagesSort(res.data.chat.messages);
+                self.messagesSort(res.data.chat.messages);
                 self.setState({
                     conference: res.data
+                }, ()=>{
+                    if(handler){
+                        handler();
+                    }
                 });
             }
         ).catch(e => {
             console.error(e);
         });
+    }
+
+    reconnect(){
+        this.socket = new WebSocket(SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id);
+        this.socket.onmessage = (event)=>{this.handleData(event.data)};
+        this.socket.onclose = this.reconnect;
+        this.socket.onerror = this.reconnect;
+        this.pongTime = Date.now();
+        this.pingPongInterval = setInterval(()=>{
+            this.socket.send("ping");
+            setTimeout(()=>{
+                if(Date.now() - this.pongTime > 2000){
+                    this.socket.close();
+                    clearInterval(this.pingPongInterval);
+                    this.loadConference();
+                }
+            }, 1000);
+        }, 10000);
     }
 
     setRoomsHandler(handler){
@@ -91,8 +111,6 @@ export default class ConferencePage extends Component {
                 <CommonNetworking/>
                 <Support/>
                 <Footer/>
-                <Websocket url={SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id}
-                           onMessage={this.handleData.bind(this)}/>
             </>
         );
     }
@@ -120,6 +138,9 @@ export default class ConferencePage extends Component {
         let conf = Object.assign({}, this.state.conference);
         let messageIndex;
         switch (data.type) {
+            case "pong":
+                this.pongTime = Date.now();
+                break;
             case "message":
                 conf.chat.messages.unshift(data.data);
                 break;

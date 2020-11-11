@@ -53,9 +53,12 @@ $ws_worker->onConnect = function ($connection) use (&$connections) {
 
 };
 
-//$ws_worker->onMessage = function($connection, $data) {
-//    $connection->send('Hello ' . $data);
-//};
+$ws_worker->onMessage = function($connection, $data) {
+    if($data === "ping"){
+        $connection->send(json_encode(['type'=>'pong']));
+
+    }
+};
 
 $ws_worker->onClose = function ($connection) use (&$connections) {
     foreach ($connections as $chat){
