@@ -32,6 +32,21 @@ class ChatController extends AbstractController {
     }
 
     /**
+     * @Route("/api/chat/{id}/ping", name="ping", methods={"POST"})
+     * @param                   $id
+     * @param  WebSocketSender  $wsSender
+     *
+     * @return JsonResponse
+     */
+    public function pingChat($id, WebSocketSender $wsSender) {
+        $this->denyAccessUnlessGranted(User::IS_AUTHENTICATED_FULLY);
+        $entityManager = $this->getDoctrine()->getManager();
+        $chat = $entityManager->find(Chat::class, $id);
+        $wsSender->send(WebSocketSender::PONG, "pong", $chat);
+        return new JsonResponse("pong", 201, [], true);
+    }
+
+    /**
      * @Route("/api/chat/{id}/message", name="add_message", methods={"POST"})
      * @param Request $request
      * @param $id

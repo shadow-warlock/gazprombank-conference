@@ -23,21 +23,22 @@ export default class ConferencePage extends Component {
         }
         this.timer = new Timer();
         this.reconnect = this.reconnect.bind(this);
+        this.ping = this.ping.bind(this);
     }
 
     componentDidMount() {
         this.loadConference(this.reconnect);
     }
 
-    loadConference(handler = null){
+    loadConference(handler = null) {
         let self = this;
         axios.get(API.CONFERENCE, AXIOS_CONFIG).then(
             res => {
                 self.messagesSort(res.data.chat.messages);
                 self.setState({
                     conference: res.data
-                }, ()=>{
-                    if(handler){
+                }, () => {
+                    if (handler) {
                         handler();
                     }
                 });
@@ -47,25 +48,37 @@ export default class ConferencePage extends Component {
         });
     }
 
-    reconnect(){
+    ping(id, handler = null) {
+        let self = this;
+        axios.post(API.CHAT_PING(id), {}, AXIOS_CONFIG).then(
+            res => {
+                handler ? handler() : null;
+            }
+        )
+    }
+
+    reconnect() {
         this.socket = new WebSocket(SERVER.WS(this.state.conference.chat.port) + "?chat=" + this.state.conference.chat.id);
-        this.socket.onmessage = (event)=>{this.handleData(event.data)};
+        this.socket.onmessage = (event) => {
+            this.handleData(event.data)
+        };
         this.socket.onclose = this.reconnect;
         this.socket.onerror = this.reconnect;
         this.pongTime = Date.now();
-        this.pingPongInterval = setInterval(()=>{
-            this.socket.send("ping");
-            setTimeout(()=>{
-                if(Date.now() - this.pongTime > 2000){
-                    this.socket.close();
-                    clearInterval(this.pingPongInterval);
-                    this.loadConference();
-                }
-            }, 1000);
-        }, 10000);
+        this.pingPongInterval = setInterval(() => {
+            this.ping(this.state.conference.chat.id, () => {
+                setTimeout(() => {
+                    if (Date.now() - this.pongTime > 60000) {
+                        clearInterval(this.pingPongInterval);
+                        this.loadConference();
+                        this.socket.close();
+                    }
+                }, 5000);
+            });
+        }, 60000);
     }
 
-    setRoomsHandler(handler){
+    setRoomsHandler(handler) {
         this.setState({
             roomsHandler: handler
         })
@@ -175,7 +188,7 @@ export default class ConferencePage extends Component {
                 }
                 return;
             default:
-                if(this.state.roomsHandler){
+                if (this.state.roomsHandler) {
                     this.state.roomsHandler(data);
                 }
         }

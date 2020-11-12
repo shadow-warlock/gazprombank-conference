@@ -24,17 +24,27 @@ if (!isset($config["SSL"]) || !$config["SSL"]) {
 $connections = [];
 // 4 processes
 //$ws_worker->count = 4;
+$lastPing = 0;
 
-$ws_worker->onWorkerStart = function () use (&$connections, $config) {
+$ws_worker->onWorkerStart = function () use (&$connections, $config, &$lastPing) {
     $inner_tcp_worker = new Worker("tcp://127.0.0.1:".$config["WS_IN"]);
-    $inner_tcp_worker->onMessage = function ($connection, $data) use (&$connections)
+    $inner_tcp_worker->onMessage = function ($connection, $data) use (&$connections, &$lastPing)
     {
         $json = json_decode($data, true);
         if(!isset($connections[$json["chat"]])){
             $connections[$json["chat"]] = [];
         }
-        foreach ($connections[$json["chat"]] as $client) {
-            $client->send($data);
+        if($json['type'] == "pong"){
+            if(time() - $lastPing > 30000){
+                $lastPing = time();
+                foreach ($connections[$json["chat"]] as $client) {
+                    $client->send($data);
+                }
+            }
+        }else{
+            foreach ($connections[$json["chat"]] as $client) {
+                $client->send($data);
+            }
         }
     };
     $inner_tcp_worker->listen();
@@ -56,7 +66,6 @@ $ws_worker->onConnect = function ($connection) use (&$connections) {
 $ws_worker->onMessage = function($connection, $data) {
     if($data === "ping"){
         $connection->send(json_encode(['type'=>'pong']));
-
     }
 };
 

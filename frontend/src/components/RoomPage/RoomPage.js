@@ -10,7 +10,7 @@ import Websocket from "react-websocket";
 import exit from "./../../assets/room_icons/exit.svg";
 import {SPONSORS} from "../../const/mockData";
 import StreamerName from "./StreamerName/StreamerName";
-import { Icon, InlineIcon } from '@iconify/react';
+import {Icon, InlineIcon} from '@iconify/react';
 import speakerSimpleHigh from '@iconify/icons-ph/speaker-simple-high';
 import speakerSimpleXLight from '@iconify/icons-ph/speaker-simple-x-light';
 import microphoneIcon from '@iconify/icons-ph/microphone';
@@ -44,21 +44,23 @@ class RoomPage extends Component {
         this.handleMainVideoStream = this.handleMainVideoStream.bind(this);
         this.onbeforeunload = this.onbeforeunload.bind(this);
         this.reconnect = this.reconnect.bind(this);
+        this.ping = this.ping.bind(this);
     }
 
 
-    loadRoom(id, handler){
+    loadRoom(id, handler) {
         let self = this;
         axios.get(API.ROOM_ID(id), AXIOS_CONFIG).then(
             res => {
                 self.setState({
                     room: res.data,
                     mySessionId: res.data.name
-                }, handler ? handler : ()=>{});
+                }, handler ? handler : () => {
+                });
             }
         ).catch(e => {
-            if(e.response && e.response.status){
-                switch (e.response.status){
+            if (e.response && e.response.status) {
+                switch (e.response.status) {
                     case 404:
                         alert("Комната не найдена");
                         break;
@@ -75,25 +77,40 @@ class RoomPage extends Component {
 
     componentDidMount() {
         window.addEventListener('beforeunload', this.onbeforeunload);
-        this.loadRoom(this.props.room, ()=>{this.joinSession(); this.reconnect()});
+        this.loadRoom(this.props.room, () => {
+            this.joinSession();
+            this.reconnect()
+        });
     }
 
-    reconnect(){
+    ping(id, handler = null) {
+        let self = this;
+        axios.post(API.CHAT_PING(id), {}, AXIOS_CONFIG).then(
+            res => {
+                handler ? handler() : null;
+            }
+        )
+    }
+
+    reconnect() {
         this.socket = new WebSocket(SERVER.WS(this.state.room.chat.port) + "?chat=" + this.state.room.chat.id);
-        this.socket.onmessage = (event)=>{this.handleData(event.data)};
+        this.socket.onmessage = (event) => {
+            this.handleData(event.data)
+        };
         this.socket.onclose = this.reconnect;
         this.socket.onerror = this.reconnect;
         this.pongTime = Date.now();
-        this.pingPongInterval = setInterval(()=>{
-            this.socket.send("ping");
-            setTimeout(()=>{
-                if(Date.now() - this.pongTime > 2000){
-                    this.socket.close();
-                    clearInterval(this.pingPongInterval);
-                    this.loadRoom(this.props.room);
-                }
-            }, 1000);
-        }, 10000);
+        this.pingPongInterval = setInterval(() => {
+            this.ping(this.state.room.chat.id, () => {
+                setTimeout(() => {
+                    if (Date.now() - this.pongTime > 60000) {
+                        clearInterval(this.pingPongInterval);
+                        this.loadRoom(this.props.room);
+                        this.socket.close();
+                    }
+                }, 5000);
+            });
+        }, 60000);
     }
 
     componentWillUnmount() {
@@ -159,7 +176,7 @@ class RoomPage extends Component {
                     mySession
                         .connect(
                             token,
-                            { clientData: this.state.myUserName },
+                            {clientData: this.state.myUserName},
                         )
                         .then(() => {
                             let publisher = this.OV.initPublisher(undefined, {
@@ -211,9 +228,9 @@ class RoomPage extends Component {
 
         return (
             sponsor && this.state.session !== undefined && this.state.publisher !== undefined
-            ? <div className={"room"}>
+                ? <div className={"room"}>
                     <div className={"header bold uppercase"}>
-                        <div className={"name"}>{ room.name }</div>
+                        <div className={"name"}>{room.name}</div>
                         <a href={sponsor.id ? `/meeting/${sponsor.id}` : '/'}><img alt={"exit"} src={exit}/></a>
                     </div>
                     <div className={"body"}>
@@ -224,7 +241,7 @@ class RoomPage extends Component {
                             <div className={"main-cameras"}>
                                 <div className={"main-speaker"}>
                                     <div className={"video_container"}>
-                                        <UserVideo streamManager={this.state.mainStreamManager} sound={this.state.sound} />
+                                        <UserVideo streamManager={this.state.mainStreamManager} sound={this.state.sound}/>
                                         <StreamerName streamer={mainStreamManager}/>
                                     </div>
                                 </div>
@@ -238,18 +255,21 @@ class RoomPage extends Component {
 
                                         <div className={"icons"}>
                                             <Icon icon={this.state.sound ? speakerSimpleHigh : speakerSimpleXLight}
-                                                  onClick={()=>{
-                                                      this.setState({sound: !this.state.sound})}}/>
+                                                  onClick={() => {
+                                                      this.setState({sound: !this.state.sound})
+                                                  }}/>
 
                                             <Icon icon={this.state.audio ? microphoneIcon : microphoneSlash}
-                                                  onClick={()=>{
+                                                  onClick={() => {
                                                       this.state.publisher.publishAudio(!this.state.audio);
-                                                      this.setState({audio: !this.state.audio})}}/>
+                                                      this.setState({audio: !this.state.audio})
+                                                  }}/>
 
                                             <Icon icon={this.state.video ? videoCamera : videoCameraSlash}
-                                                  onClick={()=>{
+                                                  onClick={() => {
                                                       this.state.publisher.publishVideo(!this.state.video);
-                                                      this.setState({video: !this.state.video})}}/>
+                                                      this.setState({video: !this.state.video})
+                                                  }}/>
                                         </div>
                                     </div>
                                 </div>
@@ -267,13 +287,14 @@ class RoomPage extends Component {
                                                 <StreamerName streamer={sub}/>
                                             </div>
                                         ))
-                                        : <div className={"no-other-users bold"}><FormattedMessage id={"no_other_users"}/></div>
+                                        : <div className={"no-other-users bold"}><FormattedMessage id={"no_other_users"}/>
+                                        </div>
                                 }
                             </div>
                         </div>
                     </div>
                 </div>
-            : "Loading..."
+                : "Loading..."
         );
     }
 
@@ -322,8 +343,8 @@ class RoomPage extends Component {
                     resolve(response.data);
                 })
                 .catch((e) => {
-                    if(e.response && e.response.status){
-                        switch (e.response.status){
+                    if (e.response && e.response.status) {
+                        switch (e.response.status) {
                             case 400:
                                 alert("Комната переполнена");
                                 break;
@@ -336,4 +357,5 @@ class RoomPage extends Component {
         });
     }
 }
+
 export default RoomPage;
