@@ -1,9 +1,9 @@
 export const SERVER = {
-    // URL: "http://localhost:8000",
-    URL: "https://atoevents.site",
+    URL: "http://localhost:8000",
+    // URL: "https://atoevents.site",
     WS: (port) => {
-        // return 'ws://localhost:' + port;
-        return 'wss://atoevents.site:' + port;
+        return 'ws://localhost:' + port;
+        // return 'wss://atoevents.site:' + port;
     }
 };
 
