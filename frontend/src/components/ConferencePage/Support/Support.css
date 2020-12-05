@@ -79,7 +79,7 @@
 
     .support_container .tech_support .login_supporters {
         flex-direction: column;
-        align-items: center;
+        align-items: start;
     }
 
     .support_container .tech_support .login_supporters .supporter {
