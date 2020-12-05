@@ -372,7 +372,6 @@ export const SPONSORS = [
         contacts: <>
             Natalya Nikitina<br/>
             Partner, Head of Aviation Practice, Moscow Office, White & Case<br/>
-            Lufthansa Technik AG<br/>
             <a href={"tel:+74957873027"}>+7 495 787 3027</a><br/>
             <a href={"mailto:nnikitina@whitecase.com"}>nnikitina@whitecase.com</a><br/>
         </>

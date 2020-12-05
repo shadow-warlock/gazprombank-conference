@@ -23,6 +23,7 @@ export const API = {
     CHAT_MESSAGE_CSV: SERVER.URL + "/api/chat/message/csv",
     MESSAGE: (id)=> {return SERVER.URL+"/api/message/"+id},
     CHAT_MESSAGE: (id) => {return SERVER.URL + "/api/chat/" + id + "/message"},
+    CHAT_PING: (id) => {return SERVER.URL + "/api/chat/" + id + "/ping"},
     MESSAGE_LIKE: (id) => {return SERVER.URL + "/api/message/" + id + "/like"},
     QUESTION_ANSWER: (id) => {return SERVER.URL + "/api/question/" + id + "/answer"},
     USER_CODE: (id) => {return SERVER.URL + "/api/user/" + id + "/code"},

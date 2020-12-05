@@ -17,6 +17,7 @@ class WebSocketSender {
     const POLL = "poll";
     const DELETE_LIKE = "delete like";
     const DELETE_MESSAGE = "delete message";
+    const PONG = "pong";
 
     /**
      * WebSocketSender constructor.
