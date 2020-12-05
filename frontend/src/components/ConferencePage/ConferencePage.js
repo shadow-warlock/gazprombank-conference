@@ -82,8 +82,8 @@ export default class ConferencePage extends Component {
                     </div>
 
                     <div className={"broadcast_chat_container"}>
+                        <div><Broadcast url={"https://facecast.net/v/tpazz6"}/></div>
                         <div><Broadcast url={this.state.conference.url}/></div>
-                        <div><Chat user={this.props.user} chat={this.state.conference.chat}/></div>
                     </div>
                 </div>
 

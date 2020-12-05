@@ -109,6 +109,19 @@ class RoomController extends AbstractController {
         return new JsonResponse($json, 201, [], true);
     }
 
+    /**
+     * @Route("/api/room/{id}/camera", methods={"get"})
+     * @param  Room            $room
+     * @param  Request         $request
+     * @param  VideoConnector  $connector
+     *
+     * @return JsonResponse
+     */
+    public function camera(Room $room, Request $request, VideoConnector $connector) {
+        $data = $connector->cameraConnect($room);
+        return new JsonResponse(json_encode($data), 201, [], true);
+    }
+
     public function findVideoServerNum(ObjectManager $manager){
         $num = null;
         $i = 1;

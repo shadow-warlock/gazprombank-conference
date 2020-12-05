@@ -55,6 +55,27 @@ class VideoConnector
         return $response->toArray()["token"];
     }
 
+    public function cameraConnect(Room $room){
+        $url = str_replace("{num}", $room->getVideo(), $this->url);
+        $response = $this->client->request("POST", $url .  self::SESSION . "/" . $room->getCode() . "/connection", [
+            "verify_peer"=>false,"verify_host"=>false,
+            'headers' => [
+                'Authorization' => 'Basic ' . base64_encode('OPENVIDUAPP:' . $this->secret),
+                'Content-Type' => 'application/json'
+            ],
+            'body' => json_encode([
+                'type' => 'IPCAM',
+                'rtspUri' => "rtsp://rtsp:StartRTSP@176.97.32.22:5543",
+                'adaptativeBitrate' => false,
+                'onlyPlayWithSubscribers' => false,
+                'data' => json_encode(['clientData' => 'test camera']),
+//                'networkCache' => 2000
+            ])
+        ]);
+//        '{"type": "IPCAM", "rtspUri": "rtsp://rtsp:StartRTSP@176.97.32.22:5541/live/main", "adaptativeBitrate": true, "onlyPlayWithSubscribers": true, "data": "Office security camera", "networkCache": 2000}'
+        return $response->toArray();
+    }
+
     public function deleteSession(Room $room){
         $url = str_replace("{num}", $room->getVideo(), $this->url);
         $response = $this->client->request("DELETE", $url . self::SESSION . '/' . $room->getCode(), [

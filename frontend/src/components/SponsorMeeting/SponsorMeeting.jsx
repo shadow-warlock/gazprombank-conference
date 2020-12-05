@@ -52,7 +52,7 @@ class SponsorMeeting extends Component {
             <div className={"sponsor-meeting"}>
                 <div className={"header"}>
                     <div className={"name bold uppercase"}>
-                        <a href={"/"}>ᐸ&nbsp; { this.sponsor.name }</a>
+                        <a href={"/"}>ᐸ&nbsp; { this.sponsor.id }</a>
                     </div>
                     <a href={this.sponsor.link.en}>
                         <img className={"logo"} alt={this.sponsor.name} src={this.sponsor.logo.en}/>

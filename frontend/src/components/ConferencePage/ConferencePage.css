@@ -91,15 +91,15 @@
     justify-content: space-between;
 }
 
-.broadcast_chat_container > div:nth-child(1) {
-    width: 100%;
-}
+/*.broadcast_chat_container > div:nth-child(1) {*/
+/*    width: 100%;*/
+/*}*/
 
 .broadcast_chat_container > div:nth-child(2) {
-    background-color: white;
-    padding: 50px;
-    color: var(--theme-color);
-    margin-left: 30px;
+    /*background-color: white;*/
+    /*padding: 50px;*/
+    /*color: var(--theme-color);*/
+    /*margin-left: 30px;*/
 }
 
 .padding_side {

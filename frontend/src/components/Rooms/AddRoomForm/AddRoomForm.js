@@ -18,7 +18,7 @@ export default class AddRoomForm extends Component {
             isOpen: false,
             name: "",
             visible: true,
-            sponsor: ""
+            sponsor: SPONSORS.map(partner => partner.id)[0]
         };
     }
 

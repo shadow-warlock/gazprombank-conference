@@ -8,7 +8,7 @@ class StreamerName extends Component {
 
         return (
             <div className={"name bold"}>
-                { name ? JSON.parse(name)?.clientData : "" }
+                { (name) ? JSON.parse(name)?.clientData : "" }
             {this.props.publisher !== undefined ? (<> (<FormattedMessage id={"you"}/>)</>) : ""}
             </div>
         )
