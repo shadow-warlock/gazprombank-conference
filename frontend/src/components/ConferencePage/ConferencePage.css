@@ -116,11 +116,6 @@
 
 
 @media all and (max-width: 1000px) {
-    .conference .broadcast_chat_container .iframe {
-        height: 400px;
-        width: 100%;
-    }
-
     .messages {
         max-height: 250px;
     }
@@ -155,12 +150,6 @@
 
     .conference .top_container .lang-n-program .change_locale_button {
         padding-bottom: 0;
-    }
-}
-
-@media all and (max-width: 600px) {
-    .conference .broadcast_chat_container .iframe {
-        height: 250px;
     }
 }
 
