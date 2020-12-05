@@ -10,5 +10,4 @@
 ###< symfony/framework-bundle ###
 /.idea/
 /frontend/package-lock.json
-/websocketServer/composer.lock
 /websocketServer/vendor/
