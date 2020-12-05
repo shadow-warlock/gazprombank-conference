@@ -9,8 +9,6 @@
 /vendor/
 ###< symfony/framework-bundle ###
 /.idea/
-/composer.lock
-/symfony.lock
 /frontend/package-lock.json
 /websocketServer/composer.lock
 /websocketServer/vendor/
