@@ -12,6 +12,10 @@
     .auth-page__content {
         background-image: none;
     }
+
+    .button{
+        width: 100%;
+    }
 }
 
 @media all and (max-width: 768px) {

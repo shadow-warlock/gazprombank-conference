@@ -9,12 +9,10 @@
 }
 
 .user_info button {
-    border-color: red;
-    background-color: transparent;
+    background-color: var(--secondary-color);
 }
 
 .user_info button:hover {
-    border-color: red;
     background-color: var(--primary-color);
     color: white;
 }
