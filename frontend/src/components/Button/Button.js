@@ -4,7 +4,10 @@ import './Button.css';
 export default class Button extends Component {
     render() {
         return (
-            <button className={'button'} onClick={this.props.onClick}>
+            <button
+                className={'button text-small'}
+                onClick={this.props.onClick}
+            >
                 {this.props.children}
             </button>
         );

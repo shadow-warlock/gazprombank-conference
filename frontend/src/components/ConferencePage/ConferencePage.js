@@ -50,13 +50,18 @@ class ConferencePage extends Component {
                 <Header />
                 <section className="conference__top-section">
                     <div className="conference__general">
-                        <h1 className="conference__title">
+                        <h1 className="conference__title subtitle">
                             <FormattedMessage id={'online_conferences'} />
                         </h1>
-                        <h1 className="conference__conf-theme">
-                            <FormattedMessage id={'the_ato_events'} />
+                        <h1 className="conference__conf-theme title">
+                            {/* <FormattedMessage id={'the_ato_events'} /> */}
+                            <FormattedMessage id={'theme-part-1'} />
+                            <br />
+                            <FormattedMessage id={'theme-part-2'} />
+                            <br />
+                            <FormattedMessage id={'theme-part-3'} />
                         </h1>
-                        <div className="conference__time">
+                        <div className="conference__time text">
                             <div className="auth-page__time">
                                 <Moment
                                     className={'upper'}
@@ -65,7 +70,7 @@ class ConferencePage extends Component {
                                     })}
                                     date={conferenceDate}
                                 />
-                                {' в ' + conferenceTime}
+                                {', ' + conferenceTime}
                             </div>
                         </div>
                         <div className="conference__btn">

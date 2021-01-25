@@ -7,7 +7,7 @@ export default class Broadcast extends Component {
     render() {
         return (
             <div className="broadcast">
-                <h1 className="broadcast__title">
+                <h1 className="broadcast__title title">
                     <FormattedMessage id={'broadcast'} />
                 </h1>
                 <div className="broadcast__window">

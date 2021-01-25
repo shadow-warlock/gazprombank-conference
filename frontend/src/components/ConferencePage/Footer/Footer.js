@@ -11,13 +11,13 @@ export default class Footer extends Component {
             <div className="footer">
                 <div className="footer__content">
                     <div className="footer__contacts">
-                        <Contacts role={true} use={USE.MAIN} />
-                        <div className="footer__logout-btn">
-                            <LogoutButton />
-                        </div>
+                        <Contacts role={false} use={USE.MAIN} />
                     </div>
                     <div className="footer__tech-support">
                         <TechSupport role={false} use={USE.MAIN} />
+                    </div>
+                    <div className="footer__logout-btn">
+                        <LogoutButton />
                     </div>
                 </div>
             </div>

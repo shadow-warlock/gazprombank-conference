@@ -1,14 +1,33 @@
 .footer {
-    background-color: var(--secondary-color);
-    padding: 7em 2em;
+    background-color: var(--primary-color);
+    padding: 6em 2em 4em;
 }
 
 .footer__content {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     color: var(--tertiary-color);
 }
 
 .footer__logout-btn {
+    margin-top: auto;
+    margin-bottom: 2em;
+
+    color: inherit;
+}
+
+.footer__contacts {
+    margin-bottom: 2em;
+}
+
+.footer__contacts .contacts__field {
+    line-height: 1.9;
+}
+
+.footer__contacts .contacts__content,
+.footer__tech-support .tech-support__support {
+    flex-direction: column;
+
     margin-top: 1.5em;
+    margin-right: 7vw;
 }

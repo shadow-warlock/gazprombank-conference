@@ -2,56 +2,76 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-image: url('../../assets/fin_images/gaz_bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     overflow-x: hidden;
     font-size: 1rem;
 }
 
 .auth-page__content {
-    flex: 1;
-    color: var(--tertiary-color);
+    position: relative;
     display: flex;
     flex-direction: column;
+    flex: 1;
+
+    color: var(--primary-color);
+
+    background-image: url('../../assets/rosatom_images/bgf2.png');
+    background-color: #f5f5f8;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-attachment: local;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 55vmax;
+}
+
+.auth-page__content::before {
+    position: absolute;
+    top: -15vmin;
+    left: -15vmin;
+
+    width: 30vmin;
+    height: 30vmin;
+
+    border-radius: 50%;
+
+    background-color: #485fe1;
+
+    content: '';
 }
 
 /* auth page top block */
 .auth-page__main-block {
-    margin: 0;
-    padding: 0 6em;
-    flex: 1;
     display: flex;
     align-items: flex-end;
+    flex: 1;
+
+    margin: 0;
+    padding: 0 6em;
 }
 
 .auth-page__general {
-    max-width: 56em;
-    text-align: center;
     box-sizing: border-box;
+
+    max-width: 68em;
+
+    text-align: center;
 }
 
 .auth-page__title {
     margin: 2em 0 0;
-    font-size: 1.8em;
-    text-transform: capitalize;
 }
 
 .auth-page__conf-theme {
     margin: 1em 0;
-    font-size: 2.7em;
+
     text-transform: uppercase;
 }
 
 .auth-page__time {
     margin: 0 0 2.8rem;
+
     font-weight: bold;
-    font-size: 1.2em;
 }
 
 .auth-page__form {
@@ -64,10 +84,10 @@
 
 /* auth page bottom block */
 .auth-page__tech-block {
-    flex: 1;
-
     display: flex;
     align-items: center;
+    flex: 1;
+
     padding: 0 6em;
 }
 

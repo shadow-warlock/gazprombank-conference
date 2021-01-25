@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=cyrillic-ext');
 
+:root {
+    --primary-color: #0256b5;
+    --tertiary-color: #fff;
+    --secondary-color: #485fe1;
+}
+
 html {
     font-size: 15px;
 }
@@ -7,9 +13,6 @@ html {
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    --primary-color: #0066cc;
-    --tertiary-color: #fff;
-    --secondary-color: #191c2f;
     --green-blue: #24767c;
     --green-blue-dark: #16464c;
     --blue: #1c58a5;
@@ -22,7 +25,7 @@ body {
     --font-size-less: 0.7rem;
     --font-size-big: 1.5rem;
     --font-size-very-big: 1.9rem;
-    --input-width: 200px;
+    --input-width: 150px;
     --light-green: #dae9eb;
     --content-width: 1730px;
 }
@@ -128,12 +131,33 @@ ul {
 
 .field-phone {
     text-decoration: none;
-    color: var(--tertiary-color);
+    color: inherit;
 }
 
 .field-email,
 .field-role {
     text-decoration: none;
-    color: var(--primary-color);
     font-weight: bold;
+    color: inherit;
+}
+
+.field-phone:hover,
+.field-email:hover {
+    opacity: 0.7;
+}
+
+.title {
+    font-size: 36px;
+}
+
+.subtitle {
+    font-size: 24px;
+}
+
+.text {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 14px;
 }

@@ -1,12 +1,16 @@
 .header {
+    z-index: 2;
+
+    padding: 1.6em 5em;
+
     background-color: var(--tertiary-color);
-    padding: 1.6em 4em;
 }
 
 .header__content {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header__logo {

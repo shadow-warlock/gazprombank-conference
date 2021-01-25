@@ -1,7 +1,7 @@
 {
     "page_title": "Online conferences of the ATO EVENTS",
     "online_conferences": "ATO Events. Better online",
-    "the_ato_events": " ",
+    "the_ato_events": "",
     "conference": "online conference",
     "conference_theme": "Airport of the future",
     "date_format": "MMMM DD, YYYY",
@@ -17,6 +17,8 @@
     "valeriya_burskaya": "Valeriya Burskaya",
     "igor_smirnov": "Igor Smirnov",
     "nikita_kachaev": "Nikita Kachaev",
+    "elena_gushchik": "Elena Gushchik",
+    "valentin_ivanov": "Valentin Ivanov",
     "moscow": "Moscow",
     "broadcast": "Broadcast",
     "chat": "Chat",
