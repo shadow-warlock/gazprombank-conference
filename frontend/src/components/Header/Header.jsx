@@ -15,7 +15,7 @@ const Header = () => {
                         alt="gazprombank logo"
                     />
                 </a>
-                <a href="http://novawind.ru/" target="_blank">
+                <a href="https://rosatom.ru/" target="_blank">
                     <img
                         className="header__logo"
                         src={novaLogo}

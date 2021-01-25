@@ -170,5 +170,5 @@ export const conferenceTime = '10:00';
 export const agendaURL = {
     en: '',
     ru:
-        'https://drive.google.com/file/d/1BVwEB62uPVdIiLPU-CPlkiKciDyeHZCj/view',
+        'https://drive.google.com/drive/folders/1np_NwGxEoI4ZNZQXIDvspxhgpI0M1Gy1',
 };
