@@ -13,7 +13,7 @@ export default class TechSupport extends Component {
 
         return (
             <div className="tech-support">
-                <h5 className="tech-support__title auth-white">
+                <h5 className="tech-support__title">
                     <FormattedMessage id={'technical_support'} />
                 </h5>
                 <div className={'tech-support__supporters'}>

@@ -16,13 +16,18 @@ class AuthPage extends Component {
                 <section className="auth-page__content">
                     <div className="auth-page__main-block">
                         <div className="auth-page__general">
-                            <h1 className="auth-page__title">
+                            <h1 className="auth-page__title subtitle">
                                 <FormattedMessage id={'conference'} />
                             </h1>
-                            <h1 className="auth-page__conf-theme">
-                                <FormattedMessage id={'conference_theme'} />
+                            <h1 className="auth-page__conf-theme title">
+                                {/* <FormattedMessage id={'conference_theme'} /> */}
+                                <FormattedMessage id={'theme-part-1'} />
+                                <br />
+                                <FormattedMessage id={'theme-part-2'} />
+                                <br />
+                                <FormattedMessage id={'theme-part-3'} />
                             </h1>
-                            <div className="auth-page__time">
+                            <div className="auth-page__time text">
                                 <Moment
                                     className={'upper'}
                                     format={this.props.intl.formatMessage({
@@ -31,8 +36,7 @@ class AuthPage extends Component {
                                     date={conferenceDate}
                                 />
                                 {', '}
-                                {conferenceTime} (
-                                <FormattedMessage id={'moscow'} />,{' GMT+3'})
+                                {conferenceTime}
                             </div>
                             <div className="auth-page__form">
                                 <AuthForm setUser={this.props.setUser} />

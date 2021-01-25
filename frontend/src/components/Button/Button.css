@@ -1,24 +1,31 @@
 .button {
-    border: none;
-    padding: 1.2em 1.8em;
-    border-radius: 2em;
     box-sizing: border-box;
+
     width: var(--input-width);
-    background-color: var(--primary-color);
+    padding: 1.2em 1.8em;
+
+    transition: all 0.2s ease-out;
+
+    border: none;
+    border-radius: 2em;
+
+    background-color: var(--secondary-color);
+
     color: var(--tertiary-color);
-    font-size: 1.2em;
+    outline: none;
+
     font-weight: bold;
     text-transform: capitalize;
-    outline: none;
-    transition: all 0.2s ease-out;
 }
 
 .button:hover {
     cursor: pointer;
+
     background-color: rgba(0, 102, 204, 0.5);
 }
 
 input[type='number']::-moz-placeholder {
-    color: #fff;
     opacity: 1;
+
+    color: #fff;
 }

@@ -6,7 +6,6 @@
     margin: 0;
     color: var(--primary-color);
     text-align: center;
-    font-size: 2rem;
 }
 
 .chat__messages {

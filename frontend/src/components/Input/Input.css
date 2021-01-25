@@ -1,14 +1,17 @@
 .password-input {
-    text-align: center;
     box-sizing: border-box;
+
     width: var(--input-width);
+
+    text-align: center;
     -moz-appearance: textfield;
 }
 
 .password-input::-webkit-outer-spin-button,
 .password-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
     margin: 0;
+
+    -webkit-appearance: none;
 }
 
 .password-input::placeholder {
@@ -20,6 +23,6 @@
 }
 
 .input[type='checkbox'] {
-    height: 30px;
     width: 30px;
+    height: 30px;
 }

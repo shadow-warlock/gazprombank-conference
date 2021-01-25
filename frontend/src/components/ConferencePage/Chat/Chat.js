@@ -15,7 +15,7 @@ export default class Chat extends Component {
     render() {
         return (
             <div className={'chat'}>
-                <h1 className="chat__title">
+                <h1 className="chat__title title">
                     <FormattedMessage id={'chat'} />
                 </h1>
                 <div className={'chat__body'}>

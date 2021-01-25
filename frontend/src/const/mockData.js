@@ -149,9 +149,9 @@ export const TECH_SUPPORTERS = [
     {
         use: [USE.MAIN, USE.AUTH],
         role: 'participation',
-        name: 'nikita_kachaev',
-        phone: '+7 964 500-25-33',
-        email: 'nikita.kachaev@gmail.com',
+        name: 'valentin_ivanov',
+        phone: '+7 962 945-38-32',
+        email: 'v.ivanov@atoevents.ru',
     },
 ];
 
@@ -159,16 +159,16 @@ export const CONTACTS = [
     {
         use: [USE.MAIN, USE.AUTH],
         role: 'agenda',
-        name: 'igor_smirnov',
-        phone: '+7 965 236 88 97',
-        email: 'i.smirnov@wwe-conferences.com',
+        name: 'elena_gushchik',
+        phone: '+7 985 976-65-37',
+        email: 'Elena.Guschik@gazprombank.ru',
     },
 ];
 
-export const conferenceDate = new Date('2020-11-12');
-export const conferenceTime = '09:30';
+export const conferenceDate = new Date('2021-01-27');
+export const conferenceTime = '10:00';
 export const agendaURL = {
     en: '',
     ru:
-        'https://wwe-conferences.com/wp-content/uploads/2020/11/MOSPF20_rus.pdf',
+        'https://drive.google.com/file/d/1BVwEB62uPVdIiLPU-CPlkiKciDyeHZCj/view',
 };

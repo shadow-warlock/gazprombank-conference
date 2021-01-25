@@ -6,7 +6,7 @@ export default class Input extends Component {
         return (
             <input
                 autoComplete={'nope'}
-                className={'button password-input'}
+                className={'button password-input text-small'}
                 {...this.props}
             />
         );
