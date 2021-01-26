@@ -1,6 +1,6 @@
-@media all and (max-width: 1300px) {
+@media all and (max-width: 1200px) {
     .auth-page__content {
-        background-size: 45vmax;
+        background-size: 40vmax;
     }
 }
 
@@ -13,7 +13,7 @@
         background-image: none;
     }
 
-    .button{
+    .button {
         width: 100%;
     }
 }
