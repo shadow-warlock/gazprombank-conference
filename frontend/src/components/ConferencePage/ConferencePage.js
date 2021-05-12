@@ -5,13 +5,14 @@ import Chat from './Chat/Chat'
 import Poll from './Poll/Poll'
 import Logo from '../Logo/Logo'
 import axios from 'axios'
-import { API, AXIOS_CONFIG, SERVER } from '../../const/const'
+import { API, AXIOS_CONFIG, CONFERENCE_TIME, SERVER } from '../../const/const'
 import Websocket from 'react-websocket'
 import './ConferencePage.css'
 import { CONFERENCE_ITEMS } from '../../const/mockData'
 import Footer from './Footer/Footer'
 import Timer from '../../Utils/Timer'
 import LogoutButton from '../LogoutButton/LogoutButton'
+import Moment from 'react-moment'
 
 export default class ConferencePage extends Component {
   constructor (props) {
@@ -57,10 +58,10 @@ export default class ConferencePage extends Component {
             и валютного контроля</p>
           <div className={'materials_and_time'}>
             <div
-              onClick={() => {window.open('/assets/materials.zip', '_blank')}}>
+              onClick={() => {window.open('/assets/Презентация.pdf', '_blank')}}>
               Материалы конференции
             </div>
-            <div>2 июня 2020 года 10:00</div>
+            <div><Moment date={CONFERENCE_TIME} format={'D MMMM Y [года] hh:mm'}/></div>
           </div>
         </div>
         <div className={'broadcast_chat_container padding_side'}>
@@ -155,6 +156,6 @@ export default class ConferencePage extends Component {
     }
     this.setState({
       conference: conf,
-    });
+    })
   }
 }
