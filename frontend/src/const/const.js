@@ -1,7 +1,7 @@
-export const SERVER = {
-    URL: "",
-    WS1: 'ws://currency-control.ru:2350',
-    WS2: 'ws://currency-control.ru:2352',
+export let SERVER = {
+    URL: process.env.REACT_APP_API_URL,
+    WS1: process.env.REACT_APP_WEBSOCKET_1,
+    WS2: process.env.REACT_APP_WEBSOCKET_2,
 };
 
 export const API = {
@@ -20,6 +20,7 @@ export const API = {
     USER_CODE: (id) => {return SERVER.URL + "/api/user/" + id + "/code"}
 };
 
+export const CONFERENCE_TIME = '2021-05-28 09:30'
 
 export const AXIOS_CONFIG = {withCredentials: true};
 

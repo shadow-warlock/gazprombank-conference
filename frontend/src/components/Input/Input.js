@@ -5,7 +5,7 @@ export default class Input extends Component {
     render() {
         return (
             <input autoComplete={"nope"}
-                   className={"input"}
+                   className={"input bold"}
                    {...this.props}/>
         );
     }
