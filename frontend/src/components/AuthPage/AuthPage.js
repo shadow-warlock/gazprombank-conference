@@ -3,6 +3,7 @@ import AuthForm from './AuthForm/AuthForm'
 import Logo from '../Logo/Logo'
 import './AuthPage.css'
 import femida from './../../assets/femida.png'
+import coins from './../../assets/coins.svg'
 import Moment from 'react-moment';
 import 'moment-timezone';
 import 'moment/locale/ru';
@@ -29,7 +30,7 @@ export default class AuthPage extends Component {
             <AuthForm setUser={this.props.setUser}/>
           </div>
           <div className={'bank_container'}>
-            <img src={femida} alt={'bank'}/>
+            <img src={coins} alt={'main image'}/>
           </div>
         </div>
         <div className={'logo_right'}>
