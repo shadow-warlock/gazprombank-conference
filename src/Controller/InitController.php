@@ -6,25 +6,22 @@ namespace App\Controller;
 
 use App\Entity\Chat;
 use App\Entity\Conference;
-use App\Entity\Message;
 use App\Entity\User;
-use App\Service\WebSocketSender;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
-class InitController extends AbstractController {
+class InitController extends AbstractController
+{
 
-    const URL = "https://facecast.net/v/lrsp2q";
+    private const URL = "https://facecast.net/v/uwvub1";
 
     /**
      * @Route("/api/init", name="init", methods={"GET"})
-     * @param Request $request
-     * @return JsonResponse
      */
-    public function init(Request $request) {
+    public function init(): JsonResponse
+    {
         $user = new User();
         $user->setRole(User::ROLE_ADMIN);
         $user->setName("Администратор");
@@ -45,7 +42,8 @@ class InitController extends AbstractController {
     /**
      * @Route("/api/seturl", name="set_url", methods={"POST"})
      */
-    public function setConferenceUrl(Request $request) {
+    public function setConferenceUrl(Request $request): JsonResponse
+    {
         $url = json_decode($request->getContent(), true)["url"];
         $em = $this->getDoctrine()->getManager();
         $conference = $em->getRepository(Conference::class)->findAll()[0];
