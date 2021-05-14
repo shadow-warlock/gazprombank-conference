@@ -9,7 +9,7 @@ export const CONFERENCE_ITEMS = [
   },
   {
     id: 1,
-    image: '/assets/speakers/rectangle.png',
+    image: '/assets/speakers/bysko.jpeg',
     name: '',
     speaker: 'Владимир Бусько',
     description: 'Первый Вице-Президент банка ГПБ (АО)',
