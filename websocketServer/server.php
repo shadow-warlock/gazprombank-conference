@@ -5,9 +5,20 @@ use Workerman\Worker;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-function createWorker($wsPort = "2350", $tcpPort = "2349"){
-    $ws_worker = new Worker('websocket://0.0.0.0:' . $wsPort);
-
+function createWorker($wsPort = "2350", $tcpPort = "2349", $ssl = false){
+    if(!$ssl){
+        $ws_worker = new Worker('websocket://0.0.0.0:' . $wsPort);
+    }else{
+        $context = array(
+            'ssl' => array(
+                'local_cert'  => __DIR__.'/ssl/fullchain.pem',
+                'local_pk'    => __DIR__.'/ssl/privkey.pem',
+                'verify_peer' => false,
+            )
+        );
+        $ws_worker = new Worker('websocket://0.0.0.0:' . $wsPort, $context);
+        $ws_worker->transport = "ssl";
+    }
     $connections = [];
     // 4 processes
     //$ws_worker->count = 4;
@@ -36,7 +47,7 @@ function createWorker($wsPort = "2350", $tcpPort = "2349"){
     };
 }
 
-createWorker(2350, 2349);
-createWorker(2352, 2351);
+createWorker(2350, 2349, true);
+createWorker(2352, 2351, true);
 
 Worker::runAll();
