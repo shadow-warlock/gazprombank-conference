@@ -4,6 +4,14 @@
     padding-bottom: 50px;
 }
 
+.conference_user_description{
+    font-size: calc(var(--default-font-size) * 1.2);
+}
+
+.conference_item_speaker{
+    font-size: calc(var(--font-size-big) * 1.2);
+}
+
 .conference_item .time {
     padding: 5px 15px;
     color: var(--blue);
