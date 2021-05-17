@@ -8,7 +8,7 @@
     font-size: calc(var(--default-font-size) * 1.2);
 }
 
-.conference_item_speaker{
+.conference_user_speaker{
     font-size: calc(var(--font-size-big) * 1.2);
 }
 
