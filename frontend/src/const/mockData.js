@@ -43,38 +43,6 @@ export const CONFERENCE_ITEMS = [
     time: '11:00 - 11:30',
   },
   {
-    id: 3,
-    image: '/assets/speakers/zetilova.jpg',
-    name: '',
-    speaker: 'Татьяна Зетилова',
-    description: 'Заместитель начальника Департамента сопровождения валютных операций Банка ГПБ (АО)',
-    time: null,
-  },
-  {
-    id: 3.1,
-    image: '/assets/speakers/putilina.jpg',
-    name: '',
-    speaker: 'Юлия Путилина',
-    description: 'Начальник Управления сопровождения и контроля валютных операций Департамента сопровождения валютных операций Банка ГПБ (АО)',
-    time: null,
-  },
-  {
-    id: 3.2,
-    image: '/assets/speakers/mironova.jpg',
-    name: '',
-    speaker: 'Екатерина Миронова',
-    description: 'Заместитель начальника Управления сопровождения и контроля валютных операций Департамента сопровождения валютных операций Банка ГПБ (АО)',
-    time: null,
-  },
-  {
-    id: 5.5,
-    image: null,
-    name: 'Сессия вопросов и ответов',
-    speaker: '',
-    description: '',
-    time: '11:30 – 12:00',
-  },
-  {
     id: 6,
     image: '/assets/speakers/lopatnikova.jpg',
     name: '',
@@ -105,6 +73,14 @@ export const CONFERENCE_ITEMS = [
     speaker: 'Екатерина Миронова',
     description: 'Заместитель начальника Управления сопровождения и контроля валютных операций Департамента сопровождения валютных операций Банка ГПБ (АО)',
     time: null,
+  },
+  {
+    id: 5.5,
+    image: null,
+    name: 'Сессия вопросов и ответов',
+    speaker: '',
+    description: '',
+    time: '11:30 – 12:00',
   },
 ]
 
